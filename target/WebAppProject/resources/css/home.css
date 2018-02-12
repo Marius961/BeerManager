@@ -1,4 +1,7 @@
 /*  HTML5 ✰ Boilerplate  */
+
+
+
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video
 	{
 	margin: 0;
@@ -160,7 +163,7 @@ button,input,select,textarea {
 }
 
 input:valid,textarea:valid {
-	
+
 }
 
 input:invalid,textarea:invalid {
@@ -319,16 +322,16 @@ a:hover {
 }
 
 /*
-  ✰✰✰✰✰✰✰✰✰✰✰✰✰✰ 
+  ✰✰✰✰✰✰✰✰✰✰✰✰✰✰
 
   Simple Login Form
   HTML5/CSS3 Coded by: $hekh@r d-Ziner, CSSJunction.com
   PSD by:PremiumPixels.com
-  
+
   Uuage: Free. You can modify, remove our links and use wherever you want ☺.
-  
-  ✰✰✰✰✰✰✰✰✰✰✰✰✰✰✰ 
-  
+
+  ✰✰✰✰✰✰✰✰✰✰✰✰✰✰✰
+
 */
 body {
 	background: #eff3f6;
@@ -500,3 +503,10 @@ footer#main {
 	font: normal 11px/16px Arial, Helvetica, sans-serif;
 	width: 100%;
 }
+
+.err_msg {
+    font-size: 25px;
+}
+
+
+
