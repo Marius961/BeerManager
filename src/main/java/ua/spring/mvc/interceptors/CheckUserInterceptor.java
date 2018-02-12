@@ -15,7 +15,7 @@ public class CheckUserInterceptor extends HandlerInterceptorAdapter {
         if (request.getRequestURI().contains("check-user")) {
 
             User user = (User) modelAndView.getModel().get("user");
-            if (user.getName().equals("admin")) {
+            if (user.getName().equals("admin") || user.getName().equals("")) {
                 response.sendRedirect(request.getContextPath() + "/failed");
             }
 

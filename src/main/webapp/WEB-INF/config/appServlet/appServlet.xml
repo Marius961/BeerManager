@@ -22,8 +22,14 @@ http://www.springframework.org/schema/context/spring-context.xsd"
     <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
+            <bean class="ua.spring.mvc.interceptors.TimeInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
             <bean class="ua.spring.mvc.interceptors.CheckUserInterceptor"/>
         </mvc:interceptor>
     </mvc:interceptors>
+
 
 </beans>
