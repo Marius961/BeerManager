@@ -1,4 +1,4 @@
-package ua.spring.mvc.objects;
+package ua.spring.mvc.dao.objects;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

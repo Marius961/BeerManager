@@ -1,9 +1,8 @@
 package ua.spring.mvc.interceptors;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import ua.spring.mvc.objects.User;
+import ua.spring.mvc.dao.objects.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
