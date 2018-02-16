@@ -11,8 +11,14 @@
 
 </head>
 <body>
-    <h1>Name: ${user.name}</h1>
-    <h1>Password: ${user.password}</h1>
-    <h1>Is admin: ${user.admin}</h1>
+    <h1>${user.tel_number}</h1>
+    <h1>${user.password}</h1>
+    <h1>${user.address}</h1>
+    <h1>${user.company_name}</h1>
+    <h1>${user.email}</h1>
+    <h1>${user.id}</h1>
+    <h1>${user.user_role}</h1>
+
+
 </body>
 </html>

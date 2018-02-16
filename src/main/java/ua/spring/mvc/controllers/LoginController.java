@@ -21,10 +21,8 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/check-user", method = RequestMethod.POST)
-    public String checkUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, Model model) {
-        if(bindingResult.hasErrors()) {
-            return "login";
-        }
+    public String checkUser(@ModelAttribute("user") User user, Model model) {
+
         model.addAttribute("user", user);
         return "main";
     }

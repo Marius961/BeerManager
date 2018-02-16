@@ -16,12 +16,14 @@ public class CheckUserInterceptor extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         if (request.getRequestURI().contains("check-user")) {
 
-            User user = modelAndView.getModel().get("user");
+            User user = (User) modelAndView.getModel().get("user");
             ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
             SQLiteDAO sqLiteDAO = (SQLiteDAO) context.getBean("SQLiteDAO");
-            if(!sqLiteDAO.isUserRegistered(user.getTel_number(), user.getPasswor())) {
-
+            user = sqLiteDAO.isUserRegistered(user.getTel_number(), user.getPassword());
+            if(user == null) {
+                response.sendRedirect(request.getContextPath() + "/failed");
             }
+            modelAndView.addObject("user", user);
         }
     }
 }

@@ -13,8 +13,8 @@
 
         <fieldset class="boxBody">
 
-            <form:label path="name">Name:</form:label>
-            <form:input path="name" />
+            <form:label path="tel_number">Name:</form:label>
+            <form:input path="tel_number" />
 
             <form:label path="password">Password:</form:label>
             <form:password path="password"/>
@@ -22,7 +22,6 @@
         </fieldset>
 
         <footer>
-            <label><form:checkbox path="admin" tabindex="3"/>Admin</label>
             <input type="submit" class="btnLogin" value="Login" tabindex="4">
         </footer>
 

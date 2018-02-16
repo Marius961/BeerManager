@@ -12,7 +12,8 @@ public class User {
     @NotNull
     private int tel_number;
     @NotNull
-    private String passwor;
+    @Size(max = 16)
+    private String password;
     @NotNull
     private String address;
     private String email;
@@ -58,12 +59,12 @@ public class User {
         this.tel_number = tel_number;
     }
 
-    public String getPasswor() {
-        return passwor;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswor(String passwor) {
-        this.passwor = passwor;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getAddress() {

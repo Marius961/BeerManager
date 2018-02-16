@@ -10,8 +10,7 @@ import ua.spring.mvc.dao.objects.User;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Map;
-import java.util.TreeMap;
+
 @Component
 public class SQLiteDAO {
 
@@ -33,13 +32,18 @@ public class SQLiteDAO {
 
 
 
-    public boolean isUserRegistered(String tel_number, String password) {
-        String sql = "SELECT  FROM " + userTable + " WHERE tel_number=:tel_number AND password=:password";
+    public User isUserRegistered(int tel_number, String password) {
+        String sql = "SELECT * FROM user WHERE tel_number=:tel_number AND password=:password";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("tel_number", tel_number);
         params.addValue("password", password);
-        User user = jdbcTemplate.queryForObject(sql, params, new UserMapper());
-        return user.getPasswor() != null && user.getTel_number() != 0;
+
+        try {
+            User user = jdbcTemplate.queryForObject(sql, params, new UserMapper());
+            return user;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 //    public int insertMP3(MP3 mp3) {
@@ -147,13 +151,13 @@ public class SQLiteDAO {
 
             User user = new User();
             user.setTel_number(rs.getInt("tel_number"));
-            user.setPasswor(rs.getString("password"));
+            user.setPassword(rs.getString("password"));
             user.setAddress(rs.getString("address"));
-            user.setCompany_name(rs.getString("company_mame"));
+//            user.setCompany_name(rs.getString("company_mame"));
             user.setEmail(rs.getString("email"));
             user.setId(rs.getInt("id"));
             user.setFio(rs.getString("fio"));
-            user.setUser_role(rs.getInt("user_role"));
+//            user.setUser_role(rs.getInt("user_role"));
             return  user;
         }
     }
