@@ -4,7 +4,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="BeerManager" />
+          <element id="module-output" name="WebAppProject" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.3.RELEASE" />
@@ -36,7 +36,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/WebAppProject/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="BeerManager/web/Web" />
+      <element id="javaee-facet-resources" facet="WebAppProject/web/Web" />
     </root>
   </artifact>
 </component>

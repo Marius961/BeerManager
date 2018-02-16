@@ -4,37 +4,81 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class User {
+    
+    private int id;
+    private String fio;
     @NotNull
-    @Size(min = 4, message = "Имя должно быть больше 4 знаков")
-    private String name;
+    private String company_name;
     @NotNull
-    @Size(min = 5,max = 16, message = "Пароль должен быть больче 5 знаков, но не больше 16")
-    private String password;
-    private Boolean isAdmin;
+    private int tel_number;
+    @NotNull
+    private String passwor;
+    @NotNull
+    private String address;
+    private String email;
+    private int user_role;
 
-    public Boolean getAdmin() {
-        return isAdmin;
+    public int getUser_role() {
+        return user_role;
     }
 
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
+    public void setUser_role(int user_role) {
+        this.user_role = user_role;
     }
 
-    public String getName() {
-        return name;
+    public int getId() {
+        return id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPassword() {
-        return password;
+    public String getFio() {
+        return fio;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setFio(String fio) {
+        this.fio = fio;
     }
 
+    public String getCompany_name() {
+        return company_name;
+    }
 
+    public void setCompany_name(String company_name) {
+        this.company_name = company_name;
+    }
+
+    public int getTel_number() {
+        return tel_number;
+    }
+
+    public void setTel_number(int tel_number) {
+        this.tel_number = tel_number;
+    }
+
+    public String getPasswor() {
+        return passwor;
+    }
+
+    public void setPasswor(String passwor) {
+        this.passwor = passwor;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
