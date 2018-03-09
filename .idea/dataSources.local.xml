@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="BeerShopDB.db" uuid="3cc846ab-3e7d-4216-97ba-fc3fff8f8205">
+    <data-source name="ProductManager.db" uuid="3cc846ab-3e7d-4216-97ba-fc3fff8f8205">
       <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
       <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
       <secret-storage>master_key</secret-storage>
