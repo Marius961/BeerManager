@@ -1,0 +1,48 @@
+body {
+    margin: 0 auto;
+}
+
+.container1 {
+    background-color: #252429;
+    margin: 0 auto;
+    border: 0;
+    padding-bottom: 1%;
+    padding-top: 1%;
+
+}
+
+.box {
+    background-color: snow;
+    margin: 12% auto;
+    width: 35%;
+    display: block;
+    padding: 4%;
+    border-radius: 2%;
+
+}
+
+.brn-2  {
+    height: 1%;
+    width: 7%;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid white;
+    background: transparent;
+    font-family: "Segoe UI Black ", serif;
+    color: white;
+    display: block;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+
+}
+
+.brn-2:hover {
+    background-color: darkorange;
+    border: 0;
+}
+
+.btn-bar {
+    width: 100%;
+    border-bottom:  1px solid snow;
+}
