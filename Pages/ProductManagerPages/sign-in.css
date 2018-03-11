@@ -58,7 +58,11 @@ body {
 
 .p-alt {
     border-top: 1px solid gainsboro;
-    margin: 5% 0 0;
-    padding: 2%;
+    margin: 4% 0 0;
+    padding: 1% 0 0;
     color: gray;
+}
+
+.link-1 {
+    color: royalblue;
 }
