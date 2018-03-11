@@ -16,8 +16,10 @@ body {
     margin: 12% auto;
     width: 35%;
     display: block;
-    padding: 4%;
-    border-radius: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3%;
+    border-radius: 3%;
 
 }
 
@@ -45,4 +47,18 @@ body {
 .btn-bar {
     width: 100%;
     border-bottom:  1px solid snow;
+}
+
+.form {
+    font-family: "Segoe UI Semibold ", serif;
+    margin-bottom: 3%;
+    padding-top: 4%;
+    font-size: 5vh;
+}
+
+.p-alt {
+    border-top: 1px solid gainsboro;
+    margin: 5% 0 0;
+    padding: 2%;
+    color: gray;
 }

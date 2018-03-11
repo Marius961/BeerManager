@@ -91,9 +91,10 @@ body {
 }
 
 .info {
-    display: inline-block;
+    display: block;
     padding: 1%;
     width: 30%;
+    float: left;
 
 }
 
