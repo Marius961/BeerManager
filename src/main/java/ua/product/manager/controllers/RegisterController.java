@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
+import ua.product.manager.validators.TelNumValidator;
 
 import javax.validation.Valid;
 
@@ -21,8 +22,9 @@ import javax.validation.Valid;
 public class RegisterController {
 
     @Autowired
-    public RegisterController(UserService userService) {
+    public RegisterController(UserService userService, TelNumValidator telNumValidator) {
         this.userService = userService;
+        this.telNumValidator = telNumValidator;
     }
 
     @ModelAttribute
@@ -31,14 +33,16 @@ public class RegisterController {
     }
 
     private final UserService userService;
+    private  final TelNumValidator telNumValidator;
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public ModelAndView registerUser(@ModelAttribute User user) {
-        return new ModelAndView("registration", "user", user);
+    public ModelAndView getRegPage() {
+        return new ModelAndView("registration", "user", new User());
     }
 
     @RequestMapping(value = "/register-user", method = RequestMethod.POST)
-    public ModelAndView registerUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public ModelAndView getRegPage(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        telNumValidator.validateWithCheckNum(user.getTelNumber(), bindingResult);
         ModelAndView modelAndView = new ModelAndView();
         if(!bindingResult.hasErrors()) {
             userService.registerUser(user);
@@ -47,6 +51,11 @@ public class RegisterController {
             modelAndView.setView(redirectView);
         } else modelAndView.setViewName("registration");
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/register-user", method = RequestMethod.GET)
+    public String regRedirect() {
+        return "redirect:registration";
     }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)

@@ -1,6 +1,11 @@
 package ua.product.manager.models;
 
 
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -15,8 +20,7 @@ public class User {
             @NotNull(message = "{company.name.null}") @Size(min = 3, max = 32, message = "{company.name.size}") String companyName,
             @NotNull(message = "{company.address.null}") @Size(min = 3, max = 63, message = "{company.address.size}") String companyAddress,
             @NotNull(message = "{user.email.null}") @Size(min = 5, max = 32, message = "{user.email.size}") String email,
-//            @NotNull(message = "{user.telnumber.null}") @Size(min = 5, max = 13, message = "{user.telnumber.size}")
-                    int telNumber,
+            @Valid String telNumber,
             @NotNull(message = "{user.password.null}") @Size(min = 6, max = 15, message = "{user.password.size}") String password) {
         this.id = id;
         this.fullName = fullName;
@@ -27,7 +31,7 @@ public class User {
         this.password = password;
     }
 
-    private int id;
+    private Integer id;
     @NotNull(message = "{user.name.null}")
     @Size(min = 3, max = 32, message = "{user.name.size}")
     private String fullName;
@@ -44,19 +48,17 @@ public class User {
     @Size(min = 5, max = 32, message = "{user.email.size}")
     private String email;
 
-//    @NotNull(message = "{user.telnumber.null}")
-//    @Size(min = 5, max = 13, message = "{user.telnumber.size}")
-    private int telNumber;
+    private String telNumber;
 
     @NotNull(message = "{user.password.null}")
     @Size(min = 6, max = 15, message = "{user.password.size}")
     private String password;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -92,11 +94,11 @@ public class User {
         this.email = email;
     }
 
-    public int getTelNumber() {
+    public String getTelNumber() {
         return telNumber;
     }
 
-    public void setTelNumber(int telNumber) {
+    public void setTelNumber(String telNumber) {
         this.telNumber = telNumber;
     }
 

@@ -15,15 +15,24 @@
 <body>
 <div class="container-1">
     <div class="btn-bar">
-        <form action="<c:url value="/"/>">
-            <button type="submit" class="brn-2">Sign in</button>
-        </form>
+        <c:if test="${empty user.fullName}">
+            <form action="<c:url value="/login"/>">
+                <button type="submit" class="brn-2">Sign in</button>
+            </form>
+        </c:if>
+        <c:if test="${not empty user.fullName}">
+            <form action="<c:url value="/logout"/>">
+                <button type="submit" class="brn-2">Log out</button>
+            </form>
+        </c:if>
     </div>
     <div class="content-2">
         <h1 class="header">Sing up and make your orded now!</h1>
-        <form action="<c:url value="/registration"/>">
-            <button type="submit" class="brn-1">Sign up</button>
-        </form>
+        <c:if test="${empty user.fullName}">
+            <form action="<c:url value="/registration"/>">
+                <button type="submit" class="brn-1">Sign up</button>
+            </form>
+        </c:if>
     </div>
 </div>
 <main class="container-2">

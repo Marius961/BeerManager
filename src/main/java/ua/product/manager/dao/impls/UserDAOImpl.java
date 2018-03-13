@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.util.NestedServletException;
 import ua.product.manager.dao.interfaces.UserDAO;
 import ua.product.manager.models.User;
 
@@ -29,8 +30,8 @@ public class UserDAOImpl implements UserDAO {
     private static final String rolesTable = "roles";
 
     @Override
-    public User checkUser(int tel_number, String password) {
-        String sql = "SELECT * FROM user WHERE tel_number=:tel_number AND password=:password";
+    public User checkUser(String tel_number, String password) {
+        String sql = "SELECT * FROM " + userTable + " WHERE tel_number=:tel_number AND password=:password";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("tel_number", tel_number);
         params.addValue("password", password);
@@ -45,12 +46,12 @@ public class UserDAOImpl implements UserDAO {
     }
     @Transactional
     @Override
-    public int insertUser(String fullName, String companyName, String companyAddress, String email, int telNumber, String password) {
+    public int insertUser(String fullName, String companyName, String companyAddress, String email, String telNumber, String password) {
         String sql = "INSERT INTO " + userTable + " (email, tel_number, password, full_name, company_name, company_addr) VALUES (:email, :tel_number, :password, :full_name, :company_name, :company_addr)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("full_name", fullName);
         params.addValue("company_name", companyName);
-        params.addValue("company_addr", companyName);
+        params.addValue("company_addr", companyAddress);
         params.addValue("email", email);
         params.addValue("tel_number", telNumber);
         params.addValue("password", password);
@@ -69,16 +70,27 @@ public class UserDAOImpl implements UserDAO {
         return null;
     }
 
+    @Override
+    public boolean checkUserTelNumber(String telnumber) {
+        String sql = "SELECT * FROM " + userTable + " WHERE tel_number=:telNum";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("telNum", telnumber);
+        try {
+            User user = jdbcTemplate.queryForObject(sql, params, new ShortUserMapper());
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
     private static final class UserMapper implements RowMapper<User> {
 
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
-
-
             User user = new User();
             user.setId(rs.getInt("id"));
             user.setEmail(rs.getString("email"));
-            user.setTelNumber(rs.getInt("tel_number"));
+            user.setTelNumber(rs.getString("tel_number"));
             user.setPassword(rs.getString("password"));
             user.setFullName(rs.getString("full_name"));
             user.setCompanyName(rs.getString("company_name"));
@@ -93,7 +105,9 @@ public class UserDAOImpl implements UserDAO {
         public User mapRow(ResultSet rs, int rowNum) throws SQLException {
             User user = new User();
             user.setId(rs.getInt("id"));
-            user.setTelNumber(rs.getInt("tel_number"));
+            user.setTelNumber(rs.getString("tel_number"));
+            user.setFullName(rs.getString("full_name"));
+
             return  user;
         }
     }

@@ -52,8 +52,6 @@
                 <form:input path="password" type="password" class="form-control" id="pass_input" placeholder="HardPass123" />
                 <form:errors path="password" cssClass="error-1"/>
             </div>
-
-
             <button type="submit" class="btn btn-primary">Sign in</button>
         </form:form>
         <p class="p-alt">Already registered?</p>

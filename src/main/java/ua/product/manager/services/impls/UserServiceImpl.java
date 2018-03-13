@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.product.manager.dao.interfaces.UserDAO;
 import ua.product.manager.models.User;
+import ua.product.manager.models.UserData;
 import ua.product.manager.services.interfaces.UserService;
 
 @Service
@@ -38,9 +39,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User checkAndGetUser(UserData userData) {
+        return userDAO.checkUser(userData.getTelNumber(), userData.getPassword());
+    }
+
+    @Override
     public User getFullData(User user) {
         return null;
     }
 
+    @Override
+    public boolean checkUserTelNumber(String telnumber) {
+        return userDAO.checkUserTelNumber(telnumber);
+    }
 
 }
