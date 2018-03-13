@@ -1,31 +1,56 @@
 package ua.product.manager.models;
 
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class User {
-    
+
+    public User() {
+    }
+
+    public User(
+            int id,
+            @NotNull(message = "{user.name.null}") @Size(min = 3, max = 32, message = "{user.name.size}") String fullName,
+            @NotNull(message = "{company.name.null}") @Size(min = 3, max = 32, message = "{company.name.size}") String companyName,
+            @NotNull(message = "{company.address.null}") @Size(min = 3, max = 63, message = "{company.address.size}") String companyAddress,
+            @NotNull(message = "{user.email.null}") @Size(min = 5, max = 32, message = "{user.email.size}") String email,
+//            @NotNull(message = "{user.telnumber.null}") @Size(min = 5, max = 13, message = "{user.telnumber.size}")
+                    int telNumber,
+            @NotNull(message = "{user.password.null}") @Size(min = 6, max = 15, message = "{user.password.size}") String password) {
+        this.id = id;
+        this.fullName = fullName;
+        this.companyName = companyName;
+        this.companyAddress = companyAddress;
+        this.email = email;
+        this.telNumber = telNumber;
+        this.password = password;
+    }
+
     private int id;
-    private String fio;
-    @NotNull
-    private String company_name;
-    @NotNull
-    private int tel_number;
-    @NotNull
-    @Size(max = 16)
-    private String password;
-    @NotNull
-    private String address;
+    @NotNull(message = "{user.name.null}")
+    @Size(min = 3, max = 32, message = "{user.name.size}")
+    private String fullName;
+
+    @NotNull(message = "{company.name.null}")
+    @Size(min = 3, max = 32, message = "{company.name.size}")
+    private String companyName;
+
+    @NotNull(message = "{company.address.null}")
+    @Size(min = 3,max = 63, message = "{company.address.size}")
+    private String companyAddress;
+
+    @NotNull(message = "{user.email.null}")
+    @Size(min = 5, max = 32, message = "{user.email.size}")
     private String email;
-    private int user_role;
 
-    public int getUser_role() {
-        return user_role;
-    }
+//    @NotNull(message = "{user.telnumber.null}")
+//    @Size(min = 5, max = 13, message = "{user.telnumber.size}")
+    private int telNumber;
 
-    public void setUser_role(int user_role) {
-        this.user_role = user_role;
-    }
+    @NotNull(message = "{user.password.null}")
+    @Size(min = 6, max = 15, message = "{user.password.size}")
+    private String password;
 
     public int getId() {
         return id;
@@ -35,44 +60,28 @@ public class User {
         this.id = id;
     }
 
-    public String getFio() {
-        return fio;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFio(String fio) {
-        this.fio = fio;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
-    public String getCompany_name() {
-        return company_name;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCompany_name(String company_name) {
-        this.company_name = company_name;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public int getTel_number() {
-        return tel_number;
+    public String getCompanyAddress() {
+        return companyAddress;
     }
 
-    public void setTel_number(int tel_number) {
-        this.tel_number = tel_number;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCompanyAddress(String companyAddress) {
+        this.companyAddress = companyAddress;
     }
 
     public String getEmail() {
@@ -81,5 +90,21 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getTelNumber() {
+        return telNumber;
+    }
+
+    public void setTelNumber(int telNumber) {
+        this.telNumber = telNumber;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

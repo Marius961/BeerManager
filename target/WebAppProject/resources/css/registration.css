@@ -1,0 +1,73 @@
+body {
+    margin: 0 auto;
+}
+
+.container1 {
+    background-color: #252429;
+    margin: 0 auto;
+    border: 0;
+    padding-bottom: 1%;
+    padding-top: 1%;
+
+}
+
+.box {
+    background-color: snow;
+    margin: 12% auto;
+    width: 35%;
+    display: block;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 3%;
+    border-radius: 3%;
+
+}
+
+.brn-2  {
+    height: 1%;
+    width: 7%;
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid white;
+    background: transparent;
+    font-family: "Segoe UI Black ", serif;
+    color: white;
+    display: block;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+
+}
+
+.brn-2:hover {
+    background-color: darkorange;
+    border: 0;
+}
+
+.btn-bar {
+    width: 100%;
+    border-bottom:  1px solid snow;
+}
+
+.form {
+    font-family: "Segoe UI Semibold ", serif;
+    margin-bottom: 3%;
+    padding-top: 4%;
+    font-size: 5vh;
+}
+
+.p-alt {
+    border-top: 1px solid gainsboro;
+    margin: 4% 0 0;
+    padding: 1% 0 0;
+    color: gray;
+}
+
+.link-1 {
+    color: royalblue;
+}
+
+.error-1 {
+    font-family: "Segoe UI Semibold ", serif;
+    color: crimson;
+}
