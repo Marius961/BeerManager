@@ -54,12 +54,18 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         if(!bindingResult.hasErrors()) {
             User user = userService.checkAndGetUser(userData);
+            RedirectView redirectView = new RedirectView("index");
             if (user != null) {
-                RedirectView redirectView = new RedirectView("/index");
                 redirectView.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
                 modelAndView.setView(redirectView);
-            } else modelAndView.setViewName("login1");
-        }
+                redirectAttributes.addFlashAttribute("user", user);
+            } else {
+                redirectView.setUrl("login");
+                redirectView.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
+                modelAndView.setView(redirectView);
+                redirectAttributes.addFlashAttribute("message", "Login failed");
+            }
+        } else modelAndView.setViewName("login1");
         return modelAndView;
     }
 

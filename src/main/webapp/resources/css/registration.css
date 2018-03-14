@@ -71,3 +71,12 @@ body {
     font-family: "Segoe UI Black ", serif;
     color: crimson;
 }
+
+.login-failed-message {
+    background-color: rosybrown;
+    border-radius: 8px;
+    font-family: "Segoe UI Black", serif;
+    color: #663f38;
+    font-size: 3vh;
+    padding: 2%;
+}

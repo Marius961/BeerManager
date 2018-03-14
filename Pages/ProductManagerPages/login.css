@@ -66,3 +66,12 @@ body {
 .link-1 {
     color: royalblue;
 }
+
+.login-failed-message {
+    background-color: rosybrown;
+    font-family: "Segoe UI Black", serif;
+    border-radius: 8px;
+    color: #663f38;
+    font-size: 3vh;
+    padding: 2%;
+}

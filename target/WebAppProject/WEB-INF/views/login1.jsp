@@ -22,6 +22,9 @@
     <div class="box">
         <form:form method="post" modelAttribute="userData" action="/check-user">
             <h1 class="form">Sing in</h1>
+            <c:if test="${not empty message}">
+                <div class="login-failed-message"><span>${message}</span></div>
+            </c:if>
             <div class="form-group">
                 <form:label path="telNumber" for="tel_input">Tel. number</form:label>
                 <form:input path="telNumber" type="text" class="form-control" id="tel_input" placeholder="+380000000000" />

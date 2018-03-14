@@ -4,7 +4,7 @@
        xmlns:tx="http://www.springframework.org/schema/cache"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="ua.spring.mvc*"/>
+    <context:component-scan base-package="ua.product.manager**"/>
 
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property value="org.sqlite.JDBC" name="driverClassName"/>
