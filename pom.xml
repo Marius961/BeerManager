@@ -165,7 +165,7 @@
     </dependencies>
 
   <build>
-    <finalName>WebAppProject</finalName>
+    <finalName>ProductManager</finalName>
 
     <plugins>
       <plugin>
