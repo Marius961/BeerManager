@@ -7,6 +7,20 @@
     <custom-resource-bundle>
       <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages.properties" />
       <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_en.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_ru.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_ukr.properties" />
+      <base-name>ValidationMessages</base-name>
+    </custom-resource-bundle>
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_en.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_ukr.properties" />
+      <base-name>ValidationMessages</base-name>
+    </custom-resource-bundle>
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_en.properties" />
+      <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_ru.properties" />
       <file value="file://$PROJECT_DIR$/src/main/webapp/resources/ValidationMessages_ukr.properties" />
       <base-name>ValidationMessages</base-name>
     </custom-resource-bundle>

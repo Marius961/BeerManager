@@ -53,11 +53,6 @@
           <element id="library" level="project" name="Maven: com.mysema.commons:mysema-commons-lang:0.2.4" />
           <element id="library" level="project" name="Maven: com.infradna.tool:bridge-method-annotation:1.13" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.1" />
-          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.8.2.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.10.2.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.0.9.RELEASE" />
-          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.6" />
-          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.12" />
         </element>
       </element>
       <element id="directory" name="META-INF">
