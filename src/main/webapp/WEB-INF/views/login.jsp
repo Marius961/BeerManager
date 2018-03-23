@@ -19,27 +19,29 @@
             <button type="submit" class="brn-2">Home</button>
         </form>
     </div>
+
     <div class="box">
-        <form:form method="post" modelAttribute="userData" action="/check-user">
+        <form name="form_login" action="<c:url value='/j_spring_security_check'/>" method="POST">
             <h1 class="form">Sing in</h1>
-            <c:if test="${not empty message}">
-                <div class="login-failed-message"><span>${message}</span></div>
+            <c:if test="${not empty error}">
+                <div class="login-failed-message">
+                        ${error}
+                </div>
             </c:if>
             <div class="form-group">
-                <form:label path="telNumber" for="tel_input">Tel. number</form:label>
-                <form:input path="telNumber" type="text" class="form-control" id="tel_input" placeholder="+380000000000" />
-                <form:errors path="telNumber" cssClass="error-1"/>
+                <label for="user_tel">Tel. number</label>
+                <input type="text" class="form-control" id="user_tel" name="user_tel" value="" placeholder="+380000000000" />
             </div>
             <div class="form-group">
-                <form:label path="password" for="pass_input">Password</form:label>
-                <form:input path="password" type="password" class="form-control" id="pass_input" placeholder="HardPass123" />
-                <form:errors path="password" cssClass="error-1"/>
+                <label for="user_pass">Password</label>
+                <input type="password" class="form-control" id="user_pass" name="user_password" value="" placeholder="HardPass123" />
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form:form>
+            <button name="submit" type="submit" class="btn btn-primary">Sign in</button>
+        </form>
         <p class="p-alt">OR</p>
         <a class="link-1" href="">Sign up</a>
     </div>
 </div>
+
 </body>
 </html>

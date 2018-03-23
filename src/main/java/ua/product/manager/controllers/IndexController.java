@@ -2,10 +2,7 @@ package ua.product.manager.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ua.product.manager.models.User;
 
@@ -29,9 +26,33 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public ModelAndView logout() {
-        return new ModelAndView("index","user", new User());
+
+
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public String getUserPage() {
+        return "/content/user";
     }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String getAdminPage() {
+        return "/content/admin";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+//    public ModelAndView logout() {
+//        return new ModelAndView("index","user", new User());
+//    }
 
 }
