@@ -14,6 +14,7 @@ import ua.product.manager.services.interfaces.UserService;
 import ua.product.manager.validators.TelNumValidator;
 
 import javax.validation.Valid;
+import java.security.Principal;
 
 @Controller
 //@SessionAttributes("user")
@@ -28,6 +29,20 @@ public class LoginController {
 
         }
         modelAndView.setViewName("login");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
+    public ModelAndView accessDenied(Principal user) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (user != null) {
+            modelAndView.addObject("message", user.getName() + " - у вас нет доступа");
+        } else {
+            modelAndView.addObject("message", "У вас нет доступа");
+        }
+
+
+        modelAndView.setViewName("accessDenied");
         return modelAndView;
     }
 

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.springframework.org/schema/security"
+         xsi:schemaLocation="
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <http use-expressions="true">
+
+        <intercept-url pattern="/**" requires-channel="https"/>
+        <port-mappings>
+            <port-mapping http="8081" https="8443"/>
+        </port-mappings>
+
+        <access-denied-handler error-page="/accessDenied"/>
+        <intercept-url pattern="/user" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
+        <form-login login-processing-url="/j_spring_security_check"
+                    login-page="/login"
+                    default-target-url="/user"
+                    authentication-failure-url="/login?error"
+                    username-parameter="user_tel"
+                    password-parameter="user_password"/>
+        <logout logout-success-url="/login" logout-url="/logout"/>
+        <csrf disabled="true"/>
+
+        <remember-me remember-me-parameter="rememberMe" data-source-ref="dataSource"/>
+    </http>
+
+    <b:bean id="jdbcGroupsImpl" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <b:property name="enableGroups" value="true"/>
+        <b:property name="enableAuthorities" value="false"/>
+        <b:property name="dataSource" ref="dataSource"/>
+     </b:bean>
+
+    <authentication-manager>
+        <authentication-provider user-service-ref="jdbcGroupsImpl">
+            <password-encoder ref="bcrypt"/>
+            <!--<user-service>-->
+                <!--<user name="user" password="user" authorities="ROLE_USER"/>-->
+                <!--<user name="admin" password="admin" authorities="ROLE_ADMIN, ROLE_ADMIN"/>-->
+            <!--</user-service>-->
+            <!--<jdbc-user-service data-source-ref="dataSource"/>-->
+        </authentication-provider>
+    </authentication-manager>
+
+    <b:bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <b:constructor-arg name="strength" value="11"/>
+    </b:bean>
+</b:beans>

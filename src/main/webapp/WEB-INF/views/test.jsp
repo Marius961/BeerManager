@@ -13,4 +13,4 @@
 <body>
     <h1>User name is ${user.fullName}</h1>
 </body>
-</html>
+</html  >

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/registration.css"/>">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/registration.css">
 </head>
 <body>
 <div class="container1">
@@ -36,6 +36,9 @@
                 <label for="user_pass">Password</label>
                 <input type="password" class="form-control" id="user_pass" name="user_password" value="" placeholder="HardPass123" />
             </div>
+            <label for="rememberMe">Remember me</label>
+            <input type="checkbox" name="rememberMe" id="rememberMe">
+            <br>
             <button name="submit" type="submit" class="btn btn-primary">Sign in</button>
         </form>
         <p class="p-alt">OR</p>

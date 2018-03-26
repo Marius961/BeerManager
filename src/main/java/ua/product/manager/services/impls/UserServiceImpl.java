@@ -53,4 +53,9 @@ public class UserServiceImpl implements UserService {
         return userDAO.checkUserTelNumber(telnumber);
     }
 
+    @Override
+    public String getMessage() {
+        return "Message only for users";
+    }
+
 }

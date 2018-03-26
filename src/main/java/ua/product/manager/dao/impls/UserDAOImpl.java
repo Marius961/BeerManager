@@ -25,7 +25,7 @@ public class UserDAOImpl implements UserDAO {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
-    private static final String userTable = "user";
+    private static final String userTable = "users";
     private static final String userRoleTable = "user_role";
     private static final String rolesTable = "roles";
 
