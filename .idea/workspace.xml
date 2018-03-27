@@ -7,25 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf79b8b-cf51-4810-a6d3-50db104505fc" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accessDenied.jsp" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3cc846ab-3e7d-4216-97ba-fc3fff8f8205.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/3cc846ab-3e7d-4216-97ba-fc3fff8f8205.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/DB/ProductManager.db" afterPath="$PROJECT_DIR$/DB/ProductManager.db" />
-      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/ProductManager.iml" afterPath="$PROJECT_DIR$/ProductManager.iml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/IndexController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginController.java" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/UserDAOImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/appServlet/appServlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-context.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/security-config.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/security-config.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/test.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -233,7 +215,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="736" />
     <option name="height" value="861" />
@@ -981,12 +963,12 @@
       <workItem from="1521897539180" duration="599000" />
       <workItem from="1521908370517" duration="7453000" />
       <workItem from="1521978230657" duration="2053000" />
-      <workItem from="1522059062277" duration="14095000" />
+      <workItem from="1522059062277" duration="14480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200289000" />
+    <option name="totallyTimeSpent" value="200674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -998,7 +980,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1458" height="871" extended-state="7" />
+    <frame x="-9" y="-9" width="1458" height="871" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1020,7 +1002,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41963017" sideWeight="0.49710566" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41963017" sideWeight="0.49710566" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32859176" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36034733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
