@@ -1,0 +1,56 @@
+/*----------Table----------*/
+.table-users {
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+/*----------th----------*/
+.th-content {
+    font-family: "Segoe UI Semibold", serif;
+    padding: 1%;
+    font-size: 1.2em;
+}
+.th-content-id {
+    width: 10%;
+}
+.th-content-2 {
+    width: 38%;
+}
+
+.th-content-3 {
+    width: 6%;
+}
+
+
+
+
+
+/*----------tr----------*/
+
+.tr-users {
+    border-bottom: 4px solid snow;
+    transition: 0.5s;
+}
+
+.tr-users:hover {
+    background-color: white;
+    cursor: pointer;
+}
+.tr-head {
+    border-bottom: 4px solid snow;
+}
+
+
+
+
+
+/*----------td----------*/
+.td-content {
+    font-family: "Segoe UI Semilight", serif;
+    padding: 1%;
+    font-size: 1.1em;
+}

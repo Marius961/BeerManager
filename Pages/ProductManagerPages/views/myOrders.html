@@ -19,9 +19,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">My orders<span class="sr-only">(current)</span></a>
                 </li>
+                <!--If user has "ROLE_ADMIN"-->
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Users<span class="sr-only">(current)</span></a>
+                </li>
+                <!----------------------------->
                 <li class="nav-item">
                     <a class="nav-link" href="#">My account</a>
                 </li>
+
                 <li class="nav-item form-inline ">
                     <a class="nav-link" href="#">Logout</a>
                 </li>
@@ -29,89 +35,73 @@
         </div>
     </nav>
 </header>
-<main class="background-color">
-    <div class="main-block">
+<main class="background">
+    <div class="main-div">
         <button type="button" class="btn btn-primary btn-sm right">New order</button>
         <H4>My orders</H4>
         <div class="content-box">
             <div class="product-block">
-
-                <p class="order-details inline order-info background-color">
+                <p class="order-details order-info">
+                    Order №: <span class="info">54687</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Date: <span class="info">20.08.2021</span>
+                </p>
+                <p class="order-details inline order-info background">
                     Time: <span class="info">18:33</span>
                 </p>
-                <p class="order-details inline order-info background-color">
+                <p class="order-details inline order-info background">
                     Owner: <span class="info">Ivan Ivanovich</span>
                 </p>
-                <p class="order-details inline order-info background-color">
-                    Firm: <span class="info">Completed</span>
+                <p class="order-details inline order-info background">
+                    Firm: <span class="info">My firm</span>
                 </p>
-                <p class="order-details inline order-info background-color">
-                    Status: <span class="info">Completed</span>
-                </p>
-                <div class="prod-order">
-                    <h4 class="prod-name">Product name</h4>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">20L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x623</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">15L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x4</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">10L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x13</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">5L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x1</span>
-                    </div>
-                </div>
-                <div class="prod-order">
-                    <h4 class="prod-name">Product name 2</h4>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">20L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x64</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">15L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x5</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">10L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x36</span>
-                    </div>
-                    <div class="barrel-block">
-                        <div class="b-content">
-                            <span class="barrels-vol">5L</span>
-                            <img class="image" src="../images/s3.png">
-                        </div>
-                        <span class="barrel-qt">x0</span>
-                    </div>
+
+                <div class="prod-order inline background order-info">
+                    <table class="table-order">
+                        <tr>
+                            <td class="table-td"><h4 class="prod-name">Product name 1:</h4></td>
+                            <td class="table-td-vol"><span class="barrel-qt">25</span></td>
+                            <td class="table-td-vol-name"><span class="barrels-vol">liters</span></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
+        <!--If user has "ROLE_ADMIN"-->
+        <div class="content-box">
+            <div class="product-block">
+                <p class="order-details order-info">
+                    Order №: <span class="info">54687</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Date: <span class="info">20.08.2021</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Time: <span class="info">18:33</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Owner: <span class="info">Ivan Ivanovich</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Firm: <span class="info">My firm</span>
+                </p>
+                <p class="order-details inline order-info background">
+                    Owner tel. number: <span class="info">0673255489</span>
+                </p>
+                <br>
+                <div class="prod-order inline background order-info">
+                    <table class="table-order">
+                        <tr>
+                            <td class="table-td"><h4 class="prod-name">Product name 1:</h4></td>
+                            <td class="table-td-vol"><span class="barrel-qt">25</span></td>
+                            <td class="table-td-vol-name"><span class="barrels-vol">liters</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-------------------------------->
     </div>
 </main>
 

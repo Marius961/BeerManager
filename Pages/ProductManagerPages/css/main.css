@@ -1,11 +1,12 @@
-.main-block {
+.main-div {
     width: 80%;
-    height: 150%;
+    height: 100vh;
+    max-height: 1000%;
     margin: 0 10%;
     padding-top: 2%;
 }
 
-.background-color {
+.background {
     background-color: #f1f1f1;
 }
 
@@ -30,7 +31,11 @@
 }
 
 .login-size {
-
     width: 35%;
-    margin: 2% auto;
+    margin: 15% auto 2%;
+}
+
+.register-size {
+    width: 50%;
+    margin: 5% 5% auto 2%;
 }
