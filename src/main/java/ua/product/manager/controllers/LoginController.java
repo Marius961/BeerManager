@@ -1,19 +1,9 @@
 package ua.product.manager.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
-import ua.product.manager.models.User;
-import ua.product.manager.models.UserData;
-import ua.product.manager.services.interfaces.UserService;
-import ua.product.manager.validators.TelNumValidator;
 
-import javax.validation.Valid;
 import java.security.Principal;
 
 @Controller
@@ -26,7 +16,6 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         if (error != null) {
             modelAndView.addObject("error", "Invalid usernameor password");
-
         }
         modelAndView.setViewName("login");
         return modelAndView;

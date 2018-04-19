@@ -17,7 +17,7 @@ public class TelNumValidator implements Validator {
     }
 
     @Override
-    public boolean supports(Class<?> clazz) {
+    public boolean supports(Class<?> aClass) {
         return false;
     }
 

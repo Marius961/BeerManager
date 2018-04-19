@@ -18,7 +18,7 @@
         <access-denied-handler error-page="/accessDenied"/>
         <intercept-url pattern="/user" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <form-login login-processing-url="/j_spring_security_check"
+        <form-login login-processing-url="/security_check"
                     login-page="/login"
                     default-target-url="/user"
                     authentication-failure-url="/login?error"

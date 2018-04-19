@@ -22,14 +22,9 @@ http://www.springframework.org/schema/security/spring-security.xsd"
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <mvc:interceptors>
-        <bean id="localeChangeInterceptor"
-              class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-            <property name="paramName" value="lang"/>
-        </bean>
-    </mvc:interceptors>
 
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" abstract="false">
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="locale.messages"/>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
@@ -38,6 +33,13 @@ http://www.springframework.org/schema/security/spring-security.xsd"
           class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <property name="defaultLocale" value="ru"/>
     </bean>
+
+    <mvc:interceptors>
+        <bean id="localeChangeInterceptor"
+              class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+        </bean>
+    </mvc:interceptors>
 
     <security:global-method-security secured-annotations="enabled"/>
 </beans>

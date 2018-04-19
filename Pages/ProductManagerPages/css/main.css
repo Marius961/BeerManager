@@ -1,6 +1,6 @@
 .main-div {
     width: 80%;
-    height: 100vh;
+    height: 120%;
     max-height: 1000%;
     margin: 0 10%;
     padding-top: 2%;
@@ -38,4 +38,18 @@
 .register-size {
     width: 50%;
     margin: 5% 5% auto 2%;
+}
+
+.btn-bar {
+    margin: 2%;
+    width: 96%;
+    height: 200%;
+    padding: 1%;
+}
+
+.btn-right {
+    width: 20%;
+    height: 20%;
+    font-family: "Segoe UI Semilight", serif;
+    margin-left: 80%;
 }
