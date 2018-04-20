@@ -29,8 +29,6 @@ public class LoginController {
         } else {
             modelAndView.addObject("message", "У вас нет доступа");
         }
-
-
         modelAndView.setViewName("accessDenied");
         return modelAndView;
     }

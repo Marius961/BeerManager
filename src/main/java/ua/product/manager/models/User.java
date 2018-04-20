@@ -19,19 +19,6 @@ public class User {
     private String telNumber;
     private String password;
 
-    public User() {
-    }
-
-    public User(int id, String fullName, String companyName, String companyAddress, String email, String telNumber, String password) {
-        this.id = id;
-        this.fullName = fullName;
-        this.companyName = companyName;
-        this.companyAddress = companyAddress;
-        this.email = email;
-        this.telNumber = telNumber;
-        this.password = password;
-    }
-
     public Integer getId() {
         return id;
     }

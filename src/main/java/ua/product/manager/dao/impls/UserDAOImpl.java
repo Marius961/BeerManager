@@ -11,6 +11,7 @@ import ua.product.manager.models.User;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Component
 public class UserDAOImpl implements UserDAO {
@@ -23,8 +24,45 @@ public class UserDAOImpl implements UserDAO {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
     }
 
+    @Override
+    public List<User> getAllUsers() {
+        return null;
+    }
 
+    @Override
+    public User getUseById(int userId) {
+        return null;
+    }
 
+    @Override
+    public void insertUser(User user) {
+
+    }
+
+    @Override
+    public void updateUser(User user) {
+
+    }
+
+    @Override
+    public void removeUser(int userId) {
+
+    }
+
+    @Override
+    public void blockUser(int userId) {
+
+    }
+
+    @Override
+    public void unblockUser(int userId) {
+
+    }
+
+    @Override
+    public void setUserGroup(int userId, int groupId) {
+
+    }
 
 
     private static final class ShortUserMapper implements RowMapper<User> {
