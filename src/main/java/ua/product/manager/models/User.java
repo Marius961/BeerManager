@@ -12,12 +12,15 @@ import javax.validation.constraints.Size;
 public class User {
 
     private Integer id;
+    private String username;
+    private int enabled;
     private String fullName;
     private String companyName;
     private String companyAddress;
     private String email;
     private String telNumber;
     private String password;
+    private int groupId;
 
     public Integer getId() {
         return id;
@@ -73,5 +76,29 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
+    public int getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
     }
 }

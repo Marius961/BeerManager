@@ -2,11 +2,20 @@ package ua.product.manager.models;
 
 public class OrderItem {
 
+    private int id;
     private int orderId;
     private int productId;
     private double volume;
 
     private Product product;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getOrderId() {
         return orderId;

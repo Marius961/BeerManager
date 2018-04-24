@@ -5,8 +5,9 @@ import java.util.List;
 public class Order {
 
     private int id;
-    private String date;
-    private String time;
+    private String creationDate;
+    private String creationTime;
+    private String execDate;
     private int userId;
     private int statusId;
     private double price;
@@ -22,20 +23,28 @@ public class Order {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
+    public String getCreationDate() {
+        return creationDate;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public String getTime() {
-        return time;
+    public String getCreationTime() {
+        return creationTime;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setCreationTime(String creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    public String getExecDate() {
+        return execDate;
+    }
+
+    public void setExecDate(String execDate) {
+        this.execDate = execDate;
     }
 
     public int getUserId() {

@@ -24,5 +24,10 @@ public interface UserDAO {
 
     void unblockUser(int userId);
 
-    void setUserGroup(int userId, int groupId);
+    @Secured("ROLE_ADMIN")
+    void updateUserGroup(String username, int groupId);
+
+    void addUserToGroup(String username, int groupId);
+
+    void removeUserFromGroup(String username);
 }
