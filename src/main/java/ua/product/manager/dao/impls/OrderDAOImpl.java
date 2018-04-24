@@ -5,6 +5,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Component;
 import ua.product.manager.dao.interfaces.OrderDAO;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.OrderItem;
@@ -14,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+@Component
 public class OrderDAOImpl implements OrderDAO {
 
     private NamedParameterJdbcTemplate jdbcTemplate;

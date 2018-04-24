@@ -10,15 +10,10 @@ import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
 
 @Controller
-@SessionAttributes("user")
 public class IndexController {
 
-    private final UserService userService;
-
-    @Autowired
-    public IndexController(UserService userService) {
-        this.userService = userService;
+    @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    public String getHomePage() {
+        return "/redirect:/registration";
     }
-
-
 }

@@ -5,6 +5,7 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Component;
 import ua.product.manager.dao.interfaces.ProductDAO;
 import ua.product.manager.models.Product;
 
@@ -12,6 +13,7 @@ import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+@Component
 public class ProductDAOImpl implements ProductDAO {
 
     private NamedParameterJdbcTemplate jdbcTemplate;

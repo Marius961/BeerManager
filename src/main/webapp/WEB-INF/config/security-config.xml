@@ -22,8 +22,8 @@
                     login-page="/login"
                     default-target-url="/user"
                     authentication-failure-url="/login?error"
-                    username-parameter="user_tel"
-                    password-parameter="user_password"/>
+                    username-parameter="username"
+                    password-parameter="password"/>
         <logout logout-success-url="/login" logout-url="/logout"/>
         <csrf disabled="true"/>
 

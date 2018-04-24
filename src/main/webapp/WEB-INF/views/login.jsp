@@ -10,41 +10,50 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/registration.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
 </head>
 <body>
-<div class="container1">
-    <div class="btn-bar">
-        <form action="<c:url value="/index"/>">
-            <button type="submit" class="brn-2">Home</button>
-        </form>
-    </div>
-
-    <div class="box">
-        <form name="form_login" action="<c:url value='/security_check'/>" method="POST">
-            <h1 class="form">Sing in</h1>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">Product manager</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="background">
+    <div class="main-div">
+        <div class="content-box login-size">
             <c:if test="${not empty error}">
-                <div class="login-failed-message">
+                <div style="color: red">
                         ${error}
                 </div>
             </c:if>
-            <div class="form-group">
-                <label for="user_tel">Tel. number</label>
-                <input type="text" class="form-control" id="user_tel" name="user_tel" value="" placeholder="+380000000000" />
-            </div>
-            <div class="form-group">
-                <label for="user_pass">Password</label>
-                <input type="password" class="form-control" id="user_pass" name="user_password" value="" placeholder="HardPass123" />
-            </div>
-            <label for="rememberMe">Remember me</label>
-            <input type="checkbox" name="rememberMe" id="rememberMe">
-            <br>
-            <button name="submit" type="submit" class="btn btn-primary">Sign in</button>
-        </form>
-        <p class="p-alt">OR</p>
-        <a class="link-1" href="">Sign up</a>
+            <form action="<c:url value="/security_check"/>" name="for_login" method="post">
+                <div class="form-group">
+                    <label for="tel">Tel. number</label>
+                    <input type="tel" name="username" class="form-control" id="tel" aria-describedby="emailHelp" placeholder="Enter tel">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
-</div>
+</main>
+
+
+
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

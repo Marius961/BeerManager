@@ -1,15 +1,23 @@
 package ua.product.manager.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import ua.product.manager.models.User;
+import ua.product.manager.services.interfaces.UserService;
 
 import java.security.Principal;
 
 @Controller
-//@SessionAttributes("user")
 public class LoginController {
 
+    private UserService userService;
+
+    @Autowired
+    private void setUserService(UserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
@@ -33,70 +41,19 @@ public class LoginController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public ModelAndView getRegistrationPage(@ModelAttribute User user) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("user", user);
+        modelAndView.setViewName("registration");
+        return modelAndView;
+    }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String registerUser(@ModelAttribute User user) {
+        userService.registerUser(user);
+        return "redirect:/user";
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-//    @Autowired
-//    public LoginController(UserService userService, TelNumValidator telNumValidator) {
-//        this.userService = userService;
-//        this.telNumValidator = telNumValidator;
-//    }
-//
-//    @ModelAttribute
-//    public User createNewUser() {
-//        return new User();
-//    }
-//
-//    @ModelAttribute
-//    public UserData createNewUserData() {
-//        return new UserData();
-//    }
-//
-//    private final UserService userService;
-//    private  final TelNumValidator telNumValidator;
-//
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
-//    public ModelAndView gerLoginPage() {
-//        return new ModelAndView("login1", "userData", new UserData());
-//    }
-//
-//
-//
-//    @RequestMapping(value = "/check-user", method = RequestMethod.POST)
-//    public ModelAndView getRegPage(@Valid @ModelAttribute("userData") UserData userData, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-//        telNumValidator.validate(userData.getTelNumber(), bindingResult);
-//        ModelAndView modelAndView = new ModelAndView();
-//        if(!bindingResult.hasErrors()) {
-//            User user = userService.checkAndGetUser(userData);
-//            RedirectView redirectView = new RedirectView("index");
-//            if (user != null) {
-//                redirectView.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
-//                modelAndView.setView(redirectView);
-//                redirectAttributes.addFlashAttribute("user", user);
-//            } else {
-//                redirectView.setUrl("login");
-//                redirectView.setStatusCode(HttpStatus.MOVED_PERMANENTLY);
-//                modelAndView.setView(redirectView);
-//                redirectAttributes.addFlashAttribute("message", "Login failed");
-//            }
-//        } else modelAndView.setViewName("login1");
-//        return modelAndView;
-//    }
-//
-//    @RequestMapping(value = "/check-user", method = RequestMethod.GET)
-//    public ModelAndView regRedirect() {
-//        return new ModelAndView("redirect:login1");
-//    }
-//
 
 }

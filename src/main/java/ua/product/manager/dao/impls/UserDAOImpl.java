@@ -53,11 +53,10 @@ public class UserDAOImpl implements UserDAO {
         String sql = "INSERT INTO users" +
                 "(username, password, enabled, email, tel_number, full_name, company_name, company_addr) " +
                 "VALUES " +
-                "(:username, :password, :enabled, :email, :telNum, :fullName, :companyName, :companyAddr)";
+                "(:username, :password, 1, :email, :telNum, :fullName, :companyName, :companyAddr)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("username", user.getUsername());
         params.addValue("password", user.getPassword());
-        params.addValue("enabled", user.getEnabled());
         params.addValue("email", user.getEmail());
         params.addValue("telNum", user.getTelNumber());
         params.addValue("fullName", user.getFullName());
