@@ -10,6 +10,8 @@ public interface UserDAO {
     @Secured("ROLE_ADMIN")
     List<User> getAllUsers();
 
+    User getUserByUsername(String username);
+
     User getUseById(int userId);
 
     void insertUser(User user);

@@ -37,6 +37,18 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public User getUserByUsername(String username) {
+        String sql = "SELECT * FROM users WHERE username=:username";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("username", username);
+        try {
+            return jdbcTemplate.queryForObject(sql, params, new UserMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
     public User getUseById(int userId) {
         String sql = "SELECT * FROM users WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();

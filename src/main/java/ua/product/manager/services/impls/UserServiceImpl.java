@@ -8,6 +8,8 @@ import ua.product.manager.dao.interfaces.UserDAO;
 import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -29,5 +31,10 @@ public class UserServiceImpl implements UserService {
     public void registerUser(User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         userDAO.insertUser(user);
+    }
+
+    @Override
+    public List<User> getUsersList() {
+        return userDAO.getAllUsers();
     }
 }
