@@ -1,15 +1,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page session="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/users.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
@@ -21,11 +20,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/users/list"/>">Users<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/users/get/${currentUserId}"/>">My account</a>
+                    <a class="nav-link" href="<c:url value="/users/list"/>">Users<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -34,22 +30,14 @@
 <main class="background">
     <div class="main-div">
         <div class="content-box">
-            <table class="table-users">
-                <tr class="tr-head">
-                    <th class="th-content th-content-id">ID</th>
-                    <th class="th-content th-content-2">FIRM</th>
-                    <th class="th-content th-content-2">FULL NAME</th>
-                    <th class="th-content th-content-id">ORDERS</th>
-                </tr>
-                <c:forEach var="user" items="${users}">
-                    <tr class="tr-users" onclick="location.href='/users/get/${user.id}'">
-                        <td class="td-content th-content-id">${user.id}</td>
-                        <td class="td-content th-content-2">${user.companyName}</td>
-                        <td class="td-content th-content-2">${user.fullName}</td>
-                        <td class="td-content th-content-id">54</td>
-                    </tr>
-                </c:forEach>
-            </table>
+            <h2 class="header-1">Full name: ${user.fullName}</h2>
+            <h6 class="details-1">Email: ${user.email}</h6>
+            <h6 class="details-1">Phone number: ${user.telNumber}</h6>
+            <h6 class="details-1">Company name: ${user.companyName}</h6>
+            <h6 class="details-1">Company address: ${user.companyAddress}</h6>
+            <c:if test="${currentUserName == user.username}">
+                <button class="btn btn-info" onclick="location.href='/logout'">Logout</button>
+            </c:if>
         </div>
     </div>
 </main>

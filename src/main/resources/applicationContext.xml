@@ -9,8 +9,6 @@
     <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
         <property value="org.sqlite.JDBC" name="driverClassName"/>
         <property value="jdbc:sqlite:C:\Users\mapiy\IdeaProjects\ProductManager\DB\ProductManager.db" name="url"/>
-        <property value="" name="username"/>
-        <property value="" name="password"/>
     </bean>
 
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

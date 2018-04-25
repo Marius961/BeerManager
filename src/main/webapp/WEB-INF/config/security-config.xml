@@ -16,12 +16,11 @@
         </port-mappings>
 
         <access-denied-handler error-page="/accessDenied"/>
-        <intercept-url pattern="/user" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/admin" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/users/*" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/{name}/*" access="hasRole('ROLE_USER')"/>
         <form-login login-processing-url="/security_check"
                     login-page="/login"
-                    default-target-url="/user"
+                    default-target-url="/"
                     authentication-failure-url="/login?error"
                     username-parameter="username"
                     password-parameter="password"/>

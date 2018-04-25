@@ -54,16 +54,4 @@ public class LoginController {
         userService.registerUser(user);
         return "redirect:/user";
     }
-
-    @RequestMapping(value = "users/list", method = RequestMethod.GET)
-    public ModelAndView getUsersList() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("users", userService.getUsersList());
-        modelAndView.setViewName("users");
-        return modelAndView;
-    }
-
-
-
-
 }
