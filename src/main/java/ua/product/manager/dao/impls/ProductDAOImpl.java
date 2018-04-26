@@ -12,6 +12,7 @@ import ua.product.manager.models.Product;
 import javax.sql.DataSource;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @Component
 public class ProductDAOImpl implements ProductDAO {
@@ -21,6 +22,16 @@ public class ProductDAOImpl implements ProductDAO {
     @Autowired
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new NamedParameterJdbcTemplate(dataSource);
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        String sql = "SELECT * FROM products";
+        try {
+            return jdbcTemplate.query(sql, new ProductMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override

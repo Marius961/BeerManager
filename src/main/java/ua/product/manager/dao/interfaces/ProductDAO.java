@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ProductDAO {
 
+    List<Product> getAllProducts();
+
     Product getProductById(int productId);
 
     void insertProduct(Product product);

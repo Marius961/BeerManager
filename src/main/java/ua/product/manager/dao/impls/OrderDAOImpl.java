@@ -5,6 +5,8 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 import ua.product.manager.dao.interfaces.OrderDAO;
 import ua.product.manager.models.Order;
@@ -40,7 +42,7 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public void addItemToOrder(OrderItem item) {
         String sql = "INSERT INTO order_items (order_id, product_id, volume)" +
-                "VALUES (:orderId, :productId, :volume";
+                "VALUES (:orderId, :productId, :volume)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("orderId", item.getOrderId());
         params.addValue("productId", item.getProductId());
@@ -81,7 +83,7 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public void createOrder(Order order) {
+    public int createOrder(Order order) {
         String sql = "INSERT INTO orders " +
                 "(creation_date, creation_time, exec_date, user_id, status_id, price, comment) VALUES " +
                 "(CURRENT_DATE, CURRENT_TIME, :execDate, :userId, :statId, :price, :comment)";
@@ -91,7 +93,9 @@ public class OrderDAOImpl implements OrderDAO {
         params.addValue("statId", order.getStatusId());
         params.addValue("price", order.getPrice());
         params.addValue("comment", order.getComment());
-        jdbcTemplate.update(sql, params);
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        jdbcTemplate.update(sql, params, keyHolder);
+        return (int) keyHolder.getKey();
     }
 
     @Override
@@ -151,7 +155,7 @@ public class OrderDAOImpl implements OrderDAO {
             order.setId(rs.getInt("id"));
             order.setCreationDate(rs.getString("creation_date"));
             order.setCreationTime(rs.getString("creation_time"));
-            order.setExecDate(rs.getString("execution_date"));
+            order.setExecDate(rs.getString("exec_date"));
             order.setUserId(rs.getInt("user_id"));
             order.setStatusId(rs.getInt("status_id"));
             order.setPrice(rs.getDouble("price"));

@@ -7,6 +7,14 @@ public class OrderItem {
     private int productId;
     private double volume;
 
+    public OrderItem() {
+    }
+
+    public OrderItem(int productId, Product product) {
+        this.productId = productId;
+        this.product = product;
+    }
+
     private Product product;
 
     public int getId() {

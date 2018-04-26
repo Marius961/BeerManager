@@ -6,8 +6,10 @@ import ua.product.manager.dao.interfaces.OrderDAO;
 import ua.product.manager.dao.interfaces.ProductDAO;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.OrderItem;
+import ua.product.manager.models.Product;
 import ua.product.manager.services.interfaces.OrderService;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -24,7 +26,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void createOrder(Order order) {
-
+        int orderId = orderDAO.createOrder(order);
+        for (OrderItem orderItem : order.getOrderItems()) {
+            if (orderItem.getVolume() > 0) {
+                orderItem.setOrderId(orderId);
+                orderDAO.addItemToOrder(orderItem);
+            }
+        }
     }
 
 
@@ -44,10 +52,23 @@ public class OrderServiceImpl implements OrderService {
         return orders;
     }
 
+    @Override
+    public Order getNewOrder() {
+        Order order = new Order();
+        List<Product> allProducts = productDAO.getAllProducts();
+        List<OrderItem> tempItems = new LinkedList<>();
+        for (Product product : allProducts) {
+            tempItems.add(new OrderItem(product.getId(), product));
+        }
+        order.setOrderItems(tempItems);
+        return order;
+    }
+
     private void setOrderItems(Order order) {
         order.setOrderItems(orderDAO.getItemsByOrderId(order.getId()));
-        for (OrderItem orderItem : order.getOrderItems()) {
-            orderItem.setProduct(productDAO.getProductById(orderItem.getProductId()));
+        for (OrderItem item : order.getOrderItems()) {
+            Product product = productDAO.getProductById(item.getProductId());
+            item.setProduct(product);
         }
     }
 }

@@ -2,10 +2,13 @@ package ua.product.manager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import ua.product.manager.models.Order;
+import ua.product.manager.models.OrderItem;
 import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.OrderService;
 import ua.product.manager.services.interfaces.UserService;
@@ -31,10 +34,28 @@ public class OrderController {
             ModelAndView modelAndView = new ModelAndView();
             User user = userService.getUserByUsername(username);
             modelAndView.addObject("orders", orderService.getAllOrdersByUserId(user.getId()));
-            modelAndView.addObject("currentUser", username);
+            modelAndView.addObject("currentUserName", username);
             modelAndView.setViewName("orders");
             return modelAndView;
         }
         return null;
+    }
+
+    @RequestMapping(value = "/{username}/orders/create", method = RequestMethod.GET)
+    public ModelAndView createOrder(@PathVariable String username, Principal principal) {
+        if (username.equals(principal.getName())) {
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("order", orderService.getNewOrder());
+            modelAndView.addObject("currentUserName", username);
+            modelAndView.setViewName("order");
+            return modelAndView;
+        }
+        return null;
+    }
+
+    @RequestMapping(value = "/{username}/orders/process", method = RequestMethod.POST)
+    public String processOrder(@ModelAttribute Order order, @PathVariable String username) {
+        orderService.createOrder(order);
+        return "redirect:/";
     }
 }

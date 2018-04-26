@@ -1,12 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: mapiy
-  Date: 25.04.2018
-  Time: 17:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page session="true" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -25,7 +22,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/${currentUser}/orders"/>">My orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/${currentUserName}/orders"/>">My orders<span class="sr-only">(current)</span></a>
                 </li>
                 <%--<!--If user has "ROLE_ADMIN"-->--%>
                 <%--<li class="nav-item active">--%>
@@ -33,7 +30,7 @@
                 <%--</li>--%>
                 <%--<!----------------------------->--%>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/${currentUser}/my-profile"/>">My account</a>
+                    <a class="nav-link" href="<c:url value="/${currentUserName}/my-profile"/>">My account</a>
                 </li>
             </ul>
         </div>
@@ -41,7 +38,7 @@
 </header>
 <main class="background">
     <div class="main-div">
-        <button type="button" class="btn btn-primary btn-sm right">New order</button>
+        <button type="button" class="btn btn-primary btn-sm right" onclick="location.href='/${currentUserName}/orders/create'">New order</button>
         <H4>My orders</H4>
         <div class="content-box">
             <c:if test="${empty orders}">

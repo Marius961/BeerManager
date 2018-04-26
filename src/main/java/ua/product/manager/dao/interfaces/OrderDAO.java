@@ -18,7 +18,7 @@ public interface OrderDAO {
 
     Order getOrder(int orderId);
 
-    void createOrder(Order order);
+    int createOrder(Order order);
 
     @Secured("ROLE_ADMIN")
     void updateOrder(Order order);
