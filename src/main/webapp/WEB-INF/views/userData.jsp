@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/users/list"/>">Users<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/${currentUserName}/users/list"/>">Users<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>

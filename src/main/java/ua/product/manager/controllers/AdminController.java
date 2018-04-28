@@ -21,25 +21,31 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "users/list", method = RequestMethod.GET)
-    public ModelAndView getUsersList(Principal principal) {
-        ModelAndView modelAndView = new ModelAndView();
-        User currentUser = userService.getUserByUsername(principal.getName());
-        modelAndView.addObject("users", userService.getUsersList());
-        modelAndView.addObject("currentUserId", currentUser.getId());
-        modelAndView.setViewName("users");
-        return modelAndView;
+    @RequestMapping(value = {"/{username}/users/list", "/{username}/users"}, method = RequestMethod.GET)
+    public ModelAndView getUsersList(Principal principal, @PathVariable String username) {
+        if (principal.getName().equals(username)) {
+            ModelAndView modelAndView = new ModelAndView();
+            User currentUser = userService.getUserByUsername(principal.getName());
+            modelAndView.addObject("users", userService.getUsersList());
+            modelAndView.addObject("currentUserId", currentUser.getId());
+            modelAndView.addObject("currentUserName", username);
+            modelAndView.setViewName("users");
+            return modelAndView;
+        }
+        return new ModelAndView("redirect:/");
     }
 
-    @RequestMapping(value = "/users/get/{id}", method = RequestMethod.GET)
-    public ModelAndView getUserProfile(@PathVariable int id, Principal principal) {
-        ModelAndView modelAndView = new ModelAndView();
-        String currentUserName = principal.getName();
-        modelAndView.addObject("user", userService.getUserById(id));
-        modelAndView.addObject("currentUserName", currentUserName);
-        modelAndView.addObject("currentUserId", id);
-        modelAndView.setViewName("userData");
-        return modelAndView;
+    @RequestMapping(value = "/{username}/users/get/{id}", method = RequestMethod.GET)
+    public ModelAndView getUserProfile(@PathVariable int id, @PathVariable String username, Principal principal) {
+        if (principal.getName().equals(username)) {
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("user", userService.getUserById(id));
+            modelAndView.addObject("currentUserName", username);
+            modelAndView.addObject("currentUserId", id);
+            modelAndView.setViewName("userData");
+            return modelAndView;
+        }
+        return new ModelAndView("redirect:/");
     }
 }
 

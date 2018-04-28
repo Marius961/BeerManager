@@ -48,20 +48,22 @@ public class ProductDAOImpl implements ProductDAO {
 
     @Override
     public void insertProduct(Product product) {
-        String sql = "INSERT INTO products (name, description) VALUES (:name, :description)";
+        String sql = "INSERT INTO products (name, description, active) VALUES (:name, :description, :active)";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", product.getName());
         params.addValue("description", product.getDescription());
+        params.addValue("active", product.isActive());
         jdbcTemplate.update(sql, params);
     }
 
     @Override
     public void updateProduct(Product product) {
-        String sql = "UPDATE products SET name=:name, description=:description WHERE id=:id";
+        String sql = "UPDATE products SET name=:name, description=:description, active=:active WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("name", product.getName());
         params.addValue("description", product.getDescription());
         params.addValue("id", product.getId());
+        params.addValue("active", product.isActive());
         jdbcTemplate.update(sql, params);
     }
 
@@ -81,6 +83,7 @@ public class ProductDAOImpl implements ProductDAO {
             product.setId(rs.getInt("id"));
             product.setName(rs.getString("name"));
             product.setDescription(rs.getString("description"));
+            product.setActive(rs.getBoolean("active"));
             return product;
         }
     }

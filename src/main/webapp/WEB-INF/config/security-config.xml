@@ -16,15 +16,15 @@
         </port-mappings>
 
         <access-denied-handler error-page="/accessDenied"/>
-        <intercept-url pattern="/users/*" access="hasRole('ROLE_ADMIN')"/>
-        <intercept-url pattern="/{name}/*" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/{username}/users/*" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/{username}/*" access="hasRole('ROLE_USER')"/>
         <form-login login-processing-url="/security_check"
                     login-page="/login"
                     default-target-url="/"
                     authentication-failure-url="/login?error"
                     username-parameter="username"
                     password-parameter="password"/>
-        <logout logout-success-url="/login" logout-url="/logout"/>
+        <logout logout-success-url="/" logout-url="/logout"/>
         <csrf disabled="true"/>
 
         <remember-me remember-me-parameter="rememberMe" data-source-ref="dataSource"/>

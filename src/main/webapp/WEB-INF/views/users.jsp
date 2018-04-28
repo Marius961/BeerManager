@@ -22,10 +22,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/users/list"/>">Users<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/${currentUserName}/users/list"/>">Users<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/users/get/${currentUserId}"/>">My account</a>
+                    <a class="nav-link" href="<c:url value="/${currentUserName}/users/get/${currentUserId}"/>">My account</a>
                 </li>
             </ul>
         </div>
@@ -42,7 +42,7 @@
                     <th class="th-content th-content-id">ORDERS</th>
                 </tr>
                 <c:forEach var="user" items="${users}">
-                    <tr class="tr-users" onclick="location.href='/users/get/${user.id}'">
+                    <tr class="tr-users" onclick="location.href='/${currentUserName}/users/get/${user.id}'">
                         <td class="td-content th-content-id">${user.id}</td>
                         <td class="td-content th-content-2">${user.companyName}</td>
                         <td class="td-content th-content-2">${user.fullName}</td>

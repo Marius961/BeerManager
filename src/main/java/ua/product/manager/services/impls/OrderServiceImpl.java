@@ -58,7 +58,9 @@ public class OrderServiceImpl implements OrderService {
         List<Product> allProducts = productDAO.getAllProducts();
         List<OrderItem> tempItems = new LinkedList<>();
         for (Product product : allProducts) {
-            tempItems.add(new OrderItem(product.getId(), product));
+            if (product.isActive()) {
+                tempItems.add(new OrderItem(product.getId(), product));
+            }
         }
         order.setOrderItems(tempItems);
         return order;

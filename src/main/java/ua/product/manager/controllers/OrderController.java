@@ -46,7 +46,7 @@ public class OrderController {
         if (username.equals(principal.getName())) {
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("order", orderService.getNewOrder());
-            modelAndView.addObject("currentUserName", username);
+            modelAndView.addObject("currentUser", userService.getUserByUsername(username));
             modelAndView.setViewName("order");
             return modelAndView;
         }
@@ -56,6 +56,6 @@ public class OrderController {
     @RequestMapping(value = "/{username}/orders/process", method = RequestMethod.POST)
     public String processOrder(@ModelAttribute Order order, @PathVariable String username) {
         orderService.createOrder(order);
-        return "redirect:/";
+        return "redirect:/" + username + "/orders";
     }
 }

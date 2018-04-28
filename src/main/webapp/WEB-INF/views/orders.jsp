@@ -40,12 +40,12 @@
     <div class="main-div">
         <button type="button" class="btn btn-primary btn-sm right" onclick="location.href='/${currentUserName}/orders/create'">New order</button>
         <H4>My orders</H4>
-        <div class="content-box">
-            <c:if test="${empty orders}">
-                <h1>You have not any orders :(</h1>
-            </c:if>
-            <c:if test="${not empty orders}">
-                <c:forEach var="order" items="${orders}">
+        <c:if test="${empty orders}">
+            <h1>You have not any orders :(</h1>
+        </c:if>
+        <c:if test="${not empty orders}">
+            <c:forEach var="order" items="${orders}">
+                <div class="content-box">
                     <div class="product-block">
                         <p class="details-1 order-info">
                             Order №: <span class="info">${order.id}</span>
@@ -75,9 +75,10 @@
                             </table>
                         </div>
                     </div>
-                </c:forEach>
-            </c:if>
-        </div>
+                </div>
+            </c:forEach>
+
+        </c:if>
         <%--<!--If user has "ROLE_ADMIN"-->--%>
         <%--<div class="content-box">--%>
             <%--<div class="product-block">--%>
