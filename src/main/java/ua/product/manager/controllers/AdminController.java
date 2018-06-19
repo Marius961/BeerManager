@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import ua.product.manager.models.User;
+import ua.product.manager.services.interfaces.OrderService;
 import ua.product.manager.services.interfaces.UserService;
 
 import java.security.Principal;
@@ -15,10 +16,12 @@ import java.security.Principal;
 public class AdminController {
 
     private UserService userService;
+    private OrderService orderService;
 
     @Autowired
-    private void setUserService(UserService userService) {
+    private void setUserService(UserService userService, OrderService orderService) {
         this.userService = userService;
+        this.orderService = orderService;
     }
 
     @RequestMapping(value = {"/{username}/users/list", "/{username}/users"}, method = RequestMethod.GET)
@@ -42,6 +45,7 @@ public class AdminController {
             modelAndView.addObject("user", userService.getUserById(id));
             modelAndView.addObject("currentUserName", username);
             modelAndView.addObject("currentUserId", id);
+            modelAndView.addObject("orders", orderService.getAllOrdersByUserId(id));
             modelAndView.setViewName("userData");
             return modelAndView;
         }

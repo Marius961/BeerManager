@@ -1,11 +1,9 @@
 package ua.product.manager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.OrderItem;
@@ -57,5 +55,11 @@ public class OrderController {
     public String processOrder(@ModelAttribute Order order, @PathVariable String username) {
         orderService.createOrder(order);
         return "redirect:/" + username + "/orders";
+    }
+
+    @RequestMapping(value = "/orders/remove/{orderId}", method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void removeOrder(@PathVariable int orderId) {
+        orderService.removeOrder(orderId);
     }
 }

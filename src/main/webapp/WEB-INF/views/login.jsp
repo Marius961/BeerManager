@@ -39,12 +39,12 @@
             </c:if>
             <form action="<c:url value="/security_check"/>" name="for_login" method="post">
                 <div class="form-group">
-                    <label for="tel">Tel. number</label>
-                    <input type="tel" name="username" class="form-control" id="tel" aria-describedby="emailHelp" placeholder="Enter tel">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

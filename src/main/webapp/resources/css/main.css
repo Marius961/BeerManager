@@ -45,15 +45,13 @@ html {
 }
 
 .btn-bar {
-    margin: 2%;
-    width: 96%;
-    height: 200%;
-    padding: 1%;
+    margin: 1%;
+    height: 5%;
 }
 
 .btn-right {
     width: 20%;
-    height: 20%;
+    height: 100%;
     font-family: "Segoe UI Semilight", serif;
     margin-left: 80%;
 }

@@ -127,10 +127,12 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public void removeOrder(int orderId) {
-        String sql = "DELETE FROM orders WHERE id=:id";
+        String sql1 = "DELETE FROM order_items WHERE order_id=:id";
+        String sql2 = "DELETE FROM orders WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", orderId);
-        jdbcTemplate.update(sql, params);
+        jdbcTemplate.update(sql1, params);
+        jdbcTemplate.update(sql2, params);
     }
 
 

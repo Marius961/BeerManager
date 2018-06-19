@@ -15,4 +15,6 @@ public interface OrderService {
     List<Order> getAllOrdersByUserId(int userId);
 
     Order getNewOrder();
+
+    void removeOrder(int orderId);
 }

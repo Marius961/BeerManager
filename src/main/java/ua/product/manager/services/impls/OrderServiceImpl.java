@@ -66,6 +66,11 @@ public class OrderServiceImpl implements OrderService {
         return order;
     }
 
+    @Override
+    public void removeOrder(int orderId) {
+        orderDAO.removeOrder(orderId);
+    }
+
     private void setOrderItems(Order order) {
         order.setOrderItems(orderDAO.getItemsByOrderId(order.getId()));
         for (OrderItem item : order.getOrderItems()) {
