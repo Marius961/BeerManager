@@ -3,11 +3,12 @@ package ua.product.manager.services.interfaces;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public interface UserService {
 
-    void registerUser(User user);
+    void registerUser(HttpServletRequest request, User user);
 
     List<User> getUsersList();
 

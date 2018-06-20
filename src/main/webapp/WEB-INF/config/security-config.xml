@@ -37,7 +37,7 @@
         <b:property name="dataSource" ref="dataSource"/>
      </b:bean>
 
-    <authentication-manager>
+    <authentication-manager id="authenticationManager">
         <authentication-provider user-service-ref="jdbcGroupsImpl">
             <password-encoder ref="bCrypt"/>
         </authentication-provider>

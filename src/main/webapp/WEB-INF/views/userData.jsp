@@ -74,7 +74,7 @@
                             </table>
                         </div>
                         <div class="btn-bar">
-                            <button type="button" class="btn btn-danger btn-right" onclick="removeOrder(${order.id})">Скасувати замовлення</button>
+                            <button type="button" class="btn btn-danger btn-right" onclick="removeOrder(${order.id})">Cancel</button>
                         </div>
                     </div>
                 </div>
