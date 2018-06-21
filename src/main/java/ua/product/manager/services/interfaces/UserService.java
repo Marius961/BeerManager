@@ -17,4 +17,6 @@ public interface UserService {
     User getUserByUsername(String username);
 
     String getUserRole();
+
+    Boolean checkUsername(String username);
 }

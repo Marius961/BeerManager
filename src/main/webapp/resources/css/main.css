@@ -78,3 +78,7 @@ html {
     width: 80%;
     margin: 5% 10%;
 }
+
+.error-message {
+    color: red;;
+}

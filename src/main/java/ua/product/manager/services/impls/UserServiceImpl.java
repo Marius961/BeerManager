@@ -6,7 +6,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Service;
@@ -52,7 +51,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(int id) {
-        return userDAO.getUseById(id);
+        return userDAO.getUserById(id);
     }
 
     @Override
@@ -76,6 +75,12 @@ public class UserServiceImpl implements UserService {
         if (isAdmin) return "ROLE_ADMIN";
         if (isUser) return "ROLE_USER";
         else return null;
+    }
+
+    @Override
+    public Boolean checkUsername(String username) {
+        User user = userDAO.getUserByUsername(username);
+        return user != null;
     }
 
     private void authWithAuthManager(HttpServletRequest request, String username, String password) {

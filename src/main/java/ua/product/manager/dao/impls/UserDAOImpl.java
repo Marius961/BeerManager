@@ -49,7 +49,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User getUseById(int userId) {
+    public User getUserById(int userId) {
         String sql = "SELECT * FROM users WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("id", userId);

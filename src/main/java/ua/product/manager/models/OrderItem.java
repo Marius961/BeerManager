@@ -6,6 +6,7 @@ public class OrderItem {
     private int orderId;
     private int productId;
     private double volume;
+    private Product product;
 
     public OrderItem() {
     }
@@ -14,8 +15,6 @@ public class OrderItem {
         this.productId = productId;
         this.product = product;
     }
-
-    private Product product;
 
     public int getId() {
         return id;

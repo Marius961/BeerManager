@@ -32,6 +32,11 @@ public class LoginController {
         }
     }
 
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String getRegistrationPage() {
+        return "registration";
+    }
+    
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
         ModelAndView modelAndView = new ModelAndView();
@@ -41,21 +46,7 @@ public class LoginController {
         modelAndView.setViewName("login");
         return modelAndView;
     }
-
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public ModelAndView getRegistrationPage(@ModelAttribute User user) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("user", user);
-        modelAndView.setViewName("registration");
-        return modelAndView;
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String registerUser(@ModelAttribute User user, HttpServletRequest request) {
-        userService.registerUser(request, user);
-        return "redirect:/";
-    }
-
+    
     @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
     public ModelAndView accessDenied(Principal user) {
         ModelAndView modelAndView = new ModelAndView();

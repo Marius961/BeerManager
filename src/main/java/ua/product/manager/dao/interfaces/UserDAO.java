@@ -12,7 +12,7 @@ public interface UserDAO {
 
     User getUserByUsername(String username);
 
-    User getUseById(int userId);
+    User getUserById(int userId);
 
     void insertUser(User user);
 
