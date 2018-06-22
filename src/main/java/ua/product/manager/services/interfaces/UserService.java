@@ -19,4 +19,8 @@ public interface UserService {
     String getUserRole();
 
     Boolean checkUsername(String username);
+
+    Boolean checkUserEmail(String email);
+
+    Boolean checkUserTel(String tel);
 }

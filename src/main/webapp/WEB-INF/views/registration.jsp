@@ -42,7 +42,7 @@
                     <input type="text" class="form-control" id="fullName" placeholder="Your full name">
                 </div>
                 <div class="form-group">
-                    <label for="companyName">Firm name</label>
+                    <label for="companyName">Company name</label>
                     <input type="text" class="form-control" id="companyName" placeholder="Your firm name">
                 </div>
                 <div class="form-group">

@@ -79,6 +79,45 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
+    public Boolean checkUsername(String username) {
+        String sql = "SELECT username FROM users WHERE username=:username";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("username", username);
+        try {
+            jdbcTemplate.queryForObject(sql, params, String.class);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean checkUserEmail(String email) {
+        String sql = "SELECT email FROM users WHERE email=:email";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("email", email);
+        try {
+            jdbcTemplate.queryForObject(sql, params, String.class);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
+    }
+
+    @Override
+    public Boolean checkUserTel(String tel) {
+        String sql = "SELECT tel_number FROM users WHERE tel_number=:tel_number";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("tel_number", tel);
+        try {
+            jdbcTemplate.queryForObject(sql, params, String.class);
+            return true;
+        } catch (EmptyResultDataAccessException e) {
+            return false;
+        }
+    }
+
+    @Override
     public void updateUser(User user) {
         String sql = "UPDATE users SET " +
                 "username=:username, password=:password, enabled=:enabled, email=:email, " +

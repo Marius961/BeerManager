@@ -79,8 +79,17 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean checkUsername(String username) {
-        User user = userDAO.getUserByUsername(username);
-        return user != null;
+        return userDAO.checkUsername(username);
+    }
+
+    @Override
+    public Boolean checkUserEmail(String email) {
+        return userDAO.checkUserEmail(email);
+    }
+
+    @Override
+    public Boolean checkUserTel(String tel) {
+        return userDAO.checkUserTel(tel);
     }
 
     private void authWithAuthManager(HttpServletRequest request, String username, String password) {

@@ -16,6 +16,12 @@ public interface UserDAO {
 
     void insertUser(User user);
 
+    Boolean checkUsername(String username);
+
+    Boolean checkUserEmail(String email);
+
+    Boolean checkUserTel(String tel);
+
     void updateUser(User user);
 
     @Secured("ROLE_ADMIN")
