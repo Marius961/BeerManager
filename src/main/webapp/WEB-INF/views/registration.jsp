@@ -61,7 +61,11 @@
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Your password">
                 </div>
-                <button type="button" class="btn btn-primary" onclick="validateAndSend(this.form)">Submit</button>
+                <div class="form-group">
+                    <label for="passwordConfirm">Password</label>
+                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm your password password">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="validateAndSend(this.form)" style="margin: 0.5%">Submit</button>
             </form>
         </div>
     </div>
