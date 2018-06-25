@@ -30,8 +30,6 @@ function validateAndSend(form) {
             showError(elems["username"].parentNode, 'Username already used');
         }
     }
-    alert('error after name check ' + hasErrors);
-
     $("#fullName").click(function () {
         resetError(elems["fullName"].parentNode);
     });
@@ -73,13 +71,13 @@ function validateAndSend(form) {
         };
         sendCheckObject(url, emailObj);
         data = window.data1;
+        // noinspection JSUnresolvedVariable
         emailIsUsed = data.emailStatus;
         if (emailIsUsed) {
             hasErrors = true;
             showError(elems["email"].parentNode, 'This email is already in use');
         }
     }
-    alert('error after email check ' + hasErrors);
 
     $("#telNumber").click(function () {
         resetError(elems["telNumber"].parentNode);
@@ -98,13 +96,13 @@ function validateAndSend(form) {
         url = '/tel-check';
         sendCheckObject(url, telNum);
         data = window.data1;
+        // noinspection JSUnresolvedVariable
         telNumIsUsed = data.telStatus;
         if (telNumIsUsed) {
             hasErrors = true;
             showError(elems["telNumber"].parentNode, 'This phone number is already in use');
         }
     }
-    alert('error after tel check ' + hasErrors);
 
     $("#password").click(function () {
         resetError(elems["password"].parentNode);
@@ -124,7 +122,7 @@ function validateAndSend(form) {
         showError(elems["passwordConfirm"].parentNode, 'Passwords do not match');
     }
     if (!hasErrors) {
-        sendUserForm();
+        sendUserForm(processRegForm());
     }
 }
 
@@ -177,16 +175,20 @@ function resetError(container) {
     }
 }
 
-function sendUserForm() {
+function sendUserForm(formObject) {
     $.ajax ({
         type : "POST",
         url : '/user',
         dataType: "json",
         contentType : 'application/json',
-        data : JSON.stringify(processRegForm()),
-        complete : location.href='/'
+        async : false,
+        data : JSON.stringify(formObject),
+        complete : (function () {
+            location.href='/';
+        })
     });
 }
+
 
 function processRegForm() {
     return {
