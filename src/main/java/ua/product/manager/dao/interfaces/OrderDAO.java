@@ -10,6 +10,8 @@ public interface OrderDAO {
 
     List<Order> getOrdersByUserId(int userId);
 
+    List<Order> getOrdersByUserName(String username);
+
     List<OrderItem> getItemsByOrderId(int orderId);
 
     void addItemToOrder(OrderItem orderItem);

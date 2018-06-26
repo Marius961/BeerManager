@@ -71,6 +71,18 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
+    public List<Order> getOrdersByUserName(String username) {
+        String sql = "SELECT * FROM orders o, users u WHERE o.user_id=u.id AND u.username=:username ORDER BY 2 DESC ";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("username", username);
+        try {
+            return jdbcTemplate.query(sql, params, new OrderMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
     public Order getOrder(int orderId) {
         String sql = "SELECT * FROM orders WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();

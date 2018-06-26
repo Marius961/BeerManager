@@ -26,35 +26,24 @@ public class OrderController {
     }
 
 
-    @RequestMapping(value = "/{username}/orders", method = RequestMethod.GET)
-    public ModelAndView getOrders(@PathVariable String username, Principal principal) {
-        if (username.equals(principal.getName())) {
-            ModelAndView modelAndView = new ModelAndView();
-            User user = userService.getUserByUsername(username);
-            modelAndView.addObject("orders", orderService.getAllOrdersByUserId(user.getId()));
-            modelAndView.addObject("currentUserName", username);
-            modelAndView.setViewName("orders");
-            return modelAndView;
-        }
-        return null;
+    @RequestMapping(value = "/orders", method = RequestMethod.GET)
+    public String getOrders() {
+        return "orders";
     }
 
-    @RequestMapping(value = "/{username}/orders/create", method = RequestMethod.GET)
-    public ModelAndView createOrder(@PathVariable String username, Principal principal) {
-        if (username.equals(principal.getName())) {
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("order", orderService.getNewOrder());
-            modelAndView.addObject("currentUser", userService.getUserByUsername(username));
-            modelAndView.setViewName("order");
-            return modelAndView;
-        }
-        return null;
+    @RequestMapping(value = "/orders/create", method = RequestMethod.GET)
+    public ModelAndView createOrder(Principal principal) {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("order", orderService.getNewOrder());
+        modelAndView.addObject("currentUser", userService.getUserByUsername(principal.getName()));
+        modelAndView.setViewName("order");
+        return modelAndView;
     }
 
-    @RequestMapping(value = "/{username}/orders/process", method = RequestMethod.POST)
-    public String processOrder(@ModelAttribute Order order, @PathVariable String username) {
+    @RequestMapping(value = "/orders/process", method = RequestMethod.POST)
+    public String processOrder(@ModelAttribute Order order) {
         orderService.createOrder(order);
-        return "redirect:/" + username + "/orders";
+        return "redirect:/orders";
     }
 
     @RequestMapping(value = "/orders/remove/{orderId}", method = RequestMethod.GET)

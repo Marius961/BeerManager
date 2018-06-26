@@ -24,20 +24,14 @@ public class MainController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = {"/", "/home" , "/index" , "/{username}"}, method = RequestMethod.GET)
-    public String getHomePage(@PathVariable(required = false) String username, Principal principal) {
+    @RequestMapping(value = {"/", "/home" , "/index"}, method = RequestMethod.GET)
+    public String getHomePage() {
         String role = userService.getUserRole();
         if (role != null) {
-            if (username != null && principal.getName().equals(username)) {
-                if (role.equals("ROLE_USER")) {
-                    return "redirect:/" + username + "/orders";
-                }
-                if (role.equals("ROLE_ADMIN")) {
-                    return "redirect:/" + username + "/users";
-                }
-            }
-            if (role.equals("ROLE_USER")) return "redirect:/" + principal.getName() + "/orders";
-            if (role.equals("ROLE_ADMIN")) return "redirect:/" + principal.getName() + "/users/list";
+            if (role.equals("ROLE_USER"))
+                return "redirect:/orders";
+            if (role.equals("ROLE_ADMIN"))
+                return "redirect:/users";
         }
         return "index";
     }

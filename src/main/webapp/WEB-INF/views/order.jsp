@@ -36,7 +36,7 @@
     <div class="main-div">
         <div class="content-box">
             <h2 class="header-1">Order:</h2>
-            <form:form action="/${currentUser.username}/orders/process" method="post" modelAttribute="order" >
+            <form:form action="/orders/process" method="post" modelAttribute="order" >
                 <c:forEach items="${order.orderItems}" var="item" varStatus="status">
                     <div class="prod-order inline background order-info">
                     <span class="order-info">${item.product.description}</span>

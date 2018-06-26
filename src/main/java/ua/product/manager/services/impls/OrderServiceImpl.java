@@ -42,9 +42,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getAllOrdersByUserId(int userId) {
+    public List<Order> getOrdersByUserId(int userId) {
         List<Order> orders = orderDAO.getOrdersByUserId(userId);
-        if (orders.size() != 0) {
+        if (!orders.isEmpty()) {
+            for (Order order : orders) {
+                setOrderItems(order);
+            }
+        }
+        return orders;
+    }
+
+    @Override
+    public List<Order> getOrdersByUsername(String username) {
+        List<Order> orders = orderDAO.getOrdersByUserName(username);
+        if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);
             }

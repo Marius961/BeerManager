@@ -12,7 +12,9 @@ public interface OrderService {
 
     Order getOrderByUserId(int userId);
 
-    List<Order> getAllOrdersByUserId(int userId);
+    List<Order> getOrdersByUserId(int userId);
+
+    List<Order> getOrdersByUsername(String username);
 
     Order getNewOrder();
 
