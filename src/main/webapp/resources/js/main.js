@@ -205,6 +205,31 @@ function processRegForm() {
     };
 }
 
+function validateOrderForm() {
+    let errorCounter = 0;
+    $(".left").each(function (index, element) {
+        resetSectionError();
+        if ((element.value % 5) !== 0) {
+            errorCounter++;
+            showSectionError("You can add only for 5 liters");
+            return false;
+        }
+    });
+    if (errorCounter === 0) {
+        $("#orderForm").submit();
+    }
+}
+
+function showSectionError(error) {
+    $(".content-div").append("<span class='error-message'>"+ error + "</span>")
+}
+
+function resetSectionError() {
+    $(".error-message").remove();
+}
+
+
+
 
 
 
