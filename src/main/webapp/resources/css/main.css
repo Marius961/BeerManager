@@ -28,12 +28,22 @@ html {
 
 
 .content-box {
-    margin: 3% 0;
+    margin: 2% 0;
     padding: 2%;
-    border-radius: 1%;
+    border-radius: 0.5vh;
     background-color: snow;
+    box-shadow: 0 0.1em 0.4em #b6b6b6;
 }
 
+.group-box {
+}
+
+.group-header {
+    margin: 1% 0 0;
+    padding: 1%;
+    background-color: #dfdada;
+    box-shadow: 0 0.3em 0.7em #cbcbcb;
+}
 .login-size {
     width: 35%;
     margin: 1% auto 2%;

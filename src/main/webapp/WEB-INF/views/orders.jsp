@@ -38,11 +38,19 @@
         <button type="button" class="btn btn-primary btn-sm right" onclick="location.href='/orders/create'">New order</button>
         <H4>My orders</H4>
         <div class="container-div">
-
+            <div class="group-box" onclick="displayHideOrderGroup('#currentDayOrders')">
+                <h5 class="group-header">Current day</h5>
+                <div id="currentDayOrders">
+                </div>
+            </div>
+            <div class="group-box" onclick="displayHideOrderGroup('#otherOrders')">
+                <h5 class="group-header">Other orders</h5>
+                <div id="otherOrders" style="display: none">
+                </div>
+            </div>
         </div>
     </div>
 </main>
-
 <script src="<%=request.getContextPath()%>/resources/js/orders.js"></script>
 </body>
 </html>

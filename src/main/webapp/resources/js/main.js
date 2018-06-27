@@ -207,21 +207,56 @@ function processRegForm() {
 
 function validateOrderForm() {
     let errorCounter = 0;
+    let emptyFieldsCount = 0;
+    let fieldsCount = 0;
+    resetSectionError();
     $(".left").each(function (index, element) {
-        resetSectionError();
-        if ((element.value % 5) !== 0) {
+        if ((+element.value % 5) !== 0) {
+            if (errorCounter < 1) {
+                showSectionError('You can add only for 5 liters');
+            }
             errorCounter++;
-            showSectionError("You can add only for 5 liters");
-            return false;
         }
+        if (+element.value === 0) {
+            emptyFieldsCount++;
+        }
+        fieldsCount++;
     });
+    if (fieldsCount === emptyFieldsCount) {
+        errorCounter++;
+        showSectionError("You must select minimum 1 product");
+    }
+    let dateError = false;
+    let dateField = document.getElementById('execDate');
+    resetError(dateField.parentNode);
+    if (!dateField.value) {
+        errorCounter++;
+        dateError = true;
+        showError(dateField.parentNode, 'Select date');
+    }
+    if (!dateError) {
+        let orderDate = new Date(document.getElementById('execDate').value);
+        let currentDate = new Date();
+        let currentHours = currentDate.getHours();
+        currentDate.setHours(0 ,0 , 0 , 0);
+        orderDate.setHours(0 ,0 , 0 , 0);
+        if (currentHours > 8 && +currentDate === +orderDate) {
+            errorCounter++;
+            dateError = true;
+            showError(dateField.parentNode, "You can make an order only until 9:00 on the day of order execution");
+        }
+        if (!dateError && +currentDate > +orderDate) {
+            errorCounter++;
+            showError(dateField.parentNode, "The order execution date must be later than current date");
+        }
+    }
     if (errorCounter === 0) {
         $("#orderForm").submit();
     }
 }
 
 function showSectionError(error) {
-    $(".content-div").append("<span class='error-message'>"+ error + "</span>")
+    $(".content-div").append("<p class='error-message'>"+ error + "</p>");
 }
 
 function resetSectionError() {

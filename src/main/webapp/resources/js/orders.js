@@ -16,8 +16,18 @@ function loadOrderList() {
         success: function (data) {
             $(".cssload-container").fadeOut(300).remove();
             if (data) {
+                let currentDate = new Date();
+                currentDate.setHours(0 ,0 , 0 , 0);
+                let orderDate = "";
                 $.each(data, function (index, element) {
-                    addListElement(element);
+                    orderDate = new Date(element.execDate);
+                    orderDate.setHours(0 ,0 , 0 , 0);
+                    if (+orderDate === +currentDate) {
+                        addListElement(element, '#currentDayOrders');
+                    }
+                    else {
+                        addListElement(element, '#otherOrders');
+                    }
                 });
                 $(".container-div").fadeIn(300);
             }  else {
@@ -27,13 +37,13 @@ function loadOrderList() {
     });
 }
 
-function addListElement(element) {
+function addListElement(element, targetList) {
     let elemId = 'elem' + element.id;
     let blockId = 'productBlock' + element.id;
     let tableContainer = 'tableContainer' + element.id;
     let table = 'table' + element.id;
     let blockSelector = '#' + blockId;
-    $(".container-div").append("<div class='content-box' id='"+ elemId + "'></div>");
+    $(targetList).append("<div class='content-box' id='"+ elemId + "'></div>");
     $("#" + elemId).append("<div class='product-block' id='" + blockId + "'></div>");
     $(blockSelector).append("<p class='details-1 order-info'>Order №: <span class='info'>" + element.id + "</span></p>");
     $(blockSelector).append("<p class='details-1 inline order-info background'>Creation date: <span class='info'>" + element.creationDate + "</span></p>");
@@ -49,4 +59,13 @@ function addListElement(element) {
             "<td class='table-td-vol-name'><span class='barrels-vol'>liters</span></td>" +
             "</tr>");
     })
+}
+
+function displayHideOrderGroup(blockId) {
+    if ($(blockId).css('display') === 'none') {
+        $(blockId).animate({height: 'show'}, 300);
+    }
+    else {
+        $(blockId).animate({height: 'hide'}, 300);
+    }
 }

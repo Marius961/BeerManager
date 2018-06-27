@@ -45,10 +45,4 @@ public class OrderController {
         orderService.createOrder(order);
         return "redirect:/orders";
     }
-
-    @RequestMapping(value = "/orders/remove/{orderId}", method = RequestMethod.GET)
-    @ResponseStatus(value = HttpStatus.OK)
-    public void removeOrder(@PathVariable int orderId) {
-        orderService.removeOrder(orderId);
-    }
 }

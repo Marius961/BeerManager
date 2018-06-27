@@ -63,6 +63,11 @@
                     <form:label path="comment" for="commentTextArea">Comment:</form:label>
                     <form:textarea path="comment" class="form-control" id="commentTextArea" rows="3"/>
                 </div>
+                <div class="form-group" style="width: 25%">
+                    <form:label path="execDate" for="execDate">Execution date:</form:label>
+                    <form:input path="execDate" class="form-control" id="execDate" type="date"/>
+                </div>
+                <br>
                 <button type="button" class="btn btn-primary" onclick="validateOrderForm()">Submit</button>
             </form:form>
         </div>
