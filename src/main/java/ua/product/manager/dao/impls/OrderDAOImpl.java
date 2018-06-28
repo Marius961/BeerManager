@@ -59,6 +59,11 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
+    public List<Order> getAllActualOrders() {
+        return null;
+    }
+
+    @Override
     public List<Order> getOrdersByUserId(int userId) {
         String sql = "SELECT * FROM orders WHERE user_id=:id ORDER BY 2 DESC ";
         MapSqlParameterSource params = new MapSqlParameterSource();

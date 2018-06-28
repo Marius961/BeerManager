@@ -35,7 +35,15 @@ public class OrdersRestController {
 
     @RequestMapping(value = "/user-orders/{id}", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Order>> getOrdersByUserId(@PathVariable int id) {
-        System.out.println(id);
+        List<Order> orders = orderService.getOrdersByUserId(id);
+        if(orders.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(orders, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/all-orders/", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Order>> getAllOrders(@PathVariable int id) {
         List<Order> orders = orderService.getOrdersByUserId(id);
         if(orders.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

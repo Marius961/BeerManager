@@ -18,6 +18,7 @@
         <access-denied-handler error-page="/accessDenied"/>
         <intercept-url pattern="/username-check/*" access="permitAll()"/>
         <intercept-url pattern="/email-check/{email}" access="permitAll()"/>
+        <intercept-url pattern="/user-orders/{id}" access="hasRole('ROLE_ADMIN')"/>
         <form-login login-processing-url="/security_check"
                     login-page="/login"
                     default-target-url="/"

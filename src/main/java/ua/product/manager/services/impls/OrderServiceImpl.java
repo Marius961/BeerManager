@@ -42,6 +42,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Order> getAllOrders() {
+        return null;
+    }
+
+    @Override
     public List<Order> getOrdersByUserId(int userId) {
         List<Order> orders = orderDAO.getOrdersByUserId(userId);
         if (!orders.isEmpty()) {

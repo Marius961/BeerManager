@@ -12,6 +12,8 @@ public interface OrderService {
 
     Order getOrderByUserId(int userId);
 
+    List<Order> getAllOrders();
+
     List<Order> getOrdersByUserId(int userId);
 
     List<Order> getOrdersByUsername(String username);

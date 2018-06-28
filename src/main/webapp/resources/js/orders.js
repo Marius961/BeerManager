@@ -1,18 +1,24 @@
 $(document).ready(function () {
-    let elem = "";
-    try {
-        elem = document.getElementById('userId');
-        loadOrderList(elem.textContent);
-    } catch (e) {
-        loadOrderList(null);
-    }
+   let path = location.href;
+   path = path.substr(path.lastIndexOf('/') + 1);
+   if (path === 'orders') {
+       showOrders();
+
+   }
 });
 
-function loadOrderList(userId) {
-    let url = '/orders';
-    if (userId !== null) {
-        url += '/user-orders/' + id;
-    }
+
+function showUserOrders() {
+    let elem = document.getElementById('userId');
+    $(".show-btn").fadeOut(300).remove();
+    loadOrderList('/user-orders/' +elem.textContent);
+
+}
+
+function showOrders() {
+    loadOrderList('/orders');
+}
+function loadOrderList(url) {
     alert(url);
     $(".main-div").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
@@ -25,26 +31,30 @@ function loadOrderList(userId) {
         contentType: 'application/json',
         success: function (data) {
             $(".cssload-container").fadeOut(300).remove();
-            if (data) {
-                let currentDate = new Date();
-                currentDate.setHours(0 ,0 , 0 , 0);
-                let orderDate = "";
-                $.each(data, function (index, element) {
-                    orderDate = new Date(element.execDate);
-                    orderDate.setHours(0 ,0 , 0 , 0);
-                    if (+orderDate === +currentDate) {
-                        addListElement(element, '#currentDayOrders');
-                    }
-                    else {
-                        addListElement(element, '#otherOrders');
-                    }
-                });
-                $(".container-div").fadeIn(300);
-            }  else {
-                $(".main-div").append("<h1>No orders</h1>");
-            }
+            processOrders(data);
         }
     });
+}
+
+function processOrders(data) {
+    if (data) {
+        let currentDate = new Date();
+        currentDate.setHours(0 ,0 , 0 , 0);
+        let orderDate = "";
+        $.each(data, function (index, element) {
+            orderDate = new Date(element.execDate);
+            orderDate.setHours(0 ,0 , 0 , 0);
+            if (+orderDate === +currentDate) {
+                addListElement(element, '#currentDayOrders');
+            }
+            else {
+                addListElement(element, '#otherOrders');
+            }
+        });
+        $(".container-div").fadeIn(300);
+    }  else {
+        $(".main-div").append("<h1>No orders</h1>");
+    }
 }
 
 function addListElement(element, targetList) {

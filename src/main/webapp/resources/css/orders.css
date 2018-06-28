@@ -102,3 +102,11 @@
     width: 40%;
 }
 
+.show-btn {
+    width: 100%;
+    padding: 1%;
+    background-color: #e2dddd;
+    box-shadow: 0 0.3em 0.7em #cbcbcb;
+    border: 0;
+}
+
