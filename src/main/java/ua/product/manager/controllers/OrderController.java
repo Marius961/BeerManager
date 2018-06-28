@@ -31,7 +31,7 @@ public class OrderController {
         return "orders";
     }
 
-    @RequestMapping(value = "/orders/create", method = RequestMethod.GET)
+    @RequestMapping(value = "/order/form", method = RequestMethod.GET)
     public ModelAndView createOrder(Principal principal) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("order", orderService.getNewOrder());

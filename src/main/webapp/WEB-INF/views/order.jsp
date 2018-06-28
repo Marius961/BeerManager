@@ -48,7 +48,7 @@
                                 <td class="table-td"><h4 class="prod-name">${item.product.name}:</h4></td>
                                 <td class="table-td-vol-input">
                                     <div class="form-group">
-                                        <form:input path="orderItems[${status.index}].volume" type="number" class="form-control left" id="volInput${status.index}" value="0" step="1"/>
+                                        <form:input path="orderItems[${status.index}].volume" type="number" class="form-control left" id="volInput${status.index}" value="0"/>
                                         <form:hidden path="orderItems[${status.index}].productId" value="${item.productId}"/>
                                         <form:hidden path="userId" value="${currentUser.id}"/>
                                     </div>

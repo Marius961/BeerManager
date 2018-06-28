@@ -38,11 +38,17 @@ html {
 .group-box {
 }
 
+
 .group-header {
     margin: 1% 0 0;
     padding: 1%;
     background-color: #dfdada;
     box-shadow: 0 0.3em 0.7em #cbcbcb;
+}
+
+.group-header:hover {
+    cursor: pointer;
+    background-color: #e2dddd;
 }
 .login-size {
     width: 35%;
@@ -95,4 +101,5 @@ html {
 
 .container-div {
     display: none;
+    padding-bottom: 3%;
 }

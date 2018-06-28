@@ -1,9 +1,19 @@
 $(document).ready(function () {
-    loadOrderList();
-})
+    let elem = "";
+    try {
+        elem = document.getElementById('userId');
+        loadOrderList(elem.textContent);
+    } catch (e) {
+        loadOrderList(null);
+    }
+});
 
-function loadOrderList() {
+function loadOrderList(userId) {
     let url = '/orders';
+    if (userId !== null) {
+        url += '/user-orders/' + id;
+    }
+    alert(url);
     $(".main-div").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
         "</div>");

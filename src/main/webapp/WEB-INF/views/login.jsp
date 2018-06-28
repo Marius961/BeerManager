@@ -46,6 +46,7 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                 </div>
+                <input type="checkbox" name="rememberMe" id="rememberMe">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

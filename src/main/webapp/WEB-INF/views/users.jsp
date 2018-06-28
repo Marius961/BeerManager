@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/users.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/animations.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
 <header>
@@ -22,10 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/${currentUserName}/users/list"/>">Users<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/${currentUserName}/users/get/${currentUserId}"/>">My account</a>
+                    <a class="nav-link" href="<c:url value="/users"/>">Users<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -41,20 +40,19 @@
                     <th class="th-content th-content-2">FULL NAME</th>
                     <th class="th-content th-content-id">ORDERS</th>
                 </tr>
-                <c:forEach var="user" items="${users}">
-                    <tr class="tr-users" onclick="location.href='/${currentUserName}/users/get/${user.id}'">
-                        <td class="td-content th-content-id">${user.id}</td>
-                        <td class="td-content th-content-2">${user.companyName}</td>
-                        <td class="td-content th-content-2">${user.fullName}</td>
-                        <td class="td-content th-content-id">54</td>
-                    </tr>
-                </c:forEach>
+                <%--<c:forEach var="user" items="${users}">--%>
+                    <%--<tr class="tr-users" onclick="location.href='/${currentUserName}/users/get/${user.id}'">--%>
+                        <%--<td class="td-content th-content-id">${user.id}</td>--%>
+                        <%--<td class="td-content th-content-2">${user.companyName}</td>--%>
+                        <%--<td class="td-content th-content-2">${user.fullName}</td>--%>
+                        <%--<td class="td-content th-content-id">54</td>--%>
+                    <%--</tr>--%>
+                <%--</c:forEach>--%>
             </table>
         </div>
     </div>
 </main>
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="<%=request.getContextPath()%>/resources/js/users.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
