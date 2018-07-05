@@ -42,15 +42,8 @@
         </div>
         <button class="show-btn" onclick="showUserOrders()">Load orders</button>
         <div class="container-div">
-            <div class="group-box" onclick="displayHideOrderGroup('#currentDayOrders')">
-                <h5 class="group-header">Current day</h5>
-                <div id="currentDayOrders">
-                </div>
-            </div>
-            <div class="group-box" onclick="displayHideOrderGroup('#otherOrders')">
-                <h5 class="group-header">Other orders</h5>
-                <div id="otherOrders" style="display: none">
-                </div>
+            <div id="orders">
+
             </div>
         </div>
     </div>

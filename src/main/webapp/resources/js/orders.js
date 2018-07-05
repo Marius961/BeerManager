@@ -13,8 +13,7 @@ $(document).ready(function () {
 function showUserOrders() {
     let elem = document.getElementById('userId');
     $(".show-btn").fadeOut(300).remove();
-    loadOrderList('/user-orders/' +elem.textContent, processOrders);
-
+    loadOrderList('/user-orders/' + elem.textContent, processOrders);
 }
 
 function showOrders() {
@@ -53,7 +52,7 @@ function processOrders(data) {
             $.each(data[key], function (index, element) {
                 addListElement(element, key);
             })
-        })
+        });
         // $.each(data, function (index, element) {
             // orderDate = new Date(element.execDate);
             // orderDate.setHours(0 ,0 , 0 , 0);

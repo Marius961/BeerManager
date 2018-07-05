@@ -15,7 +15,7 @@ public interface OrderService {
 
     List<Order> getAllOrders();
 
-    List<Order> getOrdersByUserId(int userId);
+    Map<String, List<Order>> getOrdersByUserId(int userId);
 
     Map<String, List<Order>> getOrdersByUsername(String username);
 

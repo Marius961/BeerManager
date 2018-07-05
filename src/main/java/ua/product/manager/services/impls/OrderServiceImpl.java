@@ -52,14 +52,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersByUserId(int userId) {
+    public Map<String, List<Order>> getOrdersByUserId(int userId) {
         List<Order> orders = orderDAO.getOrdersByUserId(userId);
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);
             }
         }
-        return orders;
+        return groupOrdersByDate(orders);
     }
 
     @Override

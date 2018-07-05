@@ -35,8 +35,8 @@ public class OrdersRestController {
     }
 
     @RequestMapping(value = "/user-orders/{id}", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Order>> getOrdersByUserId(@PathVariable int id) {
-        List<Order> orders = orderService.getOrdersByUserId(id);
+    public ResponseEntity<Map<String, List<Order>>> getOrdersByUserId(@PathVariable int id) {
+        Map<String, List<Order>> orders = orderService.getOrdersByUserId(id);
         if(orders.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
