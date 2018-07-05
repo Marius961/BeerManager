@@ -9,8 +9,7 @@ import ua.product.manager.models.OrderItem;
 import ua.product.manager.models.Product;
 import ua.product.manager.services.interfaces.OrderService;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -64,14 +63,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersByUsername(String username) {
+    public Map<String, List<Order>> getOrdersByUsername(String username) {
         List<Order> orders = orderDAO.getOrdersByUserName(username);
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);
             }
         }
-        return orders;
+        return groupOrdersByDate(orders);
     }
 
     @Override
@@ -99,5 +98,21 @@ public class OrderServiceImpl implements OrderService {
             Product product = productDAO.getProductById(item.getProductId());
             item.setProduct(product);
         }
+    }
+
+    private Map<String, List<Order>> groupOrdersByDate(List<Order> orders) {
+        Map<String, List<Order>> groupedOrders = new HashMap<>();
+        String date;
+        for (Order order : orders) {
+            date = order.getExecDate();
+            if (!groupedOrders.containsKey(date)) {
+                List<Order> tempLost = new ArrayList<>();
+                tempLost.add(order);
+                groupedOrders.put(date, tempLost);
+            } else {
+                groupedOrders.get(date).add(order);
+            }
+        }
+        return new TreeMap<>(groupedOrders).descendingMap();
     }
 }

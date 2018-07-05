@@ -11,6 +11,7 @@ import ua.product.manager.services.interfaces.UserService;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class OrdersRestController {
@@ -25,8 +26,8 @@ public class OrdersRestController {
     }
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Order>> getOrders(Principal principal) {
-        List<Order> orders = orderService.getOrdersByUsername(principal.getName());
+    public ResponseEntity<Map<String, List<Order>>> getOrders(Principal principal) {
+        Map<String, List<Order>> orders = orderService.getOrdersByUsername(principal.getName());
         if(orders.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

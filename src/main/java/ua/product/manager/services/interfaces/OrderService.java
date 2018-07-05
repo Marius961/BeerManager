@@ -4,6 +4,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ua.product.manager.models.Order;
 
 import java.util.List;
+import java.util.Map;
 
 public interface OrderService {
 
@@ -16,7 +17,7 @@ public interface OrderService {
 
     List<Order> getOrdersByUserId(int userId);
 
-    List<Order> getOrdersByUsername(String username);
+    Map<String, List<Order>> getOrdersByUsername(String username);
 
     Order getNewOrder();
 
