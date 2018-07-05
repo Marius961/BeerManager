@@ -36,5 +36,10 @@ public class AdminController {
         modelAndView.setViewName("userData");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/all-orders", method = RequestMethod.GET)
+    public String getAllOrdersList() {
+        return "all-orders";
+    }
 }
 

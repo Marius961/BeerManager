@@ -27,7 +27,7 @@ public class OrderController {
 
 
     @RequestMapping(value = "/orders", method = RequestMethod.GET)
-    public String getOrders() {
+    public String getOrdersPage() {
         return "orders";
     }
 

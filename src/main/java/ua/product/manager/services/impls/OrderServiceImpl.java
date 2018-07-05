@@ -43,7 +43,13 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public List<Order> getAllOrders() {
-        return null;
+        List<Order> orders = orderDAO.getAllOrders();
+        if (!orders.isEmpty()) {
+            for (Order order : orders) {
+                setOrderItems(order);
+            }
+        }
+        return orders;
     }
 
     @Override

@@ -35,8 +35,7 @@
 </header>
 <main class="background">
     <div class="main-div">
-        <button type="button" class="btn btn-primary btn-sm right" onclick="location.href='/order/form'">New order</button>
-        <H4>My orders</H4>
+        <H4>All orders</H4>
         <div class="container-div">
             <div class="group-box" onclick="displayHideOrderGroup('#currentDayOrders')">
                 <h5 class="group-header">Current day</h5>

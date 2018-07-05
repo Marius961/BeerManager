@@ -8,7 +8,8 @@ import java.util.List;
 
 public interface OrderDAO {
 
-    List<Order> getAllActualOrders();
+    @Secured("ROLE_ADMIN")
+    List<Order> getAllOrders();
 
     List<Order> getOrdersByUserId(int userId);
 
@@ -18,6 +19,7 @@ public interface OrderDAO {
 
     void addItemToOrder(OrderItem orderItem);
 
+    @Secured("ROLE_ADMIN")
     void deleteItem(int itemId);
 
     Order getOrder(int orderId);

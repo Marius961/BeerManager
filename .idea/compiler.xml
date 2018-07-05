@@ -12,7 +12,6 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ProductManager" target="1.8" />
-      <module name="WebAppProject" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>

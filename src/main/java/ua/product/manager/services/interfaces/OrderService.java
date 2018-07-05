@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface OrderService {
 
-    @Transactional
     void createOrder(Order order);
+
 
     Order getOrderByUserId(int userId);
 

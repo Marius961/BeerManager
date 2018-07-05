@@ -42,9 +42,9 @@ public class OrdersRestController {
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/all-orders/", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Order>> getAllOrders(@PathVariable int id) {
-        List<Order> orders = orderService.getOrdersByUserId(id);
+    @RequestMapping(value = "/all-orders-list", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Order>> getAllOrders() {
+        List<Order> orders = orderService.getAllOrders();
         if(orders.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

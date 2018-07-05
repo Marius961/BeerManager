@@ -4,21 +4,27 @@ $(document).ready(function () {
    if (path === 'orders') {
        showOrders();
 
-   }
+   } if (path === 'all-orders') {
+        showAllOrders();
+    }
 });
 
 
 function showUserOrders() {
     let elem = document.getElementById('userId');
     $(".show-btn").fadeOut(300).remove();
-    loadOrderList('/user-orders/' +elem.textContent);
+    loadOrderList('/user-orders/' +elem.textContent, processOrders);
 
 }
 
 function showOrders() {
-    loadOrderList('/orders');
+    loadOrderList('/orders', processOrders);
 }
-function loadOrderList(url) {
+
+function showAllOrders() {
+    loadOrderList('/all-orders-list', processOrders);
+}
+function loadOrderList(url, func) {
     alert(url);
     $(".main-div").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
@@ -30,13 +36,13 @@ function loadOrderList(url) {
         data: ({}),
         contentType: 'application/json',
         success: function (data) {
-            $(".cssload-container").fadeOut(300).remove();
-            processOrders(data);
+            func(data);
         }
     });
 }
 
 function processOrders(data) {
+    $(".cssload-container").fadeOut(300).remove();
     if (data) {
         let currentDate = new Date();
         currentDate.setHours(0 ,0 , 0 , 0);

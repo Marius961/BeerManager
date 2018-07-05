@@ -58,9 +58,15 @@ public class OrderDAOImpl implements OrderDAO {
         jdbcTemplate.update(sql, params);
     }
 
+
     @Override
-    public List<Order> getAllActualOrders() {
-        return null;
+    public List<Order> getAllOrders() {
+        String sql = "SELECT * FROM orders ORDER BY 2 DESC ";
+        try {
+            return jdbcTemplate.query(sql, new OrderMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override

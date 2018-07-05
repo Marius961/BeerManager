@@ -27,6 +27,11 @@
                     <a class="nav-link" href="<c:url value="/users"/>">Users<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="<c:url value="/all-orders"/>">All orders<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>
