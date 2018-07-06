@@ -10,7 +10,10 @@ import ua.product.manager.models.OrderItem;
 import ua.product.manager.models.Product;
 import ua.product.manager.services.interfaces.OrderService;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -46,11 +49,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Map<String, List<Order>> getOrdersWithUserDataByDate(String date) {
         List<Order> orders;
-        System.out.println(date.substring(0, 1));
-        if (date.substring(0, 1).equals("!")) {
-             orders = orderDAO.getOrdersExceptDate(date.substring(1), 50);
-        } else {
+        Date currentDate = new Date();
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd").format(currentDate);
+        System.out.println(date);
+        Pattern p = Pattern.compile("^\\d\\d\\d\\d-\\d\\d-\\d\\d$");
+        Matcher m = p.matcher(date);
+        if (m.matches()) {
             orders = orderDAO.getOrdersByDate(date);
+        } else if (date.equals("!CURRENT_DATE")) {
+            orders = orderDAO.getOrdersExceptDate(formattedDate, 50);
+        } else if (date.equals("CURRENT_DATE")){
+            orders = orderDAO.getOrdersByDate(formattedDate);
+        } else {
+            orders = new ArrayList<>();
         }
         if (!orders.isEmpty()) {
             for (Order order : orders) {

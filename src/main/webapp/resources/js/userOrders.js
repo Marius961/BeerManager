@@ -3,17 +3,15 @@ $(document).ready(function () {
 });
 
 function showCurrentDateOrders() {
-    let date = getCurrentDate();
     let dateObj = {
-        "str" : date
+        "str" : 'CURRENT_DATE'
     };
     loadOrderList('/user-orders', processOrders, dateObj);
 }
 
 function showOtherOrders() {
-    let date = getCurrentDate();
     let dateObj = {
-        "str" : '!' + date
+        "str" : '!CURRENT_DATE'
     };
     loadOrderList('/user-orders', processOrders, dateObj);
     $(".show-btn").remove();
