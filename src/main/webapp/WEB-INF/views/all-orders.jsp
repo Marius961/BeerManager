@@ -37,19 +37,13 @@
     <div class="main-div">
         <H4>All orders</H4>
         <div class="container-div">
-            <div class="group-box" onclick="displayHideOrderGroup('#currentDayOrders')">
-                <h5 class="group-header">Current day</h5>
-                <div id="currentDayOrders">
-                </div>
+            <div id="orders">
+
             </div>
-            <div class="group-box" onclick="displayHideOrderGroup('#otherOrders')">
-                <h5 class="group-header">Other orders</h5>
-                <div id="otherOrders" style="display: none">
-                </div>
-            </div>
+            <button class="show-btn" onclick="showOtherOrders()">Load orders</button>
         </div>
     </div>
 </main>
-<script src="<%=request.getContextPath()%>/resources/js/orders.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/userOrders.js"></script>
 </body>
 </html>

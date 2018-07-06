@@ -12,6 +12,7 @@ public class Order {
     private int statusId;
     private double price;
     private String comment;
+    private User customer;
 
     private List<OrderItem> orderItems;
 
@@ -85,5 +86,13 @@ public class Order {
 
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
     }
 }

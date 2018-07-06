@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ua.product.manager.dao.interfaces.OrderDAO;
 import ua.product.manager.dao.interfaces.ProductDAO;
+import ua.product.manager.dao.interfaces.UserDAO;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.OrderItem;
 import ua.product.manager.models.Product;
@@ -16,11 +17,13 @@ public class OrderServiceImpl implements OrderService {
 
     private OrderDAO orderDAO;
     private ProductDAO productDAO;
+    private UserDAO userDAO;
 
     @Autowired
-    private void setDAOs(OrderDAO orderDAO, ProductDAO productDAO) {
+    private void setDAOs(OrderDAO orderDAO, ProductDAO productDAO, UserDAO userDAO) {
         this.orderDAO = orderDAO;
         this.productDAO = productDAO;
+        this.userDAO = userDAO;
     }
 
     @Override
@@ -41,18 +44,26 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getAllOrders() {
-        List<Order> orders = orderDAO.getAllOrders();
+    public Map<String, List<Order>> getOrdersWithUserDataByDate(String date) {
+        List<Order> orders;
+        System.out.println(date.substring(0, 1));
+        if (date.substring(0, 1).equals("!")) {
+             orders = orderDAO.getOrdersExceptDate(date.substring(1), 50);
+        } else {
+            orders = orderDAO.getOrdersByDate(date);
+        }
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);
+                order.setCustomer(userDAO.getUserById(order.getUserId()));
             }
         }
-        return orders;
+        return groupOrdersByDate(orders);
     }
 
+
     @Override
-    public Map<String, List<Order>> getOrdersByUserId(int userId) {
+    public Map<String, List<Order>> getOrders(int userId) {
         List<Order> orders = orderDAO.getOrdersByUserId(userId);
         if (!orders.isEmpty()) {
             for (Order order : orders) {
@@ -63,7 +74,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Map<String, List<Order>> getOrdersByUsername(String username) {
+    public Map<String, List<Order>> getOrders(String username) {
         List<Order> orders = orderDAO.getOrdersByUserName(username);
         if (!orders.isEmpty()) {
             for (Order order : orders) {

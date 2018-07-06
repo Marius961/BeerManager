@@ -40,6 +40,31 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
+    public List<Order> getOrdersByDate(String date) {
+        String sql = "SELECT * FROM orders WHERE exec_date=:targetDate ORDER BY 2 DESC ";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("targetDate", date);
+        try {
+            return jdbcTemplate.query(sql, params, new OrderMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Order> getOrdersExceptDate(String date, int limit) {
+        String sql = "SELECT * FROM orders WHERE exec_date!=:targetDate ORDER BY 2 DESC LIMIT :value";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("targetDate", date);
+        params.addValue("value", limit);
+        try {
+            return jdbcTemplate.query(sql, params, new OrderMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
     public void addItemToOrder(OrderItem item) {
         String sql = "INSERT INTO order_items (order_id, product_id, volume)" +
                 "VALUES (:orderId, :productId, :volume)";

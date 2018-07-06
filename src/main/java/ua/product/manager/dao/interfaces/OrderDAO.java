@@ -17,6 +17,10 @@ public interface OrderDAO {
 
     List<OrderItem> getItemsByOrderId(int orderId);
 
+    List<Order> getOrdersByDate(String date);
+
+    List<Order> getOrdersExceptDate(String date, int limit);
+
     void addItemToOrder(OrderItem orderItem);
 
     @Secured("ROLE_ADMIN")

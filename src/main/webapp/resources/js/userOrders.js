@@ -1,41 +1,37 @@
 $(document).ready(function () {
-   let path = location.href;
-   path = path.substr(path.lastIndexOf('/') + 1);
-   if (path === 'orders') {
-       showOrders();
-
-   } if (path === 'all-orders') {
-        showAllOrders();
-    }
+    showCurrentDateOrders();
 });
 
-
-function showUserOrders() {
-    let elem = document.getElementById('userId');
-    $(".show-btn").fadeOut(300).remove();
-    loadOrderList('/user-orders/' + elem.textContent, processOrders);
+function showCurrentDateOrders() {
+    let date = getCurrentDate();
+    let dateObj = {
+        "str" : date
+    };
+    loadOrderList('/user-orders', processOrders, dateObj);
 }
 
-function showOrders() {
-    loadOrderList('/orders', processOrders);
+function showOtherOrders() {
+    let date = getCurrentDate();
+    let dateObj = {
+        "str" : '!' + date
+    };
+    loadOrderList('/user-orders', processOrders, dateObj);
+    $(".show-btn").remove();
 }
 
-function showAllOrders() {
-    loadOrderList('/all-orders-list', processOrders);
-}
-function loadOrderList(url, func) {
+function loadOrderList(url, func, dateObj) {
     $(".main-div").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
         "</div>");
     $.ajax ({
         url: String(url),
-        type: "GET",
+        type: "POST",
         dataType: "json",
-        data: ({}),
+        data: JSON.stringify(dateObj),
         contentType: 'application/json',
         success: function (data) {
             func(data);
-        }
+        },
     });
 }
 
@@ -43,7 +39,13 @@ function processOrders(data) {
     $(".cssload-container").fadeOut(300).remove();
     if (data) {
         Object.keys(data).forEach(function (key) {
-            addDateHeader(key);
+            let label = '';
+            if (key === getCurrentDate()) {
+                label = 'Today';
+            } else {
+                label = key;
+            }
+            addDateHeader(key, label);
             $.each(data[key], function (index, element) {
                 addListElement(element, key);
             })
@@ -63,6 +65,10 @@ function addListElement(element, target) {
     $("#" + target).append("<div class='content-box' id='"+ elemId + "'></div>");
     $("#" + elemId).append("<div class='product-block' id='" + blockId + "'></div>");
     $(blockSelector).append("<p class='details-1 order-info'>Order #<span class='info'>" + element.id + "</span></p>");
+    $(blockSelector).append("<p class='details-1 inline order-info background'>Full name full name: <span class='info'>" + element.customer.fullName + "</span></p>");
+    $(blockSelector).append("<p class='details-1 inline order-info background'>Company name: <span class='info'>" + element.customer.companyName + "</span></p>");
+    $(blockSelector).append("<p class='details-1 inline order-info background'>Company address: <span class='info'>" + element.customer.companyAddress + "</span></p>");
+    $(blockSelector).append("<p class='details-1 inline order-info background'>Phone number: <span class='info'>" + element.customer.telNumber + "</span></p>");
     $(blockSelector).append("<p class='details-1 inline order-info background'>Creation date: <span class='info'>" + element.creationDate + "</span></p>");
     $(blockSelector).append("<p class='details-1 inline order-info background'>Creation time: <span class='info'>" + element.creationTime + "</span></p>");
     $(blockSelector).append("<p class='details-1 inline order-info background'>Execution date: <span class='info'>" + element.execDate + "</span></p>");
@@ -78,8 +84,24 @@ function addListElement(element, target) {
     })
 }
 
-function addDateHeader(date) {
+function addDateHeader(date, label) {
     $("#orders").append("<div id='" + date + "'></div>");
-    $("#" + date).append("<h2 class='date-header'>" + date + "</h2>")
+    $("#" + date).append("<h2 class='date-header'>" + label + "</h2>")
 }
 
+function displayHideOrderGroup(blockId) {
+    if ($(blockId).css('display') === 'none') {
+        $(blockId).animate({height: 'show'}, 300);
+    }
+    else {
+        $(blockId).animate({height: 'hide'}, 300);
+    }
+}
+
+function getCurrentDate() {
+    let simpleDate;
+    let now = new Date();
+    simpleDate = now.toISOString();
+    simpleDate = simpleDate.substr(0,10);
+    return simpleDate;
+}
