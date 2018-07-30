@@ -103,3 +103,28 @@ html {
     display: none;
     padding-bottom: 3%;
 }
+
+.btn-bar-2 {
+    width: 80%;
+    margin: 1% 10%;
+    background: snow;
+    padding: 0.3%;
+}
+
+.btn-1 {
+    width: 15%;
+    display: inline-block;
+    border-radius: 3px;
+    border-bottom: 7px solid #ededed;
+    padding: 0.3%;
+
+}
+
+.btn-1:hover {
+    border-bottom: 7px solid #333333;
+}
+
+.btn-label {
+    font-size: 3vh;
+    color: grey;
+}

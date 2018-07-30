@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
-<body>
+<body class="background">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Product manager</a>
@@ -33,14 +33,14 @@
         </div>
     </nav>
 </header>
-<main class="background">
+<main>
+    <div class="btn-bar-2">
+        <div class="btn-1" id="btn1" onclick="showCurrentDateOrders()"><span class="btn-label">Today</span></div>
+        <div class="btn-1" id="btn2" onclick="showOtherOrders()"><span class="btn-label">Other days</span></div>
+    </div>
     <div class="main-div">
-        <H4>All orders</H4>
         <div class="container-div">
-            <div id="orders">
-
-            </div>
-            <button class="show-btn" onclick="showOtherOrders()">Load orders</button>
+            <div id="orders"></div>
         </div>
     </div>
 </main>

@@ -3,16 +3,24 @@ $(document).ready(function () {
 });
 
 function showCurrentDateOrders() {
+    $(".btn-1").css('border-bottom', '7px solid #ededed');
+    $("#btn1").css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : 'CURRENT_DATE'
     };
+    $("#orders").fadeOut(300).html('');
+    $("#orders").fadeIn(300);
     loadOrderList('/user-orders', processOrders, dateObj);
 }
 
 function showOtherOrders() {
+    $(".btn-1").css('border-bottom', '7px solid #ededed');
+    $("#btn2").css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : '!CURRENT_DATE'
     };
+    $("#orders").fadeOut(300).html('');
+    $("#orders").fadeIn(300);
     loadOrderList('/user-orders', processOrders, dateObj);
     $(".show-btn").remove();
 }
@@ -34,24 +42,24 @@ function loadOrderList(url, func, dateObj) {
 }
 
 function processOrders(data) {
-    $(".cssload-container").fadeOut(300).remove();
+    $(".cssload-container").fadeOut(100);
     if (data) {
         Object.keys(data).forEach(function (key) {
-            let label = '';
-            if (key === getCurrentDate()) {
-                label = 'Today';
-            } else {
-                label = key;
-            }
+            let label = key;
+            // if (key === getCurrentDate()) {
+            //     label = 'Today';
+            // } else {
+            //     label = key;
+            // }
             addDateHeader(key, label);
             $.each(data[key], function (index, element) {
                 addListElement(element, key);
             })
         });
-        $(".container-div").fadeIn(300);
     }  else {
         $(".main-div").append("<h1>No orders</h1>");
     }
+    $(".container-div").fadeIn(300);
 }
 
 function addListElement(element, target) {
@@ -87,6 +95,9 @@ function addDateHeader(date, label) {
     $("#" + date).append("<h2 class='date-header'>" + label + "</h2>")
 }
 
+function addHeader(label) {
+    $("#orders").append("<h2>" + label + "</h2>")
+}
 function displayHideOrderGroup(blockId) {
     if ($(blockId).css('display') === 'none') {
         $(blockId).animate({height: 'show'}, 300);
