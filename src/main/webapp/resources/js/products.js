@@ -7,15 +7,15 @@ function showProductsList() {
 }
 
 function blockProduct(productId) {
-    sendRequest("/product-block/" + productId, 'POST');
+    sendRequest("/product-block/", productId, 'POST', switchButton);
 }
 
 function unblockProduct(productId) {
-    sendRequest("/product-unblock/" + productId, 'POST');
+    sendRequest("/product-unblock/", productId, 'POST', switchButton);
 }
 
 function removeProduct(productId) {
-    sendRequest("/product-remove/" + productId, 'DELETE');
+    sendRequest("/product-remove/", productId, 'DELETE', removeListElement);
 }
 
 function loadProductsList(url, func) {
@@ -34,13 +34,16 @@ function loadProductsList(url, func) {
     });
 }
 
-function sendRequest(url, method) {
+function sendRequest(url, id, method, func) {
     $.ajax ({
-        url: String(url),
+        url: url + id,
         type: String(method),
         dataType: "json",
         data: ({}),
         contentType: 'application/json',
+        complete: function () {
+            func(id);
+        }
     });
 }
 
@@ -55,7 +58,7 @@ function processProducts(data) {
 
 function addListElement(element) {
     $(".main-div").append("" +
-        "<div class='list-elem'>\n" +
+        "<div class='list-elem' id='product"+ element.id +"'>\n" +
         "    <table style='width: 100%'>\n" +
         "        <tr>\n" +
         "            <th class='name-td'>"+ element.name +"</th>\n" +
@@ -68,4 +71,17 @@ function addListElement(element) {
         "        <p>"+ element.description +"</p>\n" +
         "    </div>\n" +
         "</div>\n")
+}
+
+function removeListElement(productId) {
+    let obj = $("#product" + productId);
+    obj.slideToggle(300);
+    // obj.fadeOut(200);
+    setTimeout(function () {
+        obj.remove()
+    }, 500);
+}
+
+function switchButton(productId) {
+
 }
