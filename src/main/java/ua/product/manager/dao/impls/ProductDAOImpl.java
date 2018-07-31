@@ -75,6 +75,22 @@ public class ProductDAOImpl implements ProductDAO {
         jdbcTemplate.update(sql, params);
     }
 
+    @Override
+    public void blockProduct(int productId) {
+        String sql = "UPDATE products SET active=0 WHERE id=:id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", productId);
+        jdbcTemplate.update(sql, params);
+    }
+
+    @Override
+    public void unblockProduct(int productId) {
+        String sql = "UPDATE products SET active=1 WHERE id=:id";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", productId);
+        jdbcTemplate.update(sql, params);
+    }
+
     private static final class ProductMapper implements RowMapper<Product> {
 
         @Override

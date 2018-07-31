@@ -20,4 +20,9 @@ public interface ProductDAO {
     @Secured("ROLE_ADMIN")
     void removeProduct(int productId);
 
+    @Secured("ROLE_ADMIN")
+    void blockProduct(int productId);
+
+    @Secured("ROLE_ADMIN")
+    void unblockProduct(int productId);
 }

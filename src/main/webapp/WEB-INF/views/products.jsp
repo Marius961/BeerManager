@@ -9,12 +9,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/products.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/animations.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
-<body class="background">
+<body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Product manager</a>
@@ -28,29 +28,35 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="<c:url value="/all-orders"/>">Orders<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
     </nav>
 </header>
-<main>
-    <div class="tab-bar">
-        <div class="tab" id="btn1" onclick="showCurrentDateOrders()"><span class="btn-label">Today</span></div>
-        <div class="tab" id="btn2" onclick="showOtherOrders()"><span class="btn-label">Other days</span></div>
-    </div>
+<main class="background">
     <div class="main-div">
-        <div class="container-div">
-            <div id="orders"></div>
-        </div>
+        <%--<div class="list-elem">--%>
+            <%--<table style="width: 100%">--%>
+                <%--<tr>--%>
+                    <%--<th class="name-td">Продукт</th>--%>
+                    <%--<td class="btn-td"><button class="btn btn-secondary">Заблокувати</button></td>--%>
+                    <%--<td class="btn-td"><button class="btn btn-danger">Видалити</button></td>--%>
+                <%--</tr>--%>
+            <%--</table>--%>
+            <%--<div>--%>
+                <%--<H6>Опис</H6>--%>
+                <%--<p>Опис продукту</p>--%>
+            <%--</div>--%>
+        <%--</div>--%>
     </div>
 </main>
-<script src="<%=request.getContextPath()%>/resources/js/userOrders.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/products.js"></script>
 </body>
 </html>

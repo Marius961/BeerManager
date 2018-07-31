@@ -1,9 +1,10 @@
 $(document).ready(function () {
+    window.monthList = ['Січня', 'Лютого','Березня','Квітня','Травня','Червня','Липня','Серпня','Вересня','Жовтня','Листопада','Грудня'];
     showCurrentDateOrders();
 });
 
 function showCurrentDateOrders() {
-    $(".btn-1").css('border-bottom', '7px solid #ededed');
+    $(".tab").css('border-bottom', '7px solid #ededed');
     $("#btn1").css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : 'CURRENT_DATE'
@@ -14,7 +15,7 @@ function showCurrentDateOrders() {
 }
 
 function showOtherOrders() {
-    $(".btn-1").css('border-bottom', '7px solid #ededed');
+    $(".tab").css('border-bottom', '7px solid #ededed');
     $("#btn2").css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : '!CURRENT_DATE'
@@ -42,10 +43,14 @@ function loadOrderList(url, func, dateObj) {
 }
 
 function processOrders(data) {
-    $(".cssload-container").fadeOut(100);
+    $(".cssload-container").fadeOut(100).remove();
     if (data) {
         Object.keys(data).forEach(function (key) {
-            let label = key;
+            let label = '';
+            let date = new Date(key);
+            label += date.getDate() + ' ';
+            label += getMonthName(date.getMonth()) + ' ';
+            label += date.getFullYear();
             // if (key === getCurrentDate()) {
             //     label = 'Today';
             // } else {
@@ -57,7 +62,7 @@ function processOrders(data) {
             })
         });
     }  else {
-        $(".main-div").append("<h1>No orders</h1>");
+        $("#orders").append("<h1>No orders</h1>");
     }
     $(".container-div").fadeIn(300);
 }
@@ -113,4 +118,8 @@ function getCurrentDate() {
     simpleDate = now.toISOString();
     simpleDate = simpleDate.substr(0,10);
     return simpleDate;
+}
+
+function getMonthName(number) {
+    return window.monthList[number];
 }

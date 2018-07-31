@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ua.product.manager.containers.SimpleStringContainer;
 import ua.product.manager.models.Order;
+import ua.product.manager.models.Product;
 import ua.product.manager.services.interfaces.OrderService;
 import ua.product.manager.services.interfaces.UserService;
 
@@ -51,5 +52,32 @@ public class OrdersRestController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(orders, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/product", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> products = orderService.getAllProducts();
+        if (products.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/product-block/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Void> blockProduct(@PathVariable int id) {
+        orderService.blockProduct(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/product-unblock/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Void> unblockProduct(@PathVariable int id) {
+        orderService.unblockProduct(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/product-remove/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Void> removeProduct(@PathVariable int id) {
+        orderService.removeProduct(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

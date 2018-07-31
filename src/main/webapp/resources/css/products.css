@@ -1,0 +1,15 @@
+.list-elem {
+    margin: 1%;
+    background-color: snow;
+    padding: 1%;
+    border-radius: 7px;
+    border-top: 6px solid #d9740c;
+}
+
+.name-td {
+    width: 80%;
+}
+
+.btn-td {
+    width: 10%;
+}

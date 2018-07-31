@@ -3,6 +3,7 @@ package ua.product.manager.services.interfaces;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.transaction.annotation.Transactional;
 import ua.product.manager.models.Order;
+import ua.product.manager.models.Product;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +23,18 @@ public interface OrderService {
     Map<String, List<Order>> getOrders(String username);
 
     Order getNewOrder();
+
+    @Secured("ROLE_ADMIN")
+    void blockProduct(int productId);
+
+    @Secured("ROLE_ADMIN")
+    void unblockProduct(int productId);
+
+    @Secured("ROLE_ADMIN")
+    void removeProduct(int productId);
+
+    @Secured("ROLE_ADMIN")
+    List<Product> getAllProducts();
 
     @Secured("ROLE_ADMIN")
     void removeOrder(int orderId);

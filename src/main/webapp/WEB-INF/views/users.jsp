@@ -28,8 +28,13 @@
                 </li>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/all-orders"/>">All orders<span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/all-orders"/>">Orders<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -45,14 +50,6 @@
                     <th class="th-content th-content-2">FULL NAME</th>
                     <th class="th-content th-content-id">ORDERS</th>
                 </tr>
-                <%--<c:forEach var="user" items="${users}">--%>
-                    <%--<tr class="tr-users" onclick="location.href='/${currentUserName}/users/get/${user.id}'">--%>
-                        <%--<td class="td-content th-content-id">${user.id}</td>--%>
-                        <%--<td class="td-content th-content-2">${user.companyName}</td>--%>
-                        <%--<td class="td-content th-content-2">${user.fullName}</td>--%>
-                        <%--<td class="td-content th-content-id">54</td>--%>
-                    <%--</tr>--%>
-                <%--</c:forEach>--%>
             </table>
         </div>
     </div>

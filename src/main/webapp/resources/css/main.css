@@ -28,7 +28,7 @@ html {
 
 
 .content-box {
-    margin: 2% 0;
+    margin: 1% 0;
     padding: 2%;
     border-radius: 0.5vh;
     background-color: snow;
@@ -104,14 +104,14 @@ html {
     padding-bottom: 3%;
 }
 
-.btn-bar-2 {
+.tab-bar {
     width: 80%;
-    margin: 1% 10%;
+    margin: 1% 10% 0;
     background: snow;
     padding: 0.3%;
 }
 
-.btn-1 {
+.tab {
     width: 15%;
     display: inline-block;
     border-radius: 3px;
@@ -120,7 +120,7 @@ html {
 
 }
 
-.btn-1:hover {
+.tab:hover {
     border-bottom: 7px solid #333333;
 }
 

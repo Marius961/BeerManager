@@ -111,6 +111,12 @@
 }
 
 .date-header {
-    border-bottom: 0.1em solid #acacac;
+    background-color: #008800;
+    font-size: 2em;
+    font-family: "Segoe UI Semibold", serif;
+    color: snow;
+    padding: 0.5%;
+    border-radius: 3px;
+    box-shadow: 0 0.3em 0.7em #cbcbcb;
 }
 

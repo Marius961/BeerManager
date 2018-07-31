@@ -110,6 +110,26 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public void blockProduct(int productId) {
+        productDAO.blockProduct(productId);
+    }
+
+    @Override
+    public void unblockProduct(int productId) {
+        productDAO.unblockProduct(productId);
+    }
+
+    @Override
+    public void removeProduct(int productId) {
+        productDAO.removeProduct(productId);
+    }
+
+    @Override
+    public List<Product> getAllProducts() {
+        return productDAO.getAllProducts();
+    }
+
+    @Override
     public void removeOrder(int orderId) {
         orderDAO.removeOrder(orderId);
     }
