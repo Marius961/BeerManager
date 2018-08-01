@@ -3,11 +3,27 @@ $(document).ready(function () {
 });
 
 function showProductsList() {
+    $(".tab").css('border-bottom', '7px solid #ededed');
+    $("#btn1").css('border-bottom', '7px solid black');
+    $(".main-div").html("");
     loadProductsList('/product', processProducts);
 }
 
+function showBlockedProductList() {
+    $(".tab").css('border-bottom', '7px solid #ededed');
+    $("#btn2").css('border-bottom', '7px solid black');
+    $(".main-div").html("");
+    loadProductsList('/product/0', processProducts);
+}
+
+function showUnblockedProducts() {
+    $(".tab").css('border-bottom', '7px solid #ededed');
+    $("#btn3").css('border-bottom', '7px solid black');
+    $(".main-div").html("");
+    loadProductsList('/product/1', processProducts);
+}
 function blockProduct(productId) {
-    sendRequest("/product-block/", productId, 'POST', switchButton);
+    sendRequest("/product-block/", productId, 'POST', removeListElement);
 }
 
 function unblockProduct(productId) {
@@ -76,7 +92,6 @@ function addListElement(element) {
 function removeListElement(productId) {
     let obj = $("#product" + productId);
     obj.slideToggle(300);
-    // obj.fadeOut(200);
     setTimeout(function () {
         obj.remove()
     }, 500);

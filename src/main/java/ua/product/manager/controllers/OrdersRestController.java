@@ -12,6 +12,7 @@ import ua.product.manager.services.interfaces.OrderService;
 import ua.product.manager.services.interfaces.UserService;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -57,6 +58,20 @@ public class OrdersRestController {
     @RequestMapping(value = "/product", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = orderService.getAllProducts();
+        if (products.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/product/{statusCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Product>> getAllProducts(@PathVariable int statusCode) {
+        List<Product> products;
+        if (statusCode == 0) {
+            products = orderService.getNotActiveProducts();
+        } else {
+            products = orderService.getActiveProducts();
+        }
         if (products.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

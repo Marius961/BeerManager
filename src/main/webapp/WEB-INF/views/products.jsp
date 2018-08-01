@@ -41,22 +41,16 @@
     </nav>
 </header>
 <main class="background">
+    <div class="tab-bar">
+        <div class="tab" id="btn1" onclick="showProductsList()"><span class="btn-label">All</span></div>
+        <div class="tab" id="btn2" onclick="showBlockedProductList()"><span class="btn-label">NotActive</span></div>
+        <div class="tab" id="btn3" onclick="showUnblockedProducts()"><span class="btn-label">Active</span></div>
+    </div>
     <div class="main-div">
-        <%--<div class="list-elem">--%>
-            <%--<table style="width: 100%">--%>
-                <%--<tr>--%>
-                    <%--<th class="name-td">Продукт</th>--%>
-                    <%--<td class="btn-td"><button class="btn btn-secondary">Заблокувати</button></td>--%>
-                    <%--<td class="btn-td"><button class="btn btn-danger">Видалити</button></td>--%>
-                <%--</tr>--%>
-            <%--</table>--%>
-            <%--<div>--%>
-                <%--<H6>Опис</H6>--%>
-                <%--<p>Опис продукту</p>--%>
-            <%--</div>--%>
-        <%--</div>--%>
     </div>
 </main>
 <script src="<%=request.getContextPath()%>/resources/js/products.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

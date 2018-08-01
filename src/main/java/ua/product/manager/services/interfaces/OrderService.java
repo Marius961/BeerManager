@@ -22,6 +22,10 @@ public interface OrderService {
 
     Map<String, List<Order>> getOrders(String username);
 
+    List<Product> getActiveProducts();
+
+    List<Product> getNotActiveProducts();
+
     Order getNewOrder();
 
     @Secured("ROLE_ADMIN")

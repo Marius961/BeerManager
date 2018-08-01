@@ -96,6 +96,16 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Product> getActiveProducts() {
+        return productDAO.getActiveProducts();
+    }
+
+    @Override
+    public List<Product> getNotActiveProducts() {
+        return productDAO.getNotActiveProducts();
+    }
+
+    @Override
     public Order getNewOrder() {
         Order order = new Order();
         List<Product> allProducts = productDAO.getAllProducts();

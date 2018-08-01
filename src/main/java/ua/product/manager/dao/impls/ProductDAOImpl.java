@@ -35,6 +35,26 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
+    public List<Product> getActiveProducts() {
+        String sql = "SELECT * FROM products WHERE active=1";
+        try {
+            return jdbcTemplate.query(sql, new ProductMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Product> getNotActiveProducts() {
+        String sql = "SELECT * FROM products WHERE active=0";
+        try {
+            return jdbcTemplate.query(sql, new ProductMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
     public Product getProductById(int productId) {
         String sql = "SELECT * FROM products WHERE id=:id";
         MapSqlParameterSource params = new MapSqlParameterSource();

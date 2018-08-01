@@ -10,6 +10,10 @@ public interface ProductDAO {
 
     List<Product> getAllProducts();
 
+    List<Product> getActiveProducts();
+
+    List<Product> getNotActiveProducts();
+
     Product getProductById(int productId);
 
     void insertProduct(Product product);
