@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
-<body>
+<body class="background">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Product manager</a>
@@ -42,11 +42,11 @@
 </header>
 <main class="background">
     <div class="tab-bar">
-        <div class="tab" id="btn1" onclick="showProductsList()"><span class="btn-label">All</span></div>
-        <div class="tab" id="btn2" onclick="showBlockedProductList()"><span class="btn-label">NotActive</span></div>
-        <div class="tab" id="btn3" onclick="showUnblockedProducts()"><span class="btn-label">Active</span></div>
+        <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">All</span></div>
+        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">NotActive</span></div>
+        <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Active</span></div>
     </div>
-    <div class="main-div">
+    <div class="main-div" style="display: none">
     </div>
 </main>
 <script src="<%=request.getContextPath()%>/resources/js/products.js"></script>

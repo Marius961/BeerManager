@@ -7,15 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bf79b8b-cf51-4810-a6d3-50db104505fc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/ProductManager.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ProductManager.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,95 +80,65 @@
     <session id="407303459">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
-          <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="6" />
+          <entry key="project.closed" value="21" />
+          <entry key="project.open.time.10" value="4" />
+          <entry key="project.open.time.11" value="3" />
+          <entry key="project.open.time.12" value="7" />
           <entry key="project.open.time.13" value="6" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.open.time.8" value="8" />
-          <entry key="project.open.time.9" value="8" />
-          <entry key="project.opened" value="42" />
+          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.9" value="10" />
+          <entry key="project.opened" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="12" />
-          <entry key="java" value="28" />
-          <entry key="js" value="14" />
-          <entry key="jsp" value="16" />
+          <entry key="css" value="13" />
+          <entry key="java" value="33" />
+          <entry key="js" value="24" />
+          <entry key="jsp" value="19" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="12" />
-          <entry key="JAVA" value="28" />
-          <entry key="JSP" value="16" />
-          <entry key="JavaScript" value="14" />
+          <entry key="CSS" value="13" />
+          <entry key="JAVA" value="33" />
+          <entry key="JSP" value="19" />
+          <entry key="JavaScript" value="24" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="444" />
-          <entry key="java" value="1305" />
-          <entry key="js" value="1874" />
-          <entry key="jsp" value="395" />
+          <entry key="java" value="1338" />
+          <entry key="js" value="3004" />
+          <entry key="jsp" value="446" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="444" />
           <entry key="HTML" value="11" />
-          <entry key="JAVA" value="1305" />
-          <entry key="JSP" value="395" />
-          <entry key="JavaScript" value="1863" />
+          <entry key="JAVA" value="1338" />
+          <entry key="JSP" value="446" />
+          <entry key="JavaScript" value="2993" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="903">
-              <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/products.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-              <folding>
-                <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -254,21 +222,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userData.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/models/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/OrderDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/OrderDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/orders.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrderController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/products.css" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" />
       </list>
     </option>
@@ -315,10 +283,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-70" />
-    <option name="width" value="785" />
-    <option name="height" value="895" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-81" />
+    <option name="width" value="796" />
+    <option name="height" value="906" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -328,19 +296,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WebAppProject" type="1abcf292:AndroidViewProjectNode" />
-              <item name="WebAppProject" type="1039202d:NonAndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -495,6 +450,19 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WebAppProject" type="1abcf292:AndroidViewProjectNode" />
+              <item name="WebAppProject" type="1039202d:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -506,7 +474,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533127143036" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533205051317" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)&#10;SQL Server (Microsoft)" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -516,19 +484,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\config" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\config\appServlet" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\locale" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views" />
       <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\css" />
       <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\images" />
       <recent name="C:\Users\mapiy\IdeaProjects\WebAppProject\src\main\webapp\WEB-INF\lib" />
       <recent name="C:\Users\mapiy\IdeaProjects\WebAppProject\src\main\webapp\resources\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\config" />
+      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\config\appServlet" />
+      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources" />
+      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\locale" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -973,11 +941,19 @@
       <workItem from="1533126407878" duration="1121000" />
       <workItem from="1533127719781" duration="637000" />
       <workItem from="1533140804424" duration="896000" />
+      <workItem from="1533201595597" duration="1031000" />
+      <workItem from="1533202753092" duration="1025000" />
+      <workItem from="1533203961622" duration="1089000" />
+      <workItem from="1533205169345" duration="1152000" />
+      <workItem from="1533207186723" duration="997000" />
+      <workItem from="1533208541450" duration="1164000" />
+      <workItem from="1533209751435" duration="1105000" />
+      <workItem from="1533210963281" duration="421000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="474739000" />
+    <option name="totallyTimeSpent" value="482723000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -990,9 +966,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21116817" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22400513" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2496382" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1010,7 +985,7 @@
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32795697" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3266129" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50289434" side_tool="true" weight="0.32859176" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3266129" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32258064" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32795697" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32795697" />
       <window_info anchor="bottom" id="Spring" order="13" weight="0.32795697" />
@@ -1115,13 +1090,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.3.RELEASE/spring-web-5.0.3.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1182,13 +1150,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4768">
           <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/orders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="43" column="15" selection-start-line="43" selection-start-column="15" selection-end-line="43" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -1322,6 +1283,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/orders.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="66" column="13" lean-forward="true" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrderController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
@@ -1329,45 +1297,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/orders.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AdminController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="903">
-          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="37" />
+        <state relative-caret-position="588">
+          <caret line="42" column="5" lean-forward="true" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="44" column="44" selection-start-line="44" selection-start-column="44" selection-end-line="44" selection-end-column="44" />
+        <state relative-caret-position="1050">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/orders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="766">
+          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="54" column="59" lean-forward="true" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="1764">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
           </folding>

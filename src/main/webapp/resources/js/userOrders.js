@@ -1,29 +1,32 @@
 $(document).ready(function () {
     window.monthList = ['Січня', 'Лютого','Березня','Квітня','Травня','Червня','Липня','Серпня','Вересня','Жовтня','Листопада','Грудня'];
-    showCurrentDateOrders();
+    showCurrentDateOrders($("#tab1"));
 });
 
-function showCurrentDateOrders() {
+function showCurrentDateOrders(tab) {
     $(".tab").css('border-bottom', '7px solid #ededed');
-    $("#btn1").css('border-bottom', '7px solid black');
+    $(tab).css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : 'CURRENT_DATE'
     };
-    $("#orders").fadeOut(300).html('');
-    $("#orders").fadeIn(300);
-    loadOrderList('/user-orders', processOrders, dateObj);
+    $(".container-div").fadeOut(100);
+    setTimeout(function () {
+        $("#orders").html('');
+        loadOrderList('/user-orders', processOrders, dateObj);
+    }, 100);
 }
 
-function showOtherOrders() {
+function showOtherOrders(tab) {
     $(".tab").css('border-bottom', '7px solid #ededed');
-    $("#btn2").css('border-bottom', '7px solid black');
+    $(tab).css('border-bottom', '7px solid black');
     let dateObj = {
         "str" : '!CURRENT_DATE'
     };
-    $("#orders").fadeOut(300).html('');
-    $("#orders").fadeIn(300);
-    loadOrderList('/user-orders', processOrders, dateObj);
-    $(".show-btn").remove();
+    $(".container-div").fadeOut(100);
+    setTimeout(function () {
+        $("#orders").html('');
+        loadOrderList('/user-orders', processOrders, dateObj);
+    }, 150);
 }
 
 function loadOrderList(url, func, dateObj) {
@@ -34,6 +37,7 @@ function loadOrderList(url, func, dateObj) {
         url: String(url),
         type: "POST",
         dataType: "json",
+        async: true,
         data: JSON.stringify(dateObj),
         contentType: 'application/json',
         success: function (data) {

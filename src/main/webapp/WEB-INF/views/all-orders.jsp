@@ -42,8 +42,8 @@
 </header>
 <main>
     <div class="tab-bar">
-        <div class="tab" id="btn1" onclick="showCurrentDateOrders()"><span class="btn-label">Today</span></div>
-        <div class="tab" id="btn2" onclick="showOtherOrders()"><span class="btn-label">Other days</span></div>
+        <div class="tab" id="tab1" onclick="showCurrentDateOrders(this)"><span class="btn-label">Today</span></div>
+        <div class="tab" onclick="showOtherOrders(this)"><span class="btn-label">Other days</span></div>
     </div>
     <div class="main-div">
         <div class="container-div">
