@@ -1,35 +1,45 @@
 let mainDiv = $(".main-div");
 let allTabs = $(".tab");
-
+let currentTab = '';
 $(document).ready(function () {
-    showProductsList($("#tab1"));
+    currentTab = '';
+    showProductsList($("#tab1")[0]);
 });
 
 function showProductsList(tab) {
-    clearTabSelection();
-    selectTab(tab);
-    mainDiv.fadeOut(100);
-    setTimeout(function () {
-        loadProductsList('/product', processProducts);
-    }, 100);
+    if (tab !== currentTab) {
+        currentTab = tab;
+        clearTabSelection();
+        selectTab(tab);
+        mainDiv.fadeOut(100);
+        setTimeout(function () {
+            loadProductsList('/product', processProducts);
+        }, 100);
+    }
 }
 
 function showBlockedProductList(tab) {
-    clearTabSelection();
-    selectTab(tab);
-    mainDiv.fadeOut(100);
-    setTimeout(function () {
-        loadProductsList('/product/0', processProducts);
-    }, 100);
+    if (tab !== currentTab) {
+        currentTab = tab;
+        clearTabSelection();
+        selectTab(tab);
+        mainDiv.fadeOut(100);
+        setTimeout(function () {
+            loadProductsList('/product/0', processProducts);
+        }, 100);
+    }
 }
 
 function showUnblockedProducts(tab) {
-    clearTabSelection();
-    selectTab(tab);
-    mainDiv.fadeOut(100);
-    setTimeout(function () {
-        loadProductsList('/product/1', processProducts);
-    }, 100);
+    if (tab !== currentTab) {
+        currentTab = tab;
+        clearTabSelection();
+        selectTab(tab);
+        mainDiv.fadeOut(100);
+        setTimeout(function () {
+            loadProductsList('/product/1', processProducts);
+        }, 100);
+    }
 }
 function blockProduct(productId) {
     sendRequest("/product-block/", productId, 'POST', removeListElement);
@@ -110,11 +120,17 @@ function addListElement(element) {
 }
 
 function removeListElement(productId) {
-    let obj = $("#product" + productId);
-    obj.slideToggle(300);
-    setTimeout(function () {
-        obj.remove()
-    }, 500);
+    let tab1 = $("#tab1");
+    if (currentTab === $(tab1)[0]) {
+        currentTab = '';
+        showProductsList($(tab1)[0]);
+    } else {
+        let obj = $("#product" + productId);
+        obj.slideToggle(300);
+        setTimeout(function () {
+            obj.remove()
+        }, 500);
+    }
 }
 
 function clearTabSelection() {

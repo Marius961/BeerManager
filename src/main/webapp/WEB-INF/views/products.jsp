@@ -43,7 +43,7 @@
 <main class="background">
     <div class="tab-bar">
         <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">All</span></div>
-        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">NotActive</span></div>
+        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Not active</span></div>
         <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Active</span></div>
     </div>
     <div class="main-div" style="display: none">

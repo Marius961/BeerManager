@@ -117,7 +117,7 @@ html {
     border-radius: 3px;
     border-bottom: 7px solid #ededed;
     padding: 0.3%;
-
+    transition: 100ms;
 }
 
 .tab:hover {

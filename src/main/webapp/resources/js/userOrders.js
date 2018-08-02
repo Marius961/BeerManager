@@ -1,32 +1,40 @@
+let currentTab = '';
+
 $(document).ready(function () {
     window.monthList = ['Січня', 'Лютого','Березня','Квітня','Травня','Червня','Липня','Серпня','Вересня','Жовтня','Листопада','Грудня'];
-    showCurrentDateOrders($("#tab1"));
+    showCurrentDateOrders($("#tab1")[0]);
 });
 
 function showCurrentDateOrders(tab) {
-    $(".tab").css('border-bottom', '7px solid #ededed');
-    $(tab).css('border-bottom', '7px solid black');
-    let dateObj = {
-        "str" : 'CURRENT_DATE'
-    };
-    $(".container-div").fadeOut(100);
-    setTimeout(function () {
-        $("#orders").html('');
-        loadOrderList('/user-orders', processOrders, dateObj);
-    }, 100);
+    if (tab !== currentTab) {
+        currentTab = tab;
+        $(".tab").css('border-bottom', '7px solid #ededed');
+        $(tab).css('border-bottom', '7px solid black');
+        let dateObj = {
+            "str" : 'CURRENT_DATE'
+        };
+        $(".container-div").fadeOut(100);
+        setTimeout(function () {
+            $("#orders").html('');
+            loadOrderList('/user-orders', processOrders, dateObj);
+        }, 100);
+    }
 }
 
 function showOtherOrders(tab) {
-    $(".tab").css('border-bottom', '7px solid #ededed');
-    $(tab).css('border-bottom', '7px solid black');
-    let dateObj = {
-        "str" : '!CURRENT_DATE'
-    };
-    $(".container-div").fadeOut(100);
-    setTimeout(function () {
-        $("#orders").html('');
-        loadOrderList('/user-orders', processOrders, dateObj);
-    }, 150);
+    if (tab !== currentTab) {
+        currentTab = tab;
+        $(".tab").css('border-bottom', '7px solid #ededed');
+        $(tab).css('border-bottom', '7px solid black');
+        let dateObj = {
+            "str" : '!CURRENT_DATE'
+        };
+        $(".container-div").fadeOut(100);
+        setTimeout(function () {
+            $("#orders").html('');
+            loadOrderList('/user-orders', processOrders, dateObj);
+        }, 150);
+    }
 }
 
 function loadOrderList(url, func, dateObj) {
