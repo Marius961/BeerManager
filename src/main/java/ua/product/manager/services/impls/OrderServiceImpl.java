@@ -140,6 +140,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public void addProduct(Product product) {
+        productDAO.insertProduct(product);
+    }
+
+    @Override
     public void removeOrder(int orderId) {
         orderDAO.removeOrder(orderId);
     }

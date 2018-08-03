@@ -46,7 +46,11 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name="password" class="form-control" id="exampleInputPassword1">
                 </div>
-                <input type="checkbox" name="rememberMe" id="rememberMe">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
+                    <label class="custom-control-label" for="rememberMe">Remember me</label>
+                </div>
+                <br>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

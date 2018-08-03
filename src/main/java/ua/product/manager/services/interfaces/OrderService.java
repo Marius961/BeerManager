@@ -41,5 +41,8 @@ public interface OrderService {
     List<Product> getAllProducts();
 
     @Secured("ROLE_ADMIN")
+    void addProduct(Product product);
+
+    @Secured("ROLE_ADMIN")
     void removeOrder(int orderId);
 }

@@ -2,8 +2,7 @@ let mainDiv = $(".main-div");
 let allTabs = $(".tab");
 let currentTab = '';
 $(document).ready(function () {
-    currentTab = '';
-    showProductsList($("#tab1")[0]);
+    moveToFirstTab();
 });
 
 function showProductsList(tab) {
@@ -122,8 +121,7 @@ function addListElement(element) {
 function removeListElement(productId) {
     let tab1 = $("#tab1");
     if (currentTab === $(tab1)[0]) {
-        currentTab = '';
-        showProductsList($(tab1)[0]);
+        moveToFirstTab();
     } else {
         let obj = $("#product" + productId);
         obj.slideToggle(300);
@@ -135,8 +133,101 @@ function removeListElement(productId) {
 
 function clearTabSelection() {
     allTabs.css('border-bottom', '7px solid #ededed');
+    $(".tab-search").css('border', '0');
 }
 
 function selectTab(tab) {
     $(tab).css('border-bottom', '7px solid black');
+}
+
+function addForm() {
+    $("body").append("" +
+        "<div class='b-popup'>\n" +
+        "        <div class='b-popup-content'>\n" +
+        "            <form>\n" +
+        "                <div class='form-group'>\n" +
+        "                    <label for='name'>Product name</label>\n" +
+        "                    <input type='text' class='form-control' id='name' placeholder=''/>\n" +
+        "                </div>\n" +
+        "                <div class='form-group'>\n" +
+        "                    <label for=description'>Product description</label>\n" +
+        "                    <input type='text' class='form-control' id='description' placeholder=''/>\n" +
+        "                </div>\n" +
+        "                <div class='custom-control custom-checkbox'>\n" +
+        "                    <input type='checkbox' class='custom-control-input' id='active'>\n" +
+        "                    <label class='custom-control-label' for='active'>Activate product</label>\n" +
+        "                </div>" +
+        "                <br>\n" +
+        "                <button type='button' class='btn btn-primary' onclick='validateAndSendForm(this.form)'>Submit</button>\n" +
+        "                <button type='button' class='btn btn-primary' onclick='removeForm()'>Cancel</button>\n" +
+        "            </form>\n" +
+        "        </div>\n" +
+        "    </div>");
+    $(".b-popup").fadeIn(100);
+}
+
+function removeForm() {
+    $(".b-popup").fadeOut(100).remove();
+}
+
+function validateAndSendForm(form) {
+    let  hasErrors = false;
+    let elems = form.elements;
+    $("#productName").click(function () {
+        resetError(elems["name"].parentNode);
+    });
+    if (!elems["name"].value || elems["name"].value.length <=3) {
+        hasErrors = true;
+        showError(elems["name"].parentNode, 'Product name must be longer than 3 symbols');
+    }
+    if (!hasErrors) {
+        sendForm('POST', processForm(form));
+    }
+}
+
+function showError(container, errorMessage) {
+    if (container.className !== 'error') {
+        container.className = 'error';
+        let msgElem = document.createElement('span');
+        msgElem.className = "error-message";
+        msgElem.innerHTML = errorMessage;
+        container.appendChild(msgElem);
+    }
+}
+
+function resetError(container) {
+    container.className = '';
+    if (container.lastChild.className === "error-message") {
+        container.removeChild(container.lastChild);
+    }
+}
+
+function processForm(elems) {
+    let active = $(elems["active"]).is(":checked");
+    alert(active);
+    return {
+        "id" : 0,
+        "name" : elems["name"].value,
+        "description" : elems["description"].value,
+        "active" : active
+    }
+}
+
+function sendForm(method, product) {
+    $.ajax ({
+        type : String(method),
+        url : '/product',
+        dataType: "json",
+        contentType : 'application/json',
+        data : JSON.stringify(product),
+        complete : function () {
+            removeForm();
+            moveToFirstTab();
+        }
+    });
+}
+
+function moveToFirstTab() {
+    currentTab = '';
+    showProductsList($("#tab1")[0]);
 }

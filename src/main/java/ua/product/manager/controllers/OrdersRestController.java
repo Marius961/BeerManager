@@ -64,6 +64,15 @@ public class OrdersRestController {
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/product", method = RequestMethod.POST)
+    public ResponseEntity<Void> addProduct(@RequestBody Product product) {
+        if (product != null) {
+            orderService.addProduct(product);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
     @RequestMapping(value = "/product/{statusCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Product>> getAllProducts(@PathVariable int statusCode) {
         List<Product> products;

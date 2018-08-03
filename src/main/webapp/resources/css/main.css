@@ -124,7 +124,43 @@ html {
     border-bottom: 7px solid #333333;
 }
 
+.tab-search {
+    width: 20%;
+    float: right;
+}
+
+.add-btn {
+    width: 11%;
+    display: inline-block;
+    float: right;
+    transition: 100ms;
+    border-radius: 3px;
+    padding: 0.3%;
+}
+
+.add-img {
+    height: 2.2vh;
+    width: 2.2vh;
+}
 .btn-label {
     font-size: 3vh;
     color: grey;
+}
+
+.b-popup{
+    display: none;
+    width:100%;
+    height: 2000px;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0;
+}
+.b-popup .b-popup-content{
+    margin:120px auto 0 auto;
+    width:60%;
+    padding:10px;
+    background-color: #eaeaea;
+    border-radius:1px;
+    box-shadow: 0 0 10px #000;
 }
