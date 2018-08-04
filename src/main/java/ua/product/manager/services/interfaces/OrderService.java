@@ -12,10 +12,8 @@ public interface OrderService {
 
     void createOrder(Order order);
 
-
     Order getOrderByUserId(int userId);
 
-    @Secured("ROLE_ADMIN")
     Map<String, List<Order>> getOrdersWithUserDataByDate(String date);
 
     Map<String, List<Order>> getOrders(int userId);
@@ -28,21 +26,17 @@ public interface OrderService {
 
     Order getNewOrder();
 
-    @Secured("ROLE_ADMIN")
     void blockProduct(int productId);
 
-    @Secured("ROLE_ADMIN")
     void unblockProduct(int productId);
 
-    @Secured("ROLE_ADMIN")
     void removeProduct(int productId);
 
-    @Secured("ROLE_ADMIN")
     List<Product> getAllProducts();
 
-    @Secured("ROLE_ADMIN")
+    List<Product> searchProduct(String request);
+
     void addProduct(Product product);
 
-    @Secured("ROLE_ADMIN")
     void removeOrder(int orderId);
 }

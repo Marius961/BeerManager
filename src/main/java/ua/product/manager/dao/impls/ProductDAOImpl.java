@@ -67,6 +67,18 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
+    public List<Product> searchProducts(String request) {
+        String sql = "SELECT * FROM products WHERE name LIKE :request";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("name", "%" + request + "%");
+        try {
+            return jdbcTemplate.query(sql, params, new ProductMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
     public void insertProduct(Product product) {
         String sql = "INSERT INTO products (name, description, active) VALUES (:name, :description, :active)";
         MapSqlParameterSource params = new MapSqlParameterSource();

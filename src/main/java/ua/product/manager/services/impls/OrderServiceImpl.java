@@ -140,6 +140,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Product> searchProduct(String request) {
+        return productDAO.searchProducts(request);
+    }
+
+    @Override
     public void addProduct(Product product) {
         productDAO.insertProduct(product);
     }

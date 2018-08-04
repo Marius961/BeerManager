@@ -104,4 +104,13 @@ public class OrdersRestController {
         orderService.removeProduct(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/product-search", method = RequestMethod.GET)
+    public ResponseEntity<List<Product>> searchProduct(@RequestBody SimpleStringContainer request) {
+        List<Product> products = orderService.searchProduct(request.getStr());
+        if (products.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(products, HttpStatus.OK);
+    }
 }
