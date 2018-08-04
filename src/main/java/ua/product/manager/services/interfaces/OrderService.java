@@ -20,10 +20,6 @@ public interface OrderService {
 
     Map<String, List<Order>> getOrders(String username);
 
-    List<Product> getActiveProducts();
-
-    List<Product> getNotActiveProducts();
-
     Order getNewOrder();
 
     void blockProduct(int productId);
@@ -33,8 +29,6 @@ public interface OrderService {
     void removeProduct(int productId);
 
     List<Product> getAllProducts();
-
-    List<Product> searchProduct(String request);
 
     void addProduct(Product product);
 

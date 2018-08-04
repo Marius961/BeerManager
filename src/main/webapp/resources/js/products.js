@@ -1,7 +1,12 @@
 let mainDiv = $(".main-div");
 let allTabs = $(".tab");
 let currentTab = '';
+let allProducts;
+let activeProducts = [];
+let notActiveProducts = [];
+let lock = false;
 $(document).ready(function () {
+    loadProductsList('/product', sortOrders);
     moveToFirstTab();
 });
 
@@ -12,7 +17,7 @@ function showProductsList(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
-            loadProductsList('/product', processProducts);
+            processProducts(this.allProducts)
         }, 100);
     }
 }
@@ -24,7 +29,7 @@ function showBlockedProductList(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
-            loadProductsList('/product/0', processProducts);
+            processProducts(this.notActiveProducts);
         }, 100);
     }
 }
@@ -36,16 +41,19 @@ function showUnblockedProducts(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
-            loadProductsList('/product/1', processProducts);
+            processProducts(this.activeProducts);
         }, 100);
     }
 }
 function blockProduct(productId) {
-    sendRequest("/product-block/", productId, 'POST', removeListElement);
+    if (!lock) {
+        lock = true;
+        sendRequest("/product-block/", productId, 'POST', changeButtonLabel);
+    }
 }
 
 function unblockProduct(productId) {
-    sendRequest("/product-unblock/", productId, 'POST', removeListElement);
+    sendRequest("/product-unblock/", productId, 'POST', changeButtonLabel);
 }
 
 function removeProduct(productId) {
@@ -56,7 +64,6 @@ function loadProductsList(url, func) {
     $("main").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
     "</div>");
-    mainDiv.html("");
     $.ajax ({
         url: String(url),
         type: "GET",
@@ -76,13 +83,12 @@ function sendRequest(url, id, method, func) {
         dataType: "json",
         data: ({}),
         contentType: 'application/json',
-        complete: function () {
-            func(id);
-        }
+        success: func(id)
     });
 }
 
 function processProducts(data) {
+    mainDiv.html("");
     if (data) {
         $.each(data, function (index, element) {
             addListElement(element);
@@ -118,11 +124,11 @@ function addListElement(element) {
         "</div>\n")
 }
 
+
+
 function removeListElement(productId) {
     let tab1 = $("#tab1");
-    if (currentTab === $(tab1)[0]) {
-        moveToFirstTab();
-    } else {
+    if (currentTab !== $(tab1)[0]) {
         let obj = $("#product" + productId);
         obj.slideToggle(300);
         setTimeout(function () {
@@ -230,4 +236,37 @@ function sendForm(method, product) {
 function moveToFirstTab() {
     currentTab = '';
     showProductsList($("#tab1")[0]);
+}
+
+function sortOrders(data) {
+    this.allProducts = data;
+    let tempNotActiveProducts = [];
+    let tempActiveProducts = [];
+    $.each(this.allProducts, function (index, element) {
+        if (!element.active) {
+            tempNotActiveProducts.push(element);
+        } else {
+            tempActiveProducts.push(element);
+        }
+    });
+    this.notActiveProducts = tempNotActiveProducts;
+    this.activeProducts = tempActiveProducts;
+}
+
+function changeButtonLabel(id) {
+    let element = $("#product" + id);
+    let blockBtn = element.find(".btn").eq(0);
+    if (blockBtn.html() === "Block") {
+        blockBtn.html("Unblock");
+        blockBtn.click(function () {
+            unblockProduct(id);
+        });
+    } else {
+        blockBtn.html("Block");
+        blockBtn.click(function () {
+            blockProduct(id);
+        });
+    }
+    removeListElement(id);
+    lock = false;
 }

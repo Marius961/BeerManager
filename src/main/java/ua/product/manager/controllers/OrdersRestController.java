@@ -73,20 +73,6 @@ public class OrdersRestController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @RequestMapping(value = "/product/{statusCode}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<Product>> getAllProducts(@PathVariable int statusCode) {
-        List<Product> products;
-        if (statusCode == 0) {
-            products = orderService.getNotActiveProducts();
-        } else {
-            products = orderService.getActiveProducts();
-        }
-        if (products.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(products, HttpStatus.OK);
-    }
-
     @RequestMapping(value = "/product-block/{id}", method = RequestMethod.POST)
     public ResponseEntity<Void> blockProduct(@PathVariable int id) {
         orderService.blockProduct(id);
@@ -103,14 +89,5 @@ public class OrdersRestController {
     public ResponseEntity<Void> removeProduct(@PathVariable int id) {
         orderService.removeProduct(id);
         return new ResponseEntity<>(HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/product-search", method = RequestMethod.GET)
-    public ResponseEntity<List<Product>> searchProduct(@RequestBody SimpleStringContainer request) {
-        List<Product> products = orderService.searchProduct(request.getStr());
-        if (products.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 }
