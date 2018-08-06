@@ -45,17 +45,17 @@
         <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">All</span></div>
         <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Not active</span></div>
         <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Active</span></div>
-        <div class="tab tab-search"  id="search">
-            <div class="input-group">
-                <input type="text" oninput="search(this.value)" class="form-control" placeholder="Products" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                <div class="input-group-append" id="button-addon4">
-                    <button class="btn btn-outline-secondary" type="button">Search</button>
-                </div>
+        <div class="add-btn" style="width: 9%">
+            <button class="btn btn-outline-secondary" type="button" style="font-size: 2vh; height: 100%; width: 100%; padding: 0.5%" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="add-img">Refresh</button>
+        </div>
+        <div class="add-btn">
+            <button class="btn btn-outline-secondary" type="button" style="font-size: 2vh; height: 100%; width: 100%; padding: 0.5%" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="add-img"> Add product</button>
+        </div>
+        <div class="search-field"  id="search">
+            <div class="input-group" >
+                <input style="height: 100%; width: 100%" type="text" oninput="search(this.value)" class="form-control" placeholder="Search" aria-label="Search by products" aria-describedby="button-addon4">
             </div>
         </div>
-        <div class="add-btn" onclick="addForm()"><span class="btn-label">
-            <button class="btn btn-outline-secondary" type="button" style="font-size: 2vh"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="add-img"> Add product</button>
-        </span></div>
     </div>
     <div class="main-div" style="display: none">
     </div>

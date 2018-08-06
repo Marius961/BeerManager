@@ -106,17 +106,19 @@ html {
 
 .tab-bar {
     width: 80%;
+    height: 10%;
     margin: 1% 10% 0;
     background: snow;
-    padding: 0.3%;
+    padding: 1%;
 }
 
 .tab {
     width: 15%;
+    height: 100%;
     display: inline-block;
     border-radius: 3px;
     border-bottom: 7px solid #ededed;
-    padding: 0.3%;
+    padding: 0.5%;
     transition: 100ms;
 }
 
@@ -124,13 +126,28 @@ html {
     border-bottom: 7px solid #333333;
 }
 
-.tab-search {
+
+.search-field {
     width: 20%;
+    height: 100%;
     float: right;
+    display: inline-block;
+    padding: 0.5%;
+    transition: 100ms;
 }
 
 .add-btn {
     width: 11%;
+    height: 100%;
+    display: inline-block;
+    float: right;
+    transition: 100ms;
+    border-radius: 3px;
+    padding: 0.5%;
+}
+
+.refresh-btn {
+    width: 5%;
     display: inline-block;
     float: right;
     transition: 100ms;
@@ -139,8 +156,8 @@ html {
 }
 
 .add-img {
-    height: 2.2vh;
-    width: 2.2vh;
+    height: 1.2em;
+    width: 1.2em;
 }
 .btn-label {
     font-size: 3vh;

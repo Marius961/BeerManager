@@ -4,9 +4,12 @@ let currentTab = '';
 let searchTab = $("#search")[0];
 let allProducts;
 let lock = false;
+
+let defaultBorderStyle = '7px solid #ededed';
+let selectedBorderStyle = '7px solid black';
+
 $(document).ready(function () {
-    loadProductsList('/product', setAllProducts);
-    moveToFirstTab();
+    refreshData();
 });
 
 function showProductsList(tab) {
@@ -154,12 +157,11 @@ function removeListElement(productId) {
 }
 
 function clearTabSelection() {
-    allTabs.css('border-bottom', '7px solid #ededed');
-    $(".tab-search").css('border', '0');
+    allTabs.css('border-bottom', defaultBorderStyle);
 }
 
 function selectTab(tab) {
-    $(tab).css('border-bottom', '7px solid black');
+    $(tab).css('border-bottom', selectedBorderStyle);
 }
 
 function addForm() {
@@ -300,7 +302,6 @@ function search(request) {
         clearTabSelection();
         mainDiv.html("");
         currentTab = searchTab;
-        selectTab(searchTab);
         let results = [];
         for (let i = 0; i <this.allProducts.length; i++) {
             if (this.allProducts[i].name.toUpperCase().match(".*" + request.toUpperCase() +".*")) {
@@ -315,5 +316,10 @@ function search(request) {
     } else {
         moveToFirstTab();
     }
+}
+
+function refreshData() {
+    loadProductsList('/product', setAllProducts);
+    moveToFirstTab();
 }
 
