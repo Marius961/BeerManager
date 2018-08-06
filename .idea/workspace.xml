@@ -9,11 +9,7 @@
     <list default="true" id="2bf79b8b-cf51-4810-a6d3-50db104505fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/ProductManager.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/ProductManager.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -81,17 +77,18 @@
     <session id="407303459">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.10" value="8" />
-          <entry key="project.open.time.11" value="13" />
-          <entry key="project.open.time.12" value="12" />
+          <entry key="project.open.time.11" value="15" />
+          <entry key="project.open.time.12" value="15" />
           <entry key="project.open.time.13" value="7" />
-          <entry key="project.open.time.14" value="2" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.15" value="3" />
           <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.32" value="1" />
           <entry key="project.open.time.34" value="2" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.37" value="1" />
@@ -101,7 +98,7 @@
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="10" />
           <entry key="project.open.time.9" value="10" />
-          <entry key="project.opened" value="76" />
+          <entry key="project.opened" value="86" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -126,8 +123,8 @@
         <counts>
           <entry key="css" value="622" />
           <entry key="java" value="1862" />
-          <entry key="js" value="6383" />
-          <entry key="jsp" value="646" />
+          <entry key="js" value="7973" />
+          <entry key="jsp" value="700" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -135,8 +132,8 @@
           <entry key="CSS" value="622" />
           <entry key="HTML" value="13" />
           <entry key="JAVA" value="1862" />
-          <entry key="JSP" value="646" />
-          <entry key="JavaScript" value="6370" />
+          <entry key="JSP" value="700" />
+          <entry key="JavaScript" value="7960" />
         </counts>
       </usages-collector>
     </session>
@@ -146,8 +143,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            <state relative-caret-position="1029">
+              <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -155,8 +152,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
+            <state relative-caret-position="21">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -199,6 +196,7 @@
       <find>box</find>
       <find>alert</find>
       <find>allOrders</find>
+      <find>allProducts</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -256,7 +254,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/products.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" />
@@ -264,6 +261,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" />
       </list>
     </option>
@@ -311,9 +309,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-78" />
-    <option name="width" value="794" />
-    <option name="height" value="904" />
+    <option name="x" value="-90" />
+    <option name="width" value="805" />
+    <option name="height" value="916" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -323,19 +321,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="WebAppProject" type="1abcf292:AndroidViewProjectNode" />
-              <item name="WebAppProject" type="1039202d:NonAndroidModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -499,6 +486,17 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="WebAppProject" type="1abcf292:AndroidViewProjectNode" />
+              <item name="WebAppProject" type="1039202d:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -510,7 +508,7 @@
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533383079185" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533395117310" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)&#10;SQL Server (Microsoft)" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -1011,11 +1009,21 @@
       <workItem from="1533387054709" duration="1156000" />
       <workItem from="1533388261248" duration="1174000" />
       <workItem from="1533389477583" duration="200000" />
+      <workItem from="1533389782862" duration="998000" />
+      <workItem from="1533392731654" duration="1089000" />
+      <workItem from="1533393938862" duration="1110000" />
+      <workItem from="1533395680367" duration="392000" />
+      <workItem from="1533473886734" duration="275000" />
+      <workItem from="1533547685973" duration="1046000" />
+      <workItem from="1533548842023" duration="1114000" />
+      <workItem from="1533550105792" duration="1146000" />
+      <workItem from="1533551323436" duration="1128000" />
+      <workItem from="1533552560841" duration="904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="508603000" />
+    <option name="totallyTimeSpent" value="517805000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1030,7 +1038,7 @@
     <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19255456" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19512194" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.2496382" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -1401,15 +1409,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="1029">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="257" column="46" selection-start-line="257" selection-start-column="46" selection-end-line="257" selection-end-column="46" />
+        <state relative-caret-position="21">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="n#style#0;n#table#0;n#div#0;n#!!top" expanded="true" />
           </folding>

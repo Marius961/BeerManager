@@ -1,12 +1,11 @@
 let mainDiv = $(".main-div");
 let allTabs = $(".tab");
 let currentTab = '';
+let searchTab = $("#search")[0];
 let allProducts;
-let activeProducts = [];
-let notActiveProducts = [];
 let lock = false;
 $(document).ready(function () {
-    loadProductsList('/product', sortOrders);
+    loadProductsList('/product', setAllProducts);
     moveToFirstTab();
 });
 
@@ -17,6 +16,7 @@ function showProductsList(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
+            mainDiv.html("");
             processProducts(this.allProducts)
         }, 100);
     }
@@ -29,7 +29,14 @@ function showBlockedProductList(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
-            processProducts(this.notActiveProducts);
+            let tempNotActiveProducts = [];
+            $.each(this.allProducts ,function (index, element) {
+                if (!element.active) {
+                    tempNotActiveProducts.push(element);
+                }
+            });
+            mainDiv.html("");
+            processProducts(tempNotActiveProducts);
         }, 100);
     }
 }
@@ -41,7 +48,14 @@ function showUnblockedProducts(tab) {
         selectTab(tab);
         mainDiv.fadeOut(100);
         setTimeout(function () {
-            processProducts(this.activeProducts);
+            let tempActiveProducts = [];
+            $.each(this.allProducts ,function (index, element) {
+                if (element.active) {
+                    tempActiveProducts.push(element);
+                }
+            });
+            mainDiv.html("");
+            processProducts(tempActiveProducts);
         }, 100);
     }
 }
@@ -53,11 +67,17 @@ function blockProduct(productId) {
 }
 
 function unblockProduct(productId) {
-    sendRequest("/product-unblock/", productId, 'POST', changeButtonLabel);
+    if (!lock) {
+        lock = true;
+        sendRequest("/product-unblock/", productId, 'POST', changeButtonLabel);
+    }
 }
 
 function removeProduct(productId) {
-    sendRequest("/product-remove/", productId, 'DELETE', removeListElement);
+    if (!lock) {
+        lock = true;
+        sendRequest("/product-remove/", productId, 'DELETE', removeListElement);
+    }
 }
 
 function loadProductsList(url, func) {
@@ -88,7 +108,6 @@ function sendRequest(url, id, method, func) {
 }
 
 function processProducts(data) {
-    mainDiv.html("");
     if (data) {
         $.each(data, function (index, element) {
             addListElement(element);
@@ -113,7 +132,7 @@ function addListElement(element) {
         "    <table style='width: 100%'>\n" +
         "        <tr>\n" +
         "            <th class='name-td'>"+ element.name +"</th>\n" +
-        "            <td class='btn-td'><button id='' class='btn btn-secondary' onclick='"+ onclick +"'>"+ label +"</button></td>\n" +
+        "            <td class='btn-td'><button class='btn btn-secondary' onclick='"+ onclick +"'>"+ label +"</button></td>\n" +
         "            <td class='btn-td'><button class='btn btn-danger' onclick='removeProduct("+ element.id +")'>Remove</button></td>\n" +
         "            </tr>\n" +
         "    </table>\n" +
@@ -127,14 +146,11 @@ function addListElement(element) {
 
 
 function removeListElement(productId) {
-    let tab1 = $("#tab1");
-    if (currentTab !== $(tab1)[0]) {
-        let obj = $("#product" + productId);
-        obj.slideToggle(300);
-        setTimeout(function () {
-            obj.remove()
-        }, 500);
-    }
+    let obj = $("#product" + productId);
+    obj.slideToggle(300);
+    setTimeout(function () {
+        obj.remove()
+    }, 500);
 }
 
 function clearTabSelection() {
@@ -238,35 +254,66 @@ function moveToFirstTab() {
     showProductsList($("#tab1")[0]);
 }
 
-function sortOrders(data) {
+function setAllProducts(data) {
     this.allProducts = data;
-    let tempNotActiveProducts = [];
-    let tempActiveProducts = [];
-    $.each(this.allProducts, function (index, element) {
-        if (!element.active) {
-            tempNotActiveProducts.push(element);
-        } else {
-            tempActiveProducts.push(element);
-        }
-    });
-    this.notActiveProducts = tempNotActiveProducts;
-    this.activeProducts = tempActiveProducts;
 }
 
 function changeButtonLabel(id) {
     let element = $("#product" + id);
     let blockBtn = element.find(".btn").eq(0);
+    let tab1 = $("#tab1");
     if (blockBtn.html() === "Block") {
-        blockBtn.html("Unblock");
-        blockBtn.click(function () {
-            unblockProduct(id);
-        });
+        if (currentTab === $(tab1)[0] || currentTab === $(searchTab)[0]) {
+            blockBtn.html("Unblock");
+            blockBtn.attr("onclick", "unblockProduct(" + id + ")");
+            setActiveStatus(id, false);
+        } else {
+            setActiveStatus(id, false);
+            removeListElement(id);
+        }
     } else {
-        blockBtn.html("Block");
-        blockBtn.click(function () {
-            blockProduct(id);
-        });
+        if (currentTab === $(tab1)[0] || currentTab === $(searchTab)[0]) {
+
+            blockBtn.html("Block");
+            blockBtn.attr("onclick", "blockProduct(" + id + ")");
+            setActiveStatus(id, true);
+        } else {
+            setActiveStatus(id, true);
+            removeListElement(id);
+        }
     }
-    removeListElement(id);
-    lock = false;
+    setTimeout(function () {
+        lock = false;
+    }, 1000);
 }
+
+function setActiveStatus(id, status) {
+    for (let i = 0; i <this.allProducts.length; i++) {
+        if (this.allProducts[i].id === id) {
+            this.allProducts[i].active = status;
+        }
+    }
+}
+
+function search(request) {
+    if (request) {
+        clearTabSelection();
+        mainDiv.html("");
+        currentTab = searchTab;
+        selectTab(searchTab);
+        let results = [];
+        for (let i = 0; i <this.allProducts.length; i++) {
+            if (this.allProducts[i].name.toUpperCase().match(".*" + request.toUpperCase() +".*")) {
+                results.push(this.allProducts[i]);
+            }
+        }
+        if (results.length !== 0) {
+            processProducts(results);
+        } else {
+            $(".main-div").append("<h5>No results</h5>")
+        }
+    } else {
+        moveToFirstTab();
+    }
+}
+
