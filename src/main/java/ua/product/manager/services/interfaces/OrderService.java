@@ -18,7 +18,7 @@ public interface OrderService {
 
     Map<String, List<Order>> getOrders(int userId);
 
-    Map<String, List<Order>> getOrders(String username);
+    Map<String, List<Order>> getOrdersByUsernameAndDate(String username, String date);
 
     Order getNewOrder();
 

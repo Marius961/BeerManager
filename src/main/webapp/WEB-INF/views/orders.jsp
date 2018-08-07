@@ -34,13 +34,16 @@
     </nav>
 </header>
 <main class="background">
+    <div class="tab-bar">
+        <div class="tab" id="tab1" onclick="showCurrentDayOrders(this)"><span class="btn-label">Today</span></div>
+        <div class="tab" onclick="showOtherOrders(this)"><span class="btn-label">Other days</span></div>
+        <div class="refresh-btn-div" style="width: 12%">
+            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="location.href='/order/form'"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">New order</button>
+        </div>
+    </div>
     <div class="main-div">
-        <button type="button" class="btn btn-primary btn-sm right" onclick="location.href='/order/form'">New order</button>
-        <H4>My orders</H4>
         <div class="container-div">
-            <div id="orders">
-
-            </div>
+            <div id="orders"></div>
         </div>
     </div>
 </main>

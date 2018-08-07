@@ -1,22 +1,24 @@
-/*----------Table----------*/
 .table-users {
     width: 100%;
     background-color: #f1f1f1;
 }
 
-
-
-
-
-/*----------th----------*/
 .th-content {
     font-family: "Segoe UI Semibold", serif;
     padding: 1%;
     font-size: 1.2em;
+    color: snow;
+    background-color: #008800;
 }
 .th-content-id {
     width: 10%;
+    font-family: "Segoe UI Black", serif;
 }
+
+.th-orders-count {
+    width: 10%;
+}
+
 .th-content-2 {
     width: 38%;
 }
@@ -26,13 +28,8 @@
 }
 
 
-
-
-
-/*----------tr----------*/
-
 .tr-users {
-    border-bottom: 4px solid snow;
+    border-bottom: 0.1em solid #b6b6b6;
     transition: 0.5s;
 }
 
@@ -41,14 +38,9 @@
     cursor: pointer;
 }
 .tr-head {
-    border-bottom: 4px solid snow;
+
 }
 
-
-
-
-
-/*----------td----------*/
 .td-content {
     font-family: "Segoe UI Semilight", serif;
     padding: 1%;

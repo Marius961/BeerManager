@@ -30,11 +30,11 @@ function loadUsersList() {
 
 function addUserToList(user) {
     if (user) {
-        $(".table-users").append("<tr class=\"tr-users\" onclick=\"location.href='/user/get/" + user.id +"'\">\n" +
-            "<td class=\"td-content th-content-id\">"+ user.id + "</td>\n" +
-            "<td class=\"td-content th-content-2\">"+ user.companyName + "</td>\n" +
-            "<td class=\"td-content th-content-2\">"+ user.fullName + "</td>\n" +
-            "<td class=\"td-content th-content-id\">54</td>\n" +
+        $(".table-users").append("<tr class='tr-users' onclick=\"location.href='/user/get/"+ user.id +"'\">\n" +
+            "<td class='td-content th-content-id'>"+ user.id + "</td>\n" +
+            "<td class='td-content th-content-2'>"+ user.companyName + "</td>\n" +
+            "<td class='td-content th-content-2'>"+ user.fullName + "</td>\n" +
+            "<td class='td-content th-orders-count'>54</td>\n" +
             "</tr>")
     }
 }

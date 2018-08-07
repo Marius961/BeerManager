@@ -40,10 +40,11 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public List<Order> getOrdersByDate(String date) {
-        String sql = "SELECT * FROM orders WHERE exec_date=:targetDate ORDER BY 2 DESC ";
+    public List<Order> getOrdersByDate(String date, int limit) {
+        String sql = "SELECT * FROM orders WHERE exec_date=:targetDate ORDER BY 2 DESC LIMIT :value";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("targetDate", date);
+        params.addValue("value", limit);
         try {
             return jdbcTemplate.query(sql, params, new OrderMapper());
         } catch (EmptyResultDataAccessException e) {
@@ -107,10 +108,26 @@ public class OrderDAOImpl implements OrderDAO {
     }
 
     @Override
-    public List<Order> getOrdersByUserName(String username) {
-        String sql = "SELECT * FROM orders o, users u WHERE o.user_id=u.id AND u.username=:username ORDER BY o.exec_date DESC LIMIT 50";
+    public List<Order> getOrdersByUserNameAndDate(String username, String date, int limit) {
+        String sql = "SELECT * FROM orders o, users u WHERE o.user_id=u.id AND u.username=:username AND o.exec_date=:targetDate ORDER BY o.exec_date DESC LIMIT :value";
         MapSqlParameterSource params = new MapSqlParameterSource();
         params.addValue("username", username);
+        params.addValue("targetDate", date);
+        params.addValue("value", limit);
+        try {
+            return jdbcTemplate.query(sql, params, new OrderMapper());
+        } catch (EmptyResultDataAccessException e) {
+            return null;
+        }
+    }
+
+    @Override
+    public List<Order> getOrdersByUserNameExceptDate(String username, String date, int limit) {
+        String sql = "SELECT * FROM orders o, users u WHERE o.user_id=u.id AND u.username=:username AND o.exec_date!=:targetDate ORDER BY o.exec_date DESC LIMIT :value";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("username", username);
+        params.addValue("targetDate", date);
+        params.addValue("value", limit);
         try {
             return jdbcTemplate.query(sql, params, new OrderMapper());
         } catch (EmptyResultDataAccessException e) {

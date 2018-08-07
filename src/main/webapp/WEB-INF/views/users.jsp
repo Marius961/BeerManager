@@ -42,16 +42,14 @@
 </header>
 <main class="background">
     <div class="main-div">
-        <div class="content-box">
-            <table class="table-users">
-                <tr class="tr-head">
-                    <th class="th-content th-content-id">ID</th>
-                    <th class="th-content th-content-2">FIRM</th>
-                    <th class="th-content th-content-2">FULL NAME</th>
-                    <th class="th-content th-content-id">ORDERS</th>
-                </tr>
-            </table>
-        </div>
+        <table class="table-users">
+            <tr class="tr-head">
+                <th class="th-content th-content-id">ID</th>
+                <th class="th-content th-content-2">FIRM</th>
+                <th class="th-content th-content-2">FULL NAME</th>
+                <th class="th-content th-orders-count">ORDERS</th>
+            </tr>
+        </table>
     </div>
 </main>
 <script src="<%=request.getContextPath()%>/resources/js/users.js"></script>

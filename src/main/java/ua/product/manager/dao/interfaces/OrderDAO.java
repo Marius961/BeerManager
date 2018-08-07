@@ -8,16 +8,17 @@ import java.util.List;
 
 public interface OrderDAO {
 
-    @Secured("ROLE_ADMIN")
     List<Order> getAllOrders();
 
     List<Order> getOrdersByUserId(int userId);
 
-    List<Order> getOrdersByUserName(String username);
+    List<Order> getOrdersByUserNameAndDate(String username,String date, int limit);
+
+    List<Order> getOrdersByUserNameExceptDate(String username, String date, int limit);
 
     List<OrderItem> getItemsByOrderId(int orderId);
 
-    List<Order> getOrdersByDate(String date);
+    List<Order> getOrdersByDate(String date, int limit);
 
     List<Order> getOrdersExceptDate(String date, int limit);
 

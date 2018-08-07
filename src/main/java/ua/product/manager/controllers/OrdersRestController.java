@@ -28,9 +28,9 @@ public class OrdersRestController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/orders", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, List<Order>>> getOrders(Principal principal) {
-        Map<String, List<Order>> orders = orderService.getOrders(principal.getName());
+    @RequestMapping(value = "/orders", method = RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Map<String, List<Order>>> getOrders(@RequestBody SimpleStringContainer date, Principal principal) {
+        Map<String, List<Order>> orders = orderService.getOrdersByUsernameAndDate(principal.getName(), date.getStr());
         if(orders.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

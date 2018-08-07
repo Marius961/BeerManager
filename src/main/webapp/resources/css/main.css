@@ -126,8 +126,7 @@ html {
     border-bottom: 7px solid #333333;
 }
 
-
-.search-field {
+.search-div {
     width: 20%;
     height: 100%;
     float: right;
@@ -136,8 +135,13 @@ html {
     transition: 100ms;
 }
 
-.add-btn {
-    width: 11%;
+.search-input {
+    height: 100%;
+    width: 100%
+}
+
+.add-btn-div {
+    width: 13%;
     height: 100%;
     display: inline-block;
     float: right;
@@ -146,24 +150,48 @@ html {
     padding: 0.5%;
 }
 
-.refresh-btn {
-    width: 5%;
-    display: inline-block;
-    float: right;
-    transition: 100ms;
-    border-radius: 3px;
-    padding: 0.3%;
-}
-
-.add-img {
+.test1 {
     height: 1.2em;
     width: 1.2em;
+    margin-bottom: 3.5%;
+    margin-right: 5%;
 }
+
+.plus-img {
+    height: 1.2em;
+    width: 1.2em;
+    margin-bottom: 3.5%;
+    margin-right: 5%;
+}
+
+.refresh-img {
+    height: 1.2em;
+    width: 1.2em;
+    margin-bottom: 3.5%;
+    margin-right: 5%;
+}
+
 .btn-label {
     font-size: 3vh;
     color: grey;
 }
 
+.refresh-btn-div {
+     width: 9%;
+     height: 100%;
+     display: inline-block;
+     float: right;
+     transition: 100ms;
+     border-radius: 3px;
+     padding: 0.5%;
+ }
+
+.btn-refresh {
+    font-size: 2vh;
+    height: 100%;
+    width: 100%;
+    padding: 0.5%
+}
 .b-popup{
     display: none;
     width:100%;

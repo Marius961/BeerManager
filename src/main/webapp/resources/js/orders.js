@@ -1,37 +1,51 @@
-$(document).ready(function () {
-   let path = location.href;
-   path = path.substr(path.lastIndexOf('/') + 1);
-   if (path === 'orders') {
-       showOrders();
+let currentTab = '';
 
-   } if (path === 'all-orders') {
-        showAllOrders();
-    }
+$(document).ready(function () {
+    window.monthList = ['Січня', 'Лютого','Березня','Квітня','Травня','Червня','Липня','Серпня','Вересня','Жовтня','Листопада','Грудня'];
+    showCurrentDayOrders($("#tab1")[0]);
 });
 
-
-function showUserOrders() {
-    let elem = document.getElementById('userId');
-    $(".show-btn").fadeOut(300).remove();
-    loadOrderList('/user-orders/' + elem.textContent, processOrders);
+function showCurrentDayOrders(tab) {
+    if (tab !== currentTab) {
+        currentTab = tab;
+        $(".tab").css('border-bottom', '7px solid #ededed');
+        $(tab).css('border-bottom', '7px solid black');
+        let dateObj = {
+            "str" : 'CURRENT_DATE'
+        };
+        $(".container-div").fadeOut(100);
+        setTimeout(function () {
+            $("#orders").html('');
+            loadOrderList('/orders', processOrders, dateObj);
+        }, 100);
+    }
 }
 
-function showOrders() {
-    loadOrderList('/orders', processOrders);
+function showOtherOrders(tab) {
+    if (tab !== currentTab) {
+        currentTab = tab;
+        $(".tab").css('border-bottom', '7px solid #ededed');
+        $(tab).css('border-bottom', '7px solid black');
+        let dateObj = {
+            "str" : '!CURRENT_DATE'
+        };
+        $(".container-div").fadeOut(100);
+        setTimeout(function () {
+            $("#orders").html('');
+            loadOrderList('/orders', processOrders, dateObj);
+        }, 100);
+    }
 }
 
-function showAllOrders() {
-    loadOrderList('/all-orders-list', processOrders);
-}
-function loadOrderList(url, func) {
+function loadOrderList(url, func, dateObj) {
     $(".main-div").append("<div class='cssload-container'>\n" +
         "\t<div class='cssload-zenith'></div>\n" +
         "</div>");
     $.ajax ({
         url: String(url),
-        type: "GET",
+        type: "POST",
         dataType: "json",
-        data: ({}),
+        data: JSON.stringify(dateObj),
         contentType: 'application/json',
         success: function (data) {
             func(data);
@@ -43,15 +57,20 @@ function processOrders(data) {
     $(".cssload-container").fadeOut(300).remove();
     if (data) {
         Object.keys(data).forEach(function (key) {
-            addDateHeader(key);
+            let label = '';
+            let date = new Date(key);
+            label += date.getDate() + ' ';
+            label += getMonthName(date.getMonth()) + ' ';
+            label += date.getFullYear();
+            addDateHeader(key, label);
             $.each(data[key], function (index, element) {
                 addListElement(element, key);
             })
         });
-        $(".container-div").fadeIn(300);
     }  else {
-        $(".main-div").append("<h1>No orders</h1>");
+        $("#orders").append("<h1>No orders</h1>");
     }
+    $(".container-div").fadeIn(300);
 }
 
 function addListElement(element, target) {
@@ -78,8 +97,12 @@ function addListElement(element, target) {
     })
 }
 
-function addDateHeader(date) {
+function addDateHeader(date, label) {
     $("#orders").append("<div id='" + date + "'></div>");
-    $("#" + date).append("<h2 class='date-header'>" + date + "</h2>")
+    $("#" + date).append("<h2 class='date-header'>" + label + "</h2>")
+}
+
+function getMonthName(number) {
+    return window.monthList[number];
 }
 

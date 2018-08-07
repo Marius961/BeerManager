@@ -45,19 +45,19 @@
         <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">All</span></div>
         <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Not active</span></div>
         <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Active</span></div>
-        <div class="add-btn" style="width: 9%">
-            <button class="btn btn-outline-secondary" type="button" style="font-size: 2vh; height: 100%; width: 100%; padding: 0.5%" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="add-img">Refresh</button>
+        <div class="refresh-btn-div">
+            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="refresh-img">Refresh</button>
         </div>
-        <div class="add-btn">
-            <button class="btn btn-outline-secondary" type="button" style="font-size: 2vh; height: 100%; width: 100%; padding: 0.5%" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="add-img"> Add product</button>
+        <div class="refresh-btn-div" style="width: 12%">
+            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">Add product</button>
         </div>
-        <div class="search-field"  id="search">
+        <div class="search-div" id="search">
             <div class="input-group" >
-                <input style="height: 100%; width: 100%" type="text" oninput="search(this.value)" class="form-control" placeholder="Search" aria-label="Search by products" aria-describedby="button-addon4">
+                <input type="text" oninput="search(this.value)" class="form-control search-input" placeholder="Search" aria-label="Search by products" aria-describedby="button-addon4">
             </div>
         </div>
     </div>
-    <div class="main-div" style="display: none">
+    <div class="main-div">
     </div>
 </main>
 <script src="<%=request.getContextPath()%>/resources/js/products.js"></script>

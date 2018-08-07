@@ -63,11 +63,6 @@ function processOrders(data) {
             label += date.getDate() + ' ';
             label += getMonthName(date.getMonth()) + ' ';
             label += date.getFullYear();
-            // if (key === getCurrentDate()) {
-            //     label = 'Today';
-            // } else {
-            //     label = key;
-            // }
             addDateHeader(key, label);
             $.each(data[key], function (index, element) {
                 addListElement(element, key);

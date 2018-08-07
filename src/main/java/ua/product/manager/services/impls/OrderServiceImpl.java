@@ -51,15 +51,14 @@ public class OrderServiceImpl implements OrderService {
         List<Order> orders;
         Date currentDate = new Date();
         String formattedDate = new SimpleDateFormat("yyyy-MM-dd").format(currentDate);
-        System.out.println(date);
         Pattern p = Pattern.compile("^\\d\\d\\d\\d-\\d\\d-\\d\\d$");
         Matcher m = p.matcher(date);
         if (m.matches()) {
-            orders = orderDAO.getOrdersByDate(date);
+            orders = orderDAO.getOrdersByDate(date, 9999);
         } else if (date.equals("!CURRENT_DATE")) {
             orders = orderDAO.getOrdersExceptDate(formattedDate, 50);
         } else if (date.equals("CURRENT_DATE")){
-            orders = orderDAO.getOrdersByDate(formattedDate);
+            orders = orderDAO.getOrdersByDate(formattedDate, 9999);
         } else {
             orders = new ArrayList<>();
         }
@@ -72,10 +71,22 @@ public class OrderServiceImpl implements OrderService {
         return groupOrdersByDate(orders);
     }
 
-
     @Override
-    public Map<String, List<Order>> getOrders(int userId) {
-        List<Order> orders = orderDAO.getOrdersByUserId(userId);
+    public Map<String, List<Order>> getOrdersByUsernameAndDate(String username, String date) {
+        List<Order> orders;
+        Date currentDate = new Date();
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd").format(currentDate);
+        Pattern p = Pattern.compile("^\\d\\d\\d\\d-\\d\\d-\\d\\d$");
+        Matcher m = p.matcher(date);
+        if (m.matches()) {
+            orders = orderDAO.getOrdersByUserNameAndDate(username, date, 9999);
+        } else if (date.equals("!CURRENT_DATE")) {
+            orders = orderDAO.getOrdersByUserNameExceptDate(username, formattedDate, 50);
+        } else if (date.equals("CURRENT_DATE")){
+            orders = orderDAO.getOrdersByUserNameAndDate(username, formattedDate, 9999);
+        } else {
+            orders = new ArrayList<>();
+        }
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);
@@ -85,8 +96,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Map<String, List<Order>> getOrders(String username) {
-        List<Order> orders = orderDAO.getOrdersByUserName(username);
+    public Map<String, List<Order>> getOrders(int userId) {
+        List<Order> orders = orderDAO.getOrdersByUserId(userId);
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);

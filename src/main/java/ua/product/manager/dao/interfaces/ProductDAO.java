@@ -8,10 +8,8 @@ import java.util.List;
 
 public interface ProductDAO {
 
-    @Secured("ROLE_ADMIN")
     List<Product> getAllProducts();
 
-    @Secured("ROLE_ADMIN")
     Product getProductById(int productId);
 
     @Secured("ROLE_ADMIN")
