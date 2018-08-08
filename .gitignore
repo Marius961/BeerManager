@@ -1,2 +1,5 @@
-idea/workspace.xml
-out/**
+
+.idea/workspace.xml
+
+/target/
+/out/
