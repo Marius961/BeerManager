@@ -14,10 +14,8 @@ $(document).ready(function () {
 
 function showProductsList(tab) {
     if (tab !== currentTab) {
-        currentTab = tab;
         clearTabSelection();
         selectTab(tab);
-        mainDiv.fadeOut(100);
         setTimeout(function () {
             mainDiv.html("");
             processProducts(this.allProducts)
@@ -27,10 +25,8 @@ function showProductsList(tab) {
 
 function showBlockedProductList(tab) {
     if (tab !== currentTab) {
-        currentTab = tab;
         clearTabSelection();
         selectTab(tab);
-        mainDiv.fadeOut(100);
         setTimeout(function () {
             let tempNotActiveProducts = [];
             $.each(this.allProducts ,function (index, element) {
@@ -46,10 +42,8 @@ function showBlockedProductList(tab) {
 
 function showUnblockedProducts(tab) {
     if (tab !== currentTab) {
-        currentTab = tab;
         clearTabSelection();
         selectTab(tab);
-        mainDiv.fadeOut(100);
         setTimeout(function () {
             let tempActiveProducts = [];
             $.each(this.allProducts ,function (index, element) {
@@ -162,6 +156,8 @@ function clearTabSelection() {
 
 function selectTab(tab) {
     $(tab).css('border-bottom', selectedBorderStyle);
+    currentTab = tab;
+    mainDiv.fadeOut(100);
 }
 
 function addForm() {

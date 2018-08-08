@@ -37,13 +37,23 @@
                     <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>
 <main>
     <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="showCurrentDateOrders(this)"><span class="btn-label">Today</span></div>
-        <div class="tab" onclick="showOtherOrders(this)"><span class="btn-label">Other days</span></div>
+        <div class="tab" id="tab1" onclick="loadAllOrdersForCurrentDate(this)"><span class="btn-label">Today</span></div>
+        <div class="tab" onclick="loadAllOtherOrders(this)"><span class="btn-label">Other days</span></div>
     </div>
     <div class="main-div">
         <div class="container-div">
@@ -51,6 +61,6 @@
         </div>
     </div>
 </main>
-<script src="<%=request.getContextPath()%>/resources/js/userOrders.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/orders.js"></script>
 </body>
 </html>

@@ -30,13 +30,23 @@
                     <%--<a class="nav-link" href="<c:url value="/${currentUserName}/my-profile"/>">My account</a>--%>
                 <%--</li>--%>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>
 <main class="background">
     <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="showCurrentDayOrders(this)"><span class="btn-label">Today</span></div>
-        <div class="tab" onclick="showOtherOrders(this)"><span class="btn-label">Other days</span></div>
+        <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="btn-label">Today</span></div>
+        <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label">Other days</span></div>
         <div class="refresh-btn-div" style="width: 12%">
             <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="location.href='/order/form'"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">New order</button>
         </div>

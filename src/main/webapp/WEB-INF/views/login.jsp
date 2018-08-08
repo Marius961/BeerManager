@@ -33,7 +33,7 @@
     <div class="main-div">
         <div class="content-box login-size">
             <c:if test="${not empty error}">
-                <div style="color: red">
+                <div class="alert alert-danger" role="alert">
                         ${error}
                 </div>
             </c:if>
