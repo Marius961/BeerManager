@@ -2,6 +2,14 @@ html {
     background-color: #f1f1f1;
 }
 
+.small-1 {
+    margin: 0 0.5%;
+    font-size: 2vh;
+}
+
+.input-group-1 {
+    margin: 0 1%;
+ }
 .main-div {
     width: 80%;
     height: 120%;
@@ -97,6 +105,8 @@ html {
 
 .error-message {
     color: red;;
+    margin: 0.3%;
+    display: none;
 }
 
 .container-div {

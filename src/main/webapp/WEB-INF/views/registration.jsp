@@ -22,8 +22,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/"/>">Home<span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="<c:url value="/"/>">Головна<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -33,39 +33,41 @@
     <div class="main-div">
         <div class="content-box register-size">
             <form>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Your username">
+                <div class="form-group input-group-1">
+                    <label for="username">Логін</label>
+                    <input type="text" class="form-control" id="username" placeholder="Ваш логін латиницею">
+                    <small id="emailHelp" class="form-text text-muted">Використовується для входу на сайт.</small>
                 </div>
-                <div class="form-group">
-                    <label for="fullName">Full name</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="Your full name">
+                <div class="form-group input-group-1">
+                    <label for="fullName">П.І.Б.</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="введіть ваше П.І.Б.">
                 </div>
-                <div class="form-group">
-                    <label for="companyName">Company name</label>
-                    <input type="text" class="form-control" id="companyName" placeholder="Your firm name">
+                <div class="form-group input-group-1">
+                    <label for="companyName">Назва компанії</label>
+                    <input type="text" class="form-control" id="companyName" placeholder="Введіть назву вашої компанії">
                 </div>
-                <div class="form-group">
-                    <label for="companyAddress">Company address</label>
-                    <input type="text" class="form-control" id="companyAddress" placeholder="Your company address">
+                <div class="form-group input-group-1">
+                    <label for="companyAddress">Адреса вашої компанії</label>
+                    <input type="text" class="form-control" id="companyAddress" placeholder="Введіть адресу вашої компанії або філіалу">
+                    <small class="form-text text-muted">УВАГА - замовлені товари будуть доставлені на дану адресу.</small>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your email address">
+                <div class="form-group input-group-1">
+                    <label for="email">Ел. адреса</label>
+                    <input type="email" class="form-control" id="email" placeholder="Введіть Вашу електронну адресу">
                 </div>
-                <div class="form-group">
-                    <label for="telNumber">Tel. number</label>
-                    <input type="tel" class="form-control" id="telNumber" placeholder="Your tel number">
+                <div class="form-group input-group-1">
+                    <label for="telNumber">Номер мобільного телефону</label>
+                    <input type="tel" class="form-control" id="telNumber" placeholder="Введіть номер Вашого мобільного телефону">
                 </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Your password">
+                <div class="form-group input-group-1">
+                    <label for="password">Пароль</label>
+                    <input type="password" class="form-control" id="password" placeholder="мінімум 8 латинських букв та цифр">
                 </div>
-                <div class="form-group">
-                    <label for="passwordConfirm">Password</label>
-                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Confirm your password password">
+                <div class="form-group input-group-1">
+                    <label for="passwordConfirm">Підтвердіть пароль</label>
+                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Будь ласска введіть пароль щераз">
                 </div>
-                <button type="button" class="btn btn-primary" onclick="validateAndSend(this.form)" style="margin: 0.5%">Submit</button>
+                <button type="button" class="btn btn-primary" onclick="validateAndSend(this.form)" style="margin: 0.5%">Зареєструватись</button>
             </form>
         </div>
     </div>

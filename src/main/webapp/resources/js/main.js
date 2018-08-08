@@ -1,3 +1,16 @@
+let litersLimitMessage = 'You can add only for 5 liters';
+let usernameLengthMessage = 'Логін повинен бути довшим ніж 3 символи';
+let usernameInUseMessage = 'Цей логін вже у використанні';
+let fullNameLengthMessage = 'П.І.Б. повинно складатись як мінімум з 6 символів';
+let companyNameLengthMessage = 'Назва компанії повинна складатись як мінімум з 2 символів';
+let companyAddressLengthMessage = 'Адреса компанії повинна складатись як мінімум з 6 символів';
+let emailLengthMessage = 'Довжина ел. адреси повинна складатись більше ніж з 4 символів';
+let emailUsedMessage = 'Ця електронна адреса вже використовується';
+let phoneNumberLengthMessage = 'Номер мобільного телефону повинен складатись з 10 символів';
+let phoneNumberInUseMessage = 'Цей номер телефону вже використовується';
+let passwordLengthMessage = 'пароль повинен складатись як мінімум з 8 символів';
+let passwordsNotMatchMessage = 'Паролі не співпадають';
+
 function removeOrder(orderId) {
     let status = confirm('Are you sure?');
     if (status) {
@@ -12,12 +25,12 @@ function validateAndSend(form) {
     let  hasErrors = false;
     let elems = form.elements;
 
-    $("#username").click(function () {
+    $("#username").on('input', function () {
         resetError(elems["username"].parentNode);
     });
     if (!elems["username"].value || elems["username"].value.length <=3) {
         hasErrors = true;
-        showError(elems["username"].parentNode, 'Username must be longer than 3 symbols');
+        showError(elems["username"].parentNode, usernameLengthMessage);
     }
     if (!hasErrors) {
         url = '/username-check/' + elems["username"].value + '';
@@ -27,41 +40,41 @@ function validateAndSend(form) {
         nameIsUsed = data.nameStatus;
         if (nameIsUsed) {
             hasErrors = true;
-            showError(elems["username"].parentNode, 'Username already used');
+            showError(elems["username"].parentNode, usernameInUseMessage);
         }
     }
-    $("#fullName").click(function () {
+    $("#fullName").on('input', function () {
         resetError(elems["fullName"].parentNode);
     });
-    if (!elems["fullName"].value || elems["fullName"].value.length <=3) {
+    if (!elems["fullName"].value || elems["fullName"].value.length <6) {
         hasErrors = true;
-        showError(elems["fullName"].parentNode, 'Full name must be longer than 3 symbols');
+        showError(elems["fullName"].parentNode, fullNameLengthMessage);
     }
 
-    $("#companyName").click(function () {
+    $("#companyName").on('input', function () {
         resetError(elems["companyName"].parentNode);
     });
-    if (!elems["companyName"].value || elems["username"].value.length <=1) {
+    if (!elems["companyName"].value || elems["companyName"].value.length <2) {
         hasErrors = true;
-        showError(elems["companyName"].parentNode, 'Company name must be longer than 1 symbol');
+        showError(elems["companyName"].parentNode, companyNameLengthMessage);
     }
 
-    $("#companyAddress").click(function () {
+    $("#companyAddress").on('input', function () {
         resetError(elems["companyAddress"].parentNode);
     });
     if (!elems["companyAddress"].value || elems["companyAddress"].value.length <=6) {
         hasErrors = true;
-        showError(elems["companyAddress"].parentNode, 'Company address must be longer than 6 symbols');
+        showError(elems["companyAddress"].parentNode, companyAddressLengthMessage);
     }
 
-    $("#email").click(function () {
+    $("#email").on('input', function () {
         resetError(elems["email"].parentNode);
     });
     let emailError = false;
     if (!elems["email"].value || elems["email"].value.length <=3) {
         hasErrors = true;
         emailError = true;
-        showError(elems["email"].parentNode, 'Email must be longer than 3 symbols');
+        showError(elems["email"].parentNode, emailLengthMessage);
     }
     if (!emailError) {
         let emailIsUsed;
@@ -75,18 +88,18 @@ function validateAndSend(form) {
         emailIsUsed = data.emailStatus;
         if (emailIsUsed) {
             hasErrors = true;
-            showError(elems["email"].parentNode, 'This email is already in use');
+            showError(elems["email"].parentNode, emailUsedMessage);
         }
     }
 
-    $("#telNumber").click(function () {
+    $("#telNumber").on('input', function () {
         resetError(elems["telNumber"].parentNode);
     });
     let telNumError = false;
     if (!elems["telNumber"].value || elems["telNumber"].value.trim().length !== 10) {
         hasErrors = true;
         telNumError = true;
-        showError(elems["telNumber"].parentNode, 'Phone number must consist of 10 numbers');
+        showError(elems["telNumber"].parentNode, phoneNumberLengthMessage);
     }
     if (!telNumError) {
         let telNumIsUsed;
@@ -100,26 +113,26 @@ function validateAndSend(form) {
         telNumIsUsed = data.telStatus;
         if (telNumIsUsed) {
             hasErrors = true;
-            showError(elems["telNumber"].parentNode, 'This phone number is already in use');
+            showError(elems["telNumber"].parentNode, phoneNumberInUseMessage);
         }
     }
 
-    $("#password").click(function () {
+    $("#password").on('input', function () {
         resetError(elems["password"].parentNode);
     });
     let passError = false;
-    if (!elems["password"].value || elems["password"].value.length < 6 ) {
+    if (!elems["password"].value || elems["password"].value.length < 8 ) {
         hasErrors = true;
         passError = true;
-        showError(elems["password"].parentNode, 'Password must be longer than 6 symbols');
+        showError(elems["password"].parentNode, passwordLengthMessage);
     }
 
-    $("#passwordConfirm").click(function () {
+    $("#passwordConfirm").on('input', function () {
         resetError(elems["passwordConfirm"].parentNode);
     });
     if (!passError && elems["passwordConfirm"].value !== elems["password"].value) {
         hasErrors = true;
-        showError(elems["passwordConfirm"].parentNode, 'Passwords do not match');
+        showError(elems["passwordConfirm"].parentNode, passwordsNotMatchMessage);
     }
     if (!hasErrors) {
         sendUserForm(processRegForm());
@@ -159,19 +172,21 @@ function setData(data) {
 }
 
 function showError(container, errorMessage) {
-    if (container.className !== 'error') {
-        container.className = 'error';
+    if (container.lastChild.className !== "error-message") {
         let msgElem = document.createElement('span');
         msgElem.className = "error-message";
         msgElem.innerHTML = errorMessage;
         container.appendChild(msgElem);
+        $(msgElem).slideDown(300);
     }
 }
 
 function resetError(container) {
-    container.className = '';
     if (container.lastChild.className === "error-message") {
-        container.removeChild(container.lastChild);
+        $(container.lastChild).slideToggle(300);
+        setTimeout(function () {
+            $(container.lastChild).remove();
+        }, 300);
     }
 }
 

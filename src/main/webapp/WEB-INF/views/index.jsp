@@ -22,27 +22,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About us<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
         </div>
     </nav>
 </header>
 <main class="background">
     <div class="main-div">
-
-        <div class="content-box">
-            <h1 class="welcome-h1">Welcome to product manager</h1>
-            <div class="table-div">
-                <div class="table-cell-div">
-                    <button class="btn btn-dark table-cell-btn" onclick="location.href='/registration'">Register</button>
-                </div>
-                <div class="table-cell-div">
-                    <button class="btn btn-dark table-cell-btn" onclick="location.href='login'">Login</button>
-                </div>
-            </div>
+        <div class="jumbotron">
+            <h1 class="display-4">Вітаємо у Product manager!</h1>
+            <p class="lead">Це простий інструмент для менеджменту замовлень!</p>
+            <hr class="my-4">
+            <p>Ми використовуєм просту та зручну систему контролю та створення замовлень</p>
+            <button class="btn btn-dark" onclick="location.href='/registration'">Зареєструватись</button>
+            <small class="small-1">або</small>
+            <button class="btn btn-dark" onclick="location.href='login'">Увійти</button>
         </div>
     </div>
 </main>
