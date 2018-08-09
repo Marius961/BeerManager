@@ -1,4 +1,3 @@
-let litersLimitMessage = 'You can add only for 5 liters';
 let usernameLengthMessage = 'Логін повинен бути довшим ніж 3 символи';
 let usernameInUseMessage = 'Цей логін вже у використанні';
 let fullNameLengthMessage = 'П.І.Б. повинно складатись як мінімум з 6 символів';
@@ -11,13 +10,11 @@ let phoneNumberInUseMessage = 'Цей номер телефону вже вик�
 let passwordLengthMessage = 'пароль повинен складатись як мінімум з 8 символів';
 let passwordsNotMatchMessage = 'Паролі не співпадають';
 
-function removeOrder(orderId) {
-    let status = confirm('Are you sure?');
-    if (status) {
-        location.href='/orders/remove/' + orderId;
-        document.getElementById('orderBox' + orderId).remove();
-    }
-}
+let litersLimitMessage = 'Ви можете додавати тільки з кроком у 5 літрів';
+let productSelectionMessage = 'Ви повинні вибрати як мінімум 1 продукт';
+let timeLimitMessage = 'Ви можете створити замовлення тільки до 9:00 дня виконання замовлення';
+let orderExecutionDataMessage = 'Дата виконання замовлення повинна бути більшою від поточної дати';
+
 
 function validateAndSend(form) {
     let url = '';
@@ -228,7 +225,7 @@ function validateOrderForm() {
     $(".left").each(function (index, element) {
         if ((+element.value % 5) !== 0) {
             if (errorCounter < 1) {
-                showSectionError('You can add only for 5 liters');
+                showSectionError(litersLimitMessage);
             }
             errorCounter++;
         }
@@ -239,7 +236,7 @@ function validateOrderForm() {
     });
     if (fieldsCount === emptyFieldsCount) {
         errorCounter++;
-        showSectionError("You must select minimum 1 product");
+        showSectionError(productSelectionMessage);
     }
     let dateError = false;
     let dateField = document.getElementById('execDate');
@@ -258,11 +255,11 @@ function validateOrderForm() {
         if (currentHours > 8 && +currentDate === +orderDate) {
             errorCounter++;
             dateError = true;
-            showError(dateField.parentNode, "You can make an order only until 9:00 on the day of order execution");
+            showError(dateField.parentNode, timeLimitMessage);
         }
         if (!dateError && +currentDate > +orderDate) {
             errorCounter++;
-            showError(dateField.parentNode, "The order execution date must be later than current date");
+            showError(dateField.parentNode, orderExecutionDataMessage);
         }
     }
     if (errorCounter === 0) {

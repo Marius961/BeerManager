@@ -24,10 +24,17 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/${currentUser.username}/orders"/>">My orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/orders"/>">Мої замовлення<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/${currentUser.username}/my-profile"/>">My account</a>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Аккаунт
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Вийти з аккаунту</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -37,7 +44,7 @@
     <div class="main-div">
         <div class="content-box">
             <div class="content-div">
-                <h2 class="header-1" id="order-header">Order:</h2>
+                <h2 class="header-1" id="order-header">Замовлення:</h2>
             </div>
             <form:form action="/orders/process" method="post" modelAttribute="order" id="orderForm">
                 <c:forEach items="${order.orderItems}" var="item" varStatus="status">
@@ -53,22 +60,22 @@
                                         <form:hidden path="userId" value="${currentUser.id}"/>
                                     </div>
                                 </td>
-                                <td class="table-td-vol"><span class="barrels-vol">liters</span></td>
+                                <td class="table-td-vol"><span class="barrels-vol">літрів</span></td>
                             </tr>
                         </table>
                     </div>
                 </c:forEach>
                 <br>
                 <div class="form-group">
-                    <form:label path="comment" for="commentTextArea">Comment:</form:label>
+                    <form:label path="comment" for="commentTextArea">Коментар:</form:label>
                     <form:textarea path="comment" class="form-control" id="commentTextArea" rows="3"/>
                 </div>
                 <div class="form-group" style="width: 25%">
-                    <form:label path="execDate" for="execDate">Execution date:</form:label>
+                    <form:label path="execDate" for="execDate">Дата виконання:</form:label>
                     <form:input path="execDate" class="form-control" id="execDate" type="date"/>
                 </div>
                 <br>
-                <button type="button" class="btn btn-primary" onclick="validateOrderForm()">Submit</button>
+                <button type="button" class="btn btn-primary" onclick="validateOrderForm()">Замовити</button>
             </form:form>
         </div>
     </div>
