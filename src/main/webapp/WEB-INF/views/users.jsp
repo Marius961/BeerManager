@@ -24,26 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/users"/>">Users<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/users"/>">Користувачі<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/all-orders"/>">Orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/all-orders"/>">Замовлення<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/products"/>">Товати<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
+                        Аккаунт
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Вийти з аккаунту</a>
                     </div>
                 </li>
             </ul>
@@ -55,9 +55,9 @@
         <table class="table-users">
             <tr class="tr-head">
                 <th class="th-content th-content-id">ID</th>
-                <th class="th-content th-content-2">FIRM</th>
-                <th class="th-content th-content-2">FULL NAME</th>
-                <th class="th-content th-orders-count">ORDERS</th>
+                <th class="th-content th-content-2">Назва компанії</th>
+                <th class="th-content th-content-2">Назва компанії</th>
+                <th class="th-content th-orders-count">Замовлень</th>
             </tr>
         </table>
     </div>

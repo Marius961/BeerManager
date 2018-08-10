@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/"/>">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/"/>">Головна<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -37,21 +37,21 @@
                         ${error}
                 </div>
             </c:if>
-            <form action="<c:url value="/security_check"/>" name="for_login" method="post">
+            <form action="<c:url value="/security_check"/>" name="form_login" method="post">
                 <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
+                    <label for="username">Логін</label>
+                    <input type="text" name="username" class="form-control" id="username">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    <label for="password">Пароль</label>
+                    <input type="password" name="password" class="form-control" id="password">
                 </div>
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
-                    <label class="custom-control-label" for="rememberMe">Remember me</label>
+                    <label class="custom-control-label" for="rememberMe">Запам'ятати мене</label>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Увійти</button>
             </form>
         </div>
     </div>

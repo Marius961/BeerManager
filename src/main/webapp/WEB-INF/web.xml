@@ -3,20 +3,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Product manager</display-name>
 
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>
-        classpath:applicationContext.xml
-        /WEB-INF/config/security-config.xml
-    </param-value>
-  </context-param>
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:applicationContext.xml
+            /WEB-INF/config/security-config.xml
+        </param-value>
+    </context-param>
 
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 
-  </listener>
+    </listener>
 
     <listener>
         <listener-class>
@@ -24,20 +24,26 @@
         </listener-class>
     </listener>
 
-  <servlet>
-    <servlet-name>dispatcherServlet</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-      <init-param>
-          <param-name>contextConfigLocation</param-name>
-          <param-value>/WEB-INF/config/dispatcher-context.xml</param-value>
-      </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+    <servlet>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/config/dispatcher-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-  <servlet-mapping>
-    <servlet-name>dispatcherServlet</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>dispatcherServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/404-error.jsp</location>
+    </error-page>
 
     <filter>
         <filter-name>encodingFilter</filter-name>

@@ -24,26 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/users"/>">Users<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/users"/>">Користувачі<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/all-orders"/>">Orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/all-orders"/>">Замовлення<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/products"/>">Товати<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
+                        Аккаунт
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Вийти з аккаунту</a>
                     </div>
                 </li>
             </ul>
@@ -52,8 +52,8 @@
 </header>
 <main>
     <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="loadAllOrdersForCurrentDate(this)"><span class="btn-label">Today</span></div>
-        <div class="tab" onclick="loadAllOtherOrders(this)"><span class="btn-label">Other days</span></div>
+        <div class="tab" id="tab1" onclick="loadAllOrdersForCurrentDate(this)"><span class="btn-label">Сьогодні</span></div>
+        <div class="tab" onclick="loadAllOtherOrders(this)"><span class="btn-label">Інші дні</span></div>
     </div>
     <div class="main-div">
         <div class="container-div">

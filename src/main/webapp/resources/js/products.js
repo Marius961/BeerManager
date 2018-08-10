@@ -8,6 +8,10 @@ let lock = false;
 let defaultBorderStyle = '7px solid #ededed';
 let selectedBorderStyle = '7px solid black';
 
+let blockBtnLabel = 'Заблокувати';
+let unblockBtnLabel = 'Розблокувати';
+let deleteBtnLabel = 'Видалити';
+
 $(document).ready(function () {
     refreshData();
 });
@@ -119,10 +123,10 @@ function addListElement(element) {
     let label = '';
     if (element.active === true) {
         onclick = 'blockProduct(' + element.id + ')';
-        label = 'Block';
+        label = blockBtnLabel;
     }  else {
         onclick = 'unblockProduct(' + element.id + ')';
-        label = 'Unblock';
+        label = unblockBtnLabel;
     }
     $(".main-div").append("" +
         "<div class='list-elem' id='product"+ element.id +"'>\n" +
@@ -130,7 +134,7 @@ function addListElement(element) {
         "        <tr>\n" +
         "            <th class='name-td'>"+ element.name +"</th>\n" +
         "            <td class='btn-td'><button class='btn btn-secondary' onclick='"+ onclick +"'>"+ label +"</button></td>\n" +
-        "            <td class='btn-td'><button class='btn btn-danger' onclick='removeProduct("+ element.id +")'>Remove</button></td>\n" +
+        "            <td class='btn-td'><button class='btn btn-danger' onclick='removeProduct("+ element.id +")'>"+ deleteBtnLabel +"</button></td>\n" +
         "            </tr>\n" +
         "    </table>\n" +
         "    <div>\n" +
@@ -258,12 +262,12 @@ function setAllProducts(data) {
 
 function changeButtonLabel(id) {
     let element = $("#product" + id);
-    let blockBtn = element.find(".btn").eq(0);
+    let btn = element.find(".btn").eq(0);
     let tab1 = $("#tab1");
-    if (blockBtn.html() === "Block") {
+    if (btn.html() === blockBtnLabel) {
         if (currentTab === $(tab1)[0] || currentTab === $(searchTab)[0]) {
-            blockBtn.html("Unblock");
-            blockBtn.attr("onclick", "unblockProduct(" + id + ")");
+            btn.html(unblockBtnLabel);
+            btn.attr("onclick", "unblockProduct(" + id + ")");
             setActiveStatus(id, false);
         } else {
             setActiveStatus(id, false);
@@ -272,8 +276,8 @@ function changeButtonLabel(id) {
     } else {
         if (currentTab === $(tab1)[0] || currentTab === $(searchTab)[0]) {
 
-            blockBtn.html("Block");
-            blockBtn.attr("onclick", "blockProduct(" + id + ")");
+            btn.html(blockBtnLabel);
+            btn.attr("onclick", "blockProduct(" + id + ")");
             setActiveStatus(id, true);
         } else {
             setActiveStatus(id, true);

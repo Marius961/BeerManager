@@ -24,26 +24,26 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/users"/>">Users<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/users"/>">Користувачі<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/all-orders"/>">Orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/all-orders"/>">Замовлення<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav active">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<c:url value="/products"/>">Products<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/products"/>">Товати<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
+                        Аккаунт
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
+                        <a class="dropdown-item" href="<c:url value="/logout"/>">Вийти з аккаунту</a>
                     </div>
                 </li>
             </ul>
@@ -52,18 +52,18 @@
 </header>
 <main class="background">
     <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">All</span></div>
-        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Not active</span></div>
-        <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Active</span></div>
+        <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">Всі</span></div>
+        <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Активні</span></div>
+        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Не активні</span></div>
         <div class="refresh-btn-div">
-            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="refresh-img">Refresh</button>
+            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="refresh-img">Оновити</button>
         </div>
         <div class="refresh-btn-div" style="width: 12%">
-            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">Add product</button>
+            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">Додати продукт</button>
         </div>
         <div class="search-div" id="search">
             <div class="input-group" >
-                <input type="text" oninput="search(this.value)" class="form-control search-input" placeholder="Search" aria-label="Search by products" aria-describedby="button-addon4">
+                <input type="text" oninput="search(this.value)" class="form-control search-input" placeholder="Пошук по продукції" aria-label="Search by products" aria-describedby="button-addon4">
             </div>
         </div>
     </div>
