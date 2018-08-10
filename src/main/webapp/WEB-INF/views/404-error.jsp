@@ -20,16 +20,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/"/>">Головна<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="error-404"><img style="width: 100%; height: 100%" src="<%=request.getContextPath()%>/resources/images/404-page.png"></div>
+<main class="background" style="position: absolute">
+    <div class="error-404"><img style="width: 100%; height: 100%; position: relative" src="<%=request.getContextPath()%>/resources/images/404-page.png"></div>
+    <a href="<c:url value="/"/>" style="position: absolute; bottom: 25%; right: 21%; font-size: 3vh; color: grey">поверніться на існуючу сторінку</a>
 </main>
 
 </body>
