@@ -81,6 +81,6 @@
     </div>
 </main>
 
-<script src="<%=request.getContextPath()%>/resources/js/main.js"></script>
+<script src="<%=request.getContextPath()%>/resources/js/registration.js"></script>
 </body>
 </html>

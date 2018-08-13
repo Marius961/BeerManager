@@ -4,31 +4,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ua.product.manager.containers.SimpleStringContainer;
 import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
+import ua.product.manager.validators.UserValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 @RestController
 public class LoginRestController {
 
-    private String rootPath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
+    private String rootPath = Objects.requireNonNull(Thread.currentThread().getContextClassLoader().getResource("")).getPath();
     private String messagesPath = rootPath + "/locale/messages.properties";
     private Properties messages = new Properties();
+    private UserValidator userValidator;
 
     private UserService userService;
 
     @Autowired
-    private void setUserService(UserService userService) {
+    private void setUserService(UserService userService, UserValidator userValidator) {
         this.userService = userService;
+        this.userValidator = userValidator;
         try {
             messages.load(new FileInputStream(messagesPath));
         } catch (IOException e) {
@@ -37,10 +38,14 @@ public class LoginRestController {
     }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public ResponseEntity<Void> registerUser(@RequestBody User user, HttpServletRequest request) {
+    public ResponseEntity<Void> registerUser(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
         if (user != null) {
-            userService.registerUser(request, user);
-            return new ResponseEntity<>(HttpStatus.OK);
+            userValidator.validate(user, bindingResult);
+            if (!bindingResult.hasErrors()) {
+                userService.registerUser(request, user);
+                return new ResponseEntity<>(HttpStatus.OK);
+            }
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

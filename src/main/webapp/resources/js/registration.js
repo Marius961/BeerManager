@@ -7,7 +7,7 @@ let emailLengthMessage = 'Довжина ел. адреси повинна ск�
 let emailUsedMessage = 'Ця електронна адреса вже використовується';
 let phoneNumberLengthMessage = 'Номер мобільного телефону повинен складатись з 10 символів';
 let phoneNumberInUseMessage = 'Цей номер телефону вже використовується';
-let passwordLengthMessage = 'пароль повинен складатись як мінімум з 8 символів';
+let passwordLengthMessage = 'пароль повинен складатись мінімум з 8 символів';
 let passwordsNotMatchMessage = 'Паролі не співпадають';
 
 let litersLimitMessage = 'Ви можете додавати тільки з кроком у 5 літрів';
@@ -15,61 +15,69 @@ let productSelectionMessage = 'Ви повинні вибрати як міні�
 let timeLimitMessage = 'Ви можете створити замовлення тільки до 9:00 дня виконання замовлення';
 let orderExecutionDataMessage = 'Дата виконання замовлення повинна бути більшою від поточної дати';
 
+// $("#username").on('input', function () {
+//     resetError(elems["username"].parentNode);
+// });
+// $("#fullName").on('input', function () {
+//     resetError(elems["fullName"].parentNode);
+// });
+// $("#companyName").on('input', function () {
+//     resetError(elems["companyName"].parentNode);
+// });
+// $("#companyAddress").on('input', function () {
+//     resetError(elems["companyAddress"].parentNode);
+// });
+// $("#email").on('input', function () {
+//     resetError(elems["email"].parentNode);
+// });
+// $("#telNumber").on('input', function () {
+//     resetError(elems["telNumber"].parentNode);
+// });
+// $("#password").on('input', function () {
+//     resetError(elems["password"].parentNode);
+// });
+// $("#passwordConfirm").on('input', function () {
+//     resetError(elems["passwordConfirm"].parentNode);
+// });
+$(":input").on('input', function () {
+    resetError($(this)[0].parentNode);
+});
 
 function validateAndSend(form) {
     let url = '';
     let data = "";
-    let  hasErrors = false;
+    let  errors = 0;
     let elems = form.elements;
-
-    $("#username").on('input', function () {
-        resetError(elems["username"].parentNode);
-    });
     if (!elems["username"].value || elems["username"].value.length <=3) {
-        hasErrors = true;
+        errors++;
         showError(elems["username"].parentNode, usernameLengthMessage);
     }
-    if (!hasErrors) {
+    if (errors === 0) {
         url = '/username-check/' + elems["username"].value + '';
         let nameIsUsed;
         sendCheckRequest(url);
         data = window.data1;
         nameIsUsed = data.nameStatus;
         if (nameIsUsed) {
-            hasErrors = true;
+            errors++;
             showError(elems["username"].parentNode, usernameInUseMessage);
         }
     }
-    $("#fullName").on('input', function () {
-        resetError(elems["fullName"].parentNode);
-    });
     if (!elems["fullName"].value || elems["fullName"].value.length <6) {
-        hasErrors = true;
+        errors++;
         showError(elems["fullName"].parentNode, fullNameLengthMessage);
     }
-
-    $("#companyName").on('input', function () {
-        resetError(elems["companyName"].parentNode);
-    });
     if (!elems["companyName"].value || elems["companyName"].value.length <2) {
-        hasErrors = true;
+        errors++;
         showError(elems["companyName"].parentNode, companyNameLengthMessage);
     }
-
-    $("#companyAddress").on('input', function () {
-        resetError(elems["companyAddress"].parentNode);
-    });
     if (!elems["companyAddress"].value || elems["companyAddress"].value.length <=6) {
-        hasErrors = true;
+        errors++;
         showError(elems["companyAddress"].parentNode, companyAddressLengthMessage);
     }
-
-    $("#email").on('input', function () {
-        resetError(elems["email"].parentNode);
-    });
     let emailError = false;
     if (!elems["email"].value || elems["email"].value.length <=3) {
-        hasErrors = true;
+        errors++;
         emailError = true;
         showError(elems["email"].parentNode, emailLengthMessage);
     }
@@ -84,17 +92,13 @@ function validateAndSend(form) {
         // noinspection JSUnresolvedVariable
         emailIsUsed = data.emailStatus;
         if (emailIsUsed) {
-            hasErrors = true;
+            errors++;
             showError(elems["email"].parentNode, emailUsedMessage);
         }
     }
-
-    $("#telNumber").on('input', function () {
-        resetError(elems["telNumber"].parentNode);
-    });
     let telNumError = false;
     if (!elems["telNumber"].value || elems["telNumber"].value.trim().length !== 10) {
-        hasErrors = true;
+        errors++;
         telNumError = true;
         showError(elems["telNumber"].parentNode, phoneNumberLengthMessage);
     }
@@ -109,29 +113,21 @@ function validateAndSend(form) {
         // noinspection JSUnresolvedVariable
         telNumIsUsed = data.telStatus;
         if (telNumIsUsed) {
-            hasErrors = true;
+            errors++;
             showError(elems["telNumber"].parentNode, phoneNumberInUseMessage);
         }
     }
-
-    $("#password").on('input', function () {
-        resetError(elems["password"].parentNode);
-    });
     let passError = false;
     if (!elems["password"].value || elems["password"].value.length < 8 ) {
-        hasErrors = true;
+        errors++;
         passError = true;
         showError(elems["password"].parentNode, passwordLengthMessage);
     }
-
-    $("#passwordConfirm").on('input', function () {
-        resetError(elems["passwordConfirm"].parentNode);
-    });
     if (!passError && elems["passwordConfirm"].value !== elems["password"].value) {
-        hasErrors = true;
+        errors++;
         showError(elems["passwordConfirm"].parentNode, passwordsNotMatchMessage);
     }
-    if (!hasErrors) {
+    if (errors === 0) {
         sendUserForm(processRegForm());
     }
 }
@@ -169,7 +165,8 @@ function setData(data) {
 }
 
 function showError(container, errorMessage) {
-    if (container.lastChild.className !== "error-message") {
+    let error = $(container).find(".error-message");
+    if (!$(error)[0]) {
         let msgElem = document.createElement('span');
         msgElem.className = "error-message";
         msgElem.innerHTML = errorMessage;
@@ -179,25 +176,30 @@ function showError(container, errorMessage) {
 }
 
 function resetError(container) {
-    if (container.lastChild.className === "error-message") {
-        $(container.lastChild).slideToggle(300);
-        setTimeout(function () {
-            $(container.lastChild).remove();
-        }, 300);
-    }
+    let errorMessage =  $(container).find(".error-message");
+    errorMessage.slideToggle(300);
+    setTimeout(function () {
+        errorMessage.remove();
+    }, 300);
 }
 
 function sendUserForm(formObject) {
     $.ajax ({
         type : "POST",
         url : '/user',
-        dataType: "json",
         contentType : 'application/json',
         async : false,
         data : JSON.stringify(formObject),
-        complete : (function () {
+        error: function(){
+            swal({
+                title: "Сталась помилка",
+                icon: "error",
+                button: "OK",
+            });
+        },
+        success : function () {
             location.href='/';
-        })
+        }
     });
 }
 

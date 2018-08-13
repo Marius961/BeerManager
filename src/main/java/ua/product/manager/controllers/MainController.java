@@ -36,14 +36,11 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping(value = "/{username}/my-profile", method = RequestMethod.GET)
+    @RequestMapping(value = "/my-profile", method = RequestMethod.GET)
     public ModelAndView getUserProfile(@PathVariable String username, Principal principal) {
-        if (username.equals(principal.getName())) {
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("user", userService.getUserByUsername(username));
-            modelAndView.setViewName("profile");
-            return modelAndView;
-        }
-        return new ModelAndView("redirect:/");
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("user", userService.getUserByUsername(username));
+        modelAndView.setViewName("profile");
+        return modelAndView;
     }
 }

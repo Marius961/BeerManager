@@ -42,7 +42,7 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/WEB-INF/views/404-error.jsp</location>
+        <location>/WEB-INF/views/errors/404-error.jsp</location>
     </error-page>
 
     <filter>
