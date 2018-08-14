@@ -14,6 +14,7 @@ import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.util.Collection;
 import java.util.List;
 

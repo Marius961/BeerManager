@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page session="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -22,20 +21,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/${user.username}/orders"/>">My orders<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="<c:url value="/"/>">Головна<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">My account</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Account
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="<c:url value="/logout"/>">Logout</a>
-                    </div>
+                    <a class="nav-link" href="<c:url value="/my-profile"/>">Мій профіль<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
         </div>
@@ -44,12 +33,11 @@
 <main class="background">
     <div class="main-div">
         <div class="content-box">
-            <h2 class="header-1">Full name: ${user.fullName}</h2>
-            <h6 class="details-1">Email: ${user.email}</h6>
-            <h6 class="details-1">Phone number: ${user.telNumber}</h6>
-            <h6 class="details-1">Company name: ${user.companyName}</h6>
-            <h6 class="details-1">Company address: ${user.companyAddress}</h6>
-            <button class="btn btn-info" onclick="location.href='/logout'">Logout</button>
+            <h2 class="header-1">П.І.Б.: ${user.fullName}</h2>
+            <h6 class="details-1">Ел. адреса: ${user.email}</h6>
+            <h6 class="details-1">Номер телефону: ${user.telNumber}</h6>
+            <h6 class="details-1">Назва компанії: ${user.companyName}</h6>
+            <h6 class="details-1">Адреса компанії: ${user.companyAddress}</h6>
         </div>
     </div>
 </main>

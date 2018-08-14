@@ -12,18 +12,13 @@ public interface ProductDAO {
 
     Product getProductById(int productId);
 
-    @Secured("ROLE_ADMIN")
     void insertProduct(Product product);
 
-    @Secured("ROLE_ADMIN")
     void updateProduct(Product product);
 
-    @Secured("ROLE_ADMIN")
     void removeProduct(int productId);
 
-    @Secured("ROLE_ADMIN")
     void blockProduct(int productId);
 
-    @Secured("ROLE_ADMIN")
     void unblockProduct(int productId);
 }

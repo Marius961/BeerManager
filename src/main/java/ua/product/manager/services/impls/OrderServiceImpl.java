@@ -40,12 +40,6 @@ public class OrderServiceImpl implements OrderService {
         }
     }
 
-
-    @Override
-    public Order getOrderByUserId(int userId) {
-        return null;
-    }
-
     @Override
     public Map<String, List<Order>> getOrdersWithUserDataByDate(String date) {
         List<Order> orders;
@@ -87,17 +81,6 @@ public class OrderServiceImpl implements OrderService {
         } else {
             orders = new ArrayList<>();
         }
-        if (!orders.isEmpty()) {
-            for (Order order : orders) {
-                setOrderItems(order);
-            }
-        }
-        return groupOrdersByDate(orders);
-    }
-
-    @Override
-    public Map<String, List<Order>> getOrders(int userId) {
-        List<Order> orders = orderDAO.getOrdersByUserId(userId);
         if (!orders.isEmpty()) {
             for (Order order : orders) {
                 setOrderItems(order);

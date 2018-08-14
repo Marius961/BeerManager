@@ -68,7 +68,7 @@ public class LoginRestController {
 
 
     @RequestMapping(value = "/users", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<User>> getOrdersList() {
+    public ResponseEntity<List<User>> getUsersList() {
         List<User> users = userService.getUsersList();
         if(users.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -76,15 +76,15 @@ public class LoginRestController {
         return new ResponseEntity<List<User>>(users, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getUser(@PathVariable int id) {
-        User user = null;
-        if (id != 0) {
-            user = userService.getUserById(id);
-        }
-        if(user == null){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(user, HttpStatus.OK);
-}
+//    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<User> getUser(@PathVariable int id) {
+//        User user = null;
+//        if (id != 0) {
+//            user = userService.getUserById(id);
+//        }
+//        if(user == null){
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(user, HttpStatus.OK);
+//    }
 }

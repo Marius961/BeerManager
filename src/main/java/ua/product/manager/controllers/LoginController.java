@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import ua.product.manager.models.User;
 import ua.product.manager.services.interfaces.UserService;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.security.Principal;
@@ -34,7 +32,7 @@ public class LoginController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String getRegistrationPage() {
-        return "registration";
+        return "all-views/registration";
     }
     
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -43,19 +41,8 @@ public class LoginController {
         if (error != null) {
             modelAndView.addObject("error", messages.getProperty("loginOrPassword.invalid"));
         }
-        modelAndView.setViewName("login");
+        modelAndView.setViewName("all-views/login");
         return modelAndView;
     }
-    
-    @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
-    public ModelAndView accessDenied(Principal user) {
-        ModelAndView modelAndView = new ModelAndView();
-        if (user != null) {
-            modelAndView.addObject("message", user.getName() + " - у вас нет доступа");
-        } else {
-            modelAndView.addObject("message", "У вас нет доступа");
-        }
-        modelAndView.setViewName("accessDenied");
-        return modelAndView;
-    }
+
 }

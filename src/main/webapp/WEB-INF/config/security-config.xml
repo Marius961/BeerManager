@@ -15,10 +15,27 @@
             <port-mapping http="8081" https="8443"/>
         </port-mappings>
 
-        <access-denied-handler error-page="/accessDenied"/>
-        <!--<intercept-url pattern="/username-check/*" access="permitAll()"/>-->
-        <!--<intercept-url pattern="/email-check/{email}" access="permitAll()"/>-->
-        <!--<intercept-url pattern="/user-orders/{id}" access="hasRole('ROLE_ADMIN')"/>-->
+        <access-denied-handler error-page="/"/>
+        <intercept-url pattern="/registration" access="isAnonymous()"/>
+        <intercept-url pattern="/login" access="isAnonymous()"/>
+        <intercept-url pattern="/user" access="isAnonymous()"/>
+        <intercept-url pattern="/username-check/{username}" access="isAnonymous()"/>
+        <intercept-url pattern="/email-check" access="isAnonymous()"/>
+        <intercept-url pattern="/tel-check" access="isAnonymous()"/>
+
+        <intercept-url pattern="/my-profile" access="hasRole('ROLE_USER')"/>
+
+        <intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/user/get/{id}" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/all-orders" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/products" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/user-orders" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/product*" access="hasRole('ROLE_ADMIN')"/>
+
+        <intercept-url pattern="/orders" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/order/form" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/orders/process" access="hasRole('ROLE_USER')"/>
+
         <form-login login-processing-url="/security_check"
                     login-page="/login"
                     default-target-url="/"

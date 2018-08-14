@@ -1,10 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page session="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -26,13 +24,13 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<c:url value="/orders"/>">Мої замовлення<span class="sr-only">(current)</span></a>
                 </li>
-            </ul>
-            <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Аккаунт
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="<c:url value="/my-profile"/>">Мій профіль</a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<c:url value="/logout"/>">Вийти з аккаунту</a>
                     </div>
                 </li>
@@ -57,7 +55,7 @@
                                     <div class="form-group">
                                         <form:input path="orderItems[${status.index}].volume" type="number" class="form-control left" id="volInput${status.index}" value="0"/>
                                         <form:hidden path="orderItems[${status.index}].productId" value="${item.productId}"/>
-                                        <form:hidden path="userId" value="${currentUser.id}"/>
+                                        <form:hidden path="userId" value="${currentUserId}"/>
                                     </div>
                                 </td>
                                 <td class="table-td-vol"><span class="barrels-vol">літрів</span></td>
@@ -82,5 +80,7 @@
 </main>
 
 <script src="<%=request.getContextPath()%>/resources/js/registration.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>

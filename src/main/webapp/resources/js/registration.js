@@ -130,6 +130,7 @@ function validateAndSend(form) {
     if (errors === 0) {
         sendUserForm(processRegForm());
     }
+    return false;
 }
 
 function sendCheckRequest(url) {

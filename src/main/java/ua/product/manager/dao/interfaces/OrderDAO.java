@@ -24,16 +24,13 @@ public interface OrderDAO {
 
     void addItemToOrder(OrderItem orderItem);
 
-    @Secured("ROLE_ADMIN")
     void deleteItem(int itemId);
 
     Order getOrder(int orderId);
 
     int createOrder(Order order);
 
-    @Secured("ROLE_ADMIN")
     void updateOrder(Order order);
 
-    @Secured("ROLE_ADMIN")
     void removeOrder(int orderId);
 }

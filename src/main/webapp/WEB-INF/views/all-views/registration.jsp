@@ -1,5 +1,4 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@page session="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
@@ -32,7 +31,7 @@
 <main class="background">
     <div class="main-div">
         <div class="content-box register-size">
-            <form>
+            <form onsubmit="return validateAndSend(this)">
                 <div class="form-group input-group-1">
                     <label for="username">Логін</label>
                     <input type="text" class="form-control" id="username" placeholder="Ваш логін латиницею">
@@ -67,7 +66,7 @@
                     <label for="passwordConfirm">Підтвердіть пароль</label>
                     <input type="password" class="form-control" id="passwordConfirm" placeholder="Будь ласска введіть пароль щераз">
                 </div>
-                <button type="button" class="btn btn-primary" onclick="validateAndSend(this.form)" style="margin: 0.5%">Зареєструватись</button>
+                <button type="submit" class="btn btn-primary" style="margin: 0.5%">Зареєструватись</button>
             </form>
         </div>
     </div>

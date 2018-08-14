@@ -1,5 +1,4 @@
 let currentTab = '';
-let lock = false;
 
 let monthList = ['Січня', 'Лютого','Березня','Квітня','Травня','Червня','Липня','Серпня','Вересня','Жовтня','Листопада','Грудня'];
 
@@ -8,7 +7,14 @@ let selectedBorderStyle = '7px solid black';
 let allTabs = $(".tab");
 
 $(document).ready(function () {
-    loadAllOrdersForCurrentDate($("#tab1")[0]);
+    let path = location.href;
+    path = path.substr(path.lastIndexOf('/') + 1);
+    if (path === 'orders') {
+        loadUserCurrentDateOrders($(allTabs)[0]);
+
+    } if (path === 'all-orders') {
+        loadAllOrdersForCurrentDate($(allTabs)[0]);
+    }
 });
 
 

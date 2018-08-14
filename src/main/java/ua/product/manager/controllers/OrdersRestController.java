@@ -37,14 +37,14 @@ public class OrdersRestController {
         return new ResponseEntity<>(orders, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/user-orders/{id}", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, List<Order>>> getOrdersByUserId(@PathVariable int id) {
-        Map<String, List<Order>> orders = orderService.getOrders(id);
-        if(orders.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(orders, HttpStatus.OK);
-    }
+//    @RequestMapping(value = "/user-orders/{id}", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
+//    public ResponseEntity<Map<String, List<Order>>> getOrdersByUserId(@PathVariable int id) {
+//        Map<String, List<Order>> orders = orderService.getOrders(id);
+//        if(orders.isEmpty()){
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
+//        return new ResponseEntity<>(orders, HttpStatus.OK);
+//    }
 
     @RequestMapping(value = "/user-orders", method = RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, List<Order>>> getAllOrders(@RequestBody SimpleStringContainer date) {
