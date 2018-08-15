@@ -7,8 +7,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"  crossorigin="anonymous">
+    <title>Реєстрація</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
 </head>
@@ -28,30 +29,41 @@
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="main-div">
-        <div class="content-box login-size">
-            <c:if test="${not empty error}">
-                <div class="alert alert-danger" role="alert">
-                        ${error}
-                </div>
-            </c:if>
-            <form action="<c:url value="/security_check"/>" name="form_login" method="post" onsubmit="return validateForm(this)">
-                <div class="form-group">
-                    <label for="username">Логін</label>
-                    <input type="text" name="username" class="form-control" id="username">
-                </div>
-                <div class="form-group">
-                    <label for="password">Пароль</label>
-                    <input type="password" name="password" class="form-control" id="password">
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="rememberMe" class="custom-control-input" id="rememberMe">
-                    <label class="custom-control-label" for="rememberMe">Запам'ятати мене</label>
-                </div>
-                <br>
-                <button type="submit" class="btn btn-primary">Увійти</button>
-            </form>
+<main class="container">
+    <div class="row">
+        <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
+           <div class="row">
+               <div class="col p-3">
+                   <c:if test="${not empty error}">
+                       <div class="row no-gutters">
+                           <div class="col">
+                               <div class="alert alert-danger" role="alert">
+                                       ${error}
+                               </div>
+                           </div>
+                       </div>
+                   </c:if>
+                   <form action="<c:url value="/security_check"/>" name="form_login" method="post" onsubmit="return validateForm(this)">
+                       <div class="form-group">
+                           <label for="username">Логін</label>
+                           <input type="text" name="username" class="form-control" id="username">
+                       </div>
+                       <div class="form-group">
+                           <label for="password">Пароль</label>
+                           <input type="password" name="password" class="form-control" id="password">
+                       </div>
+                       <div class="form-group form-check">
+                           <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                           <label class="form-check-label" for="rememberMe">Запам'ятати мене</label>
+                       </div>
+                       <div class="row">
+                           <div class="col mt-2">
+                               <button type="submit" class="btn btn-primary">Увійти</button>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+           </div>
         </div>
     </div>
 </main>
@@ -59,8 +71,8 @@
 
 
 <script src="<%=request.getContextPath()%>/resources/js/loginForm.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>

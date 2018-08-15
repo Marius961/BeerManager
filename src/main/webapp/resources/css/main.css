@@ -1,6 +1,4 @@
-html {
-    background-color: #f1f1f1;
-}
+
 
 .small-1 {
     margin: 0 0.5%;
@@ -34,6 +32,10 @@ html {
     float: left;
 }
 
+.container-background {
+    background-color: snow;
+    box-shadow: 0 0.1em 0.4em #b6b6b6;
+}
 
 .content-box {
     margin: 1% 0;
@@ -112,18 +114,10 @@ html {
 }
 
 .tab-bar {
-    width: 80%;
-    height: 10%;
-    margin: 1% 10% 0;
     background: snow;
-    padding: 1%;
 }
 
 .tab {
-    width: 15%;
-    height: 100%;
-    display: inline-block;
-    border-radius: 3px;
     border-bottom: 7px solid #ededed;
     padding: 0.5%;
     transition: 100ms;
@@ -184,12 +178,12 @@ html {
 }
 
 .refresh-btn-div {
-     width: 9%;
-     height: 100%;
-     display: inline-block;
-     float: right;
+     /*width: 9%;*/
+     /*height: 100%;*/
+     /*display: inline-block;*/
+     /*float: right;*/
      transition: 100ms;
-     border-radius: 3px;
+     /*border-radius: 3px;*/
      padding: 0.5%;
  }
 

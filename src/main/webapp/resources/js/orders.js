@@ -27,7 +27,7 @@ function loadUserCurrentDateOrders(tab) {
         let dateObj = {
             "str" : 'CURRENT_DATE'
         };
-        $(".container-div").fadeOut(100);
+        $("#orders-container").fadeOut(100);
         setTimeout(function () {
             $("#orders").html('');
             loadOrderList('/orders', processOrders, dateObj, false);
@@ -42,7 +42,7 @@ function loadUserOtherOrders(tab) {
         let dateObj = {
             "str" : '!CURRENT_DATE'
         };
-        $(".container-div").fadeOut(100);
+        $("#orders-container").fadeOut(100);
         setTimeout(function () {
             $("#orders").html('');
             loadOrderList('/orders', processOrders, dateObj, false);
@@ -76,7 +76,7 @@ function loadAllOtherOrders(tab) {
         let dateObj = {
             "str" : '!CURRENT_DATE'
         };
-        $(".container-div").fadeOut(100);
+        $("#orders-container").fadeOut(100);
         setTimeout(function () {
             $("#orders").html('');
             loadOrderList('/user-orders', processOrders, dateObj, true);
@@ -118,7 +118,7 @@ function processOrders(data, displayCustomerData) {
     }
     removeLoadAnimation();
     setTimeout(function () {
-        $(".container-div").fadeIn(300);
+        $("#orders-container").fadeIn(300);
     }, 200);
 }
 
@@ -175,7 +175,7 @@ function clearTabSelection() {
 function selectTab(tab) {
     $(tab).css('border-bottom', selectedBorderStyle);
     currentTab = tab;
-    $(".container-div").fadeOut(100);
+    $("#orders-container").fadeOut(100);
 }
 
 function addLoadAnimation() {

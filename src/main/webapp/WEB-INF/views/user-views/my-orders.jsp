@@ -7,10 +7,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/animations.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body>
@@ -39,16 +40,20 @@
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="btn-label">Сьогодні</span></div>
-        <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label">Інші дні</span></div>
-        <div class="refresh-btn-div" style="width: 12%">
-            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="location.href='/order/form'"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">Створити замовлення</button>
+<main class="container">
+    <div class="row">
+        <div class="col-2">
+            <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="btn-label">Сьогодні</span></div>
+        </div>
+        <div class="col-2">
+            <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label">Інші дні</span></div>
+        </div>
+        <div class="col-2 offset-lg-6 pt-1">
+            <button type="button" class="btn btn-light" onclick="location.href='/order/form'">Створити замовлення</button>
         </div>
     </div>
-    <div class="main-div">
-        <div class="container-div">
+    <div class="row mt-2">
+        <div class="col" id="orders-container">
             <div id="orders"></div>
         </div>
     </div>

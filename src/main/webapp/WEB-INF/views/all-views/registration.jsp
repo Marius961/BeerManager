@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -28,9 +29,9 @@
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="main-div">
-        <div class="content-box register-size">
+<main class="container">
+    <div class="row">
+        <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
             <form onsubmit="return validateAndSend(this)">
                 <div class="form-group input-group-1">
                     <label for="username">Логін</label>
