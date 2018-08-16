@@ -37,14 +37,6 @@
     box-shadow: 0 0.1em 0.4em #b6b6b6;
 }
 
-.content-box {
-    margin: 1% 0;
-    padding: 2%;
-    border-radius: 0.5vh;
-    background-color: snow;
-    box-shadow: 0 0.1em 0.4em #b6b6b6;
-}
-
 
 .group-header {
     margin: 1% 0 0;
@@ -118,8 +110,9 @@
 }
 
 .tab {
-    border-bottom: 7px solid #ededed;
-    padding: 0.5%;
+    font-family: "Segoe UI Semibold", serif;
+    border-bottom: 0.8mm solid #ededed;
+    font-size: 6mm;
     transition: 100ms;
 }
 
@@ -172,11 +165,6 @@
     margin-right: 5%;
 }
 
-.btn-label {
-    font-size: 3vh;
-    color: grey;
-}
-
 .refresh-btn-div {
      /*width: 9%;*/
      /*height: 100%;*/
@@ -215,4 +203,21 @@
     width: 80%;
     height: 95%;
     margin: auto;
+}
+
+
+
+
+
+
+/**/
+
+.order-header {
+    font-family: "Segoe UI", serif;
+    background-color: rgba(209, 209, 209, 0.31);
+}
+
+.order-box {
+    background-color: snow;
+    box-shadow: 0 0.1em 0.4em #b6b6b6;
 }

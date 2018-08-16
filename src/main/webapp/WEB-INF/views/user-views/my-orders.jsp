@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Мої замовлення</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
@@ -42,19 +42,59 @@
 </header>
 <main class="container">
     <div class="row">
-        <div class="col-2">
-            <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="btn-label">Сьогодні</span></div>
+        <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
+            <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="btn-label p-sm-3 p-3">Сьогодні</span></div>
         </div>
-        <div class="col-2">
-            <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label">Інші дні</span></div>
+        <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
+            <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label p-sm-3 p-3">Інші дні</span></div>
         </div>
-        <div class="col-2 offset-lg-6 pt-1">
-            <button type="button" class="btn btn-light" onclick="location.href='/order/form'">Створити замовлення</button>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 offset-md-3 offset-lg-6 offset-xl-6 pt-1">
+            <button type="button" class="col-12 btn btn-light p-1" onclick="location.href='/order/form'">Створити замовлення</button>
         </div>
     </div>
-    <div class="row mt-2">
+
+    <div class="row mt-3">
         <div class="col" id="orders-container">
-            <div id="orders"></div>
+            <div id="orders">
+                <%--<div class="row" id="2018-08-25">--%>
+                    <%--<div class="col-12 p-0 mb-2">--%>
+                        <%--<h2 class="date-header p-2">25 Серпня 2018</h2>--%>
+                    <%--</div>--%>
+                    <%--<div class="col" id="list-2018-08-25">--%>
+
+                    <%--</div>--%>
+                <%--</div>--%>
+
+            </div>
+            <%--<div class="row mb-3 order-box" id="elem49">--%>
+                <%--<div class="col-12">--%>
+                    <%--<div class="row order-header p-1">--%>
+                        <%--<div class="col-6 text-left">Дата створення: <span class="font-weight-bold">2018-08-14</span> </div>--%>
+                        <%--<div class="col-6 text-right">Замовлення №<span class="font-weight-bold">49</span></div>--%>
+                        <%--<div class="col text-left">Час замовлення:<span class="font-weight-bold">14:16:00</span></div>--%>
+                    <%--</div>--%>
+                    <%--<div class="row order-header p-1 mt-1 text-center font-weight-bold">--%>
+                        <%--<div class="col-9">Назва товару</div>--%>
+                        <%--<div class="col-3">Об'єм</div>--%>
+                    <%--</div>--%>
+                    <%--<div class="row" id="items-12">--%>
+                        <%--<div class="col">--%>
+                            <%--<div class="row p-1 mt-1 item-1">--%>
+                                <%--<div class="col-9">Чернігівське</div>--%>
+                                <%--<div class="col-3 text-center">50 літрів</div>--%>
+                            <%--</div>--%>
+                            <%--<div class="row p-1 mt-1 item-1">--%>
+                                <%--<div class="col-9">Garage</div>--%>
+                                <%--<div class="col-3 text-center">60 літрів</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+                <%--<div class="col p-1 pl-2 comment-col">--%>
+                    <%--<h5>Коментар:</h5>--%>
+                    <%--<p>Ваш коментар до замовлення буде міститись тут</p>--%>
+                <%--</div>--%>
+            <%--</div>--%>
         </div>
     </div>
 </main>

@@ -111,12 +111,28 @@
 }
 
 .date-header {
-    background-color: #008800;
-    font-size: 2em;
+    font-size: 4mm;
     font-family: "Segoe UI Semibold", serif;
-    color: snow;
-    padding: 0.5%;
-    border-radius: 3px;
+    background-color: rgb(255, 146, 82);
     box-shadow: 0 0.3em 0.7em #cbcbcb;
 }
 
+
+/*!**/
+
+.item-1 {
+    font-family: "Segoe UI", serif;
+    font-size: 1.3em;
+    border-bottom: 0.3vh solid rgba(0, 0, 0, 0.07);
+}
+
+.comment-col {
+    background: rgba(173, 229, 255, 0.51);
+    font-family: "Segoe UI", serif;
+    font-size: 1.3em;
+}
+
+.comment-col > P {
+    font-family: "Segoe UI", serif;
+    font-size: 0.8em;
+}
