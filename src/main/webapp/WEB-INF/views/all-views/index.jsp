@@ -18,16 +18,34 @@
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="main-div">
-        <div class="jumbotron">
-            <h1 class="display-4">Вітаємо у Product manager!</h1>
-            <p class="lead">Це простий інструмент для менеджменту замовлень!</p>
-            <hr class="my-4">
-            <p>Ми використовуєм просту та зручну систему контролю та створення замовлень</p>
-            <button class="btn btn-dark" onclick="location.href='/registration'">Зареєструватись</button>
-            <small class="small-1">або</small>
-            <button class="btn btn-dark" onclick="location.href='login'">Увійти</button>
+<main class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="row jumbotron">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="display-4">Вітаємо у Product manager!</h1>
+                    </div>
+                    <div class="col">
+                        <p class="lead">Це простий інструмент для менеджменту замовлень!</p>
+                        <hr class="my-4">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <p>Ми використовуєм просту та зручну систему контролю та створення замовлень</p>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col-12 col-sm-auto p-1 text-center">
+                        <button class="btn btn-dark" onclick="location.href='/registration'">Зареєструватись</button>
+                    </div>
+                    <div class="col-12 col-sm-auto text-center">
+                        <small class="small-1">або</small>
+                    </div>
+                    <div class="col-12 col-sm-auto p-1 text-center">
+                        <button class="btn btn-dark" onclick="location.href='login'">Увійти</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </main>

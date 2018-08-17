@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
            <div class="row">
-               <div class="col p-3">
+               <div class="col-12 p-3">
                    <c:if test="${not empty error}">
                        <div class="row no-gutters">
                            <div class="col">
@@ -57,11 +57,14 @@
                            <label class="form-check-label" for="rememberMe">Запам'ятати мене</label>
                        </div>
                        <div class="row">
-                           <div class="col mt-2">
+                           <div class="col-3 mt-2">
                                <button type="submit" class="btn btn-primary">Увійти</button>
                            </div>
                        </div>
                    </form>
+               </div>
+               <div class="col p-3 form-link">
+                   <span>Немає аккаунту? <a href="<c:url value="/registration"/>">Зареєструватись</a> </span>
                </div>
            </div>
         </div>

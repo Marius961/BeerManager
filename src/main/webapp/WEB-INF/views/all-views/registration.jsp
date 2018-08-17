@@ -31,43 +31,52 @@
 </header>
 <main class="container">
     <div class="row">
-        <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
+        <div class="col-11 col-md-7 col-lg-9 col-xl-10 mt-5 mb-2 mx-auto container-background">
             <form onsubmit="return validateAndSend(this)">
-                <div class="form-group input-group-1">
-                    <label for="username">Логін</label>
-                    <input type="text" class="form-control" id="username" placeholder="Ваш логін латиницею">
-                    <small id="emailHelp" class="form-text text-muted">Використовується для входу на сайт.</small>
+                <div class="row">
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="username">Логін</label>
+                        <input type="text" class="form-control" id="username" placeholder="Ваш логін латиницею">
+                        <small id="emailHelp" class="form-text text-muted">Використовується для входу на сайт.</small>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="fullName">П.І.Б.</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="введіть ваше П.І.Б.">
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="companyName">Назва компанії</label>
+                        <input type="text" class="form-control" id="companyName" placeholder="Введіть назву вашої компанії">
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="companyAddress">Адреса вашої компанії</label>
+                        <input type="text" class="form-control" id="companyAddress" placeholder="Введіть адресу вашої компанії або філіалу">
+                        <small class="form-text text-warning">УВАГА - замовлені товари будуть доставлені на дану адресу.</small>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="email">Ел. адреса</label>
+                        <input type="email" class="form-control" id="email" placeholder="Введіть Вашу електронну адресу">
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="telNumber">Номер мобільного телефону</label>
+                        <input type="tel" class="form-control" id="telNumber" placeholder="Введіть номер Вашого мобільного телефону">
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="password">Пароль</label>
+                        <input type="password" class="form-control" id="password" placeholder="мінімум 8 латинських букв та цифр">
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <label for="passwordConfirm">Підтвердіть пароль</label>
+                        <input type="password" class="form-control" id="passwordConfirm" placeholder="Будь ласска введіть пароль щераз">
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col mt-3 mb-3">
+                        <button type="submit" class="btn btn-primary" style="margin: 0.5%">Зареєструватись</button>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col pt-1 pl-3 form-link">
+                        <span>Вже є аккаунт? <a href="<c:url value="/login"/>">Увійти</a> </span>
+                    </div>
                 </div>
-                <div class="form-group input-group-1">
-                    <label for="fullName">П.І.Б.</label>
-                    <input type="text" class="form-control" id="fullName" placeholder="введіть ваше П.І.Б.">
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="companyName">Назва компанії</label>
-                    <input type="text" class="form-control" id="companyName" placeholder="Введіть назву вашої компанії">
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="companyAddress">Адреса вашої компанії</label>
-                    <input type="text" class="form-control" id="companyAddress" placeholder="Введіть адресу вашої компанії або філіалу">
-                    <small class="form-text text-muted">УВАГА - замовлені товари будуть доставлені на дану адресу.</small>
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="email">Ел. адреса</label>
-                    <input type="email" class="form-control" id="email" placeholder="Введіть Вашу електронну адресу">
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="telNumber">Номер мобільного телефону</label>
-                    <input type="tel" class="form-control" id="telNumber" placeholder="Введіть номер Вашого мобільного телефону">
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="password">Пароль</label>
-                    <input type="password" class="form-control" id="password" placeholder="мінімум 8 латинських букв та цифр">
-                </div>
-                <div class="form-group input-group-1">
-                    <label for="passwordConfirm">Підтвердіть пароль</label>
-                    <input type="password" class="form-control" id="passwordConfirm" placeholder="Будь ласска введіть пароль щераз">
-                </div>
-                <button type="submit" class="btn btn-primary" style="margin: 0.5%">Зареєструватись</button>
             </form>
         </div>
     </div>

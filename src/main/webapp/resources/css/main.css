@@ -1,8 +1,8 @@
 
 
 .small-1 {
-    margin: 0 0.5%;
-    font-size: 2vh;
+    font-size: 6mm;
+    font-family: "Segoe UI", serif;
 }
 
 .input-group-1 {
@@ -220,4 +220,8 @@
 .order-box {
     background-color: snow;
     box-shadow: 0 0.1em 0.4em #b6b6b6;
+}
+
+.form-link {
+    border-top: 0.2vh solid rgba(0, 0, 0, 0.07);
 }
