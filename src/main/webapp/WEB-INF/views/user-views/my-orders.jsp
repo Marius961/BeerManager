@@ -48,7 +48,7 @@
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
             <div class="tab" onclick="loadUserOtherOrders(this)"><span class="btn-label p-sm-3 p-3">Інші дні</span></div>
         </div>
-        <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 offset-md-3 offset-lg-6 offset-xl-6 pt-1">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 offset-md-2 offset-lg-5 offset-xl-5 pt-1">
             <button type="button" class="col-12 btn btn-light p-1" onclick="location.href='/order/form'">Створити замовлення</button>
         </div>
     </div>

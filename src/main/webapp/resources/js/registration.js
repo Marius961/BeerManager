@@ -14,6 +14,7 @@ let litersLimitMessage = 'Ви можете додавати тільки з к�
 let productSelectionMessage = 'Ви повинні вибрати як мінімум 1 продукт';
 let timeLimitMessage = 'Ви можете створити замовлення тільки до 9:00 дня виконання замовлення';
 let orderExecutionDataMessage = 'Дата виконання замовлення повинна бути більшою від поточної дати';
+let emptyDateError = "Будь ласка виберіть дату виконання замовлення";
 
 // $("#username").on('input', function () {
 //     resetError(elems["username"].parentNode);
@@ -43,6 +44,14 @@ $(":input").on('input', function () {
     resetError($(this)[0].parentNode);
 });
 
+$(document).ready(function () {
+    let now = new Date();
+    let day = ("0" + now.getDate()).slice(-2);
+    let month = ("0" + (now.getMonth() + 1)).slice(-2);
+    let today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+   $("#execDate").val(today);
+});
 function validateAndSend(form) {
     let url = '';
     let data = "";
@@ -225,7 +234,7 @@ function validateOrderForm() {
     let emptyFieldsCount = 0;
     let fieldsCount = 0;
     resetSectionError();
-    $(".left").each(function (index, element) {
+    $('input[type = "number"]').each(function (index, element) {
         if ((+element.value % 5) !== 0) {
             if (errorCounter < 1) {
                 showSectionError(litersLimitMessage);
@@ -241,16 +250,16 @@ function validateOrderForm() {
         errorCounter++;
         showSectionError(productSelectionMessage);
     }
-    let dateError = false;
-    let dateField = document.getElementById('execDate');
+    let dateError;
+    let dateField = $("#execDate")[0];
     resetError(dateField.parentNode);
     if (!dateField.value) {
         errorCounter++;
         dateError = true;
-        showError(dateField.parentNode, 'Select date');
+        showError(dateField.parentNode, emptyDateError);
     }
     if (!dateError) {
-        let orderDate = new Date(document.getElementById('execDate').value);
+        let orderDate = new Date($("#execDate")[0].value);
         let currentDate = new Date();
         let currentHours = currentDate.getHours();
         currentDate.setHours(0 ,0 , 0 , 0);
@@ -271,11 +280,16 @@ function validateOrderForm() {
 }
 
 function showSectionError(error) {
-    $(".content-div").append("<p class='error-message'>"+ error + "</p>");
+    let errorContainer = $("#errorContainer")[0];
+    if(errorContainer === undefined) {
+        $(".row").eq(0).prepend("<div class='col-12 alert alert-danger' role='alert' id='errorContainer'></div>")
+    }
+    $("#errorContainer").append(error);
 }
 
 function resetSectionError() {
     $(".error-message").remove();
+    $("#errorContainer").remove();
 }
 
 

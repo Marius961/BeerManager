@@ -136,3 +136,10 @@
     font-family: "Segoe UI", serif;
     font-size: 0.8em;
 }
+
+
+.item-2 {
+    border: 0.25mm solid rgba(0, 0, 0, 0.07);
+    background-color: snow;
+    font-family: "Segoe UI", serif;
+}
