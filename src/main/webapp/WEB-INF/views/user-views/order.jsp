@@ -46,7 +46,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col pt-2">
-            <form:form action="/orders/process" method="post" modelAttribute="order" id="orderForm">
+            <form:form action="/orders/process" method="post" modelAttribute="order" id="orderForm" onsubmit="return IsOrderFormValid()">
                 <a class="h5">Товари:</a>
                 <div class="row p-1 m-1">
                     <c:forEach items="${order.orderItems}" var="item" varStatus="status">
@@ -77,7 +77,7 @@
                     </div>
                     <div class="w-100"></div>
                     <div class="col-4 mt-3 ml-1">
-                        <button type="button" class="btn btn-primary" onclick="validateOrderForm()">Замовити</button>
+                        <button type="submit" class="btn btn-primary">Замовити</button>
                     </div>
                 </div>
             </form:form>
@@ -118,7 +118,7 @@
                     <%--<form:input path="execDate" class="form-control" id="execDate" type="date"/>--%>
                 <%--</div>--%>
                 <%--<br>--%>
-                <%--<button type="button" class="btn btn-primary" onclick="validateOrderForm()">Замовити</button>--%>
+                <%--<button type="button" class="btn btn-primary" onclick="IsOrderFormValid()">Замовити</button>--%>
             <%--</form:form>--%>
         <%--</div>--%>
     <%--</div>--%>

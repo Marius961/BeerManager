@@ -32,7 +32,7 @@
 <main class="container">
     <div class="row">
         <div class="col-11 col-md-7 col-lg-9 col-xl-10 mt-5 mb-2 mx-auto container-background">
-            <form onsubmit="return validateAndSend(this)">
+            <form onsubmit="return isRegistrationFormValid(this)">
                 <div class="row">
                     <div class="col-12 col-lg-6 mt-2">
                         <label for="username">Логін</label>

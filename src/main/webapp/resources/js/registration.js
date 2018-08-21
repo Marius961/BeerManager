@@ -49,10 +49,9 @@ $(document).ready(function () {
     let day = ("0" + now.getDate()).slice(-2);
     let month = ("0" + (now.getMonth() + 1)).slice(-2);
     let today = now.getFullYear()+"-"+(month)+"-"+(day) ;
-
    $("#execDate").val(today);
 });
-function validateAndSend(form) {
+function isRegistrationFormValid(form) {
     let url = '';
     let data = "";
     let  errors = 0;
@@ -229,7 +228,7 @@ function processRegForm() {
     };
 }
 
-function validateOrderForm() {
+function IsOrderFormValid() {
     let errorCounter = 0;
     let emptyFieldsCount = 0;
     let fieldsCount = 0;
@@ -275,8 +274,9 @@ function validateOrderForm() {
         }
     }
     if (errorCounter === 0) {
-        $("#orderForm").submit();
+        return true;
     }
+    return false;
 }
 
 function showSectionError(error) {
