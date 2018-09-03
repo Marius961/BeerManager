@@ -5,8 +5,8 @@ let searchTab = $("#search")[0];
 let allProducts;
 let lock = false;
 
-let defaultBorderStyle = '7px solid #ededed';
-let selectedBorderStyle = '7px solid black';
+let defaultBorderStyle = '0.8mm solid #ededed';
+let selectedBorderStyle = '0.8mm solid black';
 
 let blockBtnLabel = 'Заблокувати';
 let unblockBtnLabel = 'Розблокувати';

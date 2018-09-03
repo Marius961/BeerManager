@@ -6,11 +6,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
+    <title>Товари</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/products.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/animations.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
 <body class="background">
@@ -45,21 +46,25 @@
         </div>
     </nav>
 </header>
-<main class="background">
-    <div class="tab-bar">
-        <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="btn-label">Всі</span></div>
-        <div class="tab" onclick="showUnblockedProducts(this)"><span class="btn-label">Активні</span></div>
-        <div class="tab" onclick="showBlockedProductList(this)"><span class="btn-label">Не активні</span></div>
-        <div class="refresh-btn-div">
-            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="refreshData()"><img src="<%=request.getContextPath()%>/resources/images/refresh.png" class="refresh-img">Оновити</button>
+<main class="container">
+    <div class="row m-2 sticky-top" style="background: #f1f1f1">
+        <div class="col-12 col-sm-2 col-md-1 col-lg-1">
+            <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="label-text-1">Всі</span></div>
         </div>
-        <div class="refresh-btn-div" style="width: 12%">
-            <button class="btn btn-outline-secondary btn-refresh" type="button" onclick="addForm()"><img src="<%=request.getContextPath()%>/resources/images/plus.png" class="plus-img">Додати продукт</button>
+        <div class="col-12 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+            <div class="tab" onclick="showUnblockedProducts(this)"><span class="label-text-1">Активні</span></div>
         </div>
-        <div class="search-div" id="search">
-            <div class="input-group" >
-                <input type="text" oninput="search(this.value)" class="form-control search-input" placeholder="Пошук по продукції" aria-label="Search by products" aria-describedby="button-addon4">
-            </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-2">
+            <div class="tab" onclick="showBlockedProductList(this)"><span class="label-text-1">Не активні</span></div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-2 col-lg-2 pt-1 order-sm-11">
+            <button type="button" class="col-12 btn btn-light p-1 font-2" onclick="refreshData()">Оновити</button>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 pt-1 order-sm-12">
+            <button type="button" class="col-12 btn btn-light p-1 font-2" onclick="addForm()">Додати товар</button>
+        </div>
+        <div class="col-md-12 col-lg-3 col-xl-3 order-md-last mt-1" id="search" style="transition: 100ms;">
+            <input type="text" oninput="search(this.value)" class="form-control font-2" placeholder="Пошук по продукції" aria-label="Search by products" aria-describedby="button-addon4">
         </div>
     </div>
     <div class="main-div">

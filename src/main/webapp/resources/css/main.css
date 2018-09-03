@@ -110,9 +110,7 @@
 }
 
 .tab {
-    font-family: "Segoe UI Semibold", serif;
     border-bottom: 0.8mm solid #ededed;
-    font-size: 6mm;
     transition: 100ms;
 }
 
@@ -120,19 +118,8 @@
     border-bottom: 7px solid #333333;
 }
 
-.search-div {
-    width: 20%;
-    height: 100%;
-    float: right;
-    display: inline-block;
-    padding: 0.5%;
-    transition: 100ms;
-}
 
-.search-input {
-    height: 100%;
-    width: 100%
-}
+
 
 .add-btn-div {
     width: 13%;
@@ -166,13 +153,8 @@
 }
 
 .refresh-btn-div {
-     /*width: 9%;*/
-     /*height: 100%;*/
-     /*display: inline-block;*/
-     /*float: right;*/
+
      transition: 100ms;
-     /*border-radius: 3px;*/
-     padding: 0.5%;
  }
 
 .btn-refresh {
@@ -224,4 +206,13 @@
 
 .form-link {
     border-top: 0.2vh solid rgba(0, 0, 0, 0.07);
+}
+
+.label-text-1 {
+    font-family: "Segoe UI", serif;
+    font-size: 6mm;
+}
+
+.font-2 {
+    font-family: "Segoe UI", serif;
 }
