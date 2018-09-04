@@ -21,7 +21,7 @@ function validateForm(form) {
 function addLoginError() {
     let errorMessage = $(".alert");
     if (!$(errorMessage)[0]) {
-        $(".p-3").prepend("<div class='row no-gutters'>\n" +
+        $("#loginForm").prepend("<div class='row no-gutters'>\n" +
             "   <div class='col'>\n" +
             "       <div class='alert alert-danger' role='alert'>\n" +
             "           Неправильний логін або пароль\n" +

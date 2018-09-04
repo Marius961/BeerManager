@@ -10,10 +10,10 @@
 
     <http use-expressions="true">
 
-        <intercept-url pattern="/**" requires-channel="https"/>
-        <port-mappings>
-            <port-mapping http="8081" https="8443"/>
-        </port-mappings>
+        <!--<intercept-url pattern="/**" requires-channel="https"/>-->
+        <!--<port-mappings>-->
+            <!--<port-mapping http="8081" https="8443"/>-->
+        <!--</port-mappings>-->
 
         <access-denied-handler error-page="/"/>
         <intercept-url pattern="/registration" access="isAnonymous()"/>

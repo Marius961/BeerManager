@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
 </head>
-<body>
+<body class="background">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Product manager</a>
@@ -33,7 +33,7 @@
     <div class="row">
         <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
            <div class="row">
-               <div class="col-12 p-3">
+               <div class="col-12 p-3" id="loginForm">
                    <c:if test="${not empty error}">
                        <div class="row no-gutters">
                            <div class="col">
@@ -43,6 +43,8 @@
                            </div>
                        </div>
                    </c:if>
+                   <h4>Вхід</h4>
+                   <hr>
                    <form action="<c:url value="/security_check"/>" name="form_login" method="post" onsubmit="return validateForm(this)">
                        <div class="form-group">
                            <label for="username">Логін</label>

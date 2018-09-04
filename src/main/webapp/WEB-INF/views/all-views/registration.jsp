@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
-<body>
+<body class="background">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="<c:url value="/"/>">Product manager</a>
@@ -32,6 +32,8 @@
 <main class="container">
     <div class="row">
         <div class="col-11 col-md-7 col-lg-9 col-xl-10 mt-5 mb-2 mx-auto container-background">
+            <h4 class="mt-3">Реєстрація</h4>
+            <hr>
             <form onsubmit="return isRegistrationFormValid(this)">
                 <div class="row">
                     <div class="col-12 col-lg-6 mt-2">

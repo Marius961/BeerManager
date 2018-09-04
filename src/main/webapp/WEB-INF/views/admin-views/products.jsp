@@ -47,7 +47,7 @@
     </nav>
 </header>
 <main class="container">
-    <div class="row m-2 sticky-top" style="background: #f1f1f1">
+    <div class="row m-2">
         <div class="col-12 col-sm-2 col-md-1 col-lg-1">
             <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="label-text-1">Всі</span></div>
         </div>
@@ -73,5 +73,6 @@
 <script src="<%=request.getContextPath()%>/resources/js/products.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

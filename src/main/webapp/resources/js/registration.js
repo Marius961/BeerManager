@@ -16,30 +16,6 @@ let timeLimitMessage = 'Ви можете створити замовлення 
 let orderExecutionDataMessage = 'Дата виконання замовлення повинна бути більшою від поточної дати';
 let emptyDateError = "Будь ласка виберіть дату виконання замовлення";
 
-// $("#username").on('input', function () {
-//     resetError(elems["username"].parentNode);
-// });
-// $("#fullName").on('input', function () {
-//     resetError(elems["fullName"].parentNode);
-// });
-// $("#companyName").on('input', function () {
-//     resetError(elems["companyName"].parentNode);
-// });
-// $("#companyAddress").on('input', function () {
-//     resetError(elems["companyAddress"].parentNode);
-// });
-// $("#email").on('input', function () {
-//     resetError(elems["email"].parentNode);
-// });
-// $("#telNumber").on('input', function () {
-//     resetError(elems["telNumber"].parentNode);
-// });
-// $("#password").on('input', function () {
-//     resetError(elems["password"].parentNode);
-// });
-// $("#passwordConfirm").on('input', function () {
-//     resetError(elems["passwordConfirm"].parentNode);
-// });
 $(":input").on('input', function () {
     resetError($(this)[0].parentNode);
 });

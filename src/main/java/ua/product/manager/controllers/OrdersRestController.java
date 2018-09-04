@@ -4,12 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ua.product.manager.containers.SimpleStringContainer;
 import ua.product.manager.models.Order;
 import ua.product.manager.models.Product;
 import ua.product.manager.services.interfaces.OrderService;
 import ua.product.manager.services.interfaces.UserService;
+import ua.product.manager.validators.ProductValidator;
 
 import java.security.Principal;
 import java.util.ArrayList;
@@ -21,11 +23,12 @@ public class OrdersRestController {
 
     private OrderService orderService;
     private UserService userService;
-
+    private ProductValidator productValidator;
     @Autowired
-    private void setServices(OrderService orderService, UserService userService) {
+    private void setServices(OrderService orderService, UserService userService, ProductValidator productValidator) {
         this.orderService = orderService;
         this.userService = userService;
+        this.productValidator = productValidator;
     }
 
     @RequestMapping(value = "/orders", method = RequestMethod.POST ,produces = MediaType.APPLICATION_JSON_VALUE)
@@ -65,8 +68,10 @@ public class OrdersRestController {
     }
 
     @RequestMapping(value = "/product", method = RequestMethod.POST)
-    public ResponseEntity<Void> addProduct(@RequestBody Product product) {
-        if (product != null) {
+    public ResponseEntity<Void> addProduct(@RequestBody Product product,BindingResult result) {
+        productValidator.validate(product, result);
+        System.out.println(result.hasErrors());
+        if (!result.hasErrors()) {
             orderService.addProduct(product);
             return new ResponseEntity<>(HttpStatus.OK);
         }

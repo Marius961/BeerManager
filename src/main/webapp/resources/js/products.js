@@ -1,16 +1,23 @@
 let mainDiv = $(".main-div");
 let allTabs = $(".tab");
 let currentTab = '';
-let searchTab = $("#search")[0];
+const searchTab = $("#search")[0];
 let allProducts;
 let lock = false;
 
-let defaultBorderStyle = '0.8mm solid #ededed';
-let selectedBorderStyle = '0.8mm solid black';
+const defaultBorderStyle = '0.8mm solid #ededed';
+const selectedBorderStyle = '0.8mm solid black';
 
-let blockBtnLabel = 'Заблокувати';
-let unblockBtnLabel = 'Розблокувати';
-let deleteBtnLabel = 'Видалити';
+const blockBtnLabel = 'Заблокувати';
+const unblockBtnLabel = 'Розблокувати';
+const deleteBtnLabel = 'Видалити';
+
+const productNameLengthError = 'Назва продукту повинна перевищувати 3 символи';
+
+const creationServerErrorMessage = "Нажаль не вдалося додати новий продукт, перезавантажте сторінку та спробуйте щераз";
+const removingServerErrorMessage= 'Нажаль не вдалося додати новий продукт, перезавантажте сторінку та спробуйте щераз';
+const blockingServerErrorMessage= 'Не вдалось заблокувати продукт, будь ласка оновіть сторінку та спробуйте щераз';
+const unlockingServerErrorMessage = 'Не вдалось розблокувати продукт, будь ласка оновіть сторінку та спробуйте щераз';
 
 $(document).ready(function () {
     refreshData();
@@ -62,22 +69,55 @@ function showUnblockedProducts(tab) {
 }
 function blockProduct(productId) {
     if (!lock) {
-        lock = true;
-        sendRequest("/product-block/", productId, 'POST', changeButtonLabel);
+        swal({
+            title: "Ви впевнені?",
+            text: "Ви впевнені що хочете заблокувати продукт?",
+            icon: "warning",
+            buttons: ["Скасувати", true],
+            dangerMode: true,
+        })
+            .then((willBlock) => {
+                if (willBlock) {
+                    lock = true;
+                    sendRequest("/product-block/", productId, 'POST', changeButtonLabel, blockingServerErrorMessage);
+                }
+            });
     }
 }
 
 function unblockProduct(productId) {
     if (!lock) {
-        lock = true;
-        sendRequest("/product-unblock/", productId, 'POST', changeButtonLabel);
+        swal({
+            title: "Ви впевнені?",
+            text: "Після розблокування продукт стане доступним для замовлення",
+            icon: "warning",
+            buttons: ["Скасувати", true],
+            dangerMode: true,
+        })
+            .then((willUnblock) => {
+                if (willUnblock) {
+                    lock = true;
+                    sendRequest("/product-unblock/", productId, 'POST', changeButtonLabel, unlockingServerErrorMessage);
+                }
+            });
     }
 }
 
 function removeProduct(productId) {
     if (!lock) {
-        lock = true;
-        sendRequest("/product-remove/", productId, 'DELETE', removeListElement);
+        swal({
+            title: "Ви впевнені?",
+            text: "Видалений продукт неможливо буде відновити",
+            icon: "warning",
+            buttons: ["Скасувати", true],
+            dangerMode: true,
+        })
+            .then((willUnblock) => {
+                if (willUnblock) {
+                    lock = true;
+                    sendRequest("/product-remove/", productId, 'DELETE', removeListElement, removingServerErrorMessage);
+                }
+            });
     }
 }
 
@@ -97,14 +137,29 @@ function loadProductsList(url, func) {
     });
 }
 
-function sendRequest(url, id, method, func) {
+function sendRequest(url, id, method, func, errorMessage) {
     $.ajax ({
         url: url + id,
         type: String(method),
-        dataType: "json",
         data: ({}),
         contentType: 'application/json',
-        success: func(id)
+        success: function () {
+            swal({
+                title: "Успішно!",
+                icon: "success",
+                button: "OK",
+            });
+            func(id);
+        },
+        error: function () {
+            swal({
+                title: "Сталась помилка",
+                text: errorMessage,
+                icon: "error",
+                button: "OK",
+            });
+            lock = false;
+        }
     });
 }
 
@@ -150,7 +205,8 @@ function removeListElement(productId) {
     let obj = $("#product" + productId);
     obj.slideToggle(300);
     setTimeout(function () {
-        obj.remove()
+        obj.remove();
+        lock = false;
     }, 500);
 }
 
@@ -170,20 +226,20 @@ function addForm() {
         "        <div class='b-popup-content'>\n" +
         "            <form>\n" +
         "                <div class='form-group'>\n" +
-        "                    <label for='name'>Product name</label>\n" +
+        "                    <label for='name'>Назва продукту</label>\n" +
         "                    <input type='text' class='form-control' id='name' placeholder=''/>\n" +
         "                </div>\n" +
         "                <div class='form-group'>\n" +
-        "                    <label for=description'>Product description</label>\n" +
+        "                    <label for=description'>Опис продукту</label>\n" +
         "                    <input type='text' class='form-control' id='description' placeholder=''/>\n" +
         "                </div>\n" +
         "                <div class='custom-control custom-checkbox'>\n" +
         "                    <input type='checkbox' class='custom-control-input' id='active'>\n" +
-        "                    <label class='custom-control-label' for='active'>Activate product</label>\n" +
+        "                    <label class='custom-control-label' for='active'>Активувати продукт</label>\n" +
         "                </div>" +
         "                <br>\n" +
-        "                <button type='button' class='btn btn-primary' onclick='validateAndSendForm(this.form)'>Submit</button>\n" +
-        "                <button type='button' class='btn btn-primary' onclick='removeForm()'>Cancel</button>\n" +
+        "                <button type='button' class='btn btn-primary' onclick='validateAndSendForm(this.form)'>Додати</button>\n" +
+        "                <button type='button' class='btn btn-primary' onclick='removeForm()'>Скасувати</button>\n" +
         "            </form>\n" +
         "        </div>\n" +
         "    </div>");
@@ -202,10 +258,10 @@ function validateAndSendForm(form) {
     });
     if (!elems["name"].value || elems["name"].value.length <=3) {
         hasErrors = true;
-        showError(elems["name"].parentNode, 'Product name must be longer than 3 symbols');
+        showError(elems["name"].parentNode, productNameLengthError);
     }
     if (!hasErrors) {
-        sendForm('POST', processForm(form));
+        sendForm('POST', processForm(form), creationServerErrorMessage);
     }
 }
 
@@ -228,7 +284,6 @@ function resetError(container) {
 
 function processForm(elems) {
     let active = $(elems["active"]).is(":checked");
-    alert(active);
     return {
         "id" : 0,
         "name" : elems["name"].value,
@@ -237,16 +292,28 @@ function processForm(elems) {
     }
 }
 
-function sendForm(method, product) {
+function sendForm(method, product, errorMessage) {
     $.ajax ({
         type : String(method),
         url : '/product',
-        dataType: "json",
         contentType : 'application/json',
         data : JSON.stringify(product),
-        complete : function () {
+        error: function () {
+            swal({
+                title: "Сталась помилка",
+                text: errorMessage,
+                icon: "error",
+                button: "OK",
+            });
+        },
+        success : function () {
+            swal({
+                title: "Успішно!",
+                icon: "success",
+                button: "OK",
+            });
             removeForm();
-            moveToFirstTab();
+            refreshData();
         }
     });
 }
