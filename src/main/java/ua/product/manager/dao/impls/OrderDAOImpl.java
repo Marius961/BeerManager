@@ -160,7 +160,7 @@ public class OrderDAOImpl implements OrderDAO {
         params.addValue("comment", order.getComment());
         KeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcTemplate.update(sql, params, keyHolder);
-        return (int) keyHolder.getKey();
+        return keyHolder.getKey().intValue();
     }
 
     @Override
