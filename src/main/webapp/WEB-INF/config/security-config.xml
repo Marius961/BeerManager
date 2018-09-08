@@ -48,11 +48,11 @@
         <remember-me remember-me-parameter="rememberMe" data-source-ref="dataSource"/>
     </http>
 
-    <b:bean id="jdbcGroupsImpl" class="ua.product.manager.dao.impls.CustomJdbcDaoImpl">
-        <b:property name="enableGroups" value="false"/>
-        <b:property name="enableAuthorities" value="true"/>
+    <b:bean id="jdbcGroupsImpl" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <b:property name="enableGroups" value="true"/>
+        <b:property name="enableAuthorities" value="false"/>
         <b:property name="dataSource" ref="dataSource"/>
-     </b:bean>
+    </b:bean>
 
     <authentication-manager id="authenticationManager">
         <authentication-provider user-service-ref="jdbcGroupsImpl">

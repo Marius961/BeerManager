@@ -42,6 +42,7 @@ public class LoginRestController {
         if (user != null) {
             userValidator.validate(user, bindingResult);
             if (!bindingResult.hasErrors()) {
+                System.out.println(user.getFullName());
                 userService.registerUser(request, user);
                 return new ResponseEntity<>(HttpStatus.OK);
             }

@@ -8,9 +8,9 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/productManagerDB"/>
-        <property name="username" value="root"/>
-        <property name="password" value="MS32s26MS_"/>
+        <property name="url" value="jdbc:mysql://node62159-productmanager.mircloud.host/productmanager?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="marius"/>
+        <property name="password" value="m32s26"/>
     </bean>
 
 
