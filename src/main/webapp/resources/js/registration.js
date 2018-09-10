@@ -252,7 +252,6 @@ function IsOrderFormValid() {
     if (errorCounter === 0) {
         return true;
     }
-    return false;
 }
 
 function showSectionError(error) {
@@ -260,7 +259,7 @@ function showSectionError(error) {
     if(errorContainer === undefined) {
         $(".row").eq(0).prepend("<div class='col-12 alert alert-danger' role='alert' id='errorContainer'></div>")
     }
-    $("#errorContainer").append(error);
+    $(errorContainer).append(error);
 }
 
 function resetSectionError() {

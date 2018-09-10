@@ -193,7 +193,7 @@ function selectTab(tab) {
 }
 
 function addLoadAnimation() {
-    $(".main-div").append("<div class='cssload-container'>\n" +
+    $("#orders-container").append("<div class='cssload-container'>\n" +
         "<div class='cssload-speeding-wheel'></div>\n" +
         "</div>");
     $(".cssload-loader").fadeIn(150);

@@ -22,9 +22,9 @@
         </div>
     </nav>
 </header>
-<main class="background" style="position: absolute">
-    <div class="error-404"><img style="width: 100%; height: 100%; position: relative" src="<%=request.getContextPath()%>/resources/images/404-page.png"></div>
-    <a href="<c:url value="/"/>" style="position: absolute; bottom: 25%; right: 19.5%; font-size: 3vh; color: grey">поверніться на існуючу сторінку</a>
+
+<main class="container">
+
 </main>
 
 </body>

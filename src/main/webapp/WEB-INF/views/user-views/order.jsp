@@ -83,45 +83,6 @@
             </form:form>
         </div>
     </div>
-
-    <%--<div class="main-div">--%>
-        <%--<div class="content-box">--%>
-            <%--<div class="content-div">--%>
-
-            <%--</div>--%>
-            <%--<form:form action="/orders/process" method="post" modelAttribute="order" id="orderForm">--%>
-                <%--<c:forEach items="${order.orderItems}" var="item" varStatus="status">--%>
-                    <%--<div class="prod-order inline background order-info">--%>
-                    <%--<span class="order-info">${item.product.description}</span>--%>
-                        <%--<table class="table-order">--%>
-                            <%--<tr>--%>
-                                <%--<td class="table-td"><h4 class="prod-name">${item.product.name}:</h4></td>--%>
-                                <%--<td class="table-td-vol-input">--%>
-                                    <%--<div class="form-group">--%>
-                                        <%--<form:input path="orderItems[${status.index}].volume" type="number" class="form-control left" id="volInput${status.index}" value="0"/>--%>
-                                        <%--<form:hidden path="orderItems[${status.index}].productId" value="${item.productId}"/>--%>
-                                        <%--<form:hidden path="userId" value="${currentUserId}"/>--%>
-                                    <%--</div>--%>
-                                <%--</td>--%>
-                                <%--<td class="table-td-vol"><span class="barrels-vol">літрів</span></td>--%>
-                            <%--</tr>--%>
-                        <%--</table>--%>
-                    <%--</div>--%>
-                <%--</c:forEach>--%>
-                <%--<br>--%>
-                <%--<div class="form-group">--%>
-                    <%--<form:label path="comment" for="commentTextArea">Коментар:</form:label>--%>
-                    <%--<form:textarea path="comment" class="form-control" id="commentTextArea" rows="3"/>--%>
-                <%--</div>--%>
-                <%--<div class="form-group" style="width: 25%">--%>
-                    <%--<form:label path="execDate" for="execDate">Дата виконання:</form:label>--%>
-                    <%--<form:input path="execDate" class="form-control" id="execDate" type="date"/>--%>
-                <%--</div>--%>
-                <%--<br>--%>
-                <%--<button type="button" class="btn btn-primary" onclick="IsOrderFormValid()">Замовити</button>--%>
-            <%--</form:form>--%>
-        <%--</div>--%>
-    <%--</div>--%>
 </main>
 
 <script src="<%=request.getContextPath()%>/resources/js/registration.js"></script>

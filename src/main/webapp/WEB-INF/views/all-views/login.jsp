@@ -31,7 +31,7 @@
 </header>
 <main class="container">
     <div class="row">
-        <div class="col-10 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
+        <div class="col-12 col-sm-7 col-md-6 col-lg-5 col-xl-4 mt-5 mb-2 mx-auto container-background">
            <div class="row">
                <div class="col-12 p-3" id="loginForm">
                    <c:if test="${not empty error}">

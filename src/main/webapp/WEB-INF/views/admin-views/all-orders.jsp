@@ -47,7 +47,7 @@
     </nav>
 </header>
 <main class="container">
-    <div class="row mt-2">
+    <div class="row mt-2 mb-2">
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
             <div class="tab" id="tab1" onclick="loadAllOrdersForCurrentDate(this)"><span class="label-text-1">Сьогодні</span></div>
         </div>

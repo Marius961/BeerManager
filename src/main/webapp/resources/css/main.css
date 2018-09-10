@@ -5,9 +5,6 @@
     font-family: "Segoe UI", serif;
 }
 
-.input-group-1 {
-    margin: 0 1%;
- }
 .main-div {
     width: 80%;
     height: 120%;
@@ -20,79 +17,11 @@
     background-color: #f1f1f1;
 }
 
-.inline {
-    display: inline-block;
-}
-
-.right {
-    float: right;
-}
-
-.left {
-    float: left;
-}
-
 .container-background {
     background-color: snow;
     box-shadow: 0 0.1em 0.4em #b6b6b6;
 }
 
-
-.group-header {
-    margin: 1% 0 0;
-    padding: 1%;
-    background-color: #dfdada;
-    box-shadow: 0 0.3em 0.7em #cbcbcb;
-}
-
-.group-header:hover {
-    cursor: pointer;
-    background-color: #e2dddd;
-}
-.login-size {
-    width: 35%;
-    margin: 1% auto 2%;
-}
-
-.register-size {
-    width: 50%;
-    margin: 1% auto 2%;
-}
-
-.btn-bar {
-    margin: 1%;
-    height: 5%;
-}
-
-.btn-right {
-    width: 20%;
-    height: 100%;
-    font-family: "Segoe UI Semilight", serif;
-    margin-left: 80%;
-}
-
-.table-cell-div {
-    width: 50%;
-    display: table-cell;
-}
-
-.table-div {
-    width: 80%;
-    display: table;
-    margin: 5% 10%;
-}
-
-.table-cell-btn {
-    width: 60%;
-    margin: 0 20%;
-    font-size: 0.1vh;
-}
-
-.welcome-h1 {
-    text-align: center;
-    width: 80%;
-    margin: 5% 10%;
-}
 
 .error-message {
     color: red;;
@@ -100,14 +29,6 @@
     display: none;
 }
 
-.container-div {
-    display: none;
-    padding-bottom: 3%;
-}
-
-.tab-bar {
-    background: snow;
-}
 
 .tab {
     border-bottom: 0.8mm solid #ededed;
@@ -116,53 +37,9 @@
 
 .tab:hover {
     border-bottom: 7px solid #333333;
+    cursor: pointer;
 }
 
-
-
-
-.add-btn-div {
-    width: 13%;
-    height: 100%;
-    display: inline-block;
-    float: right;
-    transition: 100ms;
-    border-radius: 3px;
-    padding: 0.5%;
-}
-
-.test1 {
-    height: 1.2em;
-    width: 1.2em;
-    margin-bottom: 3.5%;
-    margin-right: 5%;
-}
-
-.plus-img {
-    height: 1.2em;
-    width: 1.2em;
-    margin-bottom: 3.5%;
-    margin-right: 5%;
-}
-
-.refresh-img {
-    height: 1.2em;
-    width: 1.2em;
-    margin-bottom: 3.5%;
-    margin-right: 5%;
-}
-
-.refresh-btn-div {
-
-     transition: 100ms;
- }
-
-.btn-refresh {
-    font-size: 2vh;
-    height: 100%;
-    width: 100%;
-    padding: 0.5%
-}
 .b-popup{
     display: none;
     width:100%;
@@ -173,26 +50,9 @@
     top:0;
 }
 .b-popup .b-popup-content{
-    margin:120px auto 0 auto;
-    width:60%;
-    padding:10px;
-    background-color: #eaeaea;
+    background-color: snow;
     border-radius:1px;
-    box-shadow: 0 0 10px #000;
 }
-
-.error-404 {
-    width: 80%;
-    height: 95%;
-    margin: auto;
-}
-
-
-
-
-
-
-/**/
 
 .order-header {
     font-family: "Segoe UI", serif;

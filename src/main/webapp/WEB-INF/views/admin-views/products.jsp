@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <title>Товари</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/products.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/orders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/animations.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -47,7 +47,7 @@
     </nav>
 </header>
 <main class="container">
-    <div class="row m-2">
+    <div class="row mt-2 mb-2">
         <div class="col-12 col-sm-2 col-md-1 col-lg-1">
             <div class="tab" id="tab1" onclick="showProductsList(this)"><span class="label-text-1">Всі</span></div>
         </div>
@@ -67,7 +67,7 @@
             <input type="text" oninput="search(this.value)" class="form-control font-2" placeholder="Пошук по продукції" aria-label="Search by products" aria-describedby="button-addon4">
         </div>
     </div>
-    <div class="main-div">
+    <div class="row" id="productsContainer">
     </div>
 </main>
 <script src="<%=request.getContextPath()%>/resources/js/products.js"></script>

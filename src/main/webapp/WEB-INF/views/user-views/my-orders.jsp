@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 </head>
-<body>
+<body class="background">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <a class="navbar-brand" href="#">Product manager</a>
@@ -41,7 +41,7 @@
     </nav>
 </header>
 <main class="container">
-    <div class="row mt-2">
+    <div class="row mt-2 mb-2">
         <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2">
             <div class="tab" id="tab1" onclick="loadUserCurrentDateOrders(this)"><span class="label-text-1">Сьогодні</span></div>
         </div>
@@ -56,45 +56,7 @@
     <div class="row mt-3">
         <div class="col" id="orders-container">
             <div id="orders">
-                <%--<div class="row" id="2018-08-25">--%>
-                    <%--<div class="col-12 p-0 mb-2">--%>
-                        <%--<h2 class="date-header p-2">25 Серпня 2018</h2>--%>
-                    <%--</div>--%>
-                    <%--<div class="col" id="list-2018-08-25">--%>
-
-                    <%--</div>--%>
-                <%--</div>--%>
-
             </div>
-            <%--<div class="row mb-3 order-box" id="elem49">--%>
-                <%--<div class="col-12">--%>
-                    <%--<div class="row order-header p-1">--%>
-                        <%--<div class="col-6 text-left">Дата створення: <span class="font-weight-bold">2018-08-14</span> </div>--%>
-                        <%--<div class="col-6 text-right">Замовлення №<span class="font-weight-bold">49</span></div>--%>
-                        <%--<div class="col text-left">Час замовлення:<span class="font-weight-bold">14:16:00</span></div>--%>
-                    <%--</div>--%>
-                    <%--<div class="row order-header p-1 mt-1 text-center font-weight-bold">--%>
-                        <%--<div class="col-9">Назва товару</div>--%>
-                        <%--<div class="col-3">Об'єм</div>--%>
-                    <%--</div>--%>
-                    <%--<div class="row" id="items-12">--%>
-                        <%--<div class="col">--%>
-                            <%--<div class="row p-1 mt-1 item-1">--%>
-                                <%--<div class="col-9">Чернігівське</div>--%>
-                                <%--<div class="col-3 text-center">50 літрів</div>--%>
-                            <%--</div>--%>
-                            <%--<div class="row p-1 mt-1 item-1">--%>
-                                <%--<div class="col-9">Garage</div>--%>
-                                <%--<div class="col-3 text-center">60 літрів</div>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="col p-1 pl-2 comment-col">--%>
-                    <%--<h5>Коментар:</h5>--%>
-                    <%--<p>Ваш коментар до замовлення буде міститись тут</p>--%>
-                <%--</div>--%>
-            <%--</div>--%>
         </div>
     </div>
 </main>

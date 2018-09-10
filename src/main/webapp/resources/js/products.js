@@ -1,4 +1,4 @@
-let mainDiv = $(".main-div");
+let mainDiv = $("#productsContainer");
 let allTabs = $(".tab");
 let currentTab = '';
 const searchTab = $("#search")[0];
@@ -170,7 +170,7 @@ function processProducts(data) {
         })
     }
     $(".cssload-container").fadeOut(100).remove();
-    $(".main-div").fadeIn(100);
+    $(mainDiv).fadeIn(100);
 }
 
 function addListElement(element) {
@@ -183,20 +183,33 @@ function addListElement(element) {
         onclick = 'unblockProduct(' + element.id + ')';
         label = unblockBtnLabel;
     }
-    $(".main-div").append("" +
-        "<div class='list-elem' id='product"+ element.id +"'>\n" +
-        "    <table style='width: 100%'>\n" +
-        "        <tr>\n" +
-        "            <th class='name-td'>"+ element.name +"</th>\n" +
-        "            <td class='btn-td'><button class='btn btn-secondary' onclick='"+ onclick +"'>"+ label +"</button></td>\n" +
-        "            <td class='btn-td'><button class='btn btn-danger' onclick='removeProduct("+ element.id +")'>"+ deleteBtnLabel +"</button></td>\n" +
-        "            </tr>\n" +
-        "    </table>\n" +
-        "    <div>\n" +
-        "        <H6>Опис</H6>\n" +
-        "        <p>"+ element.description +"</p>\n" +
-        "    </div>\n" +
-        "</div>\n")
+    $("#productsContainer").append("        " +
+        "       <div class='col-12 col-xl-6 p-3 item-2' id='product"+ element.id +"'>\n" +
+        "            <div class='row align-items-center'>\n" +
+        "                <div class='col-12 col-sm-8 col-md-9 col-xl-8'>\n" +
+        "                    <div class='row'>\n" +
+        "                        <div class='col-12'>\n" +
+        "                            <h5>" + element.name + "</h5>\n" +
+        "                        </div>\n" +
+        "                        <div class='col-12'>\n" +
+        "                            <p>" + element.description + "</p>\n" +
+        "                        </div>\n" +
+        "                    </div>\n" +
+        "                </div>\n" +
+        "                <div class='col-12 col-sm-4 col-md-3 col-xl-4'>\n" +
+        "                    <div class='btn-group'>\n" +
+        "                        <button type='button' class='btn btn-warning' onclick='"+ onclick +"'>"+ label +"</button>\n" +
+        "                        <button type='button' class='btn btn-warning dropdown-toggle dropdown-toggle-split' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>\n" +
+        "                            <span class='sr-only'>Розгорнути меню</span>\n" +
+        "                        </button>\n" +
+        "                        <div class='dropdown-menu'>\n" +
+        "                            <button class='dropdown-item' type='button'>Редагувати</button>\n" +
+        "                            <button class='dropdown-item' type='button' onclick='removeProduct("+ element.id +")'>"+ deleteBtnLabel +"</button>\n" +
+        "                        </div>\n" +
+        "                    </div>\n" +
+        "                </div>\n" +
+        "            </div>\n" +
+        "        </div>")
 }
 
 
@@ -223,26 +236,30 @@ function selectTab(tab) {
 function addForm() {
     $("body").append("" +
         "<div class='b-popup'>\n" +
-        "        <div class='b-popup-content'>\n" +
+        "   <div class='row pt-5'>" +
+        "        <div class='col-5 mx-auto b-popup-content mt-5 p-3'>\n" +
+        "            <h4>Додати товар</h4>" +
+        "            <hr>" +
         "            <form>\n" +
         "                <div class='form-group'>\n" +
         "                    <label for='name'>Назва продукту</label>\n" +
         "                    <input type='text' class='form-control' id='name' placeholder=''/>\n" +
         "                </div>\n" +
         "                <div class='form-group'>\n" +
-        "                    <label for=description'>Опис продукту</label>\n" +
-        "                    <input type='text' class='form-control' id='description' placeholder=''/>\n" +
-        "                </div>\n" +
+        "                    <label for='description'>Опис продукту</label>\n" +
+        "                    <textarea class='form-control' id='description' rows='3'></textarea>\n" +
+        "                </div>" +
         "                <div class='custom-control custom-checkbox'>\n" +
         "                    <input type='checkbox' class='custom-control-input' id='active'>\n" +
         "                    <label class='custom-control-label' for='active'>Активувати продукт</label>\n" +
         "                </div>" +
         "                <br>\n" +
-        "                <button type='button' class='btn btn-primary' onclick='validateAndSendForm(this.form)'>Додати</button>\n" +
-        "                <button type='button' class='btn btn-primary' onclick='removeForm()'>Скасувати</button>\n" +
+        "                <button type='button' class='btn btn-warning' onclick='validateAndSendForm(this.form)'>Додати</button>\n" +
+        "                <button type='button' class='btn btn-secondary' onclick='removeForm()'>Скасувати</button>\n" +
         "            </form>\n" +
         "        </div>\n" +
-        "    </div>");
+        "   </div>" +
+        "</div>");
     $(".b-popup").fadeIn(100);
 }
 
@@ -253,9 +270,7 @@ function removeForm() {
 function validateAndSendForm(form) {
     let  hasErrors = false;
     let elems = form.elements;
-    $("#productName").click(function () {
-        resetError(elems["name"].parentNode);
-    });
+
     if (!elems["name"].value || elems["name"].value.length <=3) {
         hasErrors = true;
         showError(elems["name"].parentNode, productNameLengthError);
@@ -265,21 +280,27 @@ function validateAndSendForm(form) {
     }
 }
 
+$(":input").on('input', function () {
+    resetError($(this)[0].parentNode);
+});
+
 function showError(container, errorMessage) {
-    if (container.className !== 'error') {
-        container.className = 'error';
+    let error = $(container).find(".error-message");
+    if (!$(error)[0]) {
         let msgElem = document.createElement('span');
         msgElem.className = "error-message";
         msgElem.innerHTML = errorMessage;
         container.appendChild(msgElem);
+        $(msgElem).slideDown(300);
     }
 }
 
 function resetError(container) {
-    container.className = '';
-    if (container.lastChild.className === "error-message") {
-        container.removeChild(container.lastChild);
-    }
+    let errorMessage =  $(container).find(".error-message");
+    errorMessage.slideToggle(300);
+    setTimeout(function () {
+        errorMessage.remove();
+    }, 300);
 }
 
 function processForm(elems) {
@@ -378,7 +399,7 @@ function search(request) {
         if (results.length !== 0) {
             processProducts(results);
         } else {
-            $(".main-div").append("<h5>No results</h5>")
+            $(mainDiv).append("<h5>No results</h5>")
         }
     } else {
         moveToFirstTab();
