@@ -20,21 +20,7 @@ public class MainController {
 
     @RequestMapping(value = {"/", "/home" , "/index"}, method = RequestMethod.GET)
     public String getHomePage() {
-        String role = userService.getUserRole();
-        if (role != null) {
-            if (role.equals("ROLE_USER"))
-                return "redirect:/orders";
-            if (role.equals("ROLE_ADMIN"))
-                return "redirect:/users";
-        }
-        return "all-views/index";
+        return "index";
     }
 
-    @RequestMapping(value = "/my-profile", method = RequestMethod.GET)
-    public ModelAndView getUserProfile(Principal principal) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("user", userService.getUserByUsername(principal.getName()));
-        modelAndView.setViewName("user-views/my-profile");
-        return modelAndView;
-    }
 }

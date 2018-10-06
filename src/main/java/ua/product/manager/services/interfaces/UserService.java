@@ -12,20 +12,7 @@ public interface UserService {
 
     void registerUser(HttpServletRequest request, User user);
 
-    @Secured("ROLE_ADMIN")
-    List<User> getUsersList();
-
-    @Secured("ROLE_ADMIN")
-    User getUserById(int id);
-
-    @Secured("ROLE_USER")
-    User getUserByUsername(String username);
-
-    String getUserRole();
-
     Boolean checkUsername(String username);
 
     Boolean checkUserEmail(String email);
-
-    Boolean checkUserTel(String tel);
 }

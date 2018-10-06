@@ -39,59 +39,18 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerUser(HttpServletRequest request, User user) {
-        String password = user.getPassword();
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userDAO.insertUser(user);
-        authWithAuthManager(request, user.getUsername(), password);
-    }
-
-    @Override
-    public List<User> getUsersList() {
-        return userDAO.getAllUsers();
-    }
-
-    @Override
-    public User getUserById(int id) {
-        return userDAO.getUserById(id);
-    }
-
-    @Override
-    public User getUserByUsername(String username) {
-        return userDAO.getUserByUsername(username);
-    }
-
-    @Override
-    public String getUserRole() {
-        boolean isUser = false;
-        boolean isAdmin = false;
-        Collection<? extends GrantedAuthority> authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
-        for (GrantedAuthority authority : authorities) {
-            if (authority.getAuthority().equals("ROLE_ADMIN")) {
-                isAdmin = true;
-                break;
-            } else if (authority.getAuthority().equals("ROLE_USER")) {
-                isUser = true;
-            }
-        }
-        if (isAdmin) return "ROLE_ADMIN";
-        if (isUser) return "ROLE_USER";
-        else return null;
     }
 
     @Override
     public Boolean checkUsername(String username) {
-        return userDAO.checkUsername(username);
+        return false;
     }
 
     @Override
     public Boolean checkUserEmail(String email) {
-        return userDAO.checkUserEmail(email);
+        return false;
     }
 
-    @Override
-    public Boolean checkUserTel(String tel) {
-        return userDAO.checkUserTel(tel);
-    }
 
     private void authWithAuthManager(HttpServletRequest request, String username, String password) {
         UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(username, password);
