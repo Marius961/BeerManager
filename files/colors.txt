@@ -1,0 +1,6 @@
+user icon page =  https://www.flaticon.com/free-icon/user-silhouette_64096#term=user&page=1&position=14
+cart icon page = https://www.flaticon.com/free-icon/shopping-cart_1170627
+
+
+
+grey color = C9C9C9

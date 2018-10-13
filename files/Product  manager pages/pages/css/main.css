@@ -1,0 +1,82 @@
+html > body {
+    background: #fafafa;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.profile-dropdown {
+
+}
+
+.profile-dropdown:hover {
+    background-color: #e5e5e5;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.nav-font {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 4.5mm;
+}
+
+.cart-item {
+    font-size: 2.5vh;
+}
+
+
+.item-pref-1:active {
+    background: none;
+    color: black;
+}
+
+.cart-item:hover {
+    background-color: #e5e5e5;
+}
+
+.cart-item-name {
+    font-family: "Segoe UI Semilight", serif;
+}
+
+.cart-item-price {
+    font-family: "Segoe UI Black", serif;
+    color: #21b125;
+}
+
+
+.menu-pref-1 {
+    max-height: 800px;
+}
+
+
+@media screen and (min-width: 0px) {
+    .dropdown-menu {
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .dropdown-menu {
+        width: 576px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .dropdown-menu {
+        width: 768px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .dropdown-menu {
+        width: 740px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .dropdown-menu {
+        width: 900px;
+    }
+}
