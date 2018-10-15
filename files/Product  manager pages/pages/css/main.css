@@ -86,7 +86,8 @@ html > body {
 }
 
 .categories-container {
-    overflow-x: scroll;
+    overflow-x: auto;
+    left: 0;
     flex-wrap: nowrap;
     background: #57708b;
     color: white;
@@ -97,35 +98,58 @@ html > body {
 
 .category {
     color: white;
-    border-bottom: 1vh solid transparent;
 }
 
 .category:hover {
-    border-bottom: 1vh solid #e5e5e5;
+    background: #6f8eb0;
 }
 
-
-
-/* width */
 ::-webkit-scrollbar {
     height: 1.5vh;
 }
 
-
-
-
-/* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #57708b;
     border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #e5e5e5;
+}
+
+.segment-header {
+    font-family: "Segoe UI Semilight", serif;
+    border-bottom: 0.7vh solid #57708b;
+}
+
+.segment-divider {
+    border-bottom: 0.3vh solid #57708b;
+}
+
+.goods-container {
+
+}
+
+.product-card {
+    background: white;
+    border: 0.1vh solid #57708b;
+    transition: 150ms;
+}
+
+.product-card:hover {
+    background: #e5e5e5;
+    transition: 150ms;
+}
+
+.product-name {
+    font-family: "Segoe UI Semibold", serif;
+}
+
+.to-cart-btn {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 2vh;
 }
