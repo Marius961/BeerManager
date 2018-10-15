@@ -80,3 +80,52 @@ html > body {
         width: 900px;
     }
 }
+
+.categories-wrapper {
+    display: none;
+}
+
+.categories-container {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    background: #57708b;
+    color: white;
+    box-shadow: 0 0 38px 2px #000000 inset;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.category {
+    color: white;
+    border-bottom: 1vh solid transparent;
+}
+
+.category:hover {
+    border-bottom: 1vh solid #e5e5e5;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    height: 1.5vh;
+}
+
+
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #57708b;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e5e5e5;
+}

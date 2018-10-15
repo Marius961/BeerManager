@@ -4,3 +4,5 @@ cart icon page = https://www.flaticon.com/free-icon/shopping-cart_1170627
 
 
 grey color = C9C9C9
+
+category grey = BABABA
