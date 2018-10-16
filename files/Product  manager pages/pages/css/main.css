@@ -86,18 +86,23 @@ html > body {
 }
 
 .categories-container {
-    overflow-x: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     left: 0;
     flex-wrap: nowrap;
     background: #57708b;
     color: white;
-    box-shadow: 0 0 38px 2px #000000 inset;
+    box-shadow: 0 0 20px 2px #000000 inset;
     -moz-user-select: none;
     -webkit-user-select: none;
+    transition: 300ms;
 }
 
 .category {
     color: white;
+    font-family: "Segoe UI Black", serif;
+    font-size: 1ch;;
+    border-left: 0.3ch solid black;
 }
 
 .category:hover {

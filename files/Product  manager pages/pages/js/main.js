@@ -1,4 +1,4 @@
-let togleAnimationTime = 300,
+let toggleAnimationTime = 300,
     categoriesContainer = $(".categories-container"),
     scrollAnimationClock = 80,
     firefoxscrollAnimationClock = 40;
@@ -9,18 +9,50 @@ let togleAnimationTime = 300,
 function showCategories() {
     let elem = $(".categories-wrapper");
     if ($(elem).css("display") === "none") {
-        $(elem).slideDown(togleAnimationTime);
+        $(elem).slideDown(toggleAnimationTime);
     } else {
-        $(categoriesContainer).stop().animate({scrollLeft: 0}, 300);
+        $(categoriesContainer).stop().animate({scrollLeft: 0}, toggleAnimationTime);
         let togglingTimeOut = 0;
         if ($(categoriesContainer)[0].scrollLeft !== 0) {
-            togglingTimeOut = togleAnimationTime;
+            togglingTimeOut = toggleAnimationTime;
         }
         setTimeout(function () {
-            $(elem).slideToggle(togleAnimationTime);
+            $(elem).slideToggle(toggleAnimationTime);
         }, togglingTimeOut);
     }
 }
+
+$("#left").click(function () {
+    let containerWidth = parseFloat($(categoriesContainer).css("width"));
+    $(categoriesContainer).stop().animate({scrollLeft: "-=" + containerWidth}, 300);
+});
+
+$("#right").click(function () {
+    let containerWidth = parseFloat($(categoriesContainer).css("width"));
+    $(categoriesContainer).stop().animate({scrollLeft: "+=" + containerWidth}, 300);
+});
+
+
+$("#wrapper").click(function () {
+    if ($(categoriesContainer).css("flex-wrap") === "nowrap") {
+        let currentHeight = parseInt($(categoriesContainer).css("height"));
+        $(categoriesContainer).css("flex-wrap", "wrap");
+        let autoheight = $(categoriesContainer).css("height", "auto").height();
+        $(categoriesContainer).css("height", currentHeight);
+        $(".category").css("border", "0");
+        $(categoriesContainer).animate({"height": "+" + (autoheight + 10)}, 150);
+    } else {
+        let currentHeight = parseInt($(categoriesContainer).css("height"));
+        $(categoriesContainer).css("flex-wrap", "nowrap");
+        let autoheight = $(categoriesContainer).css("height", "auto").height();
+        $(categoriesContainer).css("height", currentHeight);
+
+        $(categoriesContainer).animate({"height": autoheight + 10}, 150);
+        setTimeout(function () {
+            $(".category").css("border-left", "0.3ch solid black");
+        }, 250);
+    }
+});
 
 $(document).ready(function() {
     $(categoriesContainer).bind('mousewheel', function(e) {
