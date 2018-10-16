@@ -24,12 +24,12 @@ function showCategories() {
 
 $("#left").click(function () {
     let containerWidth = parseFloat($(categoriesContainer).css("width"));
-    $(categoriesContainer).stop().animate({scrollLeft: "-=" + containerWidth}, 300);
+    $(categoriesContainer).stop().animate({scrollLeft: "-=" + (containerWidth/100)*85}, 300);
 });
 
 $("#right").click(function () {
     let containerWidth = parseFloat($(categoriesContainer).css("width"));
-    $(categoriesContainer).stop().animate({scrollLeft: "+=" + containerWidth}, 300);
+    $(categoriesContainer).stop().animate({scrollLeft: "+=" + (containerWidth/100)*85}, 300);
 });
 
 

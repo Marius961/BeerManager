@@ -100,8 +100,8 @@ html > body {
 
 .category {
     color: white;
-    font-family: "Segoe UI Black", serif;
-    font-size: 1ch;;
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 1.3ch;;
     border-left: 0.3ch solid black;
 }
 
@@ -132,7 +132,7 @@ html > body {
 }
 
 .segment-divider {
-    border-bottom: 0.3vh solid #57708b;
+    border-bottom: 0.1vh solid #bbbbbb;
 }
 
 .goods-container {
@@ -141,20 +141,23 @@ html > body {
 
 .product-card {
     background: white;
-    border: 0.1vh solid #57708b;
     transition: 150ms;
 }
 
 .product-card:hover {
-    background: #e5e5e5;
-    transition: 150ms;
+    border-left: 0.1vh solid #bbbbbb;
+    border-right: 0.1vh solid #bbbbbb;
 }
 
 .product-name {
     font-family: "Segoe UI Semibold", serif;
 }
 
-.to-cart-btn {
+.product-price {
     font-family: "Segoe UI Semibold", serif;
-    font-size: 2vh;
+    font-size: 3vh;
+}
+
+.to-cart-btn {
+    background: #009400;
 }
