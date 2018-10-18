@@ -53,7 +53,7 @@ html > body {
 
 @media screen and (min-width: 0px) {
     .dropdown-menu {
-        width: 400px;
+        width: 350px;
     }
 }
 
@@ -86,8 +86,8 @@ html > body {
 }
 
 .categories-container {
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
     left: 0;
     flex-wrap: nowrap;
     background: #57708b;
@@ -110,7 +110,7 @@ html > body {
 }
 
 ::-webkit-scrollbar {
-    height: 1.5vh;
+    height: 0.1vh;
 }
 
 ::-webkit-scrollbar-track {
@@ -118,7 +118,7 @@ html > body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #57708b;
+    background: transparent;
     border-radius: 10px;
 }
 
