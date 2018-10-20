@@ -9,11 +9,11 @@
   <url>http://maven.apache.org</url>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
-        <spring.ver>5.0.3.RELEASE</spring.ver>
-        <spring-security.version>4.0.2.RELEASE</spring-security.version>
-        <spring-data-jpa.version>1.8.2.RELEASE</spring-data-jpa.version>
-        <hibernate.version>4.3.11.Final</hibernate.version>
+        <jdk.version>10</jdk.version>
+        <spring.ver>5.0.8.RELEASE</spring.ver>
+        <spring-security.version>5.0.7.RELEASE</spring-security.version>
+        <spring-data-jpa.version>5.0.8.RELEASE</spring-data-jpa.version>
+        <hibernate.version>5.3.6.Final</hibernate.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
     </properties>
 
