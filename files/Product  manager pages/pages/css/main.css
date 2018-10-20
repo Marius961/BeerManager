@@ -86,13 +86,9 @@ html > body {
 }
 
 .categories-container {
-    overflow-y: hidden;
-    overflow-x: scroll;
-    left: 0;
-    flex-wrap: nowrap;
     background: #57708b;
     color: white;
-    box-shadow: 0 0 20px 2px #000000 inset;
+    box-shadow: 0 0 10px 2px #000000 inset;
     -moz-user-select: none;
     -webkit-user-select: none;
     transition: 300ms;
@@ -101,30 +97,49 @@ html > body {
 .category {
     color: white;
     font-family: "Segoe UI Semibold", serif;
-    font-size: 1.3ch;;
-    border-left: 0.3ch solid black;
+    font-size: 2.6vh;;
 }
 
-.category:hover {
-    background: #6f8eb0;
+.subcategories-divider {
+    border-bottom: 0.1vh solid #a8a8a8;
+}
+.subcategories-divider:hover {
+    background: #293545;
 }
 
-::-webkit-scrollbar {
-    height: 0.1vh;
+.subcategory {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 2vh;;
+    color: snow;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
+.subcategory:hover {
+    color: white;
 }
 
-::-webkit-scrollbar-thumb {
-    background: transparent;
-    border-radius: 10px;
+.subcategories-container {
+    position: absolute;
+    background: #293545;
+    z-index: 2;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #e5e5e5;
-}
+
+/*::-webkit-scrollbar {*/
+    /*height: 0.1vh;*/
+/*}*/
+
+/*::-webkit-scrollbar-track {*/
+    /*background: transparent;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb {*/
+    /*background: transparent;*/
+    /*border-radius: 10px;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb:hover {*/
+    /*background: #e5e5e5;*/
+/*}*/
 
 .segment-header {
     font-family: "Segoe UI Semilight", serif;
@@ -156,8 +171,4 @@ html > body {
 .product-price {
     font-family: "Segoe UI Semibold", serif;
     font-size: 3vh;
-}
-
-.to-cart-btn {
-    background: #009400;
 }
