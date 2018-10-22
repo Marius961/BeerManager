@@ -11,37 +11,24 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-white p-1">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText">
+        <button class="col-2 col-sm-1 navbar-toggler order-sm first" type="button" data-toggle="collapse" data-target="#navbarText">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarText">
+        <div class="collapse navbar-collapse order-last order-lg-first" id="navbarText">
             <ul class="navbar-nav mr-auto nav-font pl-3">
-                <li class="nav-item active">
+                  <li class="nav-item active">
                     <a class="nav-link" href="#">ГОЛОВНА</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" onclick="showCategories()" href="#">КАТЕГОРІЇ</a>
                 </li>
             </ul>
         </div>
-
-        <div class="col-sm-auto text-center p-2 pl-4 pr-4 profile-dropdown order-12">
-            <div class="row" data-toggle="dropdown">
+        <div class="col-4 col-sm-1 text-center p-2 pl-4 pr-4 profile-dropdown order-12" onclick="showCategories()">
+            <div class="row">
                 <div class="col p-1">
-                    <img src="img/cart_grey.png" width="32" height="32">
-                </div>
-                <div class="col p-2">3232</div>
-            </div>
-            <div class="dropdown-menu dropdown-menu-right menu-pref-1">
-                <div class="dropdown-item item-pref-1">
-                    <div class="row cart-item p-1">
-                        <div class="col-9 align-self-center cart-item-name" style="white-space: pre-wrap">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
-                        <div class="col-3 align-self-center cart-item-price">19548 грн</div>
-                    </div>
+                    <img src="img/categories.png" width="32" height="32">
                 </div>
             </div>
         </div>
-        <div class="col-9 col-sm-7 col-md-6 col-lg-3 col-xl-2 text-right pt-2 pb-2 profile-dropdown order-lg-12">
+        <div class="col-10 col-sm-6 col-lg-auto text-right pt-2 pb-2 profile-dropdown order">
             <div class="row" data-toggle="dropdown" >
                 <div class="col-1 p-1 pl-3">
                     <img src="img/user_icon_grey.png" width="32" height="32">
@@ -61,125 +48,169 @@
                 <a class="dropdown-item" href="#">Вийти</a>
             </div>
         </div>
+        <div class="col-8 col-sm-4 col-lg-auto text-center p-2 pl-4 pr-4 profile-dropdown">
+            <div class="row" data-toggle="dropdown">
+                <div class="col p-1">
+                    <img src="img/cart_grey.png" width="32" height="32">
+                </div>
+                <div class="col p-2">9999999</div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-right menu-pref-1">
+                <div class="dropdown-item item-pref-1">
+                    <div class="row cart-item p-1">
+                        <div class="col-9 align-self-center cart-item-name" style="white-space: pre-wrap">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
+                        <div class="col-3 align-self-center cart-item-price">19548 грн</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     <div class="categories-wrapper">
         <div class="container-fluid">
             <div class="row categories-container p-4">
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Пекарня</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Хліб</a>
-                        <a class="col-6 subcategory p-1" href="#">Хлібці</a>
-                        <a class="col-6 subcategory p-1" href="#">Булочки</a>
-                        <a class="col-6 subcategory p-1" href="#">Лаваші та коржі</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/fruits_and_vegetables_grey_icon.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Фрукти та овочі</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Фрукти</a>
-                        <a class="col-6 subcategory p-1" href="#">Овочі</a>
-                        <a class="col-6 subcategory p-1" href="#">Гриби</a>
-                        <a class="col-6 subcategory p-1" href="#">Зелень</a>
-                        <a class="col-6 subcategory p-1" href="#">Сухофрукти</a>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Пекарня</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Хліб</a>
+                                <a class="col-6 subcategory p-1" href="#">Хлібці</a>
+                                <a class="col-6 subcategory p-1" href="#">Булочки</a>
+                                <a class="col-6 subcategory p-1" href="#">Лаваші та коржі</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/milk_and_eggs_icon_grey.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Молочне та яйця</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Молоко</a>
-                        <a class="col-6 subcategory p-1" href="#">Сир</a>
-                        <a class="col-6 subcategory p-1" href="#">Творог</a>
-                        <a class="col-6 subcategory p-1" href="#">Сметана</a>
-                        <a class="col-6 subcategory p-1" href="#">Йогурт</a>
-                        <a class="col-6 subcategory p-1" href="#">Кислосолодкі напитки</a>
-                        <a class="col-6 subcategory p-1" href="#">Масло і маргарин</a>
-                        <a class="col-6 subcategory p-1" href="#">Десерти</a>
-                        <a class="col-6 subcategory p-1" href="#">Вершки</a>
-                        <a class="col-6 subcategory p-1" href="#">Згущене молоко</a>
-                        <a class="col-6 subcategory p-1" href="#">Яйця</a>
-                        <a class="col-6 subcategory p-1" href="#">Пресовані дріжжі</a>
-                        <a class="col-6 subcategory p-1" href="#">Безлактозна їда та напитки</a>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/fruits_and_vegetables_grey_icon.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Фрукти та овочі</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Фрукти</a>
+                                <a class="col-6 subcategory p-1" href="#">Овочі</a>
+                                <a class="col-6 subcategory p-1" href="#">Гриби</a>
+                                <a class="col-6 subcategory p-1" href="#">Зелень</a>
+                                <a class="col-6 subcategory p-1" href="#">Сухофрукти</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/meat_icon_greyy.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">М'ясо риба та птиця</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Свіже м'ясо</a>
-                        <a class="col-6 subcategory p-1" href="#">Свіжа риба</a>
-                        <a class="col-6 subcategory p-1" href="#">Ковбаса та сосиски</a>
-                        <a class="col-6 subcategory p-1" href="#">М'ясні делікатеси</a>
-                        <a class="col-6 subcategory p-1" href="#">Приготовлена риба</a>
-                        <a class="col-6 subcategory p-1" href="#">Морепродукти</a>
-                        <a class="col-6 subcategory p-1" href="#">Суші</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/sauces_icon_grey.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Соуси та спеції</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Майонез</a>
-                        <a class="col-6 subcategory p-1" href="#">Соус</a>
-                        <a class="col-6 subcategory p-1" href="#">Кетчуп</a>
-                        <a class="col-6 subcategory p-1" href="#">Приправи та спеції</a>
-                        <a class="col-6 subcategory p-1" href="#">Сіль</a>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/milk_and_eggs_icon_grey.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Молочне та яйця</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Молоко</a>
+                                <a class="col-6 subcategory p-1" href="#">Сир</a>
+                                <a class="col-6 subcategory p-1" href="#">Творог</a>
+                                <a class="col-6 subcategory p-1" href="#">Сметана</a>
+                                <a class="col-6 subcategory p-1" href="#">Йогурт</a>
+                                <a class="col-6 subcategory p-1" href="#">Кислосолодкі напитки</a>
+                                <a class="col-6 subcategory p-1" href="#">Масло і маргарин</a>
+                                <a class="col-6 subcategory p-1" href="#">Десерти</a>
+                                <a class="col-6 subcategory p-1" href="#">Вершки</a>
+                                <a class="col-6 subcategory p-1" href="#">Згущене молоко</a>
+                                <a class="col-6 subcategory p-1" href="#">Яйця</a>
+                                <a class="col-6 subcategory p-1" href="#">Пресовані дріжжі</a>
+                                <a class="col-6 subcategory p-1" href="#">Безлактозна їда та напитки</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/categories/wheat_icon_grey.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Бакалія</div>
-                    </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Макарони</a>
-                        <a class="col-6 subcategory p-1" href="#">Крупа</a>
-                        <a class="col-6 subcategory p-1" href="#">Мука</a>
-                        <a class="col-6 subcategory p-1" href="#">Сухі сніданки</a>
-                        <a class="col-6 subcategory p-1" href="#">Каші та мюслі</a>
-                        <a class="col-6 subcategory p-1" href="#">Їжа швидкого приготування</a>
-                        <a class="col-6 subcategory p-1" href="#">Для випічки та десертів</a>
-                        <a class="col-6 subcategory p-1" href="#">Цукор та цукрозамінники</a>
-                        <a class="col-6 subcategory p-1" href="#">Соєві продукти</a>
-                        <a class="col-6 subcategory p-1" href="#">Все для суші</a>
-                        <a class="col-6 subcategory p-1" href="#">Біодобавки</a>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/meat_icon_greyy.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">М'ясо риба та птиця</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Свіже м'ясо</a>
+                                <a class="col-6 subcategory p-1" href="#">Свіжа риба</a>
+                                <a class="col-6 subcategory p-1" href="#">Ковбаса та сосиски</a>
+                                <a class="col-6 subcategory p-1" href="#">М'ясні делікатеси</a>
+                                <a class="col-6 subcategory p-1" href="#">Приготовлена риба</a>
+                                <a class="col-6 subcategory p-1" href="#">Морепродукти</a>
+                                <a class="col-6 subcategory p-1" href="#">Суші</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 category">
-                    <div class="row m-1 p-2 subcategories-divider">
-                        <div class="col-3 text-center"><img src="img/category_grey.png" width="32" height="32"></div>
-                        <div class="col-9 text-left pt-2">Напої</div>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/sauces_icon_grey.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Соуси та спеції</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Майонез</a>
+                                <a class="col-6 subcategory p-1" href="#">Соус</a>
+                                <a class="col-6 subcategory p-1" href="#">Кетчуп</a>
+                                <a class="col-6 subcategory p-1" href="#">Приправи та спеції</a>
+                                <a class="col-6 subcategory p-1" href="#">Сіль</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row w-100 m-1 p-3 subcategories-container d-none">
-                        <a class="col-6 subcategory p-1" href="#">Мінеральна вода</a>
-                        <a class="col-6 subcategory p-1" href="#">Сік</a>
-                        <a class="col-6 subcategory p-1" href="#">Нектар</a>
-                        <a class="col-6 subcategory p-1" href="#">Смузі</a>
-                        <a class="col-6 subcategory p-1" href="#">Соковмістні напитки</a>
-                        <a class="col-6 subcategory p-1" href="#">Морс</a>
-                        <a class="col-6 subcategory p-1" href="#">Солодка вода</a>
-                        <a class="col-6 subcategory p-1" href="#">Квас</a>
-                        <a class="col-6 subcategory p-1" href="#">Холодний чай</a>
-                        <a class="col-6 subcategory p-1" href="#">Кава</a>
-                        <a class="col-6 subcategory p-1" href="#">Какао напої та шоколад</a>
-                        <a class="col-6 subcategory p-1" href="#">Цикорій</a>
-                        <a class="col-6 subcategory p-1" href="#">Чай</a>
-                        <a class="col-6 subcategory p-1" href="#">Фільтри для чаю та кави</a>
-                        <a class="col-6 subcategory p-1" href="#">Топпінг</a>
-                        <a class="col-6 subcategory p-1" href="#">Алкоголь та енергетики</a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/categories/wheat_icon_grey.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Бакалія</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Макарони</a>
+                                <a class="col-6 subcategory p-1" href="#">Крупа</a>
+                                <a class="col-6 subcategory p-1" href="#">Мука</a>
+                                <a class="col-6 subcategory p-1" href="#">Сухі сніданки</a>
+                                <a class="col-6 subcategory p-1" href="#">Каші та мюслі</a>
+                                <a class="col-6 subcategory p-1" href="#">Їжа швидкого приготування</a>
+                                <a class="col-6 subcategory p-1" href="#">Для випічки та десертів</a>
+                                <a class="col-6 subcategory p-1" href="#">Цукор та цукрозамінники</a>
+                                <a class="col-6 subcategory p-1" href="#">Соєві продукти</a>
+                                <a class="col-6 subcategory p-1" href="#">Все для суші</a>
+                                <a class="col-6 subcategory p-1" href="#">Біодобавки</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 category">
+                    <div class="row subcategories-divider">
+                        <div class="col">
+                            <div class="row mr-1 ml-1 mt-1 p-2">
+                                <div class="col-3 text-center"><img src="img/category_grey.png" width="32" height="32"></div>
+                                <div class="col-9 text-left pt-2">Напої</div>
+                            </div>
+                            <div class="row p-3 w-100 subcategories-container d-none">
+                                <a class="col-6 subcategory p-1" href="#">Мінеральна вода</a>
+                                <a class="col-6 subcategory p-1" href="#">Сік</a>
+                                <a class="col-6 subcategory p-1" href="#">Нектар</a>
+                                <a class="col-6 subcategory p-1" href="#">Смузі</a>
+                                <a class="col-6 subcategory p-1" href="#">Соковмістні напитки</a>
+                                <a class="col-6 subcategory p-1" href="#">Морс</a>
+                                <a class="col-6 subcategory p-1" href="#">Солодка вода</a>
+                                <a class="col-6 subcategory p-1" href="#">Квас</a>
+                                <a class="col-6 subcategory p-1" href="#">Холодний чай</a>
+                                <a class="col-6 subcategory p-1" href="#">Кава</a>
+                                <a class="col-6 subcategory p-1" href="#">Какао напої та шоколад</a>
+                                <a class="col-6 subcategory p-1" href="#">Цикорій</a>
+                                <a class="col-6 subcategory p-1" href="#">Чай</a>
+                                <a class="col-6 subcategory p-1" href="#">Фільтри для чаю та кави</a>
+                                <a class="col-6 subcategory p-1" href="#">Топпінг</a>
+                                <a class="col-6 subcategory p-1" href="#">Алкоголь та енергетики</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--<div class="col-12 col-md-6 col-lg-4 category">-->
@@ -256,22 +287,131 @@
 <!--<button id="right">Arrow right</button>-->
 <!--<button id="wrapper">Wrap</button>-->
 <main class="container-fluid" style="background: white">
-    <div class="row no-gutters pr-5 pl-5">
+    <div class="row no-gutters pr-5 pl-5 m-2">
         <div class="col-auto">
-            <h4 class="p-2 m-0 pl-0 segment-header">Недавно додані товари</h4>
+            <span class="p-3 segment-header">Недавно додані товари</span>
         </div>
-        <div class="col segment-divider d-none d-sm-block"></div>
     </div>
-    <div class="row goods-container no-gutters ml-5 mr-5 pt-4">
-        <!--<div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card">-->
-            <!--<div class="row p-sm-2 p-md-4 no-gutters">-->
-                <!--<div class="col-12 text-center"><img src="img/test/sugar.jpg" width="190" height="108"></div>-->
-                <!--<div class="col-12 text-center pt-2 product-name">Цукор</div>-->
-                <!--<div class="col-12 segment-divider pt-4"></div>-->
-                <!--<span class="col-6 text-right product-price align-self-center">999999</span>-->
-                <!--<span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>-->
-            <!--</div>-->
-        <!--</div>-->
+    <div class="row goods-container no-gutters ml-5 mr-5 p-3">
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/sugar.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Цукор</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/salt.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Сіль</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/a1.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Апельсини</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/apple.jpeg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Яблука</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/banana.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Банани</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/muka.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Мука</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-lg-3 col-xl-2 product-card align-items-end">
+            <div class="row p-4 no-gutters">
+                <div class="col-12">
+                    <div class="row align-items-center">
+                        <img class="product-picture" src="img/test/juice.jpg">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-12 text-center pt-2 product-name">Апельсиновий сік</div>
+                        <div class="col-12 segment-divider pt-4"></div>
+                        <span class="col-6 text-right product-price align-self-center">999999</span>
+                        <span class="col-6 text-left pl-1  product-price align-self-center">грн/г</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 <script src="js/main.js"></script>

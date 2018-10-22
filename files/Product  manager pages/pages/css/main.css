@@ -45,11 +45,9 @@ html > body {
     color: #21b125;
 }
 
-
 .menu-pref-1 {
     max-height: 800px;
 }
-
 
 @media screen and (min-width: 0px) {
     .dropdown-menu {
@@ -142,21 +140,17 @@ html > body {
 /*}*/
 
 .segment-header {
-    font-family: "Segoe UI Semilight", serif;
-    border-bottom: 0.7vh solid #57708b;
-}
-
-.segment-divider {
-    border-bottom: 0.1vh solid #bbbbbb;
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 3vh;
 }
 
 .goods-container {
-
+    border-top: 0.1vh solid #bbbbbb;
 }
 
 .product-card {
-    background: white;
     transition: 150ms;
+    display: flex;
 }
 
 .product-card:hover {
@@ -171,4 +165,10 @@ html > body {
 .product-price {
     font-family: "Segoe UI Semibold", serif;
     font-size: 3vh;
+}
+
+.product-picture {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
 }

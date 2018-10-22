@@ -12,7 +12,7 @@ function showCategories() {
 }
 
 
-$(".category").click(function () {
+$(".category").hover(function () {
     let container = $(this).find(".subcategories-container");
     if (!$(container).hasClass("d-none")) {
         $(container).addClass("d-none");
