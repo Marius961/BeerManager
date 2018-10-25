@@ -95,7 +95,7 @@ html > body {
 .category {
     color: white;
     font-family: "Segoe UI Semibold", serif;
-    font-size: 2.6vh;;
+    font-size: 2vh;
 }
 
 .subcategories-divider {
@@ -151,6 +151,7 @@ html > body {
 .product-card {
     transition: 150ms;
     display: flex;
+    border-bottom: 0.1vh solid #a8a8a8;
 }
 
 .product-card:hover {
@@ -159,16 +160,17 @@ html > body {
 }
 
 .product-name {
-    font-family: "Segoe UI Semibold", serif;
+    text-wrap: none;
+    font-family: "Segoe UI Black", serif;
+    font-size: 2ch;
 }
 
 .product-price {
-    font-family: "Segoe UI Semibold", serif;
-    font-size: 3vh;
+    font-family: "Segoe UI Black", serif;
+    font-size: 2.5vh;
 }
 
 .product-picture {
-    width: 100%;
+    width: 128px;
     height: auto;
-    max-height: 250px;
 }
