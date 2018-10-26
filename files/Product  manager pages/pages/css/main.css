@@ -144,14 +144,13 @@ html > body {
     font-size: 3vh;
 }
 
-.goods-container {
-    border-top: 0.1vh solid #bbbbbb;
+.products-container {
+
 }
 
 .product-card {
     transition: 150ms;
     display: flex;
-    border-bottom: 0.1vh solid #a8a8a8;
 }
 
 .product-card:hover {
@@ -165,12 +164,54 @@ html > body {
     font-size: 2ch;
 }
 
-.product-price {
-    font-family: "Segoe UI Black", serif;
-    font-size: 2.5vh;
-}
 
 .product-picture {
-    width: 128px;
-    height: auto;
+    width: 200px;
+    height: 200px;
 }
+
+
+.price-box {
+    background: #f6f6f6;
+}
+
+.price {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 3.2vh;
+}
+
+.price-currency {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 2vh;
+}
+
+.cart-img {
+    background: green;
+    border-radius: 6px;
+}
+
+.filter-category {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 3vh;
+    border-bottom: 0.1vh solid #bbbbbb;
+}
+
+.checkbox-size {
+    font-size: 2.7vh;
+}
+
+.filter-button {
+    background: #bbbbbb;
+    border: 0;
+}
+
+.filter-button:focus {
+    background: #bbbbbb;
+    border: 0;
+}
+
+.filters-box {
+    border-bottom: 0.1vh solid #bbbbbb;
+}
+
+

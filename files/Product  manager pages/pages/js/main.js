@@ -27,3 +27,13 @@ $(".category").hover(function () {
 });
 
 
+$("#filtersToggle").on("click", function () {
+    let filtersContainer = $("#filters");
+    if ($(filtersContainer).hasClass("d-none")) {
+        $(filtersContainer).removeClass("d-none");
+    } else {
+        $(filtersContainer).addClass("d-none");
+    }
+});
+
+
