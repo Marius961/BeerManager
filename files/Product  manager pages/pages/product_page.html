@@ -305,29 +305,52 @@
             </div>
         </div>
         <div class="col-12 col-md-4">
-            <div class="row no-gutters p-2">
+            <div class="row no-gutters p-1 pt-2">
+                <div class="col-12 p-3" style="background: white">
+                    <div class="col price-box">
+                        <div class="row no-gutters p-2">
+                            <span class="col-6 col-sm-auto price text-right" id="price">17.90</span>
+                            <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters p-1">
+                <div class="col-12 p-1" style="background: white">
+                    <div class="col h6 stock-label">Є на складі</div>
+                </div>
+            </div>
+            <div class="row no-gutters p-1">
                 <div class="col-12 p-3" style="background: white">
                     <div class="row no-gutters p-1">
-                        <div class="col-12 col-md-12 col-lg-5">
+                        <label for="measurementInput" class="h5">Замовити</label>
+                        <div class="w-100"></div>
+                        <div class="col-12 col-md-12 col-lg-7">
                             <div class="row no-gutters">
                                 <div class="col-10 col-md-8 col-lg-8 mb-2 mb-lg-0">
-                                    <input type="number" class=" form-control text-center">
+                                    <input type="number" id="measurementInput" class=" form-control text-center">
                                 </div>
-                                <div class="col-2 col-md-4 p-2 mes-unit-box text-center align-self-center">КГ</div>
+                                <div class="col-2 col-md-4 p-2 mes-unit-box text-center align-self-center">ШТУК</div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-12 col-lg-7 to-cart-block p-2 p-md-1">
+                        <div class="col-12 col-md-12 col-lg-5 to-cart-block p-2 p-md-1">
                             <div class="row p-0 align-items-center no-gutters pl-1 pr-2">
-                                <div class="col-7 ">В корзину</div>
+                                <div class="col-7 ">У кошик</div>
                                 <div class="col-5 text-right">
                                     <img src="img/to_cart_icon_white.png">
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 p-3 sum-box mt-1">
+                            <div class="row no-gutters">
+                                <div class="col-12 h6">Всього до сплати:</div>
+                                <p class="col-12 h4" id="sum"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row no-gutters p-2">
+            <div class="row no-gutters p-1">
                 <div class="col-12 p-3" style="background: white">
                     <div class="row no-gutters">
                         <div class="col-12 h5">Опис</div>

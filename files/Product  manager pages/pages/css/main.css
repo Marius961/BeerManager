@@ -51,8 +51,9 @@ html > body {
 
 @media screen and (min-width: 0px) {
     .dropdown-menu {
-        width: 350px;
-        background: red;
+        width: 150%;
+        left: 0;
+        right: auto;
     }
 
     .product-picture-2 {
@@ -64,6 +65,8 @@ html > body {
 @media screen and (min-width: 576px) {
     .dropdown-menu {
         width: 576px;
+        left: auto;
+        right: 0;
     }
 
     .product-picture-2 {
@@ -203,7 +206,7 @@ html > body {
 .to-cart-block {
     color: white;
     font-family: "Segoe UI Semibold", serif;
-    font-size: 2vh;
+    font-size: 1em;
     background: green;
     border-radius: 6px;
 }
@@ -248,13 +251,25 @@ html > body {
 
 .mes-unit-box {
     font-family: "Segoe UI Semilight", serif;
-    font-size: 2;
+    font-size: 2vh;
 }
 
 
 .product-description {
     font-family: "Segoe UI", serif;
-    font-size: 2    vh;
+    font-size: 1em;
+}
+
+.sum-box {
+    background: rgba(0, 128, 0, 0.84);
+    color: white;
+    display: none;
+    word-wrap: break-word;
+    border-radius: 6px;
+}
+
+.stock-label {
+    color: green;
 }
 
 

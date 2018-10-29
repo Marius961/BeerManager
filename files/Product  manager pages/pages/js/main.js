@@ -36,4 +36,15 @@ $("#filtersToggle").on("click", function () {
     }
 });
 
+$("#measurementInput").on("input", function () {
+    let sumBox = $(".sum-box");
+    if ($(this).val() !== "") {
+        let sum = +$("#price").text() * +$(this).val();
+        $(sumBox).find("#sum").text(sum.toFixed(2) + "грн");
+        $(sumBox).fadeIn(510);
+    } else {
+        $(sumBox).fadeOut(300);
+    }
+});
+
 
