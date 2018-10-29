@@ -149,13 +149,13 @@ html > body {
 }
 
 .product-card {
+    border: 0.1vh solid transparent;
     transition: 150ms;
     display: flex;
 }
 
 .product-card:hover {
-    border-left: 0.1vh solid #bbbbbb;
-    border-right: 0.1vh solid #bbbbbb;
+    border: 0.1vh solid #bbbbbb;
 }
 
 .product-name {
