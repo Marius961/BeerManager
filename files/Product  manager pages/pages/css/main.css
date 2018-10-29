@@ -52,12 +52,23 @@ html > body {
 @media screen and (min-width: 0px) {
     .dropdown-menu {
         width: 350px;
+        background: red;
+    }
+
+    .product-picture-2 {
+        max-height: 256px;
+        max-width: 256px;
     }
 }
 
 @media screen and (min-width: 576px) {
     .dropdown-menu {
         width: 576px;
+    }
+
+    .product-picture-2 {
+        max-height: 450px;
+        max-width: 450px;
     }
 }
 
@@ -170,6 +181,10 @@ html > body {
     height: 200px;
 }
 
+.product-picture-2 {
+    width: 450px;
+    height: 450px;
+}
 
 .price-box {
     background: #f6f6f6;
@@ -185,9 +200,16 @@ html > body {
     font-size: 2vh;
 }
 
-.cart-img {
+.to-cart-block {
+    color: white;
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 2vh;
     background: green;
     border-radius: 6px;
+}
+
+.to-cart-block:hover {
+    cursor: pointer;
 }
 
 .filter-category {
@@ -213,5 +235,27 @@ html > body {
 .filters-box {
     border-bottom: 0.1vh solid #bbbbbb;
 }
+
+.product-header {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 4.5vh;
+}
+
+.product-code {
+    font-family: "Segoe UI Semilight", serif;
+    font-size: 1.8vh;
+}
+
+.mes-unit-box {
+    font-family: "Segoe UI Semilight", serif;
+    font-size: 2;
+}
+
+
+.product-description {
+    font-family: "Segoe UI", serif;
+    font-size: 2    vh;
+}
+
 
 
