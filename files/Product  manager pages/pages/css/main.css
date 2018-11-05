@@ -2,12 +2,13 @@ html > body {
     background: #fafafa;
 }
 
-.bg-white {
-    background-color: white;
-}
 
 .profile-dropdown {
 
+}
+
+.bg-white-1 {
+    background: white;
 }
 
 .profile-dropdown:hover {
@@ -46,28 +47,25 @@ html > body {
 }
 
 .menu-pref-1 {
-    max-height: 800px;
+    max-height: 350px;
+    overflow-y: scroll;
 }
 
-@media screen and (min-width: 0px) {
+@media all and (min-width: 0px) {
     .dropdown-menu {
-        width: 150%;
-        left: 0;
-        right: auto;
+        width: auto;
     }
-
     .product-picture-2 {
         max-height: 256px;
         max-width: 256px;
     }
 }
 
-@media screen and (min-width: 576px) {
+@media all and (min-width: 576px) {
     .dropdown-menu {
-        width: 576px;
-        left: auto;
-        right: 0;
+        width: 460px;
     }
+
 
     .product-picture-2 {
         max-height: 450px;
@@ -77,19 +75,19 @@ html > body {
 
 @media screen and (min-width: 768px) {
     .dropdown-menu {
-        width: 768px;
+        width: 614px;
     }
 }
 
 @media screen and (min-width: 992px) {
     .dropdown-menu {
-        width: 740px;
+        width: 793px;
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media all and (min-width: 1200px) {
     .dropdown-menu {
-        width: 900px;
+        width: 960px;
     }
 }
 
@@ -101,6 +99,14 @@ html > body {
     background: #57708b;
     color: white;
     box-shadow: 0 0 10px 2px #000000 inset;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    transition: 300ms;
+}
+
+.categories-container-2 {
+    background: #57708b;
+    color: white;
     -moz-user-select: none;
     -webkit-user-select: none;
     transition: 300ms;
@@ -135,23 +141,6 @@ html > body {
     z-index: 2;
 }
 
-
-/*::-webkit-scrollbar {*/
-    /*height: 0.1vh;*/
-/*}*/
-
-/*::-webkit-scrollbar-track {*/
-    /*background: transparent;*/
-/*}*/
-
-/*::-webkit-scrollbar-thumb {*/
-    /*background: transparent;*/
-    /*border-radius: 10px;*/
-/*}*/
-
-/*::-webkit-scrollbar-thumb:hover {*/
-    /*background: #e5e5e5;*/
-/*}*/
 
 .segment-header {
     font-family: "Segoe UI Semibold", serif;
@@ -268,9 +257,48 @@ html > body {
     border-radius: 6px;
 }
 
-.stock-label {
-    color: green;
+.in-stock-label {
+    font-family: "Segoe UI Semibold", serif;
+    color: #00e800;
 }
 
+.out-of-stock-label {
+    font-family: "Segoe UI Semibold", serif;
+    color: #e8363f;
+}
 
+.seller-name-label {
+    font-family: "Segoe UI Semilight", serif;
+}
 
+.news-header {
+    font-family: "Segoe UI Semibold", serif;
+    font-size: 1.5em;
+}
+
+.news-container {
+
+}
+
+.news-content {
+    font-size: 1em;
+}
+
+.publication-date {
+    font-size: 0.9em;
+    color: #bbbbbb;
+    font-family: "Segoe UI Semibold", serif;
+}
+
+.box-white {
+    background: white;
+}
+
+.seller-name-label {
+    font-family: "Segoe UI Semibold", serif;
+
+}
+
+.news-item {
+    border-bottom: 0.1vh solid #bbbbbb;
+}
