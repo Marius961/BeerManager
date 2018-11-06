@@ -1,18 +1,18 @@
 html > body {
-    background: #fafafa;
+    background: #4a4a4a;
 }
 
 
 .profile-dropdown {
-
+    color: snow;
 }
 
 .bg-white-1 {
-    background: white;
+    background: #2b2b2b;
 }
 
 .profile-dropdown:hover {
-    background-color: #e5e5e5;
+    background-color: #6f6f6f;
     cursor: pointer;
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -96,9 +96,9 @@ html > body {
 }
 
 .categories-container {
-    background: #57708b;
+    background: #6f6f6f;
     color: white;
-    box-shadow: 0 0 10px 2px #000000 inset;
+
     -moz-user-select: none;
     -webkit-user-select: none;
     transition: 300ms;
