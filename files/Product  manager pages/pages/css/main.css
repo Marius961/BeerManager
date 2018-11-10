@@ -1,60 +1,92 @@
+
+
 html > body {
+    padding: 0;
+    margin: 0;
     background: #4a4a4a;
+    font-family: "Roboto", serif;
 }
 
 
-.profile-dropdown {
+.p-dropdown-box {
     color: snow;
 }
 
-.bg-white-1 {
-    background: #2b2b2b;
-}
-
-.profile-dropdown:hover {
+.p-dropdown-box:hover {
     background-color: #6f6f6f;
     cursor: pointer;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
 
+.bg-white-1 {
+    background: #2b2b2b;
+}
+
+
 .nav-font {
     font-family: "Segoe UI Semibold", serif;
     font-size: 4.5mm;
 }
 
-.cart-item {
-    font-size: 2.5vh;
+.cart-item-1 {
     border-bottom: 0.1vh solid #bbbbbb;
 }
 
+.to-cart-btn {
+    font-size: 0.8em;
+    border: 0;
+    border-radius: 0.3em;
+    background: #e3e3e3;
+}
+
+.to-cart-btn:hover {
+    border: 0;
+    background: #b4b4b4;
+    cursor: pointer;
+}
 
 
 
-.cart-item:hover {
-    background-color: #e5e5e5;
+.cart-item-2 {
+    font-family: "Roboto Material Black", serif;
+    font-size: 2.5vh;
 }
 
 .cart-item-name {
-    font-family: "Segoe UI Semilight", serif;
+    font-size: 0.8em;
+    font-weight: 500;
 }
 
 .cart-item-price {
-    font-family: "Segoe UI Black", serif;
+    font-weight: 700;
     color: #21b125;
 }
 
-.menu-pref-1 {
+
+
+.cart-segment-1 {
     max-height: 350px;
-    overflow-y: scroll;
+    overflow-y: auto;
+
+}
+
+.cart-segment-2 {
+    border: 0.1em solid #d9d9d9;
 }
 
 
-
 @media all and (min-width: 0px) {
-    .dropdown-menu {
-        width: auto;
+    .cart-dropdown {
+        padding: 0;
+        margin: 0;
+        width: 600%;
     }
+
+    .user-actions-dropdown {
+        width: 450%;
+    }
+
     .product-picture-2 {
         max-height: 256px;
         max-width: 256px;
@@ -62,10 +94,13 @@ html > body {
 }
 
 @media all and (min-width: 576px) {
-    .dropdown-menu {
+    .cart-dropdown {
         width: 460px;
     }
 
+    .user-actions-dropdown {
+        width: 100%;
+    }
 
     .product-picture-2 {
         max-height: 450px;
@@ -74,34 +109,32 @@ html > body {
 }
 
 @media screen and (min-width: 768px) {
-    .dropdown-menu {
+    .cart-dropdown {
         width: 614px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .dropdown-menu {
+    .cart-dropdown {
         width: 793px;
     }
 }
 
 @media all and (min-width: 1200px) {
-    .dropdown-menu {
+    .cart-dropdown {
         width: 960px;
     }
 }
 
-.categories-wrapper {
+.categories-segment {
     display: none;
 }
 
 .categories-container {
     background: #6f6f6f;
     color: white;
-
     -moz-user-select: none;
     -webkit-user-select: none;
-    transition: 300ms;
 }
 
 .categories-container-2 {
@@ -114,7 +147,7 @@ html > body {
 
 .category {
     color: white;
-    font-family: "Segoe UI Semibold", serif;
+    font-weight: 500;
     font-size: 2vh;
 }
 
@@ -126,8 +159,8 @@ html > body {
 }
 
 .subcategory {
-    font-family: "Segoe UI Semibold", serif;
-    font-size: 2vh;;
+    font-weight: 300;
+    font-size: 1em;
     color: snow;
 }
 
@@ -301,4 +334,59 @@ html > body {
 
 .news-item {
     border-bottom: 0.1vh solid #bbbbbb;
+}
+
+.th-box {
+    background: #dfdfdf;
+    border: 1px solid #888888;
+}
+
+.th-item {
+    font-family: "Roboto Material Black", serif;
+    font-size: 1em;
+}
+
+.border-box-1 {
+    border: 0.1em solid #d9d9d9;
+}
+
+.user-box-name {
+    font-size: 4mm
+}
+
+.user-box-email {
+    font-size: 3mm; white-space: nowrap; overflow: hidden
+}
+
+
+.p-dropdown {
+    left: auto;
+    right: 0;
+    background: white;
+    color: black;
+    z-index: 1;
+    position: absolute;
+    display: none;
+}
+
+
+.p-drop-btn {
+
+}
+
+
+.p-dropdown a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em;
+}
+
+.p-dropdown a:hover {
+    color: black;
+    text-decoration: none;
+    background: #bbbbbb;
+}
+
+.p-dropdown-divider {
+    border-bottom: 0.1vh solid #e3e3e3;
 }

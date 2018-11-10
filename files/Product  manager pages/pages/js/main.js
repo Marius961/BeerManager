@@ -1,41 +1,11 @@
-let toggleAnimationTime = 200;
+let animationTime = 200;
 
 
 
-function showCategories() {
-    let elem = $(".categories-wrapper");
-    if ($(elem).css("display") === "none") {
-        $(elem).slideDown(toggleAnimationTime);
-    } else {
-        $(elem).slideToggle(toggleAnimationTime);
-    }
-}
 
-
-$(".category").hover(function () {
-    let container = $(this).find(".subcategories-container");
-    if (!$(container).hasClass("d-none")) {
-        $(container).addClass("d-none");
-    } else {
-        $(".subcategories-container").each(function (index, element) {
-            if (!$(element).hasClass("d-none")) {
-                $(element).addClass("d-none");
-            }
-        });
-        $(container).removeClass("d-none");
-    }
-});
-
-
-$("#filtersToggle").on("click", function () {
-    let filtersContainer = $("#filters");
-    if ($(filtersContainer).hasClass("d-none")) {
-        $(filtersContainer).removeClass("d-none");
-    } else {
-        $(filtersContainer).addClass("d-none");
-    }
-});
-
+/*
+* Method for calculating price
+*/
 $("#measurementInput").on("input", function () {
     let sumBox = $(".sum-box");
     if ($(this).val() !== "") {
@@ -47,5 +17,25 @@ $("#measurementInput").on("input", function () {
     }
 });
 
+
+/*
+* Dropdown methods
+* dropdonw classws: p-drop-btn, p-dropdown,
+* classes must the same parent node*/
+
+$(".p-drop-btn").on("click", function () {
+    let menu = $(this.parentNode).find(".p-dropdown");
+    if ($(menu).css("display") === "none") {
+        clearDropdowSelection();
+        $(menu).css("display", "inline-block")
+    } else {
+        $(menu).css("display", "none")
+    }
+});
+
+
+function clearDropdowSelection() {
+    $(".p-dropdown").css("display", "none");
+}
 
 

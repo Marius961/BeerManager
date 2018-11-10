@@ -1,0 +1,37 @@
+/*font weigh 300, 400, 500, 700, 900*/
+
+.bg {
+    background: #2e2e2e;
+    color: white;
+    font-family: "Roboto", serif;
+    font-size: 1.3em;
+}
+
+
+
+.nav-link-1, .nav-link-1:hover {
+    text-decoration: none;
+    color: #b7b3b3;
+}
+
+.active, .active:hover {
+    font-weight: 500;
+    color: snow;
+}
+
+@media all and (min-width: 0px) {
+
+    #menuContent {
+        display: none;
+    }
+}
+
+@media all and (min-width: 992px) {
+    #menu {
+        display: none;
+    }
+
+    #menuContent {
+        display: block;
+    }
+}
