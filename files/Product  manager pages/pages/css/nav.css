@@ -1,8 +1,8 @@
 /*font weigh 300, 400, 500, 700, 900*/
 
 .bg {
-    background: #2e2e2e;
-    color: white;
+    background: rgb(63, 81, 181);
+    color: snow;
     font-family: "Roboto", serif;
     font-size: 1.3em;
 }

@@ -27,6 +27,7 @@ $(".p-drop-btn").on("click", function () {
     let menu = $(this.parentNode).find(".p-dropdown");
     if ($(menu).css("display") === "none") {
         clearDropdowSelection();
+        clearCategorySelection();
         $(menu).css("display", "inline-block")
     } else {
         $(menu).css("display", "none")

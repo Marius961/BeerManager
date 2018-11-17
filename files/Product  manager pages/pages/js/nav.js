@@ -17,17 +17,16 @@ $("#categoriesBtn").click(function () {
     }
 });
 
+$(".category").on("touchstart ", function () {
+    clearCategorySelection();
+});
 
-$(".category").hover(function () {
+$(".subcategory-box").hover(function () {
     let container = $(this).find(".subcategories-container");
     if (!$(container).hasClass("d-none")) {
         $(container).addClass("d-none");
     } else {
-        $(".subcategories-container").each(function (index, element) {
-            if (!$(element).hasClass("d-none")) {
-                $(element).addClass("d-none");
-            }
-        });
+        clearCategorySelection();
         $(container).removeClass("d-none");
     }
 });
@@ -41,3 +40,12 @@ $("#filtersToggle").on("click", function () {
         $(filtersContainer).addClass("d-none");
     }
 });
+
+
+function clearCategorySelection() {
+    $(".subcategories-container").each(function (index, element) {
+        if (!$(element).hasClass("d-none")) {
+            $(element).addClass("d-none");
+        }
+    });
+}
