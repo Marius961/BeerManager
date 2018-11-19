@@ -8,18 +8,9 @@ $("#categoriesBtn").click(function () {
 
 });
 
-$(".category").on("touchstart ", function () {
-    clearCategorySelection();
-});
-
-$(".subcategory-box").hover(function () {
+$(".subcategory-box").hover(function (e) {
     let container = $(this).find(".subcategories-container");
-    if (!$(container).hasClass("d-none")) {
-        $(container).addClass("d-none");
-    } else {
-        clearCategorySelection();
-        $(container).removeClass("d-none");
-    }
+    toggleCategoryVisibility(container);
 });
 
 
@@ -44,4 +35,13 @@ function clearCategorySelection() {
 function closeCategoriesMenu() {
     let elem = $(".categories-segment");
     $(elem).slideUp(animationTime);
+}
+
+function toggleCategoryVisibility(container) {
+    if (!$(container).hasClass("d-none")) {
+        $(container).addClass("d-none");
+    } else {
+        clearCategorySelection();
+        $(container).removeClass("d-none");
+    }
 }
