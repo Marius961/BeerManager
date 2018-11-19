@@ -1,20 +1,11 @@
 $("#menu").on("click", function () {
-    let content = $("#menuContent");
-    if ($(content).css("display") === "none") {
-        $(content).slideDown(150);
-    } else {
-        $(content).slideToggle(150);
-    }
+    $("#menuContent").slideToggle(150);
     });
 
 $("#categoriesBtn").click(function () {
     clearDropdowSelection();
-    let elem = $(".categories-segment");
-    if ($(elem).css("display") === "none") {
-        $(elem).slideDown(animationTime);
-    } else {
-        $(elem).slideToggle(animationTime);
-    }
+    $(".categories-segment").slideToggle(animationTime);
+
 });
 
 $(".category").on("touchstart ", function () {
@@ -48,4 +39,9 @@ function clearCategorySelection() {
             $(element).addClass("d-none");
         }
     });
+}
+
+function closeCategoriesMenu() {
+    let elem = $(".categories-segment");
+    $(elem).slideUp(animationTime);
 }

@@ -28,6 +28,7 @@ $(".p-drop-btn").on("click", function () {
     if ($(menu).css("display") === "none") {
         clearDropdowSelection();
         clearCategorySelection();
+        closeCategoriesMenu();
         $(menu).css("display", "inline-block")
     } else {
         $(menu).css("display", "none")

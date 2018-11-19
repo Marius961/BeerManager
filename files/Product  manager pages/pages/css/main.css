@@ -53,6 +53,11 @@ html > body {
     font-weight: 500;
 }
 
+.cart-item-name-2 {
+    font-size: 1em;
+    font-weight: 500;
+}
+
 .cart-item-price {
     font-weight: 700;
     color: #21b125;
@@ -92,7 +97,7 @@ html > body {
 
 @media all and (min-width: 576px) {
     .cart-dropdown {
-        width: 460px;
+        width: 360px;
     }
 
     .user-actions-dropdown {
@@ -101,15 +106,10 @@ html > body {
 }
 
 @media screen and (min-width: 768px) {
-    .cart-dropdown {
-        width: 614px;
-    }
+
 }
 
 @media screen and (min-width: 992px) {
-    .cart-dropdown {
-        width: 793px;
-    }
 
     #menuContent {
         background-color: transparent;
@@ -117,9 +117,6 @@ html > body {
 }
 
 @media all and (min-width: 1200px) {
-    .cart-dropdown {
-        width: 360px;
-    }
 }
 
 .categories-segment {
@@ -394,4 +391,37 @@ img {
     max-width: 100%;
     height: auto;
     width: auto\9; /* ie8 */
+}
+
+.header-1 {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.label-2 {
+    color: #7d7d7d;
+    font-size: 1em;
+}
+
+.address-label-3 {
+    font-weight: 500;
+}
+
+.address-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+.address-card {
+    border: 1px solid grey;
+}
+
+.add-address-btn:hover {
+    background: #eeeeee;
+}
+
+.selected-addres {
+    border: 0 transparent;
+    background: rgba(112, 255, 137, 0.34);
 }
