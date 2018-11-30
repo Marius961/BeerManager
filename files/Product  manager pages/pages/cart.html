@@ -27,19 +27,11 @@
             <div class="col-2 col-sm-auto" id="menu"><img src="img/menu.png" width="24" height="24"></div>
             <div class="col">
                 <div class="row justify-content-end align-items-center">
-                    <div class="col p-1 p-dropdown-box">
+                    <div class="col p-1 search-segment">
                         <div class="row no-gutters p-drop-btn">
-                            <input class="col-12 d-none d-sm-block" type="search" placeholder="Пошук">
+                            <input class="col-12 d-none d-sm-block pl-2 pr-2 search-input" type="search" placeholder="Пошук">
                             <div class="col col-sm-1 p-1 pl-sm-2 text-center d-sm-none">
                                 <img src="img/search.png" width="32" height="32">
-                            </div>
-                        </div>
-                        <div class="user-actions-dropdown mt-2" style="display: none">
-                            <div class="row no-gutters">
-                                <a class="col-12 p-2" href="#">Замовлення</a>
-                                <a class="col-12 p-2" href="#">Особистий кабінет</a>
-                                <div class="p-dropdown-divider w-100"></div>
-                                <a class="col-12 p-2" href="#">Вийти</a>
                             </div>
                         </div>
                     </div>
@@ -280,6 +272,9 @@
                             <div class="row cart-item-2 p-2 align-items-center">
                                 <div class="col-3 col-sm-3 col-md-2 col-lg-1 text-center"><img src="img/test/product.png" width="64" height="64"></div>
                                 <div class="col-9 col-sm-9 col-md-3 col-lg-5 align-self-center cart-item-name" style="white-space: pre-wrap">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
+                                <label class="col-4 col-sm-4 d-md-none th-item-b pt-2">Ціна за од.</label>
+                                <label class="col-3 col-sm-3 d-md-none th-item-b pt-2">Кількість</label>
+                                <label class="col-4 col-sm-4 d-md-none th-item-b pt-2">Кінцева ціна</label>
                                 <div class="col-4 col-sm-4 col-md-2 col-lg-2 align-self-center cart-item-price">15.60грн/кг</div>
                                 <input class="col-3 col-sm-3 col-md-2 col-lg-1 align-self-center text-center" type="number">
                                 <div class="col-3 col-sm-3 col-md-2 col-lg-2 align-self-center cart-item-price text-centert">19548 грн</div>
@@ -291,9 +286,10 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="row align-items-center p-3">
-                        <div class="col-6 col-md-8 text-right">Сума до сплати 123123грн</div>
-                        <a href="order.html" class="col-6 col-md-4 text-right"><button class="btn">Оформити замовлення</button></a>
+                    <div class="row align-items-center justify-content-center p-3">
+                        <hr class="w-100">
+                        <div class="col-auto col-md-8 text-right th-item-b">Сума до сплати 123123грн</div>
+                        <a href="order.html" class="col-auto col-md-4 text-right"><button class="btn">Оформити замовлення</button></a>
                     </div>
                 </div>
             </div>

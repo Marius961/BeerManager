@@ -30,9 +30,9 @@ html > body {
 
 .to-cart-btn {
     font-size: 0.8em;
-    border: 0;
     border-radius: 0.3em;
-    background: #e3e3e3;
+    background: transparent;
+    border: 1px solid rgb(63, 81, 181);
 }
 
 .to-cart-btn:hover {
@@ -315,7 +315,11 @@ html > body {
 }
 
 .th-item {
-    font-family: "Roboto Material Black", serif;
+    font-size: 1em;
+}
+
+.th-item-b {
+    font-weight: 500;
     font-size: 1em;
 }
 
@@ -425,3 +429,4 @@ img {
     border: 0 transparent;
     background: rgba(112, 255, 137, 0.34);
 }
+
