@@ -11,6 +11,62 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 </head>
 <body>
+<div class="popup-bg">
+    <div class="container">
+        <div class="row box-white mt-md-5 p-1 align-items-center h-100">
+            <div class="col segment-header pt-2">Адреса</div>
+            <div class="col-auto"><img class="close-btn" src="img/cross.png" id="closeAddressFormBtn"></div>
+            <div class="col-12 p-4">
+                <form class="row" onsubmit="popupFormFadeToggle()">
+                    <input type="hidden" id="userId">
+                    <div class="col-12 p-1">Інформація про отримувача</div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="recipient_full_name">П.І.Б. отримувача</label>
+                        <input type="text" class="form-control" id="recipient_full_name" placeholder="П.І.Б.">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="mobileNumber">Номер телефону</label>
+                        <input type="tel" class="form-control" id="mobileNumber">
+                    </div>
+                    <hr class="w-100">
+                    <div class="col-12 p-1">Адресні дані отримувача</div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="city">Місто</label>
+                        <input type="text" class="form-control" id="city" placeholder="Місто відправки">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="region">Область</label>
+                        <input type="text" class="form-control" id="region" placeholder="Область">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="street">Вулиця</label>
+                        <input type="text" class="form-control" id="street" placeholder="Назва вулиці">
+                    </div>
+                    <hr class="w-100">
+                    <div class="col-12">
+                        <div class="row align-items-end">
+                            <div class="col-6 col-sm-4 col-md-4  p-2">
+                                <label for="buildingNumber">Номер будинку</label>
+                                <input type="text" class="form-control" id="buildingNumber">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-4  p-2">
+                                <label for="apartmentNumber">Номер квартири / офісу</label>
+                                <input type="text" class="form-control" id="apartmentNumber">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-4 p-2">
+                                <label for="postalCode">Поштовий індекс</label>
+                                <input type="text" class="form-control" id="postalCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center pt-3">
+                        <button type="submit" class="btn">Зберегти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <header>
     <div class="container-fluid">
         <nav class="row bg align-items-center" id="navPanel">
@@ -311,7 +367,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 address-card text-center add-address-btn">
+                        <div class="col-10 col-sm-7 col-md-5 col-lg-4 col-xl-3 address-card text-center add-address-btn" id="addAddressBtn">
                             <div class="row justify-content-center h-100 align-items-center">
                                 <div class="col-12">
                                     <div class="row">
@@ -378,6 +434,7 @@
         </div>
     </div>
 </main>
+
 <script src="js/main.js"></script>
 <script src="js/nav.js"></script>
 
