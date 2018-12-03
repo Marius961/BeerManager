@@ -49,7 +49,7 @@ html > body {
 }
 
 .cart-item-name {
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-weight: 500;
 }
 
@@ -59,8 +59,8 @@ html > body {
 }
 
 .cart-item-price {
-    font-weight: 700;
-    color: #21b125;
+    font-weight: 300;
+    font-size: 1.3em;
 }
 
 
@@ -324,7 +324,7 @@ html > body {
 }
 
 .border-box-1 {
-    border: 0.1em solid #d9d9d9;
+    border: 1px solid #d9d9d9;
 }
 
 .user-box-name {
@@ -344,6 +344,7 @@ html > body {
     z-index: 1;
     position: absolute;
     display: none;
+    box-shadow: rgb(219, 223, 226) 0 1px 2px 0, rgb(219, 223, 226) 0 1px 3px 1px;
 }
 
 
@@ -415,6 +416,7 @@ img {
     overflow-x: auto;
     overflow-y: hidden;
     flex-wrap: nowrap;
+    font-size: 0.8em;
 }
 
 .address-card {
@@ -430,3 +432,25 @@ img {
     background: rgba(112, 255, 137, 0.34);
 }
 
+.input-1 {
+    outline: none;
+    border-radius: 1em;
+    border: 1px solid #d9d9d9;
+}
+
+.input-1:focus {
+    box-shadow: 0 0 20px 1px #d9d9d9;
+}
+
+.input-2 {
+    width: 100%;
+    outline: none;
+    border-radius: 1em;
+    border: 1px solid #d9d9d9;
+    transition: 150ms;
+}
+
+.input-2:focus {
+    transition: 150ms;
+    box-shadow: 0 0 5px 1px #283593;
+}
