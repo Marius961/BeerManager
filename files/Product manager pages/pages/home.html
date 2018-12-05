@@ -12,93 +12,95 @@
 </head>
 <body>
 <header>
-    <div class="container-fluid fixed-top">
-        <nav class="row bg align-items-center" id="navPanel">
-            <div class="col-12 col-lg-auto d-lg-block" id="menuContent">
-                <div class="row pr-3 pl-3">
-                    <div class="col-12 col-lg-auto p-1 pl-2 pr-2 ">
-                        <a class="nav-link-1 active" href="#">Головна</a>
-                    </div>
-                    <div class="col-12 col-lg-auto p-1 pl-2 pr-2">
-                        <a class="nav-link-1" href="#">Мої замовлення</a>
+    <div class="container-fluid bg-blue fixed-top p-1">
+        <div class="container">
+            <nav class="row nav-bg-blue align-items-center" id="navPanel">
+                <div class="col-12 col-lg-auto d-lg-block" id="menuContent">
+                    <div class="row pr-3 pl-3">
+                        <div class="col-12 col-lg-auto p-1 pl-2 pr-2 ">
+                            <a class="nav-link-1 active" href="#">Головна</a>
+                        </div>
+                        <div class="col-12 col-lg-auto p-1 pl-2 pr-2">
+                            <a class="nav-link-1" href="#">Мої замовлення</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-2 col-sm-auto" id="menu"><img src="img/menu.png" width="24" height="24"></div>
-            <div class="col">
-                <div class="row justify-content-end align-items-center">
-                    <div class="col p-1 search-segment">
-                        <div class="row no-gutters p-drop-btn">
-                            <input class="col-12 d-none d-sm-block pl-2 pr-2 search-input" type="search" placeholder="Пошук">
-                            <div class="col col-sm-1 p-1 pl-sm-2 text-center d-sm-none">
-                                <img src="img/search.png" width="32" height="32">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-4 col-sm-5 col-md-4 col-lg-4 col-xl-3  p-1 p-dropdown-box">
-                        <div class="row no-gutters p-drop-btn">
-                            <div class="col col-sm-2 p-1  text-center">
-                                <img src="img/user_icon_grey.png" width="24" height="24">
-                            </div>
-                            <div class="col-9 col-sm-9 pl-1 d-none d-sm-block">
-                                <div class="row no-gutters">
-                                    <div class="col-12 user-box-name">Користувач</div>
-                                    <div class="col-12 user-box-email" >marius.shimsn@gmail.com</div>
+                <div class="col-2 col-sm-auto" id="menu"><img src="img/menu.png" width="24" height="24"></div>
+                <div class="col">
+                    <div class="row justify-content-end align-items-center">
+                        <div class="col p-1 search-segment">
+                            <div class="row no-gutters p-drop-btn">
+                                <input class="col-12 d-none d-sm-block p-1 pl-3 pr-3 search-input" type="search" placeholder="Пошук">
+                                <div class="col col-sm-1 p-1 pl-sm-2 text-center d-sm-none">
+                                    <img src="img/search.png" width="32" height="32">
                                 </div>
                             </div>
-                            <div class="col-1 no-gutters dropdown-toggle d-none d-sm-block"></div>
                         </div>
-                        <div class="p-dropdown user-actions-dropdown mt-2">
-                            <div class="row no-gutters">
-                                <a class="col-12 p-2" href="#">Замовлення</a>
-                                <a class="col-12 p-2" href="#">Особистий кабінет</a>
-                                <div class="p-dropdown-divider w-100"></div>
-                                <a class="col-12 p-2" href="#">Вийти</a>
+                        <div class="col-4 col-sm-5 col-md-4 col-lg-4 col-xl-3  p-1 p-dropdown-box">
+                            <div class="row no-gutters p-drop-btn">
+                                <div class="col col-sm-2 p-1  text-center">
+                                    <img src="img/user_icon_grey.png" width="24" height="24">
+                                </div>
+                                <div class="col-9 col-sm-9 pl-1 d-none d-sm-block">
+                                    <div class="row no-gutters">
+                                        <div class="col-12 user-box-name">Користувач</div>
+                                        <div class="col-12 user-box-email" >marius.shimsn@gmail.com</div>
+                                    </div>
+                                </div>
+                                <div class="col-1 no-gutters dropdown-toggle d-none d-sm-block"></div>
+                            </div>
+                            <div class="p-dropdown user-actions-dropdown mt-2">
+                                <div class="row no-gutters">
+                                    <a class="col-12 p-2" href="#">Замовлення</a>
+                                    <a class="col-12 p-2" href="#">Особистий кабінет</a>
+                                    <div class="p-dropdown-divider w-100"></div>
+                                    <a class="col-12 p-2" href="#">Вийти</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-3 col-sm-2 col-md-auto text-center p-1 pl-3 pr-3 p-dropdown-box order-sm-12" id="categoriesBtn">
-                        <div class="row align-items-center">
-                            <div class="col p-1">
-                                <img src="img/categories.png" width="24" height="24">
+                        <div class="col-3 col-sm-2 col-md-auto text-center p-1 pl-3 pr-3 p-dropdown-box order-sm-12" id="categoriesBtn">
+                            <div class="row align-items-center">
+                                <div class="col p-1">
+                                    <img src="img/categories.png" width="24" height="24">
+                                </div>
+                                <div class="col user-box-name d-none d-md-block">Категорії</div>
                             </div>
-                            <div class="col user-box-name d-none d-md-block">Категорії</div>
                         </div>
-                    </div>
-                    <div class="col-3 col-sm-1 col-md-auto text-center p-1 pl-3 pr-3 p-dropdown-box">
-                        <div class="row p-drop-btn align-items-center ">
-                            <div class="col p-1">
-                                <img src="img/cart_grey.png" width="24" height="24">
+                        <div class="col-3 col-sm-1 col-md-auto text-center p-1 pl-3 pr-3 p-dropdown-box">
+                            <div class="row p-drop-btn align-items-center ">
+                                <div class="col p-1">
+                                    <img src="img/cart_grey.png" width="24" height="24">
+                                </div>
+                                <div class="col user-box-name d-none d-md-block">Корзина</div>
                             </div>
-                            <div class="col user-box-name d-none d-md-block">Корзина</div>
-                        </div>
-                        <div class="p-dropdown cart-dropdown mt-2">
-                            <div class="row m-0">
-                                <div class="col-12">
-                                    <div class="row cart-segment-1">
-                                        <div class="col">
-                                            <div class="row cart-item-1 p-3 align-items-center">
-                                                <div class="col-4 col-sm-2 text-center"><img src="img/test/product.png" width="32" height="32"></div>
-                                                <div class="col-8 col-sm-10 align-self-center text-left cart-item-name">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
-                                                <div class="col-8 col-sm-6 align-self-center text-left cart-item-name">32кг</div>
-                                                <div class="col-12 col-sm-6 align-self-center cart-item-price text-right">19548 грн</div>
+                            <div class="p-dropdown cart-dropdown mt-2">
+                                <div class="row m-0">
+                                    <div class="col-12">
+                                        <div class="row cart-segment-1">
+                                            <div class="col">
+                                                <div class="row cart-item-1 p-3 align-items-center">
+                                                    <div class="col-4 col-sm-2 text-center"><img src="img/test/product.png" width="32" height="32"></div>
+                                                    <div class="col-8 col-sm-10 align-self-center text-left cart-item-name">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
+                                                    <div class="col-8 col-sm-6 align-self-center text-left cart-item-name">32кг</div>
+                                                    <div class="col-12 col-sm-6 align-self-center cart-item-price text-right">19548 грн</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 p-2 cart-segment-2">
+                                        <div class="row">
+                                            <div class="col text-right">
+                                                <a class="to-cart-btn p-2" href="cart.html">Перейти у кошик</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 p-2 cart-segment-2">
-                                    <div class="row">
-                                        <div class="col text-right">
-                                            <a class="to-cart-btn p-2" href="cart.html">Перейти у кошик</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         <div class="row categories-segment" style="display: none; position: absolute; z-index: 1">
             <div class="col-12">
                 <div class="row categories-container p-3">

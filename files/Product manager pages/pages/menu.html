@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Кошик</title>
+    <title>Оформлення замовлення</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,6 +11,62 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 </head>
 <body>
+<div class="popup-bg">
+    <div class="container">
+        <div class="row box-white mt-md-5 p-1 align-items-center h-100">
+            <div class="col segment-header pt-2">Адреса</div>
+            <div class="col-auto"><img class="close-btn" src="img/cross.png" id="closeAddressFormBtn"></div>
+            <div class="col-12 p-4">
+                <form class="row" onsubmit="popupFormFadeToggle()">
+                    <input type="hidden" id="userId">
+                    <div class="col-12 p-1">Інформація про отримувача</div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="recipient_full_name">П.І.Б. отримувача</label>
+                        <input type="text" class="input-2 p-2" id="recipient_full_name" placeholder="П.І.Б.">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="mobileNumber">Номер телефону</label>
+                        <input type="tel" class="input-2 p-2" id="mobileNumber">
+                    </div>
+                    <hr class="w-100">
+                    <div class="col-12 p-1">Адресні дані отримувача</div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="city">Місто</label>
+                        <input type="text" class="input-2 p-2" id="city" placeholder="Місто відправки">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="region">Область</label>
+                        <input type="text" class="input-2 p-2" id="region" placeholder="Область">
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-4 p-2">
+                        <label for="street">Вулиця</label>
+                        <input type="text" class="input-2 p-2" id="street" placeholder="Назва вулиці">
+                    </div>
+                    <hr class="w-100">
+                    <div class="col-12">
+                        <div class="row align-items-end">
+                            <div class="col-6 col-sm-4 col-md-4 col-xl-3 p-2">
+                                <label for="buildingNumber">Номер будинку</label>
+                                <input type="text" class="input-2 p-2 text-center" id="buildingNumber">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-4 col-xl-3 p-2">
+                                <label for="apartmentNumber">Номер квартири / офісу</label>
+                                <input type="text" class="input-2 p-2 text-center" id="apartmentNumber">
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-4 col-xl-3 p-2">
+                                <label for="postalCode">Поштовий індекс</label>
+                                <input type="text" class="input-2 p-2 text-center" id="postalCode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center pt-3">
+                        <button type="submit" class="btn">Зберегти</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <header>
     <div class="container-fluid">
         <nav class="row nav-bg-blue align-items-center" id="navPanel">
@@ -252,77 +308,74 @@
         </div>
     </div>
 </header>
-<main class="container">
-    <div class="row th-box p-3 mt-5">
-        <div class="col-12 th-item d-md-none">Товари у кошику</div>
-        <div class="col-1 d-none d-md-block col-md-2 col-lg-1 th-item"></div>
-        <div class="col-5 d-none d-md-block col-md-3 col-lg-4 th-item">Назва позиції</div>
-        <div class="col-2 d-none d-md-block col-md-2 col-lg-2 text-center th-item">Ціна за одиницю</div>
-        <div class="col-1 d-none d-md-block col-md-2 col-lg-2 th-item">Кількість</div>
-        <div class="col-2 d-none d-md-block col-md-2 col-lg-2 th-item">Кінцева ціна</div>
-        <div class="col-1 d-none d-md-block col-md-1 col-lg-1 th-item"></div>
-    </div>
-    <div class="row box-white p-sm-3 pt-3 pb-3">
-        <div class="col-12">
-            <div class="row header-1 border-box-1 p-1">Продавець: іван</div>
+<main class="container-fluid mt-4 mb-4">
+    <div class="row">
+        <div class="col-2">
             <div class="row">
+                <div class="col-12 segment-header">Меню</div>
+            </div>
+            <div class="row box-white mr-1 ml-1">
+                <a href="#my-orders"  class="col-12 menu-item p-1 pl-3">Мої замовлення</a>
+                <a href="#received-orders" class="col-12 menu-item p-1 pl-3">Отримані замовлення</a>
+                <a href="#my-products" class="col-12 menu-item p-1 pl-3">Мої товари</a>
+            </div>
+        </div>
+        <div class="col-10 item-content" id="my-orders">
+            <div class="row mr-1 ml-1">
+                <div class="col segment-header">Мої замовлення</div>
+            </div>
+            <div class="row box-white p-3 mr-1 ml-1">
                 <div class="col-12">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row cart-item-2 p-2 align-items-center border-box-1">
-                                <div class="col-3 col-sm-3 col-md-2 col-lg-1 text-center"><img src="img/test/product.png" width="64" height="64"></div>
-                                <div class="col-7 col-sm-7 col-md-3 col-lg-4 align-self-center cart-item-name" style="white-space: pre-wrap">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
-                                <div class="col-2 col-sm-2 col-md-1 text-center order-md-last">
-                                    <img src="img/cross.png" height="16" width="16">
-                                </div>
-                                <hr class="w-100 d-md-none">
-                                <div class="col-6 col-md-2 col-sm-4">
-                                    <div class="row align-items-center text-center">
-                                        <label class="col-12 d-md-none th-item-b pt-2">Ціна за од.</label>
-                                        <div class="col-12">
-                                            <div class="row">
-                                                <div class="col-12 col-md-12 cart-item-price">15.60</div>
-                                                <div class="col-12 col-md-12">грн/кг</div>
-                                            </div>
-                                        </div>
+                    <div class="row p-2">
+                        <div class="col" id="orders">
+                            <div class="row align-items-center border-box-1 p-3">
+                                <div class="col-6">
+                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                        <div class="col-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
+                                        <div class="col-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
+                                        <div class="col-2"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
+                                        <div class="col-2"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                        <div class="col-2"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                        <div class="col-2"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                        <div class="col-2"><img src="https://aquamarket.ua/16834-thickbox_default/barilla-ragu-contadino-sous-dlya-pasti-400-g-sklo.jpg"> </div>
+                                        <div class="col-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                        <div class="col-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                        <div class="col-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
+                                        <div class="col-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                        <div class="col-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                        <div class="col-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-2 col-sm-3 col-lg-2">
-                                    <div class="row align-items-start text-center">
-                                        <label class="col-12 d-md-none th-item-b pt-2">Кількість</label>
-                                        <input class="col-12 align-self-center input-1 p-3 text-center" type="number">
-                                    </div>
-                                </div>
-                                <hr class="w-100 d-sm-none">
-                                <div class="col-12 col-sm-5 col-md-2">
-                                    <div class="row align-items-center text-center">
-                                        <label class="col-12 col-sm-12 d-md-none th-item-b pt-2">Кінцева ціна</label>
-                                        <div class="col-12">
-                                            <div class="row justify-content-center">
-                                                <div class="col-auto col-sm-12 col-md-12 cart-item-price">123</div>
-                                                <div class="col-auto col-sm-12 col-md-12">грн</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="col-4 text-center">Не підтверджено</div>
+                                <a class="col-1" href="#">Деталі</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <div class="row align-items-center justify-content-center p-3">
-                        <hr class="w-100">
-                        <div class="col-auto col-md-8 text-right th-item-b">Сума до сплати 123123грн</div>
-                        <a href="order.html" class="col-auto col-md-4 text-right"><button class="btn">Оформити замовлення</button></a>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="col-10 item-content" id="received-orders">
+            <div class="row mr-1 ml-1">
+                <div class="col segment-header">Отримані замовленння</div>
+            </div>
+            <div class="row box-white p-3 mr-1 ml-1">
+                У розділі пусто
+            </div>
+        </div>
+        <div class="col-10 item-content" id="my-products">
+            <div class="row mr-1 ml-1">
+                <div class="col segment-header">Мої товари</div>
+            </div>
+            <div class="row box-white p-3 mr-1 ml-1">
+                У розділі пусто
             </div>
         </div>
     </div>
 </main>
+
 <script src="js/main.js"></script>
 <script src="js/nav.js"></script>
-
+<script src="js/menu.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

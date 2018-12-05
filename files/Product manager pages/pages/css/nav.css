@@ -1,12 +1,11 @@
 /*font weigh 300, 400, 500, 700, 900*/
 
-.bg {
-    background: rgb(63, 81, 181);
+.nav-bg-blue {
+    background: rgb(84, 53, 181);
     color: snow;
     font-family: "Roboto", serif;
     font-size: 1.3em;
 }
-
 
 
 .nav-link-1, .nav-link-1:hover {
@@ -37,15 +36,18 @@
 }
 
 .search-input {
-    border-radius: 0.3em;
-    border: 0;
-    background: #cfcfcf;
-    transition: 200ms;
+    font-size: 0.8em;
+    border-radius: 0.4em;
+    border: 1px transparent;
+    background: rgb(71, 46, 150);
+    transition: 150ms;
 }
 
 .search-input:focus {
-    background: white;
-    transition: 200ms;
+    color: white;
+    outline: none;
+    border: 1px solid snow;
+    transition: 150ms;
 }
 
 .search-segment {
