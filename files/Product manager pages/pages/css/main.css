@@ -459,14 +459,14 @@ img {
     box-shadow: 0 0 5px 1px #283593;
 }
 
-.menu-item {
+
+.item {
     color: black;
     font-size: 1.2em;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
+    border: 1px solid transparent;
 }
 
-.menu-item:hover {
+.item:hover {
     color: black;
     text-decoration: none;
     border-color: #cecece;
@@ -489,6 +489,7 @@ img {
 
 }
 
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -509,4 +510,8 @@ img {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(84, 53, 181);
+}
+
+#active-orders, #not-active-orders {
+    display: none;
 }

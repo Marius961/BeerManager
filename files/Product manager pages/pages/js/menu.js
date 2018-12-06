@@ -1,46 +1,72 @@
-let items = $(".menu-item");
-let currenMenuItem = "";
+
+
+let userMenu = {items:$("#userMenuItems").children(),
+        currentMenuItem: "",
+        content: $("#userMenuContent").children(),
+        paramName: "item"
+    },
+    tabMenu = {items:$("#ordersTabs").children(),
+        currentMenuItem: "",
+        content: $("#ordersTabsContent").children()
+    };
+
+
 
 $(document).ready(function () {
-    let url = location.href;
-    let itemHref = url.substring(url.indexOf("#")+1);
-    let item = $(".menu-item[href='#"+ itemHref +"']")[0];
-    if (item !== undefined) {
-        try {
-            selectMenuItem($(item)[0]);
-        } catch (e) {
-            selectMenuItem($(items)[0]);
-        }
-    } else {
-        let localSelectedItem = localStorage.getItem('lastItem') || '';
-        if (localSelectedItem !== '') {
-            try {
-                item = $(".item[name='"+ localSelectedItem +"']")[0];
-                selectMenuItem($(item)[0]);
-            } catch (e) {
-                selectMenuItem($(items)[0]);
-            }
-        } else {
-            selectMenuItem($(items)[0]);
-        }
-    }
+    readSelectedItemFromUrlParams();
+    selectItem($(tabMenu.items)[0], tabMenu);
+    $(userMenu.items).click( function (e) {
+        selectItem($(this), userMenu);
+        e.preventDefault();
+    });
+
+    $(tabMenu.items).click( function (e) {
+        selectItem($(this), tabMenu);
+        e.preventDefault();
+    });
 });
 
 
-$(items).click( function () {
-    selectMenuItem($(this));
-});
-
-function selectMenuItem(item) {
-    if ($(item)[0] !== currenMenuItem) {
+function selectItem(item, menu) {
+    if ($(item)[0] !== menu.currentMenuItem) {
         let href = $(item).attr('href');
-        $(items).removeClass("selected-item");
-        $(".item-content").fadeOut(100);
+        $(menu.items).removeClass("selected-item");
+        $(menu.content).fadeOut(100);
         $(item).addClass("selected-item");
         setTimeout(function () {
             $(href).fadeIn(100);
         }, 100);
-        currenMenuItem = $(item)[0];
-        localStorage.setItem("lastItem", $(item).attr('name'));
+        menu.currentMenuItem = $(item)[0];
+        if (menu.paramName !== undefined) {
+            setGetParam("item", href.substr(1))
+        }
+    }
+}
+function setGetParam(key,value) {
+    if (history.pushState) {
+        var params = new URLSearchParams(window.location.search);
+        params.set(key, value);
+        var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + params.toString();
+        window.history.pushState({path:newUrl},'',newUrl);
+    }
+}
+
+function getParam(name){
+    let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+
+
+function readSelectedItemFromUrlParams() {
+    try {
+        let menuItemHref = "#" + getParam("item");
+        let item = $(".item[href='"+ menuItemHref +"']")[0];
+        if (item !== undefined) {
+            selectItem($(item), userMenu);
+        } else {
+            selectItem($(userMenu.items)[0], userMenu);
+        }
+    } catch (e) {
+        selectItem($(userMenu.items)[0], userMenu);
     }
 }
