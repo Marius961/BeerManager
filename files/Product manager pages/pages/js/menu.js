@@ -5,23 +5,33 @@ let userMenu = {items:$("#userMenuItems").children(),
         content: $("#userMenuContent").children(),
         paramName: "item"
     },
-    tabMenu = {items:$("#ordersTabs").children(),
+    myOrdersTabMenu = {items:$("#myOrdersTabs").children(),
         currentMenuItem: "",
-        content: $("#ordersTabsContent").children()
+        content: $("#myOrdersContent").children()
+    },
+    receivedOrdersTabMenu = {items:$("#receivedOrdersTabs").children(),
+        currentMenuItem: "",
+        content: $("#receivedOrdersContent").children()
     };
 
 
 
 $(document).ready(function () {
     readSelectedItemFromUrlParams();
-    selectItem($(tabMenu.items)[0], tabMenu);
+    selectItem($(myOrdersTabMenu.items)[0], myOrdersTabMenu);
+    selectItem($(receivedOrdersTabMenu.items)[0], receivedOrdersTabMenu);
     $(userMenu.items).click( function (e) {
         selectItem($(this), userMenu);
         e.preventDefault();
     });
 
-    $(tabMenu.items).click( function (e) {
-        selectItem($(this), tabMenu);
+    $(myOrdersTabMenu.items).click( function (e) {
+        selectItem($(this), myOrdersTabMenu);
+        e.preventDefault();
+    });
+
+    $(receivedOrdersTabMenu.items).click( function (e) {
+        selectItem($(this), receivedOrdersTabMenu);
         e.preventDefault();
     });
 });

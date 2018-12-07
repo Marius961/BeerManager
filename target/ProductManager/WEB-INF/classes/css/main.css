@@ -1,0 +1,78 @@
+
+
+.small-1 {
+    font-size: 6mm;
+    font-family: "Segoe UI", serif;
+}
+
+.main-div {
+    width: 80%;
+    height: 120%;
+    max-height: 1000%;
+    margin: 0 10%;
+    padding-top: 2%;
+}
+
+.background {
+    background-color: #f1f1f1;
+}
+
+.container-background {
+    background-color: snow;
+    box-shadow: 0 0.1em 0.4em #b6b6b6;
+}
+
+
+.error-message {
+    color: red;;
+    margin: 0.3%;
+    display: none;
+}
+
+
+.tab {
+    border-bottom: 0.8mm solid #ededed;
+    transition: 100ms;
+}
+
+.tab:hover {
+    border-bottom: 7px solid #333333;
+    cursor: pointer;
+}
+
+.b-popup{
+    display: none;
+    width:100%;
+    height: 2000px;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position: fixed;
+    top:0;
+}
+.b-popup .b-popup-content{
+    background-color: snow;
+    border-radius:1px;
+}
+
+.order-header {
+    font-family: "Segoe UI", serif;
+    background-color: rgba(209, 209, 209, 0.31);
+}
+
+.order-box {
+    background-color: snow;
+    box-shadow: 0 0.1em 0.4em #b6b6b6;
+}
+
+.form-link {
+    border-top: 0.2vh solid rgba(0, 0, 0, 0.07);
+}
+
+.label-text-1 {
+    font-family: "Segoe UI", serif;
+    font-size: 6mm;
+}
+
+.font-2 {
+    font-family: "Segoe UI", serif;
+}

@@ -93,6 +93,17 @@ html > body {
     .project-header {
         font-size: 0.3em;
     }
+
+    .order-info-a {
+        background: #283593;
+        color: snow;
+        text-align: center;
+    }
+
+    .order-info-a:hover {
+        text-decoration: none;
+        color: snow;
+    }
 }
 
 @media all and (min-width: 576px) {
@@ -102,6 +113,17 @@ html > body {
 
     .user-actions-dropdown {
         width: 100%;
+    }
+
+    .order-info-a {
+        background: transparent;
+        color: black;
+        text-align: center;
+    }
+
+    .order-info-a:hover {
+        text-decoration: #283593;
+        color: #283593;
     }
 }
 
@@ -203,7 +225,7 @@ html > body {
 }
 
 .price-box {
-    background: #f6f6f6;
+    background: #ededed;
 }
 
 .price {
@@ -512,6 +534,34 @@ img {
     background: rgb(84, 53, 181);
 }
 
-#active-orders, #not-active-orders {
+#myActiveOrders, #myOrdersHistory, #receivedActiveOrders, #receivedOrdersHistory {
     display: none;
+}
+
+.warning-box-1 {
+    background: #ff7b36;
+}
+
+.accept-btn-1, .cancel-btn-1 {
+    color: snow;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.accept-btn-1 {
+    background: #283593;
+}
+
+.cancel-btn-1 {
+    background: rgba(40, 53, 147, 0.42);
+}
+
+.not-active-btn {
+    background: rgba(186, 186, 186, 0.28);
+    text-align: center;
+    border-radius: 3px;
+    cursor: not-allowed;
+    font-weight: 500;
 }

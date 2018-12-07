@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.springframework.org/schema/security"
+         xsi:schemaLocation="
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <http use-expressions="true">
+
+        <!--<intercept-url pattern="/**" requires-channel="https"/>-->
+        <!--<port-mappings>-->
+            <!--<port-mapping http="8081" https="8443"/>-->
+        <!--</port-mappings>-->
+
+        <access-denied-handler error-page="/"/>
+        <intercept-url pattern="/registration" access="isAnonymous()"/>
+        <intercept-url pattern="/login" access="isAnonymous()"/>
+        <intercept-url pattern="/user" access="isAnonymous()"/>
+        <intercept-url pattern="/username-check/{username}" access="isAnonymous()"/>
+        <intercept-url pattern="/email-check" access="isAnonymous()"/>
+        <intercept-url pattern="/tel-check" access="isAnonymous()"/>
+
+        <intercept-url pattern="/my-profile" access="hasRole('ROLE_USER')"/>
+
+        <intercept-url pattern="/users" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/user/get/{id}" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/all-orders" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/products" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/user-orders" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/product*" access="hasRole('ROLE_ADMIN')"/>
+
+        <intercept-url pattern="/orders" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/order/form" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/orders/process" access="hasRole('ROLE_USER')"/>
+
+        <form-login login-processing-url="/security_check"
+                    login-page="/login"
+                    default-target-url="/"
+                    authentication-failure-url="/login?error"
+                    username-parameter="username"
+                    password-parameter="password"/>
+        <logout logout-success-url="/" logout-url="/logout"/>
+        <csrf disabled="true"/>
+
+        <remember-me remember-me-parameter="rememberMe" data-source-ref="dataSource"/>
+    </http>
+
+    <b:bean id="jdbcGroupsImpl" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+        <b:property name="enableGroups" value="true"/>
+        <b:property name="enableAuthorities" value="false"/>
+        <b:property name="dataSource" ref="dataSource"/>
+    </b:bean>
+
+    <authentication-manager id="authenticationManager">
+        <authentication-provider user-service-ref="jdbcGroupsImpl">
+            <password-encoder ref="bCrypt"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <b:bean id="bCrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <b:constructor-arg name="strength" value="11"/>
+    </b:bean>
+</b:beans>

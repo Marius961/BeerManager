@@ -13,7 +13,7 @@
 <body>
 <div class="popup-bg">
     <div class="container">
-        <div class="row box-white mt-md-5 p-1 align-items-center h-100">
+        <div class="row box-white mt-md-5 align-items-center h-100">
             <div class="col segment-header pt-2">Адреса</div>
             <div class="col-auto"><img class="close-btn" src="img/cross.png" id="closeAddressFormBtn"></div>
             <div class="col-12 p-4">
@@ -68,7 +68,7 @@
     </div>
 </div>
 <header>
-    <div class="container-fluid bg-blue p-1">
+    <div class="container-fluid bg-blue pt-1 pb-1">
         <nav class="row nav-bg-blue align-items-center" id="navPanel">
             <div class="col-12 col-lg-auto d-lg-block" id="menuContent">
                 <div class="row pr-3 pl-3">
@@ -80,11 +80,11 @@
             <div class="col-2 col-sm-auto" id="menu"><img src="img/menu.png" width="24" height="24"></div>
             <div class="col">
                 <div class="row justify-content-end align-items-center">
-                    <div class="col p-1 search-segment">
+                    <div class="col col-lg-4 p-1 search-segment">
                         <div class="row no-gutters p-drop-btn">
                             <input class="col-12 d-none d-sm-block p-1 pl-3 pr-3 search-input" type="search" placeholder="Пошук">
                             <div class="col col-sm-1 p-1 pl-sm-2 text-center d-sm-none">
-                                <img src="img/search.png" width="32" height="32">
+                                <img src="img/search.png" width="24" height="24">
                             </div>
                         </div>
                     </div>
@@ -312,14 +312,14 @@
                 <div class="col-12 segment-header">Меню</div>
             </div>
             <div class="row box-white mr-sm-1 ml-sm-1" id="userMenuItems">
-                <a href="#my-orders"  class="col-12 item p-1 pl-3">Мої замовлення</a>
-                <a href="#received-orders" class="col-12 item p-1 pl-3">Отримані замовлення</a>
+                <a href="#myOrders" class="col-12 item p-1 pl-3">Мої замовлення</a>
+                <a href="#receivedOrders" class="col-12 item p-1 pl-3">Отримані замовлення</a>
                 <a href="#my-products" class="col-12 item p-1 pl-3">Мої товари</a>
             </div>
         </div>
         <div class="col-md-9 col-xl-10">
             <div class="row" id="userMenuContent">
-                <div class="col item-content" id="my-orders">
+                <div class="col item-content" id="myOrders">
                     <div class="row mr-1 ml-1">
                         <div class="col segment-header">Мої замовлення</div>
                     </div>
@@ -327,14 +327,14 @@
                         <div class="col-12">
                             <div class="row p-sm-2">
                                 <div class="col-12 pt-2 pb-2">
-                                    <div class="row" id="ordersTabs">
-                                        <a class="col-6 col-lg-auto item p-2" href="#active-orders">Активні замовлення</a>
-                                        <a class="col-6 col-lg-auto item p-2" href="#not-active-orders">Не активні замовлення</a>
+                                    <div class="row" id="myOrdersTabs">
+                                        <a class="col-6 col-lg-auto item p-2" href="#myActiveOrders">Активні замовлення</a>
+                                        <a class="col-6 col-lg-auto item p-2" href="#myOrdersHistory">Історія моїх замовлень</a>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <div class="row m-0" id="ordersTabsContent">
-                                        <div class="col item-content" id="active-orders">
+                                    <div class="row m-0" id="myOrdersContent">
+                                        <div class="col item-content" id="myActiveOrders">
                                             <div class="row align-items-center border-box-1 p-3">
                                                 <div class="col-12 col-sm-5 col-lg-6">
                                                     <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
@@ -354,8 +354,14 @@
                                                     </div>
                                                 </div>
                                                 <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Відправлено</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-5 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення очікує підтвердження продавця</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-1 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
                                             </div>
                                             <div class="row align-items-center border-box-1 p-3">
                                                 <div class="col-12 col-sm-5 col-lg-6">
@@ -363,25 +369,12 @@
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">В дорозі</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Повернено відправнику</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/16834-thickbox_default/barilla-ragu-contadino-sous-dlya-pasti-400-g-sklo.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
                                                         <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
@@ -389,21 +382,47 @@
                                                     </div>
                                                 </div>
                                                 <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Не підтверджено</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-5 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення підтверджено, очікується відправка</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-1 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
+                                            </div>
+                                            <div class="row align-items-center border-box-1 p-3">
+                                                <div class="col-12 col-sm-5 col-lg-6">
+                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/16834-thickbox_default/barilla-ragu-contadino-sous-dlya-pasti-400-g-sklo.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-5 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення відправлено</div>
+                                                        <hr class="w-100 d-sm-none">
+                                                        <div class="col-12 col-sm-auto accept-btn-1 p-2 mt-1 mb-1">Підтвердити отримання</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-1 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
                                             </div>
                                         </div>
-                                        <div class="col item-content" id="not-active-orders">
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
+                                        <div class="col item-content" id="myOrdersHistory">
                                             <div class="row align-items-center border-box-1 p-3">
                                                 <div class="col-12 col-sm-5 col-lg-6">
                                                     <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
@@ -423,88 +442,14 @@
                                                     </div>
                                                 </div>
                                                 <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-5 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення отримано</div>
                                                     </div>
                                                 </div>
                                                 <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
-
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Скасовано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/16834-thickbox_default/barilla-ragu-contadino-sous-dlya-pasti-400-g-sklo.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
-                                            </div>
-                                            <div class="row align-items-center border-box-1 p-3">
-                                                <div class="col-12 col-sm-5 col-lg-6">
-                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
-                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-3 col-xl-2"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
-                                                    </div>
-                                                </div>
-                                                <hr class="w-100 d-sm-none">
-                                                <div class="col-8 col-sm-5 col-md-4 col-lg-5 text-center p-1 p-sm-0">Виконано</div>
-                                                <a class="col-4 col-sm-2 col-md-2 col-lg-1 p-1 p-sm-0" href="#">Деталі</a>
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-1 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
                                             </div>
                                         </div>
                                     </div>
@@ -513,12 +458,144 @@
                         </div>
                     </div>
                 </div>
-                <div class="col item-content" id="received-orders">
-                    <div class="row mr-sm-1 ml-sm-1">
-                        <div class="col segment-header">Отримані замовленння</div>
+                <div class="col item-content" id="receivedOrders">
+                    <div class="row mr-1 ml-1">
+                        <div class="col segment-header">Отримані замовлення</div>
                     </div>
-                    <div class="row box-white p-3 mr-1 ml-1">
-                        У розділі пусто
+                    <div class="row box-white p-lg-3 mr-sm-1 ml-sm-1">
+                        <div class="col-12">
+                            <div class="row p-sm-2">
+                                <div class="col-12 pt-2 pb-2">
+                                    <div class="row" id="receivedOrdersTabs">
+                                        <a class="col-6 col-lg-auto item p-2" href="#receivedActiveOrders">Активні замовлення</a>
+                                        <a class="col-6 col-lg-auto item p-2" href="#receivedOrdersHistory">Історія отриманих замовлень</a>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row m-0" id="receivedOrdersContent">
+                                        <div class="col item-content" id="receivedActiveOrders">
+                                            <div class="row align-items-center border-box-1 p-3">
+                                                <div class="col-12 p-2 mb-2 warning-box-1">Потрибен Ваш вибір!</div>
+                                                <div class="col-12 col-sm-5 col-lg-4 col-xl-3">
+                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://aquamarket.ua/16834-thickbox_default/barilla-ragu-contadino-sous-dlya-pasti-400-g-sklo.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img2.zakaz.ua/src.1467305367.ad72436478c_2016-06-30_Aleksey/src.1467305367.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://aquamarket.ua/12478-large_default/product.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://produkty24.com.ua/photos/product/513x395/86760.jpg"></div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">амовлення очікує підтвердження продавця</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-2 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-md-12 col-lg-3">
+                                                    <div class="row justify-content-between justify-content-lg-center">
+                                                        <div class="col-12 col-sm-5 col-lg-12 accept-btn-1 p-2 mt-1 mb-1">Прийняти замовлення</div>
+                                                        <div class="col-12 col-sm-5 col-lg-12 cancel-btn-1 p-2 mt-1 mb-1">Відхилити замовлення</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row align-items-center border-box-1 p-3">
+                                                <div class="col-12 p-2 mb-2 warning-box-1">Потрибен Ваш вибір!</div>
+                                                <div class="col-12 col-sm-5 col-lg-4 col-xl-3">
+                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення підтверджено, очікується відправка</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-2 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-md-12 col-lg-3">
+                                                    <div class="row justify-content-between justify-content-lg-center">
+                                                        <div class="col-12 col-sm-5 col-lg-12 accept-btn-1 p-2 mt-1 mb-1">Підтвердити відправку</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row align-items-center border-box-1 p-3">
+                                                <div class="col-12 col-sm-5 col-lg-4 col-xl-3">
+                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Замовлення відправлено</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-2 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-md-12 col-lg-3">
+                                                    <div class="row justify-content-between justify-content-lg-center">
+                                                        <div class="col-12 col-sm-5 col-lg-12 not-active-btn p-2 mt-1 mb-1">Очікується підтвердження отримання замовником</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col item-content" id="receivedOrdersHistory">
+                                            <div class="row align-items-center border-box-1 p-3">
+                                                <div class="col-12 col-sm-5 col-lg-4 col-xl-3">
+                                                    <div class="row pt-2 pb-2" style="flex-wrap: nowrap; overflow-x: auto ">
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://fozzyshop.com.ua/50079-large_default/moloko-slovyanochka-25.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://vodo.lviv.ua/wp-content/uploads/%D0%A6%D1%83%D0%BA%D0%BE%D1%80-%D0%A2%D0%9C-%C2%AB%D0%94%D1%96%D0%B0%D0%BC%D0%B0%D0%BD%D1%82%C2%BB-%D1%80%D0%B0%D0%B4%D0%B5%D1%85%D1%96%D0%B2-1-%D0%BA%D0%B3.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="http://akvitania.com.ua/wp-content/uploads/%D1%82%D1%80%D1%83%D1%81-05.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img3.zakaz.ua/20180122.1516645167.ad72436478c_2018-01-22_Alexey/20180122.1516645167.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://img.e-dostavka.by/UserFiles/images/catalog/Goods/thumbs/3800/3800205875604_1000x1000_w.png.jpg?1495551377"> </div>
+                                                        <div class="col-7 col-sm-6 col-md-5 col-lg-5 col-xl-4"><img src="https://av.ru/product/h40/he8/8886940991518.jpg"> </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-12 col-sm-5 col-md-4 col-lg-3 text-center p-1 pt-2 pb-2 p-sm-0">
+                                                    <div class="row">
+                                                        <div class="col-auto col-sm-12 header-1">Статус:</div>
+                                                        <div class="col col-sm-12 text-right text-sm-center">Отримано</div>
+                                                    </div>
+                                                </div>
+                                                <hr class="w-100 d-sm-none">
+                                                <a class="col-12 col-sm-2 col-md-2 col-lg-2 p-2 p-sm-0 order-info-a" href="#">Деталі</a>
+                                                <hr class="w-100 d-sm-none">
+                                                <div class="col-md-12 col-lg-3">
+                                                    <div class="row justify-content-between justify-content-lg-center">
+                                                        <div class="col-12 col-sm-5 col-lg-12 not-active-btn p-2 mt-1 mb-1">Замовлення отримано</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col item-content" id="my-products">
