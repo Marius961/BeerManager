@@ -89,12 +89,14 @@ html > body {
 }
 
 
-.categories-container-2 {
-    background: #57708b;
+.menu-link {
     color: white;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    transition: 300ms;
+    background: #2f3340;
+}
+
+.menu-link:hover {
+    text-decoration: none;
+    color: white;
 }
 
 
@@ -348,10 +350,6 @@ html > body {
     color: snow;
 }
 
-.item-content {
-    display: none;
-}
-
 .item-order {
 
 }
@@ -516,3 +514,18 @@ html > body {
 }
 
 /*-----------------------------*/
+
+
+.categories-box {
+    z-index: 1;
+    background: white;
+}
+
+.categories-box-header {
+    background: #4a3194;
+    color: white;
+}
+
+.categories-content {
+    color: black;
+}
