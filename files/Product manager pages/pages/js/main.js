@@ -93,25 +93,13 @@ $("#menuBtn").click(function () {
 
 
 
-$(".category-item-box, .subcategories").hover(function () {
-    $(this.parentNode).find(".subcategories").toggleClass("d-none");
-    $(this).toggleClass("c-menu-item-box-active");
-    let k = $(this);
-});
-
 $(".menu-item").click(function () {
-    let itemContent = $(this.parentNode).find(".item-content")
-
-    if ($(itemContent).css("display") === "none") {
-        slideUpAllItemContent();
-    }
-    $(itemContent).slideToggle(animationTime)
+    $(this).find(".menu-item-content").slideToggle(animationTime)
 })
 
 function slideUpAllItemContent() {
-    $(".item-content").slideUp(animationTime);
+    $(".menu-item-content").slideUp(animationTime);
 }
-
 
 //
 // $(".categories-segment").mouseleave(function () {
@@ -152,10 +140,6 @@ function menuSlideToggle() {
 
 
 
-//
-// function categoriesMenuSlideUp() {
-//     $(".categories-segment").slideUp(animationTime);
-// }
 
 
 $("#filtersToggle").on("click", function () {

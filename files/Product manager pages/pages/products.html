@@ -12,75 +12,80 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
 </head>
 <body>
-<header>
+<header >
     <div class="container-fluid nav-container-bg pt-1 pb-1">
-        <nav class="row nav-bg align-items-center" id="navPanel">
-            <div class="col-auto" id="menuContent">
-                <div class="row">
-                    <div class="col-auto text-center categories-menu-btn pt-1 pb-1" id="categoriesBtn">
-                        <div class="row align-items-center">
-                            <div class="col-2">
-                                <img src="img/list.png" width="24" height="24">
+        <nav class="container nav-bg" id="navPanel">
+            <div class="row align-items-center" style="flex-wrap: nowrap">
+                <div class="col-2" id="menuContent">
+                    <div class="row">
+                        <div class="col-auto categories-menu-btn pt-1 pb-1" id="menuBtn">
+                            <div class="row align-items-center">
+                                <div class="col-2">
+                                    <img src="img/list.png" width="24" height="24">
+                                </div>
+                                <div class="col nav-item d-none d-sm-block text-left pt-1 pl-3">Product Manager</div>
                             </div>
-                            <div class="col nav-item d-none d-md-block text-center">Категорії</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col col-sm">
-                <div class="row justify-content-center">
-                    <div class="col-7 p-1 search-segment">
-                        <div class="row p-drop-btn">
-                            <input class="col-12 p-1 pl-3 pr-3 search-input" type="search" placeholder="Пошук">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-auto col-sm-7 col-md-6 col-lg-5 col-xl-4">
-                <div class="row justify-content-end"  style="flex-wrap: nowrap">
-                    <div class="col-auto p-dropdown-box pt-1 pb-1">
-                        <div class="row p-drop-btn align-items-center">
-                            <div class="col-2">
-                                <img src="img/user_icon_grey.png" width="24" height="24">
-                            </div>
-                            <div class="col nav-item dropdown-toggle text-center d-none d-sm-block">Користувач</div>
-                        </div>
-                        <div class="p-dropdown user-actions-dropdown mt-3">
-                            <div class="row no-gutters">
-                                <a class="col-12 p-1 pl-2" href="menu.html">Моє меню</a>
-                                <div class="p-dropdown-divider w-100"></div>
-                                <a class="col-12 p-1 pl-2" href="#">Вийти</a>
+                <div class="col">
+                    <div class="row justify-content-end"  style="flex-wrap: nowrap">
+                        <div class="col-auto p-dropdown-box pt-1 pb-1">
+                            <div class="row p-drop-btn align-items-center">
+                                <div class="col-auto">
+                                    <img src="img/search.png" width="24" height="24">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-auto col-sm-5 col-lg-5 col-xl-4 p-dropdown-box pt-1 pb-1">
-                        <div class="row p-drop-btn align-items-center">
-                            <div class="col-2">
-                                <img src="img/cart_grey.png" width="24" height="24">
+                        <div class="col-auto p-dropdown-box pt-1 pb-1">
+                            <div class="row p-drop-btn align-items-center">
+                                <div class="col-2">
+                                    <img src="img/user_icon_grey.png" width="24" height="24">
+                                </div>
                             </div>
-                            <div class="col nav-item text-center d-none d-sm-block">Кошик</div>
+                            <div class="p-dropdown user-actions-dropdown mt-2">
+                                <div class="row no-gutters">
+                                    <a class="col-12 p-2 pl-2" href="menu.html">Моє меню</a>
+                                    <div class="p-dropdown-divider w-100"></div>
+                                    <a class="col-12 p-2 pl-2" href="#">Вийти</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="p-dropdown cart-dropdown mt-3">
-                            <div class="row m-0">
-                                <div class="col-12">
-                                    <div class="row cart-segment-1">
+                        <div class="col-auto p-dropdown-box pt-1 pb-1">
+                            <div class="row p-drop-btn align-items-center">
+                                <div class="col-2" style="position: absolute; z-index: 1; top: 4px; right: 12px">
+                                    <div class="row align-items-center">
                                         <div class="col">
-                                            <div class="row cart-item align-items-center p-3">
-                                                <div class="col-4 col-sm-2 text-center"><img src="img/test/product.png" width="32" height="32"></div>
-                                                <div class="col-8 col-sm-10 align-self-center text-left cart-item-text">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
-                                                <hr class="w-100">
-                                                <div class="col-5 offset-2 cart-m-unit text-center">32кг</div>
-                                                <div class="col-5 cart-item-price text-center">19548 грн</div>
-                                            </div>
+                                            <div class="notifications-count-icon">1</div>
                                         </div>
                                     </div>
                                 </div>
-                                <hr>
-                                <div class="col-12 p-2">
-                                    <div class="row align-items-center pl-1 pr-1">
-                                        <div class="col-6 cart-total-price">99999грн</div>
-                                        <div class="col-6 text-right" style="font-size: 0.9em">
-                                            <a class="to-cart-btn p-2" href="cart.html">Перейти у кошик</a>
+                                <div class="col-2">
+                                    <img src="img/cart_grey.png" width="24" height="24">
+                                </div>
+                            </div>
+                            <div class="p-dropdown cart-dropdown mt-2">
+                                <div class="row m-0">
+                                    <div class="col-12">
+                                        <div class="row cart-segment-1">
+                                            <div class="col">
+                                                <div class="row cart-item align-items-center p-3">
+                                                    <div class="col-4 col-sm-2 text-center"><img src="img/test/product.png" width="32" height="32"></div>
+                                                    <div class="col-8 col-sm-10 align-self-center text-left cart-item-text">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
+                                                    <hr class="w-100">
+                                                    <div class="col-5 offset-2 cart-m-unit text-center">32кг</div>
+                                                    <div class="col-5 cart-item-price text-center">19548 грн</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="col-12 p-2">
+                                        <div class="row align-items-center pl-1 pr-1">
+                                            <div class="col-6 cart-total-price">99999грн</div>
+                                            <div class="col-6 text-right" style="font-size: 0.9em">
+                                                <a class="to-cart-btn p-2" href="cart.html">Перейти у кошик</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -91,343 +96,67 @@
             </div>
         </nav>
     </div>
-    <div class="container-fluid position-absolute">
-        <div class="row categories-segment" style="display: none">
-            <div class="col" style="z-index: 1">
-                <div class="row">
-                    <div class="col-4 col-sm-3 item-label text-5 text-center font-weight-bold p-2" style="color: white">Категорії</div>
-                </div>
-                <div class="row item-content" id="categories">
-                    <div class="col-12 category" style="display: none">
-                        <div class="row">
-                            <div class="col-4 col-sm-3 category-item-box p-2 pl-md-4">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-md-3 text-center pb-2 pb-md-0"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
-                                    <div class="col-12 col-md-9 text-center text-md-left">Пекарня</div>
-                                </div>
-                            </div>
-                            <div class="col-auto col-lg-6 col-xl-3 subcategories offset-4 offset-sm-3 d-none" style="position: absolute; z-index: 1">
-                                <div class="row">
-                                    <div class="col-12 c-subcategories-container-box">
-                                        <div class="row p-3">
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Хліб</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Хлібці</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Булочки</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Лаваші та коржі</a>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="row w-100 position-absolute m-0" id="menu" style="display: none">
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-6 col-md-5 col-lg-4 col-xl-3 menu-header pt-1 pb-1 text-center">Категорії</div>
+            </div>
+            <div class="row">
+                <div class="col col-sm-6 col-md-5 col-lg-4 col-xl-3 menu-item" style="    z-index: 1;">
+                    <div class="row align-items-center p-2">
+                        <div class="col-3 col-md-3 text-center pb-2 pb-md-0">
+                            <img src="img/categories/bakery_icon_grey.png" width="32" height="32">
+                        </div>
+                        <div class="col-9 col-md-9">Пекарня</div>
+                    </div>
+                    <div class="row">
+                        <div class="col menu-item-content ">
+                            <div class="row p-2">
+                                <a class="col-6 subcategory p-1" href="products.html">Хліб</a>
+                                <a class="col-6 subcategory p-1" href="products.html">Хлібці</a>
+                                <a class="col-6 subcategory p-1" href="products.html">Булочки</a>
+                                <a class="col-6 subcategory p-1" href="products.html">Лаваші та коржі</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 category" style="display: none">
-                        <div class="row ">
-                            <div class="col-4 col-sm-3 category-item-box p-2 pl-md-4">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-md-3 text-center pb-2 pb-md-0"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
-                                    <div class="col-12 col-md-9 text-center text-md-left">Фрукти та овочі</div>
-                                </div>
-                            </div>
-                            <div class="col-auto col-lg-6 col-xl-3 subcategories offset-4 offset-sm-3 d-none" style="position: absolute; z-index: 1">
-                                <div class="row">
-                                    <div class="col-12 c-subcategories-container-box">
-                                        <div class="row p-3">
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Фрукти</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Овочі</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Гриби</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Зелень</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Сухофрукти</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 category" style="display: none">
-                        <div class="row ">
-                            <div class="col-4 col-sm-3 category-item-box p-2 pl-md-4">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-md-3 text-center pb-2 pb-md-0"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
-                                    <div class="col-12 col-md-9 text-center text-md-left">Молочне та яйця</div>
-                                </div>
-                            </div>
-                            <div class="col-auto col-lg-6 col-xl-3 subcategories offset-4 offset-sm-3 d-none" style="position: absolute; z-index: 1">
-                                <div class="row">
-                                    <div class="col-12 c-subcategories-container-box">
-                                        <div class="row p-3">
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Молоко</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Сир</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Творог</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Сметана</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Йогурт</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Кисломолочні напої</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Масло та маргарин</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Десерти</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Вершки</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Згущене молоко</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Яйця</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Пресовані дріжжі</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Безлактозна їжа та напої</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 category" style="display: none">
-                        <div class="row ">
-                            <div class="col-4 col-sm-3 category-item-box p-2 pl-md-4">
-                                <div class="row align-items-center">
-                                    <div class="col-12 col-md-3 text-center pb-2 pb-md-0"><img src="img/categories/bakery_icon_grey.png" width="32" height="32"></div>
-                                    <div class="col-12 col-md-9 text-center text-md-left">М'ясо, риба, птиця</div>
-                                </div>
-                            </div>
-                            <div class="col-auto col-lg-6 col-xl-3 subcategories offset-4 offset-sm-3 d-none" style="position: absolute; z-index: 1">
-                                <div class="row">
-                                    <div class="col-12 c-subcategories-container-box">
-                                        <div class="row p-3">
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Свіже м'ясо</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Свіжа риба</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Ковбаса та сосиски</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">м'ясні делікатеси</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Приготована риба</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Морепродукти</a>
-                                            <a class="col-12 col-sm-6 subcategory p-1" href="products.html">Суші</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </header>
-
-<main class="container-fluid" style="background: white">
+<main class="container">
     <div class="row">
-        <button type="button" class="btn btn-secondary col-12 col-sm-2 d-block d-lg-none offset-sm-9 filter-button" id="filtersToggle">Фільтри</button>
-        <div class="col-lg-2 col-xl-2 pt-3 pl-4 d-none d-lg-block" id="filters">
-            <div class="row filters-box pb-4">
-                <div class="col-10 filter-category pb-2 pt-4">Виробники</div>
-                <div class="col-12">
-                    <div class="row pl-3">
-                        <div class="col-12 p-1">
-                            <div class="pretty p-default p-curve checkbox-size">
-                                <input type="checkbox"/>
-                                <div class="state">
-                                    <label>Виробник 1</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 p-1">
-                            <div class="pretty p-default p-curve checkbox-size">
-                                <input type="checkbox" />
-                                <div class="state">
-                                    <label>Виробник 2</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 p-1">
-                            <div class="pretty p-default p-curve checkbox-size">
-                                <input type="checkbox" />
-                                <div class="state">
-                                    <label>Виробник 3</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-10 col-xl-10">
-            <div class="row products-container no-gutters p-3 row-eq-height">
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Апельсин</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="https://st.depositphotos.com/1000141/1936/i/950/depositphotos_19366981-stock-photo-one-ripe-orange-in-closeup.jpg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">34.90</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/кг</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
+        <div class="col-2 pl-3 pr-3 mt-3 ">
+            <div class="row box-white">
+                <button type="button" class="btn btn-secondary col-12 col-sm-2 d-block d-lg-none offset-sm-9 filter-button" id="filtersToggle">Фільтри</button>
+                <div class="col-2 pt-2 pl-4 d-none d-lg-block" id="filters">
+                    <div class="row filters-box pb-4 ">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 font-weight-bold">Виробники</div>
+                                <div class="col-12">
+                                    <div class="row pl-3">
+                                        <div class="col-12 p-1">
+                                            <div class="pretty p-default p-curve text-5">
+                                                <input type="checkbox"/>
+                                                <div class="state">
+                                                    <label>Виробник 1</label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Борошно</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="https://img2.zakaz.ua/20151009.1444134441.ad72436478c_2015-10-09_Yana/20151009.1444134441.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">44.90</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
+                                        <div class="col-12 p-1">
+                                            <div class="pretty p-default p-curve text-5">
+                                                <input type="checkbox"/>
+                                                <div class="state">
+                                                    <label>Виробник 2</label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Молоко</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="http://fozzyshop.com.ua/19842-thickbox_default/moloko-bila-liniya-25.jpg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">17.90</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Макарони</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="https://i1.rozetka.ua/goods/7353550/53895774_images_7353550092.jpg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">59.87</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Сир</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="https://ua.all.biz/img/ua/catalog/3132693.jpeg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">89.60</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card">
-                    <div class="row p-3 pb-5 no-gutters">
-                        <div class="col-12 p-3">
-                            <div class="col-12 text-center pt-2 product-name">Чіпси "Люкс" зі смаом сиру</div>
-                        </div>
-                        <div class="col-12 align-self-end">
-                            <div class="row justify-content-center">
-                                <div class="col-auto">
-                                    <img class="product-picture" src="https://img2.zakaz.ua/zakaz-HP-630-2-Notebook-PC.1430305353.ad72436478c_2015-04-30_vitaliy/zakaz-HP-630-2-Notebook-PC.1430305353.SN1741CD.obj.0.8.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg">
-                                </div>
-                                <div class="w-100"></div>
-                                <div class="col mt-4">
-                                    <div class="row no-gutters">
-                                        <div class="col-9 price-box">
-                                            <div class="row no-gutters p-2">
-                                                <span class="col-6 col-sm-auto price text-right">26.75</span>
-                                                <span class="col-6 col-sm-auto price-currency text-left pl-1">грн/шт</span>
-                                            </div>
-                                        </div>
-                                        <div class="col-3 to-cart-block">
-                                            <div class="row no-gutters p-2">
-                                                <div class="col text-center">
-                                                    <img src="img/to_cart_icon_white.png">
+                                        <div class="col-12 p-1">
+                                            <div class="pretty p-default p-curve text-5">
+                                                <input type="checkbox"/>
+                                                <div class="state">
+                                                    <label>Виробник 3</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -439,6 +168,51 @@
                 </div>
             </div>
         </div>
+        <div class="col pl-4 pr-3 mt-3">
+            <div class="row box-white">
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row no-gutters p-3 row-eq-height" id="products-container">
+                                <div class="col-12 col-sm-6 col-md-4 col-xl-3 product-card p-2 p-xl-0" onclick="location.href='product_page.html'">
+                                    <div class="row pb-3 no-gutters">
+                                        <div class="col-12 p-3">
+                                            <div class="col-12 text-center pt-2 product-name">Апельсин Іспанія</div>
+                                        </div>
+                                        <div class="col-12 align-self-end">
+                                            <div class="row justify-content-center">
+                                                <div class="col-auto">
+                                                    <img class="product-picture" src="https://st.depositphotos.com/1000141/1936/i/950/depositphotos_19366981-stock-photo-one-ripe-orange-in-closeup.jpg">
+                                                </div>
+                                                <div class="w-100"></div>
+                                                <div class="col-12 col-sm-10 col-lg-9 col-xl-10 mt-4">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-9 price-box">
+                                                            <div class="row no-gutters p-2">
+                                                                <span class="col-auto price text-right align-self-center">99999.99</span>
+                                                                <span class="col-auto price-currency text-left pl-1">грн/кг</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-3 to-cart-block">
+                                                            <div class="row no-gutters p-1 p-lg-2 h-100 align-items-center">
+                                                                <div class="col text-center">
+                                                                    <img src="img/to_cart_icon_white.png" height="24" width="24">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </main>
 <script src="js/main.js"></script>
