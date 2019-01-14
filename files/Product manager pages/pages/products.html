@@ -96,13 +96,13 @@
             </div>
         </nav>
     </div>
-    <div class="row w-100 position-absolute m-0" id="menu" style="display: none">
+    <div class="row w-100 position-absolute m-0" id="menu" style="display: none; z-index: 3">
         <div class="container">
             <div class="row">
                 <div class="col col-sm-6 col-md-5 col-lg-4 col-xl-3 menu-header pt-1 pb-1 text-center">Категорії</div>
             </div>
             <div class="row">
-                <div class="col col-sm-6 col-md-5 col-lg-4 col-xl-3 menu-item" style="    z-index: 1;">
+                <div class="col col-sm-6 col-md-5 col-lg-4 col-xl-3 menu-item">
                     <div class="row align-items-center p-2">
                         <div class="col-3 col-md-3 text-center pb-2 pb-md-0">
                             <img src="img/categories/bakery_icon_grey.png" width="32" height="32">
@@ -126,12 +126,14 @@
 </header>
 <main class="container">
     <div class="row">
-        <div class="col-2 pl-3 pr-3 mt-3 ">
-            <div class="row box-white">
-                <button type="button" class="btn btn-secondary col-12 col-sm-2 d-block d-lg-none offset-sm-9 filter-button" id="filtersToggle">Фільтри</button>
-                <div class="col-2 pt-2 pl-4 d-none d-lg-block" id="filters">
-                    <div class="row filters-box pb-4 ">
-                        <div class="col-12">
+        <div class="col-12 col-lg-2 pl-lg-3 pr-lg-3 mt-3 ">
+            <div class="row d-block d-lg-none">
+                <div class="col-12 filters-button p-1" id="filtersToggle">Фільтри</div>
+            </div>
+            <div class="row box-white d-none d-lg-block" id="filters">
+                <div class="col pt-2 pl-4">
+                    <div class="row pb-4 ">
+                        <div class="col-12 col-sm-6 col-lg-12">
                             <div class="row">
                                 <div class="col-12 font-weight-bold">Виробники</div>
                                 <div class="col-12">
@@ -168,9 +170,16 @@
                 </div>
             </div>
         </div>
-        <div class="col pl-4 pr-3 mt-3">
+        <div class="col pl-lg-4 pr-lg-3 mt-3">
             <div class="row box-white">
                 <div class="col">
+                    <div class="row p-1">
+                        <label class="col font-weight-bold">Сортувати:</label>
+                        <a href="#" class="col-auto link-1">по назві</a>
+                        <a href="#" class="col-auto link-1">по зростанню ціни</a>
+                        <a href="#" class="col-auto link-1">по зменшенню ціни</a>
+                    </div>
+                    <hr class="w-100 m-1">
                     <div class="row">
                         <div class="col">
                             <div class="row no-gutters p-3 row-eq-height" id="products-container">
@@ -180,20 +189,20 @@
                                             <div class="col-12 text-center pt-2 product-name">Апельсин Іспанія</div>
                                         </div>
                                         <div class="col-12 align-self-end">
-                                            <div class="row justify-content-center">
+                                            <div class="row justify-content-center no-gutters">
                                                 <div class="col-auto">
                                                     <img class="product-picture" src="https://st.depositphotos.com/1000141/1936/i/950/depositphotos_19366981-stock-photo-one-ripe-orange-in-closeup.jpg">
                                                 </div>
                                                 <div class="w-100"></div>
-                                                <div class="col-12 col-sm-10 col-lg-9 col-xl-10 mt-4">
-                                                    <div class="row no-gutters">
-                                                        <div class="col-9 price-box">
+                                                <div class="col-8 col-sm-10 col-lg-9 col-xl-10 mt-4">
+                                                    <div class="row no-gutters justify-content-center">
+                                                        <div class="col-12 col-sm-9 price-box">
                                                             <div class="row no-gutters p-2">
                                                                 <span class="col-auto price text-right align-self-center">99999.99</span>
                                                                 <span class="col-auto price-currency text-left pl-1">грн/кг</span>
                                                             </div>
                                                         </div>
-                                                        <div class="col-3 to-cart-block">
+                                                        <div class="col-12 col-sm-3 to-cart-block">
                                                             <div class="row no-gutters p-1 p-lg-2 h-100 align-items-center">
                                                                 <div class="col text-center">
                                                                     <img src="img/to_cart_icon_white.png" height="24" width="24">
@@ -206,8 +215,21 @@
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
+                    </div>
+                    <hr class="w-100 m-1">
+                    <div class="row justify-content-center p-1 pb-2">
+                        <a href="#" class="col-auto link-1 p-2">1</a>
+                        <a href="#" class="col-auto link-1 p-2">2</a>
+                        <a href="#" class="col-auto link-1 p-2">3</a>
+
+                        <a href="#" class="col-auto link-1 p-2">4</a>
+
+                        <a href="#" class="col-auto link-1 p-2">5</a>
+                        <a href="#" class="col-auto link-1 p-2">6</a>
+                        <a href="#" class="col-auto link-1 p-2">7</a>
                     </div>
                 </div>
             </div>

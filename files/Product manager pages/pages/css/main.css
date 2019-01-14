@@ -41,12 +41,25 @@ html > body {
 
 
 
+.to-cart-block {
+    color: white;
+    background: green;
+}
 
-
-
+.price-box {
+    background: #ededed;
+    border-radius: 6px 6px 0 0;
+}
 
 
 @media all and (min-width: 0px) {
+    .to-cart-block {
+        border-radius: 0 0 6px 6px;
+    }
+
+    .price-box {
+        border-radius: 6px 6px 0 0;
+    }
 
 
     .order-info-a {
@@ -62,6 +75,15 @@ html > body {
 }
 
 @media all and (min-width: 576px) {
+
+    .to-cart-block {
+        border-radius: 0 6px 6px 0;
+    }
+
+    .price-box {
+        border-radius: 6px 0 0 6px;
+    }
+
     .order-info-a {
         background: transparent;
         color: black;
@@ -88,6 +110,10 @@ html > body {
 @media all and (min-width: 1200px) {
 }
 
+
+.to-cart-block:hover {
+    cursor: pointer;
+}
 
 .menu-link {
     color: white;
@@ -129,16 +155,6 @@ html > body {
     border-bottom: 1px solid #bbbbbb;
 }
 
-
-.filter-button {
-    background: #bbbbbb;
-    border: 0;
-}
-
-.filter-button:focus {
-    background: #bbbbbb;
-    border: 0;
-}
 
 .filters-box {
     border-right: 1px solid #eaeaea;
@@ -439,9 +455,7 @@ html > body {
     height: 128px;
 }
 
-.price-box {
-    background: #ededed;
-}
+
 
 .price {
     font-weight: 400;
@@ -452,15 +466,7 @@ html > body {
     font-size: 0.7em;
 }
 
-.to-cart-block {
-    color: white;
-    background: green;
-    border-radius: 0 6px 6px 0;
-}
 
-.to-cart-block:hover {
-    cursor: pointer;
-}
 
 
 /* headers */
