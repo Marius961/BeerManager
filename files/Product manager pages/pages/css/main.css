@@ -115,15 +115,7 @@ html > body {
     cursor: pointer;
 }
 
-.menu-link {
-    color: white;
-    background: #2f3340;
-}
 
-.menu-link:hover {
-    text-decoration: none;
-    color: white;
-}
 
 
 .subcategory-box {
@@ -537,3 +529,6 @@ html > body {
 .categories-content {
     color: black;
 }
+
+
+

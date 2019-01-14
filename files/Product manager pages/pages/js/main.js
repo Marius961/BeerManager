@@ -67,7 +67,8 @@ $(".popup-bg").ready(function () {
 
 $("#menuBtn").click(function () {
     clearDropdowSelection();
-    slideUpAllItemContent();
+    slideUpAllCategoriesWrappers();
+    slideUpAllMenuWrappers();
     menuSlideToggle();
 });
 
@@ -91,14 +92,32 @@ $("#menuBtn").click(function () {
 // });
 
 
-
-
 $(".menu-item").click(function () {
-    $(this).find(".menu-item-content").slideToggle(animationTime)
+    slideUpAllCategoriesWrappers();
+    let wrapper = $(this.parentNode).find(".menu-item-content-wrapper");
+    if ($(wrapper).css("display") === "none") {
+        slideUpAllMenuWrappers();
+    }
+    $(this).toggleClass("menu-item-active");
+    $(wrapper).slideToggle(animationTime)
+});
+
+$(".category-item").click(function () {
+    let wrapper  = $(this).find(".category-item-content-wrapper");
+    if ($(wrapper).css("display") === "none") {
+        slideUpAllCategoriesWrappers();
+    }
+    $(wrapper).slideToggle(animationTime)
 })
 
-function slideUpAllItemContent() {
-    $(".menu-item-content").slideUp(animationTime);
+
+function slideUpAllMenuWrappers() {
+    $(".menu-item-content-wrapper").slideUp(animationTime);
+    $(".menu-item").removeClass("menu-item-active");
+}
+
+function slideUpAllCategoriesWrappers() {
+    $(".category-item-content-wrapper").slideUp(animationTime);
 }
 
 //
