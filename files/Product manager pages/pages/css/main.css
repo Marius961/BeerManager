@@ -339,16 +339,14 @@ html > body {
 
 
 .item {
-
-    z-index: 1;
-    font-size: 1.2em;
-
+    color: black;
     -moz-user-select: none;
     -webkit-user-select: none;
 }
 
 .item:hover {
     text-decoration: none;
+    color: black;
 }
 
 .selected-item {
@@ -528,6 +526,19 @@ html > body {
 
 .categories-content {
     color: black;
+}
+
+.product-action-button {
+    border: 1px solid #c0c0c0;
+    border-radius: 7px;
+}
+
+.product-action-button:hover {
+    cursor: pointer;
+    border-radius: 8px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    background: rgba(74, 49, 148, 0.37);
 }
 
 
