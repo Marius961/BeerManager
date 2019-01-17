@@ -1,14 +1,33 @@
-let animationTime = 150;
+let animationTime = 150,
+    dropdownButtons = $(".nav-dropdown-btn"),
+    menuButton = $("#menuBtn"),
+    categoryItems = $(".category-item"),
+    menuItemWrappers = $(".menu-item-content-wrapper"),
+    navMenuItemActiveClassname = "menu-item-active",
+    menu = $("#menu");
+
+let mainMenu = $("#mainMenu");
+
+let userMenu = {items:$("#mainMenuItems").children(),
+        currentMenuItem: "",
+        content: $("#userMenuContent").children(),
+        paramName: "item"
+    },
+    myOrdersTabMenu = {items:$("#myOrdersTabs").children(),
+        currentMenuItem: "",
+        content: $("#myOrdersContent").children()
+    },
+    receivedOrdersTabMenu = {items:$("#receivedOrdersTabs").children(),
+        currentMenuItem: "",
+        content: $("#receivedOrdersContent").children()
+    };
 
 
-
-/*
-    * Method for calculating price
-*/
+//  function for calculating price
 $("#measurementInput").on("input", function () {
     let quantity = +$(this).val();
     let sumBox = $(".sum-box");
-        if (quantity) {
+    if (quantity) {
         let productPrice = $("#price").text(),
             sum = (productPrice * quantity).toFixed(2),
             sumLabel = $(sumBox).find("#sum");
@@ -21,14 +40,9 @@ $("#measurementInput").on("input", function () {
 });
 
 
-/*
-    * Dropdown methods
-    * dropdonw classws: p-drop-btn, p-dropdown,
-    * classes must the same parent node
-*/
-
-$(".p-drop-btn").on("click", function () {
-    let menu = $(this.parentNode).find(".p-dropdown");
+// show dropdown on click on any dropdown button
+$(dropdownButtons).on("click", function () {
+    let menu = $(this.parentNode).find(".nav-dropdown-menu");
     if ($(menu).css("display") === "none") {
         clearDropdowSelection();
         $(menu).css("display", "inline-block")
@@ -37,7 +51,9 @@ $(".p-drop-btn").on("click", function () {
     }
 });
 
-$(".p-dropdown").mouseleave(function () {
+
+// hide dropdown menu on mouseleave
+$(".nav-dropdown-menu").mouseleave(function () {
     $(this).css("display", "none")
 });
 
@@ -47,25 +63,21 @@ $("#closeAddressFormBtn").on("click", function () {
 });
 
 
-
 $("#addAddressBtn").click(function () {
     popupFormFadeToggle();
 });
 
 
-/*
-    * Resize address form window popup
-*/
 $(".popup-bg").ready(function () {
     $(".popup-bg").css('height', $(document).height());
+    // when resizing the page - popup change its size to such as page size
     $(window).resize(function () {
         $(".popup-bg").css('height', $(document).height())
     });
 });
 
 
-
-$("#menuBtn").click(function () {
+$(menuButton).click(function () {
     clearDropdowSelection();
     slideUpAllCategoriesWrappers();
     slideUpAllMenuWrappers();
@@ -73,107 +85,120 @@ $("#menuBtn").click(function () {
 });
 
 
-
-
-
-
-//
-// $(".category-item-box").mouseover(function () {
-//
-//     let subcategoriesContainer = $(this.parentNode).find(".subcategories");
-//     removeAllCategoryActiveClasses();
-//     hideAllSubcategories();
-//     addCategoryActiveClass(this);
-//     showSubcategories(subcategoriesContainer);
-//     $(subcategoriesContainer).mouseleave(function () {
-//         hideSubcategories(subcategoriesContainer);
-//         removeAllCategoryActiveClasses();
-//     })
-// });
-
-
-$(".menu-item").click(function () {
+$(".nav-menu-item").click(function () {
     slideUpAllCategoriesWrappers();
     let wrapper = $(this.parentNode).find(".menu-item-content-wrapper");
     if ($(wrapper).css("display") === "none") {
         slideUpAllMenuWrappers();
     }
-    $(this).toggleClass("menu-item-active");
+    $(this).toggleClass(navMenuItemActiveClassname);
     $(wrapper).slideToggle(animationTime)
 });
 
-$(".category-item").click(function () {
+$(categoryItems).click(function () {
     let wrapper  = $(this).find(".category-item-content-wrapper");
     if ($(wrapper).css("display") === "none") {
         slideUpAllCategoriesWrappers();
     }
     $(wrapper).slideToggle(animationTime)
-})
+});
 
 
 function slideUpAllMenuWrappers() {
-    $(".menu-item-content-wrapper").slideUp(animationTime);
-    $(".menu-item").removeClass("menu-item-active");
+    $(menuItemWrappers).slideUp(animationTime);
+    $(".nav-menu-item").removeClass(navMenuItemActiveClassname);
 }
 
 function slideUpAllCategoriesWrappers() {
     $(".category-item-content-wrapper").slideUp(animationTime);
 }
 
-//
-// $(".categories-segment").mouseleave(function () {
-//     hideAllSubcategories();
-//     let menuTimerId = setTimeout(function () {
-//         menuSlideToggle()
-//     }, 500 );
-//     $(this).mouseenter(function () {
-//         clearTimeout(menuTimerId);
-//     })
-// });
-//
-//
-//
-// function showSubcategories(container) {
-//     $(container).removeClass("d-none");
-// }
-//
-// function hideSubcategories(container) {
-//     $(container).addClass("d-none");
-// }
-//
-// function hideAllSubcategories() {
-//     $(".subcategories").addClass("d-none");
-// }
-//
-// function addCategoryActiveClass(category) {
-//     $(category).addClass("c-menu-item-box-active");
-// }
-//
-// function removeAllCategoryActiveClasses() {
-//     $(".c-menu-item-box-active").removeClass("c-menu-item-box-active");
-// }
-//
+
 function menuSlideToggle() {
-    $("#menu").slideToggle(animationTime);
+    $(menu).slideToggle(animationTime);
 }
 
 
-
-
-
-$("#filtersToggle").on("click", function () {
-    let filtersContainer = $("#filters");
-    if ($(filtersContainer).hasClass("d-none")) {
-        $(filtersContainer).removeClass("d-none");
-    } else {
-        $(filtersContainer).addClass("d-none");
-    }
+$("#filtersBtn").on("click", function () {
+    $("#filters").toggleClass("d-none")
 });
 
+
 function clearDropdowSelection() {
-    $(".p-dropdown").css("display", "none");
+    $(".nav-dropdown-menu").css("display", "none");
 }
 
 function popupFormFadeToggle() {
     $(".popup-bg").fadeToggle(animationTime);
+}
+
+
+$(document).ready(function () {
+    if ($("*").is(mainMenu)) {
+        readSelectedItemFromUrlParams();
+        selectItem($(myOrdersTabMenu.items)[0], myOrdersTabMenu);
+        selectItem($(receivedOrdersTabMenu.items)[0], receivedOrdersTabMenu);
+        $(userMenu.items).click( function (e) {
+            selectItem($(this), userMenu);
+            e.preventDefault();
+        });
+
+        $(myOrdersTabMenu.items).click( function (e) {
+            selectItem($(this), myOrdersTabMenu);
+            e.preventDefault();
+        });
+
+        $(receivedOrdersTabMenu.items).click( function (e) {
+            selectItem($(this), receivedOrdersTabMenu);
+            e.preventDefault();
+        });
+    }
+});
+
+
+function selectItem(item, menu) {
+    if ($(item)[0] !== menu.currentMenuItem) {
+        let href = $(item).attr('href');
+        $(menu.items).removeClass("selected-item");
+        $(menu.content).fadeOut(animationTime);
+        $(item).addClass("selected-item");
+        setTimeout(function () {
+            $(href).fadeIn(animationTime);
+        }, animationTime);
+        menu.currentMenuItem = $(item)[0];
+        if (menu.paramName !== undefined) {
+            setGetParam("item", href.substr(1))
+        }
+    }
+}
+
+
+function setGetParam(key,value) {
+    if (history.pushState) {
+        let params = new URLSearchParams(window.location.search);
+        params.set(key, value);
+        let newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + params.toString();
+        window.history.pushState({path:newUrl},'',newUrl);
+    }
+}
+
+
+function getParam(name){
+    let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+}
+
+
+function readSelectedItemFromUrlParams() {
+    try {
+        let menuItemHref = "#" + getParam("item");
+        let item = $(".item[href='"+ menuItemHref +"']")[0];
+        if (item !== undefined) {
+            selectItem($(item), userMenu);
+        } else {
+            selectItem($(userMenu.items)[0], userMenu);
+        }
+    } catch (e) {
+        selectItem($(userMenu.items)[0], userMenu);
+    }
 }
