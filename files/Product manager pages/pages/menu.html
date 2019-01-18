@@ -257,31 +257,29 @@
 </header>
 <main class="container mt-4 mb-3 mb-sm-0">
     <div class="row">
-        <div class="col-12 col-md-3 col-xl-2 mb-5" id="mainMenu">
+        <div class="col-12 col-md-3 col-xl-2 mb-2" id="mainMenu">
             <div class="row">
                 <div class="col-12 fs-4 font-weight-bold">Меню</div>
             </div>
-            <div class="row box mr-md-1 ml-md-1" id="mainMenuItems">
+            <div class="row box mr-md-1 ml-md-1 text-sm-center text-md-left" id="mainMenuItems">
                 <a href="#myOrders" class="col-12 main-menu-item p-1 pl-2">Мої замовлення</a>
                 <a href="#receivedOrders" class="col-12 main-menu-item p-1 pl-2">Отримані замовлення</a>
                 <a href="#my-products" class="col-12 main-menu-item p-1 pl-2">Мої товари</a>
             </div>
         </div>
-        <div class="col-md-9 col-xl-10">
+        <div class="col-12 col-md-9 col-xl-10">
             <div class="row" id="userMenuContent">
                 <div class="col-12 main-menu-item-content" id="myOrders">
                     <div class="row mr-1 ml-1">
                         <div class="col fs-4 font-weight-bold">Мої замовлення</div>
                     </div>
-                    <div class="row box p-lg-3 mr-sm-1 ml-sm-1">
+                    <div class="row ml-md-1 mr-md-1" id="myOrdersTabs">
+                        <a class="col-6 col-lg-auto main-menu-item main-menu-tab p-1 pl-3 pr-3" href="#myActiveOrders">Активні замовлення</a>
+                        <a class="col-6 col-lg-auto main-menu-item main-menu-tab p-1 pl-3 pr-3" href="#myOrdersHistory">Історія моїх замовлень</a>
+                    </div>
+                    <div class="row box p-lg-3 ml-md-1 mr-md-1">
                         <div class="col-12">
                             <div class="row p-1">
-                                <div class="col-12 pt-2 pb-4">
-                                    <div class="row" id="myOrdersTabs">
-                                        <a class="col-6 col-lg-auto main-menu-item p-1 pl-3 pr-3" href="#myActiveOrders">Активні замовлення</a>
-                                        <a class="col-6 col-lg-auto main-menu-item p-1 pl-3 pr-3" href="#myOrdersHistory">Історія моїх замовлень</a>
-                                    </div>
-                                </div>
                                 <div class="col-12">
                                     <div class="row m-0" id="myOrdersContent">
                                         <div class="col main-menu-item-content" id="myActiveOrders">
@@ -303,13 +301,13 @@
                                                     </div>
                                                 </div>
                                                 <hr class="w-100 m-1">
-                                                <div class="col-2">
+                                                <div class="col-3 col-sm-2">
                                                     <div class="row text-center">
                                                         <div class="col-12">позицій:</div>
                                                         <div class="col-12 fs-2 font-weight-light">3</div>
                                                     </div>
                                                 </div>
-                                                <div class="col-8 col-sm-8 col-md-8 col-lg-9 text-center p-2 pt-2 pb-2 p-sm-0">
+                                                <div class="col-9 col-sm-8 col-md-8 col-lg-9 text-center p-2 pt-2 pb-2 p-sm-0">
                                                     <div class="row">
                                                         <div class="col-12 font-weight-bold">Статус:</div>
                                                         <div class="col text-center font-weight-light">Замовлення очікує підтвердження продавця</div>
@@ -332,15 +330,13 @@
                     <div class="row mr-1 ml-1">
                         <div class="col fs-4 font-weight-bold">Отримані замовлення</div>
                     </div>
-                    <div class="row box p-lg-3 mr-sm-1 ml-sm-1">
+                    <div class="row ml-md-1 mr-md-1" id="receivedOrdersTabs">
+                        <a class="col-6 col-lg-auto main-menu-item main-menu-tab p-2" href="#receivedActiveOrders">Активні замовлення</a>
+                        <a class="col-6 col-lg-auto main-menu-item main-menu-tab p-2" href="#receivedOrdersHistory">Історія отриманих замовлень</a>
+                    </div>
+                    <div class="row box p-lg-3 ml-md-1 mr-md-1">
                         <div class="col-12">
                             <div class="row">
-                                <div class="col-12 pt-2 pb-2">
-                                    <div class="row" id="receivedOrdersTabs">
-                                        <a class="col-6 col-lg-auto main-menu-item p-2" href="#receivedActiveOrders">Активні замовлення</a>
-                                        <a class="col-6 col-lg-auto main-menu-item p-2" href="#receivedOrdersHistory">Історія отриманих замовлень</a>
-                                    </div>
-                                </div>
                                 <div class="col-12">
                                     <div class="row m-0" id="receivedOrdersContent">
                                         <div class="col main-menu-item-content" id="receivedActiveOrders">
@@ -359,7 +355,7 @@
                     <div class="row mr-1 ml-1">
                         <div class="col fs-4 font-weight-bold">Мої товари</div>
                     </div>
-                    <div class="row mr-md-1 ml-md-1">
+                    <div class="row ml-md-1 mr-md-1">
                         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-6 pb-3 pl-4 pr-4">
                             <div class="row box p-1">
                                 <div class="col">

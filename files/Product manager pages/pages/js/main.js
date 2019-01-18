@@ -42,6 +42,7 @@ $("#measurementInput").on("input", function () {
 
 // show dropdown on click on any dropdown button
 $(dropdownButtons).on("click", function () {
+    slideUpMenuWithContent();
     let menu = $(this.parentNode).find(".nav-dropdown-menu");
     if ($(menu).css("display") === "none") {
         clearDropdowSelection();
@@ -76,7 +77,7 @@ $(".popup-bg").ready(function () {
     });
 });
 
-
+// slide up all categories and other menu items on close or open menu
 $(menuButton).click(function () {
     clearDropdowSelection();
     slideUpAllCategoriesWrappers();
@@ -84,6 +85,18 @@ $(menuButton).click(function () {
     menuSlideToggle();
 });
 
+$(".nav-menu, #menuBtn").mouseleave(function () {
+    let menuTimerId = setTimeout(    slideUpMenuWithContent, 500);
+    $(".nav-menu, #menuBtn").mouseover(function () {
+        clearTimeout(menuTimerId);
+    })
+})
+
+function slideUpMenuWithContent() {
+    menuSlideUp();
+    slideUpAllCategoriesWrappers();
+    slideUpAllMenuWrappers();
+}
 
 $(".nav-menu-item").click(function () {
     slideUpAllCategoriesWrappers();
@@ -100,6 +113,7 @@ $(categoryItems).click(function () {
     if ($(wrapper).css("display") === "none") {
         slideUpAllCategoriesWrappers();
     }
+    $(this).toggleClass("category-item-active")
     $(wrapper).slideToggle(animationTime)
 });
 
@@ -110,12 +124,17 @@ function slideUpAllMenuWrappers() {
 }
 
 function slideUpAllCategoriesWrappers() {
+    $(categoryItems).removeClass("category-item-active");
     $(".category-item-content-wrapper").slideUp(animationTime);
 }
 
 
 function menuSlideToggle() {
     $(menu).slideToggle(animationTime);
+}
+
+function menuSlideUp() {
+    $(menu).slideUp(animationTime);
 }
 
 
