@@ -5,6 +5,7 @@ let animationTime = 150,
     menuItemWrappers = $(".menu-item-content-wrapper"),
     navMenuItemActiveClassname = "menu-item-active",
     menu = $("#menu");
+    itemClassNae = "main-menu-item";
 
 let mainMenu = $("#mainMenu");
 
@@ -157,6 +158,7 @@ $(document).ready(function () {
         readSelectedItemFromUrlParams();
         selectItem($(myOrdersTabMenu.items)[0], myOrdersTabMenu);
         selectItem($(receivedOrdersTabMenu.items)[0], receivedOrdersTabMenu);
+
         $(userMenu.items).click( function (e) {
             selectItem($(this), userMenu);
             e.preventDefault();
@@ -211,7 +213,7 @@ function getParam(name){
 function readSelectedItemFromUrlParams() {
     try {
         let menuItemHref = "#" + getParam("item");
-        let item = $(".item[href='"+ menuItemHref +"']")[0];
+        let item = $(".main-menu-item[href='"+ menuItemHref +"']")[0];
         if (item !== undefined) {
             selectItem($(item), userMenu);
         } else {
