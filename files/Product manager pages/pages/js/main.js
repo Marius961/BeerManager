@@ -223,3 +223,20 @@ function readSelectedItemFromUrlParams() {
         selectItem($(userMenu.items)[0], userMenu);
     }
 }
+
+
+// enable bootstrap popowers
+$(function () {
+    $('#newProductForm [data-toggle="popover"]').popover({
+        template: '' +
+            '<div class="popover p-2" role="tooltip">' +
+            '   <div class="arrow"></div>' +
+            '   <div class="row align-items-center">\n' +
+            '       <div class="col-auto">\n' +
+            '           <img src="img/tip.png">\n' +
+            '       </div>\n' +
+            '       <div class="col popover-body p-0 pr-2"></div>\n' +
+            '   </div>\n' +
+            '</div>'
+    })
+})

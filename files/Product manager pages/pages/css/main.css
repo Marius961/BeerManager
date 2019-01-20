@@ -251,7 +251,6 @@ html > body {
     font-size: 1em;
 }
 
-
 /*-- media --*/
 
 /* Bootstrap xs breakpoint */
@@ -453,12 +452,12 @@ html > body {
 
 .input-1 {
     outline: none;
-    border-radius: 1em;
+    border-radius: 7px;
     border: 1px solid #d9d9d9;
 }
 
 .input-1:focus {
-    box-shadow: 0 0 20px 1px #d9d9d9;
+    box-shadow: 0 0 20px 1px #d1d1d1;
 }
 
 .input-2 {
@@ -608,7 +607,14 @@ html > body {
     height: 25px;
     width: 25px;
     background-color: #eee;
+    border: 2px solid transparent;
 }
+
+.checkmark:hover {
+    transition: 150ms;
+    border: 2px solid #5435B5
+}
+
 
 /* When the checkbox is checked, add a background */
 .checkbox-container input:checked ~ .checkmark {
@@ -627,10 +633,11 @@ html > body {
     display: block;
 }
 
+
 /* Style the indicator */
 .checkbox-container .checkmark:after {
-    left: 10px;
-    top: 8px;
+    left: 8px;
+    top: 6px;
     width: 5px;
     height: 10px;
     border: solid white;
