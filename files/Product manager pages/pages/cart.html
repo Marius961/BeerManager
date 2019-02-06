@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Кошик</title>
-    <meta name="theme-color" content="#5435B5">
+    <meta name="theme-color" content="#2c526a">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
@@ -12,34 +12,42 @@
 </head>
 <body>
 <header >
-    <div class="container-fluid nav-container-bg pt-1 pb-1">
-        <nav class="container nav-bg" id="navPanel">
-            <div class="row align-items-center" style="flex-wrap: nowrap">
+    <div class="container-fluid nav-container-bg p-0">
+        <nav class="container p-0" id="navPanel">
+            <div class="row align-items-center ">
                 <div class="col-auto">
                     <div class="row">
-                        <div class="col nav-menu-btn pt-1 pb-1" id="menuBtn">
-                            <div class="row align-items-center">
-                                <div class="col-2">
-                                    <img src="img/list.png" width="24" height="24">
+                        <div class="col-auto nav-menu-btn pt-1 pb-1" id="menuBtn">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-auto">
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-dot"></div>
+                                    <div class="menu-dot"></div>
                                 </div>
-                                <div class="col nav-item d-none d-sm-block text-left pt-1 pl-3">Product Manager</div>
+                                <div class="col-auto mr-2">
+                                    <div class="menu-line"></div>
+                                    <div class="menu-line"></div>
+                                    <div class="menu-line"></div>
+                                </div>
+                                <div class="col brand-name d-none d-sm-block">Product Manager</div>
+                                <div class="col brand-name d-sm-none">PM</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="row justify-content-end"  style="flex-wrap: nowrap">
-                        <div class="col-auto nav-dropdown pt-1 pb-1">
+                    <div class="row justify-content-end m-0"  style="flex-wrap: nowrap">
+                        <div class="col-auto nav-dropdown">
                             <div class="row nav-dropdown-btn align-items-center">
                                 <div class="col-auto">
-                                    <img src="img/search.png" width="24" height="24">
+                                    <img src="img/search.png" alt="">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto nav-dropdown pt-1 pb-1">
+                        <div class="col-auto nav-dropdown">
                             <div class="row nav-dropdown-btn align-items-center">
                                 <div class="col-2">
-                                    <img src="img/user_icon_grey.png" width="24" height="24">
+                                    <img src="img/user_icon_grey.png" alt="">
                                 </div>
                             </div>
                             <div class="nav-dropdown-menu user-actions-dropdown mt-2">
@@ -50,43 +58,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-auto nav-dropdown pt-1 pb-1">
+                        <div class="col-auto nav-dropdown">
                             <div class="row nav-dropdown-btn align-items-center">
-                                <div class="col-2" style="position: absolute; z-index: 1; top: 4px; right: 12px">
+                                <div class="col-2" style="position: absolute; z-index: 1; top: 11px; right: 25px">
                                     <div class="row align-items-center">
                                         <div class="col">
-                                            <div class="nav-notifications-count-icon">1</div>
+                                            <div class="nav-notifications-count-icon p-1">999</div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    <img src="img/cart_grey.png" width="24" height="24">
+                                    <img src="img/cart_grey.png" alt="">
                                 </div>
                             </div>
                             <div class="nav-dropdown-menu cart-dropdown-menu mt-2">
                                 <div class="row m-0">
                                     <div class="col-12">
-                                        <div class="row nav-cart-box">
+                                        <div class="row nav-cart-box p-1">
                                             <div class="col">
-                                                <div class="row nav-cart-item align-items-center p-3">
-                                                    <div class="col-4 col-sm-2 text-center"><img src="img/test/product.png" width="32" height="32"></div>
-                                                    <div class="col-8 col-sm-10 align-self-center text-left nav-cart-item-text">Повна назва товару з переносом на наступний рядок через переповнення блоку</div>
+                                                <div class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
+                                                    <div class="col-4 col-sm-2 text-center">
+                                                        <img src="img/product-photo.png" alt="">
+                                                    </div>
+                                                    <div class="col-8 col-sm-10 align-self-center text-center nav-cart-item-text">Апельсин</div>
                                                     <hr class="w-100">
-                                                    <div class="col-5 offset-2 nav-cart-m-unit text-center">32кг</div>
-                                                    <div class="col-5 nav-cart-item-price text-center">19548 грн</div>
+                                                    <div class="col">
+                                                        <div class="row cart-item-info">
+                                                            <div class="col-6 text-center">32кг</div>
+                                                            <div class="col-6 text-center">19548 грн</div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="col-12 p-2">
-                                        <div class="row align-items-center pl-1 pr-1">
-                                            <div class="col-6 nav-cart-total-price">99999грн</div>
-                                            <div class="col-6 text-right" style="font-size: 0.9em">
-                                                <a class="nav-go-to-cart-btn p-2" href="cart.html">Перейти у кошик</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: 99999грн</div>
+                                    <button class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center" href="cart.html">Перейти у кошик</button>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +107,7 @@
         <div class="container">
             <div class="row">
                 <div class="col col-sm-6 col-md-5 col-lg-4 nav-menu col-xl-3">
-                    <a href="home.html" class="row p-2 nav-menu-link">
+                    <a href="home.html" class="row p-2">
                         <div class="col-3 text-center">
                             <img src="img/home.png" width="24" height="24">
                         </div>
