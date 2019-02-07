@@ -75,8 +75,8 @@ html > body {
 
 .nav-dropdown {
   color: snow;
-  padding-top: 20px;
-  padding-bottom: 20px; }
+  padding-top: 13px;
+  padding-bottom: 13px; }
   .nav-dropdown:hover {
     background-color: #1c2939;
     cursor: pointer;
@@ -87,7 +87,7 @@ html > body {
 .nav-dropdown-menu {
   position: absolute;
   left: auto;
-  top: 64px;
+  top: 38px;
   right: 0;
   background: white;
   z-index: 99;
@@ -127,10 +127,10 @@ html > body {
 .nav-notifications-count-icon {
   text-align: center;
   margin: 0 auto;
-  width: 35px;
-  font-size: 0.8em;
+  width: 22px;
+  font-size: 0.7em;
   background: #25394e;
-  border-radius: 50px; }
+  border-radius: 5px; }
 
 /*-- categories menu  --*/
 /* div with this style contains subcategories, used in js */
@@ -177,8 +177,8 @@ html > body {
 
 /* style which is used in js for toggling dropdown menu visibility */
 .nav-dropdown-btn img {
-  height: 32px;
-  width: 32px; }
+  height: 20px;
+  width: 20px; }
 
 /*-- Product and product card styles --*/
 .product-card {
