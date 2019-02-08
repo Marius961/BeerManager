@@ -10,43 +10,16 @@ html > body {
 
 /*-- Navigation bar, dropdown menus and buttons --*/
 
-/* the nav bar background and text color */
-.nav-container-bg {
-  background: $accentColor;
-  color: snow;
-}
-
-
-
-.nav-menu-btn {
-  color: snow;
-
-  &:hover {
-    cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-  }
-
-}
 
 
 
 
-/* this class is used in js */
-.nav-menu-item {
-  &:hover {
-    background: $accentColor;
-  }
 
-  &:active {
-    background: $accentColor;
-    transition: 0ms;
 
-    &:after {
-      transition: 150ms;
-    }
-  }
-}
+
+
+
+
 
 /* alternative for :active, used in js */
 .menu-item-active {
@@ -59,53 +32,28 @@ html > body {
 }
 
 
-/* menu in the nav bar with categories and other options */
-.nav-menu {
-  color: white;
-  background: #2e333f;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  a {
-    color: inherit;
 
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
-}
 
-#navMenu {
-  top: $dropdownTopOffset + $customMTOpValue;
+
+
+
+
+
+
+.n-item-content {
+  visibility: hidden;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.15s ease;
 }
 
-#menuBtn:hover ~ #navMenu, #navMenu:hover {
+.n-item:hover .n-item-content {
+  visibility: visible;
   transform: scaleY(1);
 }
 
-/* size for cart */
-.nav-cart-box {
-  max-height: 350px;
-  overflow-y: auto;
-}
-
-.nav-cart-item {
-  color: $cartTextColor;
-  border: 1px solid $borderColor;
-  border-radius: 12px;
-  background: $cartDropdownElemColor;
-
-  img {
-    height: 50px;
-    width: 50px;
-  }
-}
-
 .nav-cart-item-text {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500;
 }
 
@@ -129,42 +77,9 @@ html > body {
 
 
 
-.nav-go-to-cart-btn {
-  transition: all 300ms;
-  color: white;
-  background: $accentColor;
-  border: 1px solid $borderColor;
-  border-radius: 0 0 12px 12px;
 
 
-  &:hover {
-    color: white;
-    border: 0;
-    cursor: pointer;
-  }
-}
 
-.nav-cart-total-price {
-  background: $cartDropdownElemColor;
-  font-weight: bold;
-  font-size: 1em;
-  color: $cartTextColor;
-}
-
-/* style for measurement units font */
-.nav-cart-m-unit {
-  font-weight: 300;
-  font-size: 0.7em;
-}
-
-.nav-notifications-count-icon {
-  text-align: center;
-  margin: 0 auto;
-  width: 22px;
-  font-size: 0.7em;
-  background: $notificationsIconColor;
-  border-radius: 5px;
-}
 
 /*-- categories menu  --*/
 
@@ -225,53 +140,8 @@ html > body {
   }
 }
 
-.nav-dropdown {
-  color: snow;
-  padding-top: $navMenuPadding;
-  padding-bottom: $navMenuPadding;
 
-  &:hover {
-    background-color: $dropdownHoverColor;
-    cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-  }
 
-  img {
-    height: $navImgSize;
-    width: $navImgSize;
-  }
-}
-
-/* dropdown menu style */
-.nav-dropdown-menu {
-  position: absolute;
-  left: auto;
-  top: $dropdownTopOffset;
-  right: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.15s ease;
-  background: $dropdownBg;
-  z-index: 99;
-  box-shadow: rgb(219, 223, 226) 0 1px 2px 0, rgb(219, 223, 226) 0 1px 3px 1px;
-
-  a {
-    text-decoration: none;
-    color: $dropdownTextColor;
-    font-size: 1.2em;
-
-    &:hover {
-      color: white;
-      text-decoration: none;
-      background: $accentColor;
-    }
-  }
-}
-
-.nav-dropdown:hover > .nav-dropdown-menu {
-  transform: scaleY(1);
-}
 
 /*-- Product and product card styles --*/
 
@@ -317,9 +187,7 @@ html > body {
 }
 
 
-.cart-dropdown-menu {
-  border-radius: 0 0 12px 12px;
-}
+
 
 /*-- media --*/
 
@@ -345,38 +213,15 @@ html > body {
     }
   }
 
-
-  /* size of the cart dropdown menu */
-  .cart-dropdown-menu {
-    padding: 0;
-    margin: 0;
-    width: 240px
-  }
-
-  /* size for the user actions dropdown menu */
-  .user-actions-dropdown {
-    border-bottom: 4px solid $accentColor;
-    width: 300%;
-  }
 }
 
-@media all and (min-width: 376px) {
-  .cart-dropdown-menu {
-    padding: 0;
-    margin: 0;
-    width: 378px;
-  }
-}
+
 
 /*Bootstrap sm (small) breakpoint */
 @media all and (min-width: 576px) {
-  .user-actions-dropdown {
-    width: 300%;
-  }
 
-  .cart-dropdown-menu {
-    width: 360px;
-  }
+
+
 
   .to-cart-segment {
     border-radius: 0 6px 6px 0;
@@ -728,21 +573,4 @@ html > body {
   border-radius: 6px;
 }
 
-.menu-dot {
-  width: 6px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 3px 6px 0;
-}
 
-.menu-line {
-  width: 20px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0;
-}
-
-.brand-name {
-  font-size: 1.8em;
-  font-weight: bold;
-}

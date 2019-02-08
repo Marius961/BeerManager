@@ -5,9 +5,10 @@ $navImgSize: 20px;
 $dropdownHoverColor: #1c2939;
 $dropdownBg: white;
 $dropdownTextColor: black;
-$navMenuPadding: 13px;
-$customMTOpValue: 3;
-$dropdownTopOffset: ($navImgSize + ($navMenuPadding*2)) - $customMTOpValue;
+
+
+$dropdownIconPadding: 20px;
+
 $notificationsIconColor: #25394e;
 
 $boxColor: white;

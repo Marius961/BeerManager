@@ -5,27 +5,6 @@ html > body {
   background: #e7e8e9; }
 
 /*-- Navigation bar, dropdown menus and buttons --*/
-/* the nav bar background and text color */
-.nav-container-bg {
-  background: #2c526a;
-  color: snow; }
-
-.nav-menu-btn {
-  color: snow; }
-  .nav-menu-btn:hover {
-    cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none; }
-
-/* this class is used in js */
-.nav-menu-item:hover {
-  background: #2c526a; }
-.nav-menu-item:active {
-  background: #2c526a;
-  transition: 0ms; }
-  .nav-menu-item:active:after {
-    transition: 150ms; }
-
 /* alternative for :active, used in js */
 .menu-item-active {
   background: #2c526a; }
@@ -34,43 +13,18 @@ html > body {
 .menu-item-content-wrapper {
   display: none; }
 
-/* menu in the nav bar with categories and other options */
-.nav-menu {
-  color: white;
-  background: #2e333f;
-  -moz-user-select: none;
-  -webkit-user-select: none; }
-  .nav-menu a {
-    color: inherit; }
-    .nav-menu a:hover {
-      text-decoration: none;
-      color: inherit; }
-
-#navMenu {
-  top: 46px;
+.n-item-content {
+  visibility: hidden;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.15s ease; }
 
-#menuBtn:hover ~ #navMenu, #navMenu:hover {
+.n-item:hover .n-item-content {
+  visibility: visible;
   transform: scaleY(1); }
 
-/* size for cart */
-.nav-cart-box {
-  max-height: 350px;
-  overflow-y: auto; }
-
-.nav-cart-item {
-  color: black;
-  border: 1px solid #d6d6d6;
-  border-radius: 12px;
-  background: white; }
-  .nav-cart-item img {
-    height: 50px;
-    width: 50px; }
-
 .nav-cart-item-text {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 500; }
 
 .nav-cart-item-price {
@@ -81,36 +35,6 @@ html > body {
 .nav-item {
   font-size: 0.8em;
   overflow: hidden; }
-
-.nav-go-to-cart-btn {
-  transition: all 300ms;
-  color: white;
-  background: #2c526a;
-  border: 1px solid #d6d6d6;
-  border-radius: 0 0 12px 12px; }
-  .nav-go-to-cart-btn:hover {
-    color: white;
-    border: 0;
-    cursor: pointer; }
-
-.nav-cart-total-price {
-  background: white;
-  font-weight: bold;
-  font-size: 1em;
-  color: black; }
-
-/* style for measurement units font */
-.nav-cart-m-unit {
-  font-weight: 300;
-  font-size: 0.7em; }
-
-.nav-notifications-count-icon {
-  text-align: center;
-  margin: 0 auto;
-  width: 22px;
-  font-size: 0.7em;
-  background: #25394e;
-  border-radius: 5px; }
 
 /*-- categories menu  --*/
 /* div with this style contains subcategories, used in js */
@@ -155,43 +79,6 @@ html > body {
   .subcategory:hover {
     color: inherit; }
 
-.nav-dropdown {
-  color: snow;
-  padding-top: 13px;
-  padding-bottom: 13px; }
-  .nav-dropdown:hover {
-    background-color: #1c2939;
-    cursor: pointer;
-    -moz-user-select: none;
-    -webkit-user-select: none; }
-  .nav-dropdown img {
-    height: 20px;
-    width: 20px; }
-
-/* dropdown menu style */
-.nav-dropdown-menu {
-  position: absolute;
-  left: auto;
-  top: 43px;
-  right: 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.15s ease;
-  background: white;
-  z-index: 99;
-  box-shadow: #dbdfe2 0 1px 2px 0, #dbdfe2 0 1px 3px 1px; }
-  .nav-dropdown-menu a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.2em; }
-    .nav-dropdown-menu a:hover {
-      color: white;
-      text-decoration: none;
-      background: #2c526a; }
-
-.nav-dropdown:hover > .nav-dropdown-menu {
-  transform: scaleY(1); }
-
 /*-- Product and product card styles --*/
 .product-card {
   border: 1px solid transparent;
@@ -223,9 +110,6 @@ html > body {
   font-weight: 500;
   font-size: 1em; }
 
-.cart-dropdown-menu {
-  border-radius: 0 0 12px 12px; }
-
 /*-- media --*/
 /* Bootstrap xs breakpoint */
 @media all and (min-width: 0px) {
@@ -242,31 +126,9 @@ html > body {
     text-align: center; }
     .order-info-a:hover {
       text-decoration: none;
-      color: snow; }
-
-  /* size of the cart dropdown menu */
-  .cart-dropdown-menu {
-    padding: 0;
-    margin: 0;
-    width: 240px; }
-
-  /* size for the user actions dropdown menu */
-  .user-actions-dropdown {
-    border-bottom: 4px solid #2c526a;
-    width: 300%; } }
-@media all and (min-width: 376px) {
-  .cart-dropdown-menu {
-    padding: 0;
-    margin: 0;
-    width: 378px; } }
+      color: snow; } }
 /*Bootstrap sm (small) breakpoint */
 @media all and (min-width: 576px) {
-  .user-actions-dropdown {
-    width: 300%; }
-
-  .cart-dropdown-menu {
-    width: 360px; }
-
   .to-cart-segment {
     border-radius: 0 6px 6px 0; }
 
@@ -530,19 +392,3 @@ html > body {
 .order-box {
   border: 1px solid #d9d9d9;
   border-radius: 6px; }
-
-.menu-dot {
-  width: 6px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 3px 6px 0; }
-
-.menu-line {
-  width: 20px;
-  height: 3px;
-  background-color: white;
-  margin: 6px 0; }
-
-.brand-name {
-  font-size: 1.8em;
-  font-weight: bold; }
