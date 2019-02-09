@@ -6,26 +6,34 @@
 nav {
   height: 60px; }
 
+.nav-dropdown-arrow img {
+  transform: rotate(90deg); }
+
 .category {
   background: #dddedf;
   padding: 15px;
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 1px solid #d6d6d6; }
+  .category:hover {
+    background: #c1c2c3; }
   .category img {
     width: 32px;
     height: 32px; }
 
-.nav-menu-wrapper {
-  position: absolute;
+.menu-container {
+  pointer-events: auto;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.15s ease; }
+  transition: transform 0.15s ease;
+  box-shadow: 2px 3px 10px 0px rgba(0, 0, 0, 0.34); }
 
 .menu-btn-container {
   height: 60px; }
+  .menu-btn-container:hover {
+    background: #1c2939; }
 
-.menu-button:hover ~ .nav-menu-wrapper, .nav-menu-wrapper:hover {
+.show-menu {
   transform: scaleY(1); }
 
 .menu-dot {
@@ -60,6 +68,12 @@ nav {
 .menu-item {
   padding: 10px;
   border-bottom: 1px solid #d6d6d6; }
+  .menu-item:hover {
+    background: #1c2939; }
+  .menu-item a {
+    color: white; }
+    .menu-item a:hover {
+      color: white; }
 
 .subcategories {
   padding: 10px 5px;
@@ -177,14 +191,18 @@ nav {
     padding: 6px;
     padding-left: 20px; }
 
+.nav-cart-item-text {
+  font-size: 1.1em;
+  font-weight: 500; }
+
 @media all and (min-width: 0px) {
-  .nav-menu-wrapper {
+  .menu-container {
     width: 200px; }
 
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
     width: 250px;
-    right: -75px; }
+    right: -80px; }
 
   /* size of the cart dropdown menu */
   .cart-dropdown-menu {
@@ -196,22 +214,26 @@ nav {
     padding: 0;
     margin: 0;
     width: 300px;
-    right: -30px; } }
+    right: -30px; }
+
+  .menu-container {
+    width: 280px; } }
 @media all and (min-width: 376px) {
   .cart-dropdown-menu {
     padding: 0;
     margin: 0;
     width: 376px; }
 
-  .nav-menu-wrapper {
-    width: 376px; } }
+  .menu-container {
+    width: 350px; } }
 @media all and (min-width: 576px) {
   .user-actions-dropdown {
     width: 250px;
     right: 0; }
 
-  .nav-menu-wrapper {
+  .menu-container {
     width: 100%; }
 
   .cart-dropdown-menu {
-    width: 360px; } }
+    width: 360px;
+    right: 0; } }

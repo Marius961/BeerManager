@@ -3,8 +3,11 @@
     <div class="container-fluid nav-bar-container">
       <div class="container">
         <nav class="row align-items-center">
-          <div class="col-6 col-sm-auto menu-btn-container">
-            <div class="row h-100 align-items-center menu-button" style="z-index: 99">
+          <div class="col-5 col-sm-auto menu-btn-container"
+               @click="showMenu"
+               @mouseenter="showMenu"
+               @mouseleave="hideMenu(menuHideDelay)">
+            <div class="row h-100 align-items-center menu-button" style="z-index: 99" @click="hideMenu(0)">
               <div class="col-auto">
                 <div class="row align-items-center no-gutters">
                   <div class="col-auto">
@@ -18,61 +21,63 @@
                 </div>
               </div>
             </div>
-            <div class="nav-menu-wrapper" @mouseleave="hideAllMenuDropdowns">
-              <div class="row w-100">
-                <div class="col-12  nav-menu">
-                  <div class="row menu-links-container align-items-center pt-2 pb-2">
-                    <a href="#" class="col-2">
-                      <div class="row justify-content-center">
-                        <div class="col-auto text-center">
-                          <img src="../assets/img/nav-bar/home.png" width="24" height="24">
-                        </div>
-                      </div>
-                    </a>
-                    <span class="col font-weight-bold fs-4" style="border-left: 1px solid white">Меню</span>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="row menu-item" @click="showCategories = !showCategories">
-                        <div class="col-12">
-                          <div class="row align-items-center">
-                            <div class="col-9 text-left">Категорії</div>
-                            <div class="col-3">
-                              <img class="dropdonw-arrow" :class="{'dropdonw-arrow-opened': showCategories}" src="../assets/img/nav-bar/dropdown_arrow.png" alt="">
-                            </div>
+            <div class="row pr-3 position-absolute" style="pointer-events: none">
+              <div class="col menu-container" :class="{'show-menu': isShowMenu}">
+                <div class="row">
+                  <div class="col-12 nav-menu">
+                    <div class="row menu-links-container align-items-center pt-2 pb-2">
+                      <a href="#" class="col-3 col-sm-2">
+                        <div class="row justify-content-center">
+                          <div class="col-auto text-center">
+                            <img src="../assets/img/nav-bar/home.png" width="24" height="24">
                           </div>
                         </div>
-                      </div>
-                      <div class="row dropdown-content" :class="{'show-dropdown-content': showCategories}">
-                        <div class="col-12" v-for="category in categories" @click="category.isOpened = !category.isOpened">
-                          <div class="row category align-items-center">
-                            <div class="col-auto p-1">
-                              <img src="../assets/img/test/category.png">
-                            </div>
-                            <div class="col">{{category.name}}</div>
-                          </div>
-                          <div class="row subcategories" v-if="category.isOpened">
-                            <a v-for="subcategory in category.subcategories" :href="subcategory.id" class="col-6">{{subcategory.name}}</a>
-                          </div>
-                        </div>
-                      </div>
+                      </a>
+                      <span class="col font-weight-bold fs-4" style="border-left: 1px solid white">Меню</span>
                     </div>
-                    <a class="col-12">
-                      <div class="row menu-item">
-                        <span class="col">Про нас</span>
+                    <div class="row">
+                      <div class="col">
+                        <div class="row menu-item" @click="showCategories = !showCategories">
+                          <div class="col">
+                            <div class="row align-items-center">
+                              <div class="col-9 text-left">Категорії</div>
+                              <div class="col-3">
+                                <img class="dropdonw-arrow" :class="{'dropdonw-arrow-opened': showCategories}" src="../assets/img/nav-bar/dropdown_arrow.png" alt="">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row dropdown-content" :class="{'show-dropdown-content': showCategories}">
+                          <div class="col-12" v-for="category in categories" @click="category.isOpened = !category.isOpened">
+                            <div class="row category align-items-center">
+                              <div class="col-auto p-1">
+                                <img src="../assets/img/test/category.png">
+                              </div>
+                              <div class="col">{{category.name}}</div>
+                            </div>
+                            <div class="row subcategories" v-if="category.isOpened">
+                              <a class="col-12 col-sm-6" v-for="subcategory in category.subcategories" :href="subcategory.id">{{subcategory.name}}</a>
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                    </a>
-                    <a class="col-12">
-                      <div class="row menu-item">
-                        <span class="col">Оплата і доставка</span>
-                      </div>
-                    </a>
+                      <a class="col-12">
+                        <div class="row menu-item">
+                          <a href="#" class="col">Про нас</a>
+                        </div>
+                      </a>
+                      <a class="col-12">
+                        <div class="row menu-item">
+                          <a href="#" class="col">Оплата і доставка</a>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-6 col-sm">
+          <div class="col-7 col-sm">
             <div class="row justify-content-end m-0"  style="flex-wrap: nowrap">
               <div class="col-auto nav-dropdown">
                 <div class="row h-100 align-items-center">
@@ -82,7 +87,7 @@
                 </div>
               </div>
               <div class="col-auto">
-                <div class="row h-100 align-items-center nav-dropdown">
+                <div class="row align-items-center nav-dropdown">
                   <div class="col-2">
                     <img src="../assets/img/nav-bar/user-icon.png" alt="">
                   </div>
@@ -98,7 +103,7 @@
                 </div>
               </div>
               <div class="col-auto">
-                <div class="row h-100 align-items-center nav-dropdown">
+                <div class="row align-items-center nav-dropdown">
                   <div class="cart-items-count">933</div>
                   <div class="col-2">
                     <img src="../assets/img/nav-bar/cart-icon.png" alt="">
@@ -211,7 +216,10 @@
         cartItems: [carIte1, carIte2, carIte3, carIte4],
         cartSum: 0,
         showCategories: false,
-        categories: [category, category2]
+        categories: [category, category2],
+        isShowMenu: false,
+        menuCloseTimerId: '',
+        menuHideDelay: 300
       }
     },
     methods: {
@@ -222,9 +230,16 @@
         });
         return sum;
       },
-      hideAllMenuDropdowns() {
-        this.showCategories = false;
-        this.hideAllSubcategories();
+      showMenu() {
+        this.isShowMenu = true;
+        clearTimeout(this.menuCloseTimerId);
+      },
+      hideMenu(delay) {
+        this.menuCloseTimerId = setTimeout(() => {
+          this.isShowMenu = false;
+          this.showCategories = false;
+          this.hideAllSubcategories();
+        }, delay)
       },
       hideAllSubcategories() {
         this.categories.map(category => {
@@ -237,4 +252,6 @@
 
 <style scoped>
   @import "../assets/css/nav-bar.css";
+
+
 </style>

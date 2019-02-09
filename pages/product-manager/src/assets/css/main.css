@@ -23,10 +23,6 @@ html > body {
   visibility: visible;
   transform: scaleY(1); }
 
-.nav-cart-item-text {
-  font-size: 1.2em;
-  font-weight: 500; }
-
 .nav-cart-item-price {
   font-weight: 300;
   font-size: 0.7em; }

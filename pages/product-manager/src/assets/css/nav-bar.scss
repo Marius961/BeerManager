@@ -19,6 +19,12 @@ nav {
 
 }
 
+.nav-dropdown-arrow {
+  img {
+    transform: rotate(90deg);
+  }
+}
+
 .category {
   background: #dddedf;
   padding: 15px;
@@ -26,27 +32,35 @@ nav {
   font-weight: bold;
   border-bottom: 1px solid $borderColor;
 
+  &:hover {
+    background: #c1c2c3;
+  }
   img {
     width: 32px;
     height: 32px;
   }
 }
 
-.nav-menu-wrapper {
-  position: absolute;
+
+.menu-container {
+  pointer-events: auto;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.15s ease;
+  box-shadow: 2px 3px 10px 0px rgba(0,0,0,0.34);
 }
 
 .menu-btn-container {
   height: $navBarHeight;
+
+  &:hover {
+    background: $dropdownHoverColor;
+  }
 }
 
-.menu-button:hover ~ .nav-menu-wrapper, .nav-menu-wrapper:hover {
+.show-menu {
   transform: scaleY(1);
 }
-
 
 .menu-dot {
   width: 6px;
@@ -88,15 +102,23 @@ nav {
 .menu-item {
   padding: 10px;
   border-bottom: 1px solid $borderColor;
+
+  &:hover {
+    background: $dropdownHoverColor;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .subcategories {
   padding: 10px 5px;
   background: white;
-
   a {
     color: $accentColor;
-
     &:hover {
       color: $accentColor;
     }
@@ -213,6 +235,8 @@ nav {
   transform: scaleY(1);
 }
 
+
+
 .cart-items-count {
   position: absolute;
   top: 13px;
@@ -239,15 +263,24 @@ nav {
   }
 }
 
+.nav-cart-item-text {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.cart-item-info {
+
+}
+
 @media all and (min-width: 0px) {
-  .nav-menu-wrapper {
+  .menu-container {
     width: 200px;
   }
 
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
     width: 250px;
-    right: -75px
+    right: -80px
   }
 
   /* size of the cart dropdown menu */
@@ -265,6 +298,10 @@ nav {
     width: 300px;
     right: -30px;
   }
+
+  .menu-container {
+    width: 280px;
+  }
 }
 
 @media all and (min-width: 376px) {
@@ -274,8 +311,8 @@ nav {
     width: 376px;
   }
 
-  .nav-menu-wrapper {
-    width: 376px;
+  .menu-container {
+    width: 350px;
   }
 }
 
@@ -285,12 +322,15 @@ nav {
     right: 0;
   }
 
-  .nav-menu-wrapper {
+  .menu-container {
     width: 100%;
   }
 
   .cart-dropdown-menu {
     width: 360px;
+    right: 0;
   }
 }
+
+
 
