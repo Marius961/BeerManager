@@ -41,6 +41,10 @@ nav {
   }
 }
 
+.category-active {
+  background: #c1c2c3;
+}
+
 
 .menu-container {
   pointer-events: auto;
@@ -106,12 +110,17 @@ nav {
   &:hover {
     background: $dropdownHoverColor;
   }
+
   a {
     color: white;
     &:hover {
       color: white;
     }
   }
+}
+
+.menu-item-active {
+  background: $dropdownHoverColor;
 }
 
 .subcategories {

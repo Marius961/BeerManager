@@ -37,7 +37,7 @@
                     </div>
                     <div class="row">
                       <div class="col">
-                        <div class="row menu-item" @click="showCategories = !showCategories">
+                        <div class="row menu-item" :class="{'menu-item-active': showCategories}"  @click="showCategories = !showCategories">
                           <div class="col">
                             <div class="row align-items-center">
                               <div class="col-9 text-left">Категорії</div>
@@ -49,7 +49,7 @@
                         </div>
                         <div class="row dropdown-content" :class="{'show-dropdown-content': showCategories}">
                           <div class="col-12" v-for="category in categories" @click="category.isOpened = !category.isOpened">
-                            <div class="row category align-items-center">
+                            <div class="row category align-items-center" :class="{'category-active': category.isOpened}">
                               <div class="col-auto p-1">
                                 <img src="../assets/img/test/category.png">
                               </div>

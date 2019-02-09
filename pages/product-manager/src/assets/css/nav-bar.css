@@ -21,6 +21,9 @@ nav {
     width: 32px;
     height: 32px; }
 
+.category-active {
+  background: #c1c2c3; }
+
 .menu-container {
   pointer-events: auto;
   transform: scaleY(0);
@@ -74,6 +77,9 @@ nav {
     color: white; }
     .menu-item a:hover {
       color: white; }
+
+.menu-item-active {
+  background: #1c2939; }
 
 .subcategories {
   padding: 10px 5px;
