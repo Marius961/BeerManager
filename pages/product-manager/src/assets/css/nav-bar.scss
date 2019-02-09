@@ -1,30 +1,49 @@
 @import "vars";
 
+@mixin userSelectNone {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
 /* the nav bar background and text color */
 .nav-bar-container {
   background: $accentColor;
   color: snow;
 }
 
-.nav-bar {
-
+nav {
+  height: $navBarHeight;
 }
 
 .menu-button {
 
 }
 
+.category {
+  background: #dddedf;
+  padding: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 1px solid $borderColor;
+
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 .nav-menu-wrapper {
-  width: 250px;
   position: absolute;
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.15s ease;
 }
 
+.menu-btn-container {
+  height: $navBarHeight;
+}
 
-
-.menu-button:hover .nav-menu-wrapper, .nav-menu-wrapper:hover {
+.menu-button:hover ~ .nav-menu-wrapper, .nav-menu-wrapper:hover {
   transform: scaleY(1);
 }
 
@@ -51,20 +70,13 @@
 
 /* menu in the nav bar with categories and other options */
 .nav-menu {
-  background: white;
-  color: black;
-  border-bottom: 4px solid $accentColor;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  a {
-    color: inherit;
-    font-size: 1.3em;
+  @include userSelectNone;
+  background: $accentColor;
+}
 
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
+
+.menu-links-container {
+  background: $menuLinksBg;
 }
 
 
@@ -73,20 +85,44 @@
   color: white;
 }
 
-.item-body {
-  overflow: hidden;
+.menu-item {
+  padding: 10px;
+  border-bottom: 1px solid $borderColor;
 }
 
-.item-body-content {
-  position: absolute;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.15s ease;
+.subcategories {
+  padding: 10px 5px;
+  background: white;
+
+  a {
+    color: $accentColor;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
 }
 
-.show-content {
-  transform: scaleY(1);
+.dropdown-content {
+  background: #dcddde;
+  color: $accentColor;
+  display: none;
 }
+
+.show-dropdown-content {
+  display: flex;
+}
+
+.dropdonw-arrow {
+  height: 24px;
+  width: 24px;
+  transition: all 150ms;
+}
+
+.dropdonw-arrow-opened {
+  transform: rotate(180deg);
+}
+
 
 .nav-go-to-cart-btn {
   transition: all 300ms;
@@ -134,15 +170,9 @@
   font-size: 0.7em;
 }
 
-@mixin userSelectNone {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
-
 .nav-dropdown {
   @include userSelectNone;
-  padding-top: $dropdownIconPadding;
-  padding-bottom: $dropdownIconPadding;
+  height: $navBarHeight;
   &:hover {
     background-color: $dropdownHoverColor;
     cursor: pointer;
@@ -210,6 +240,10 @@
 }
 
 @media all and (min-width: 0px) {
+  .nav-menu-wrapper {
+    width: 200px;
+  }
+
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
     width: 250px;
@@ -220,7 +254,16 @@
   .cart-dropdown-menu {
     padding: 0;
     margin: 0;
-    width: 240px
+    right: -30px;
+  }
+}
+
+@media all and (min-width: 300px) {
+  .cart-dropdown-menu {
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    right: -30px;
   }
 }
 
@@ -228,7 +271,11 @@
   .cart-dropdown-menu {
     padding: 0;
     margin: 0;
-    width: 378px;
+    width: 376px;
+  }
+
+  .nav-menu-wrapper {
+    width: 376px;
   }
 }
 
@@ -236,6 +283,10 @@
   .user-actions-dropdown {
     width: 250px;
     right: 0;
+  }
+
+  .nav-menu-wrapper {
+    width: 100%;
   }
 
   .cart-dropdown-menu {
