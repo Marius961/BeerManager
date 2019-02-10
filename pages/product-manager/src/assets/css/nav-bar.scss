@@ -27,7 +27,7 @@ nav {
 
 .category {
   background: #dddedf;
-  padding: 15px;
+  padding: 10px;
   font-size: 1.2em;
   font-weight: bold;
   border-bottom: 1px solid $borderColor;
@@ -113,6 +113,7 @@ nav {
 
   a {
     color: white;
+    text-decoration: none;
     &:hover {
       color: white;
     }
