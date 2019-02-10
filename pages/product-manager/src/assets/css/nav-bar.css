@@ -6,26 +6,10 @@
 nav {
   height: 60px; }
 
-.nav-dropdown-arrow img {
-  transform: rotate(90deg); }
-
-.category-active {
-  background: #c1c2c3; }
-
-.menu-container {
-  pointer-events: auto;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.15s ease;
-  box-shadow: 2px 3px 10px 0px rgba(0, 0, 0, 0.34); }
-
 .menu-btn-container {
   height: 60px; }
   .menu-btn-container:hover {
     cursor: pointer; }
-
-.show-menu {
-  transform: scaleY(1); }
 
 .menu-dot {
   width: 6px;
@@ -43,33 +27,6 @@ nav {
   font-size: 1.8em;
   font-weight: bold; }
 
-/* menu in the nav bar with categories and other options */
-.nav-menu {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  background: #2c526a; }
-
-.menu-links-container {
-  background: #283a50; }
-
-.t-text {
-  background: #2c526a;
-  color: white; }
-
-.menu-item {
-  padding: 10px;
-  border-bottom: 1px solid #58bae8; }
-  .menu-item:hover {
-    background: #1c2939; }
-  .menu-item a {
-    color: white;
-    text-decoration: none; }
-    .menu-item a:hover {
-      color: white; }
-
-.menu-item-active {
-  background: #1c2939; }
-
 .subcategories {
   padding: 10px 5px;
   background: white; }
@@ -77,22 +34,6 @@ nav {
     color: #2c526a; }
     .subcategories a:hover {
       color: #2c526a; }
-
-.dropdown-content {
-  background: #dcddde;
-  color: #2c526a;
-  display: none; }
-
-.show-dropdown-content {
-  display: flex; }
-
-.dropdonw-arrow {
-  height: 24px;
-  width: 24px;
-  transition: all 150ms; }
-
-.dropdonw-arrow-opened {
-  transform: rotate(180deg); }
 
 .nav-go-to-cart-btn {
   transition: all 300ms;
@@ -124,11 +65,6 @@ nav {
   .nav-cart-item img {
     height: 50px;
     width: 50px; }
-
-/* style for measurement units font */
-.nav-cart-m-unit {
-  font-weight: 300;
-  font-size: 0.7em; }
 
 .nav-dropdown {
   -moz-user-select: none;
@@ -183,17 +119,13 @@ nav {
 .user-actions-dropdown {
   border-bottom: 4px solid #2c526a; }
   .user-actions-dropdown a {
-    padding: 6px;
-    padding-left: 20px; }
+    padding: 6px 6px 6px 20px; }
 
 .nav-cart-item-text {
   font-size: 1.1em;
   font-weight: 500; }
 
 @media all and (min-width: 0px) {
-  .menu-container {
-    width: 200px; }
-
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
     width: 250px;
@@ -209,25 +141,16 @@ nav {
     padding: 0;
     margin: 0;
     width: 300px;
-    right: -30px; }
-
-  .menu-container {
-    width: 280px; } }
+    right: -30px; } }
 @media all and (min-width: 376px) {
   .cart-dropdown-menu {
     padding: 0;
     margin: 0;
-    width: 376px; }
-
-  .menu-container {
-    width: 350px; } }
+    width: 376px; } }
 @media all and (min-width: 576px) {
   .user-actions-dropdown {
     width: 250px;
     right: 0; }
-
-  .menu-container {
-    width: 100%; }
 
   .cart-dropdown-menu {
     width: 360px;
@@ -256,7 +179,7 @@ nav {
   margin-left: -300px;
   height: 100%;
   background: white;
-  box-shadow: 3px 0px 24px 0px rgba(0, 0, 0, 0.75); }
+  box-shadow: 3px 0 24px 0 rgba(0, 0, 0, 0.75); }
 
 .show-sidebar {
   margin-left: 0; }
@@ -304,16 +227,20 @@ nav {
     height: 32px; }
 
 .search-field input {
-  border-radius: 16px 0 0 16px;
-  padding: 10px;
-  border: 2px solid #2c526a;
+  border-radius: 10px 0 0 10px;
+  padding: 16px;
+  height: 26px;
+  border: 1px solid #2c526a;
   color: #2c526a; }
   .search-field input:focus {
     outline: none; }
-.search-field div {
+.search-field span {
+  padding-top: 5px;
   background: #2c526a;
   color: white;
-  border-radius: 0 16px 16px 0;
-  padding: 10px; }
+  border-radius: 0 10px 10px 0; }
+  .search-field span img {
+    width: 16px;
+    height: 16px; }
 .search-field label {
   font-size: 1.3em; }

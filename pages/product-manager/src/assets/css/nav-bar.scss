@@ -15,41 +15,12 @@ nav {
   height: $navBarHeight;
 }
 
-.menu-button {
-
-}
-
-.nav-dropdown-arrow {
-  img {
-    transform: rotate(90deg);
-  }
-}
-
-
-
-.category-active {
-  background: #c1c2c3;
-}
-
-
-.menu-container {
-  pointer-events: auto;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.15s ease;
-  box-shadow: 2px 3px 10px 0px rgba(0,0,0,0.34);
-}
-
 .menu-btn-container {
   height: $navBarHeight;
 
   &:hover {
     cursor: pointer;
   }
-}
-
-.show-menu {
-  transform: scaleY(1);
 }
 
 .menu-dot {
@@ -71,45 +42,6 @@ nav {
   font-weight: bold;
 }
 
-
-/* menu in the nav bar with categories and other options */
-.nav-menu {
-  @include userSelectNone;
-  background: $accentColor;
-}
-
-
-.menu-links-container {
-  background: $menuLinksBg;
-}
-
-
-.t-text {
-  background: $accentColor;
-  color: white;
-}
-
-.menu-item {
-  padding: 10px;
-  border-bottom: 1px solid $borderColor;
-
-  &:hover {
-    background: $dropdownHoverColor;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
-    &:hover {
-      color: white;
-    }
-  }
-}
-
-.menu-item-active {
-  background: $dropdownHoverColor;
-}
-
 .subcategories {
   padding: 10px 5px;
   background: white;
@@ -120,27 +52,6 @@ nav {
     }
   }
 }
-
-.dropdown-content {
-  background: #dcddde;
-  color: $accentColor;
-  display: none;
-}
-
-.show-dropdown-content {
-  display: flex;
-}
-
-.dropdonw-arrow {
-  height: 24px;
-  width: 24px;
-  transition: all 150ms;
-}
-
-.dropdonw-arrow-opened {
-  transform: rotate(180deg);
-}
-
 
 .nav-go-to-cart-btn {
   transition: all 300ms;
@@ -180,12 +91,6 @@ nav {
     height: 50px;
     width: 50px;
   }
-}
-
-/* style for measurement units font */
-.nav-cart-m-unit {
-  font-weight: 300;
-  font-size: 0.7em;
 }
 
 .nav-dropdown {
@@ -254,8 +159,7 @@ nav {
 .user-actions-dropdown {
   border-bottom: 4px solid $accentColor;
   a {
-    padding: 6px;
-    padding-left: 20px;
+    padding: 6px 6px 6px 20px;
   }
 }
 
@@ -264,15 +168,7 @@ nav {
   font-weight: 500;
 }
 
-.cart-item-info {
-
-}
-
 @media all and (min-width: 0px) {
-  .menu-container {
-    width: 200px;
-  }
-
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
     width: 250px;
@@ -294,10 +190,6 @@ nav {
     width: 300px;
     right: -30px;
   }
-
-  .menu-container {
-    width: 280px;
-  }
 }
 
 @media all and (min-width: 376px) {
@@ -306,20 +198,12 @@ nav {
     margin: 0;
     width: 376px;
   }
-
-  .menu-container {
-    width: 350px;
-  }
 }
 
 @media all and (min-width: 576px) {
   .user-actions-dropdown {
     width: 250px;
     right: 0;
-  }
-
-  .menu-container {
-    width: 100%;
   }
 
   .cart-dropdown-menu {
@@ -405,7 +289,7 @@ nav {
   margin-left: -300px;
   height: 100%;
   background: white;
-  box-shadow: 3px 0px 24px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 0 24px 0 rgba(0,0,0,0.75);
 }
 
 .show-sidebar {
@@ -473,19 +357,25 @@ nav {
 
 .search-field {
   input {
-    border-radius: 16px 0 0 16px;
-    padding: 10px;
-    border: 2px solid $accentColor;
+    border-radius: 10px 0 0 10px;
+    padding: 16px;
+    height: 26px;
+    border: 1px solid $accentColor;
     color: $accentColor;
     &:focus {
       outline: none;
     }
   }
-  div {
+  span {
+    padding-top: 5px;
     background: $accentColor;
     color: white;
-    border-radius: 0 16px 16px 0;
-    padding: 10px;
+    border-radius: 0 10px 10px 0;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
   }
 
   label {

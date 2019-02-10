@@ -6,14 +6,18 @@
           <div class="col-5 col-sm-auto menu-btn-container"
                @click="isShowSideBar = !isShowSideBar"
           >
-            <div class="row h-100 align-items-center menu-button" style="z-index: 99">
+            <div class="row h-100 align-items-center" style="z-index: 99">
               <div class="col-auto">
                 <div class="row align-items-center no-gutters">
                   <div class="col-auto">
-                    <div v-for="dot in 3" class="menu-dot"></div>
+                    <div class="menu-dot"></div>
+                    <div class="menu-dot"></div>
+                    <div class="menu-dot"></div>
                   </div>
                   <div class="col-auto mr-2">
-                    <div v-for="line in 3" class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
                   </div>
                   <div class="col brand-name d-none d-sm-block">Product Manager</div>
                   <div class="col brand-name d-sm-none">PM</div>
@@ -58,7 +62,7 @@
                             <div class="col-8 col-sm-10 align-self-center text-center nav-cart-item-text">{{item.name}}</div>
                             <hr class="w-100">
                             <div class="col">
-                              <div class="row cart-item-info">
+                              <div class="row">
                                 <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit.shortName}}</div>
                                 <div class="col-6 text-center">{{item.priceForOneMeasurementUnit * item.quantity}} грн</div>
                               </div>
@@ -85,14 +89,14 @@
       <div class="sidebar" :class="{'show-sidebar': isShowSideBar}">
         <div class="row no-gutters">
           <div class="col-12">
-            <div class="row align-items-center menu-title-bar">
+            <div class="row menu-title-bar align-items-center">
               <a href="#" class="col-2 pb-2">
                 <img src="../assets/img/nav-bar/home.png" alt="">
               </a>
               <div class="col">
                 <h4>Меню</h4>
               </div>
-              <div class="col-2" @click="closeSideBar">
+              <div class="col-2 pb-2" @click="closeSideBar">
                 <img src="../assets/img/nav-bar/close.png" alt="">
               </div>
             </div>
@@ -126,10 +130,10 @@
             <div class="row no-gutters sidebar-item">Правила розміщення товарів</div>
             <div class="row no-gutters p-2 search-field">
               <label for="search" class="col-12">Пошук по сайту</label>
-              <input id="search" class="col-9" type="search">
-              <div class="col-3 text-center">
+              <input id="search" class="col-10" type="search">
+              <span class="col-2 text-center">
                 <img src="../assets/img/nav-bar/search.png" alt="">
-              </div>
+              </span>
             </div>
           </div>
         </div>
