@@ -189,7 +189,7 @@ nav {
 
 .menu-title-bar {
   color: #2c526a;
-  padding: 10px; }
+  padding: 10px 10px 0; }
   .menu-title-bar h4 {
     border-left: 3px solid #2c526a;
     padding-left: 10px; }

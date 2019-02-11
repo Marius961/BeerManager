@@ -1,10 +1,12 @@
 html > body {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", serif;
-  background: #e7e8e9; }
+  font-family: "Roboto", serif; }
 
-/*-- Navigation bar, dropdown menus and buttons --*/
+.cards-bar {
+  overflow-x: auto;
+  flex-wrap: nowrap; }
+
 /* alternative for :active, used in js */
 .menu-item-active {
   background: #2c526a; }
@@ -75,46 +77,9 @@ html > body {
   .subcategory:hover {
     color: inherit; }
 
-/*-- Product and product card styles --*/
-.product-card {
-  border: 1px solid transparent;
-  transition: 150ms;
-  display: flex; }
-  .product-card:hover {
-    border: 1px solid #bbbbbb; }
-
-/* size for image inside all product cards */
-.product-picture {
-  width: 128px;
-  height: 128px; }
-
-.price-currency {
-  font-size: 0.7em; }
-
-.to-cart-segment {
-  color: white;
-  background: green; }
-  .to-cart-segment:hover {
-    cursor: pointer; }
-
-.price-box {
-  background: #ededed;
-  border-radius: 6px 6px 0 0; }
-
-.product-name {
-  text-wrap: none;
-  font-weight: 500;
-  font-size: 1em; }
-
 /*-- media --*/
 /* Bootstrap xs breakpoint */
 @media all and (min-width: 0px) {
-  .to-cart-segment {
-    border-radius: 0 0 6px 6px; }
-
-  .price-box {
-    border-radius: 6px 6px 0 0; }
-
   /* color for <a> on xs size of screens */
   .order-info-a {
     background: #2c526a;
@@ -125,12 +90,6 @@ html > body {
       color: snow; } }
 /*Bootstrap sm (small) breakpoint */
 @media all and (min-width: 576px) {
-  .to-cart-segment {
-    border-radius: 0 6px 6px 0; }
-
-  .price-box {
-    border-radius: 6px 0 0 6px; }
-
   .order-info-a {
     background: transparent;
     color: black;

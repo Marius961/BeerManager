@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d730e06-6d4c-4336-b15b-8230c8bb5b1f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/nav-bar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/nav-bar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/product-card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/components/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/nav-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/nav-bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/components/NavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/components/NavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Home.vue" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -36,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="265" selection-start-line="265" selection-end-line="470" selection-end-column="7" />
+            <state relative-caret-position="304">
+              <caret line="476" column="17" selection-start-line="476" selection-start-column="17" selection-end-line="476" selection-end-column="17" />
               <folding>
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -131,10 +134,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1450" />
-    <option name="y" value="169" />
-    <option name="width" value="1458" />
-    <option name="height" value="870" />
+    <option name="x" value="-1451" />
+    <option name="y" value="168" />
+    <option name="width" value="1460" />
+    <option name="height" value="871" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -144,6 +147,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,11 +366,13 @@
       <workItem from="1549541300906" duration="3102000" />
       <workItem from="1549552772301" duration="9000" />
       <workItem from="1549828104055" duration="749000" />
+      <workItem from="1549867171279" duration="741000" />
+      <workItem from="1549881709855" duration="62000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="533121000" />
+    <option name="totallyTimeSpent" value="533924000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="265" selection-start-line="265" selection-end-line="470" selection-end-column="7" />
+        <state relative-caret-position="304">
+          <caret line="476" column="17" selection-start-line="476" selection-start-column="17" selection-end-line="476" selection-end-column="17" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />

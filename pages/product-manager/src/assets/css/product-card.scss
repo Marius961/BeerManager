@@ -1,0 +1,62 @@
+@import "vars";
+
+.product-card {
+  padding-top: 10px;
+  border-radius: 8px;
+  border: 1px solid $borderColor;
+  background: white;
+  height: 100%;
+}
+
+
+.product-name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.seller-nick {
+  font-weight: lighter;
+  font-size: 0.8em;
+}
+
+.in-stock-label {
+  position: absolute;
+  bottom: 10px;
+  background: green;
+  color: white;
+  font-size: 0.8em;
+  padding: 3px 7px 3px 3px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+}
+
+.card-img {
+  border-bottom: 1px solid $borderColor;
+  width: 200px;
+  height: 200px;
+  padding: 8px;
+
+  img {
+    max-width: 192px;
+    max-height: 192px;
+  }
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.product-price {
+  font-weight: bold;
+  color: $accentColor;
+  font-size: 1.1em;
+}
+
+.details-btm {
+  color: $accentColor;
+  transition: all .15s;
+
+  &:hover {
+    color: $accentColor;
+  }
+}
+
