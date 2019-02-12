@@ -4,7 +4,7 @@
       <div class="container">
         <nav class="row align-items-center">
           <div class="col-5 col-sm-auto menu-btn-container"
-               @click="isShowSideBar = !isShowSideBar"
+               @click="toggleSidebarVisibility"
           >
             <div class="row h-100 align-items-center" style="z-index: 99">
               <div class="col-auto">
@@ -83,57 +83,58 @@
       </div>
     </div>
     <div class="sidebar-wrapper"
-         @click.self="closeSideBar"
          :class="{'show-sidebar-wrapper': isShowSideBar}"
     >
-      <div class="sidebar" :class="{'show-sidebar': isShowSideBar}">
-        <div class="row no-gutters">
-          <div class="col-12">
-            <div class="row menu-title-bar align-items-center">
-              <a href="#" class="col-2 pb-2">
-                <img src="../assets/img/nav-bar/home.png" alt="">
-              </a>
-              <div class="col">
-                <h4>Меню</h4>
-              </div>
-              <div class="col-2 pb-2" @click="closeSideBar">
-                <img src="../assets/img/nav-bar/close.png" alt="">
+      <div class="container h-100" id="sidebar" @click.self="closeSideBar">
+        <div class="sidebar" :class="{'show-sidebar': isShowSideBar}">
+          <div class="row no-gutters">
+            <div class="col-12">
+              <div class="row menu-title-bar align-items-center">
+                <a href="#" class="col-2 pb-2">
+                  <img src="../assets/img/nav-bar/home.png" alt="">
+                </a>
+                <div class="col">
+                  <h4>Меню</h4>
+                </div>
+                <div class="col-2 pb-2 d-md-none" @click="closeSideBar">
+                  <img src="../assets/img/nav-bar/close.png" alt="">
+                </div>
               </div>
             </div>
-          </div>
-          <hr class="w-100 m-1">
-          <div class="col-12">
-            <div class="row no-gutters">
-              <div class="col-12 sidebar-item" @click="isShowCategories = !isShowCategories" :class="{'sidebar-item-active': isShowCategories}">Категорії</div>
-              <div class="col-12 item-dropdown" v-if="isShowCategories">
-                <div v-for="category in categories" class="row align-items-center">
-                  <div class="col">
-                    <div class="row category" @click="category.isOpened = !category.isOpened">
-                      <div class="col-2">
-                        <img src="../assets/img/test/category.png" alt="">
+            <hr class="w-100 m-1">
+            <div class="col-12">
+              <div class="row no-gutters">
+                <div class="col-12 sidebar-item" @click="isShowCategories = !isShowCategories" :class="{'sidebar-item-active': isShowCategories}">Категорії</div>
+                <div class="col-12 item-dropdown" v-if="isShowCategories">
+                  <div v-for="category in categories" class="row align-items-center">
+                    <div class="col">
+                      <div class="row category" @click="category.isOpened = !category.isOpened">
+                        <div class="col-2">
+                          <img src="../assets/img/test/category.png" alt="">
+                        </div>
+                        <div class="col">{{category.name}}}</div>
                       </div>
-                      <div class="col">{{category.name}}}</div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 p-2" v-if="category.isOpened">
-                        <div class="row no-gutters">
-                          <a v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</a>
+                      <div class="row">
+                        <div class="col-12 p-2" v-if="category.isOpened">
+                          <div class="row no-gutters">
+                            <a v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row no-gutters sidebar-item">Про нас</div>
-            <div class="row no-gutters sidebar-item">Оплата та доставка</div>
-            <div class="row no-gutters sidebar-item">Правила розміщення товарів</div>
-            <div class="row no-gutters p-2 search-field">
-              <label for="search" class="col-12">Пошук по сайту</label>
-              <input id="search" class="col-10" type="search">
-              <span class="col-2 text-center">
+              <div class="row no-gutters sidebar-item">Про нас</div>
+              <div class="row no-gutters sidebar-item">Оплата та доставка</div>
+              <div class="row no-gutters sidebar-item">Правила розміщення товарів</div>
+              <div class="row no-gutters p-2 search-field">
+                <label for="search" class="col-12 d-md-none">Пошук по сайту</label>
+                <input id="search" class="col-10" type="search">
+                <span class="col-2 text-center">
                 <img src="../assets/img/nav-bar/search.png" alt="">
               </span>
+              </div>
             </div>
           </div>
         </div>
@@ -235,6 +236,13 @@
             category.isOpened = false;
           }, 300)
         })
+      },
+      toggleSidebarVisibility() {
+        if (this.isShowSideBar) {
+          this.closeSideBar();
+        } else {
+          this.isShowSideBar = true;
+        }
       }
     }
   }

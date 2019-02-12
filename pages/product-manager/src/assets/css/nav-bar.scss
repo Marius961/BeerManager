@@ -16,6 +16,7 @@ nav {
 }
 
 .menu-btn-container {
+  @include userSelectNone;
   height: $navBarHeight;
 
   &:hover {
@@ -168,6 +169,66 @@ nav {
   font-weight: 500;
 }
 
+
+
+.sidebar-wrapper {
+  width: 100%;
+  max-height: 1000%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.show-sidebar-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar {
+  @include userSelectNone;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: white;
+}
+
+
+
+
+.sidebar-wrapper, .sidebar {
+  transition: opacity .15s, margin-left .3s ease-out, margin-top .3s;
+}
+
+.menu-title-bar {
+  color: $accentColor;
+  padding: 10px 10px 0;
+
+  h4 {
+    border-left: 3px solid $accentColor;
+    padding-left: 10px;
+  }
+}
+
+.sidebar-item {
+  transition: all 0.3s;
+  padding: 10px;
+  color: $accentColor;
+  font-size: 1.3em;
+  border-bottom: 1px solid $borderColor;
+
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: $accentColor;
+    color: white;
+  }
+}
+
+
+
+
 @media all and (min-width: 0px) {
   /* size for the user actions dropdown menu */
   .user-actions-dropdown {
@@ -180,6 +241,24 @@ nav {
     padding: 0;
     margin: 0;
     right: -30px;
+  }
+
+  .sidebar-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.42);
+  }
+
+  .sidebar {
+    width: 300px;
+    margin-left: -300px;
+    height: 100%;
+    box-shadow: 3px 0 24px 0 rgba(0,0,0,0.75);
+  }
+
+  .show-sidebar {
+    margin-left: 0;
   }
 }
 
@@ -212,69 +291,54 @@ nav {
   }
 }
 
-.sidebar-wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.42);
-  opacity: 0;
-  z-index: 999;
-  pointer-events: none;
-}
+@media all and (max-width: 768px) {
 
-.show-sidebar-wrapper {
-  opacity: 1;
-  pointer-events: auto;
-}
+  #sidebar {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
 
-.sidebar {
-  @include userSelectNone;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 300px;
-  margin-left: -300px;
-  height: 100%;
-  background: white;
-  box-shadow: 3px 0 24px 0 rgba(0,0,0,0.75);
-}
-
-.show-sidebar {
-  margin-left: 0;
-}
-
-
-.sidebar-wrapper, .sidebar {
-  transition: opacity .15s, margin-left .3s ease-out;
-}
-
-.menu-title-bar {
-  color: $accentColor;
-  padding: 10px 10px 0;
-
-  h4 {
-    border-left: 3px solid $accentColor;
-    padding-left: 10px;
   }
 }
 
-.sidebar-item {
-  transition: all 0.3s;
-  padding: 10px;
-  color: $accentColor;
-  font-size: 1.3em;
-  border-bottom: 1px solid $borderColor;
-
-  a {
-    text-decoration: none;
+@media all and (min-width: 768px) {
+  .sidebar-wrapper {
+    position: absolute;
+    top: auto;
+    bottom: auto;
+    background: transparent;
   }
 
-  &:hover {
-    background: $accentColor;
-    color: white;
+  .sidebar {
+    border-radius: 0 0 6px 6px;
+    margin-left: 0;
+    width: 350px;
+    height: auto;
+    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.47);
+  }
+
+  .show-sidebar {
+    margin-left: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .sidebar-item-active {
   background: $accentColor;
