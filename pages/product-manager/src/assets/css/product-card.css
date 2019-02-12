@@ -15,6 +15,7 @@
 
 .in-stock-label {
   position: absolute;
+  left: 0;
   bottom: 10px;
   background: green;
   color: white;
@@ -44,3 +45,6 @@
   transition: all .15s; }
   .details-btm:hover {
     color: #2c526a; }
+
+.in-favorites-icon {
+  color: #2c526a; }

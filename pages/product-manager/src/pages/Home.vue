@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12 mt-sm-3">
         <div class="row cards-bar">
-          <a v-for="c in 6" href="#" class="col-7 col-sm-5 col-md-3 col-lg-2 category-card p-3">
+          <a class="col-7 col-sm-5 col-md-3 col-lg-2 category-card p-3">
             <div class="row align-items-start text-center">
               <div class="col">
                 <img src="../assets/img/test/category.png" alt="">
@@ -21,36 +21,16 @@
           <div class="col-12">
             <div class="row">
               <product-card
+                v-for="product in products" :key="product.id"
                 class="col-12 col-sm-6 col-md-4 col-xl-3"
-                productName="Молоко"
-                imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdr8i-0nIWMk3EW39bbDrQMvX3ucvU8R9_Bb82i6Ui54qO2EUC"
-                priceForMeasurementUnit="21,90"
-                measurementUnit="л."
-                sellerNickname="marius961"
-                inStockStatus="true"
-                isInFavorites="false"
-              >
-              </product-card>
-              <product-card
-                class="col-12 col-sm-6 col-md-4 col-xl-3"
-                productName="Молоко"
-                imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqowTiH5C4Ywszo5AXBxX9NrcEedr3j1CY7-n2hf7SWkrAMv47DQ"
-                priceForMeasurementUnit="21,90"
-                measurementUnit="л."
-                sellerNickname="marius961"
-                inStockStatus="true"
-                isInFavorites="false"
-              >
-              </product-card>
-              <product-card
-                class="col-12 col-sm-6 col-md-4 col-xl-3"
-                productName="Молоко"
-                imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKtngGfEjZwPMFDFGOmxTeyrrObo-GE0Y44GSxKtdtINAZaL_P"
-                priceForMeasurementUnit="21,90"
-                measurementUnit="л."
-                sellerNickname="marius961"
-                inStockStatus="true"
-                isInFavorites="false"
+                :id="product.id"
+                :productName="product.name"
+                :imgSrc="product.imgSrc"
+                :priceForMeasurementUnit="product.priceForMeasurementUnit"
+                :measurementUnit="product.measurementUnit"
+                :sellerName="product.sellerName"
+                :isInStock="product.isInStock"
+                :isInFavorites="product.isInFavorites"
               >
               </product-card>
             </div>
@@ -64,11 +44,29 @@
 </template>
 
 <script>
+
+  let product1 = {
+    id: 0,
+    name: 'Молоко',
+    imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKtngGfEjZwPMFDFGOmxTeyrrObo-GE0Y44GSxKtdtINAZaL_P',
+    priceForMeasurementUnit: 22.90,
+    measurementUnit: 'л,',
+    sellerName: 'marius961',
+    isInStock: true,
+    isInFavorites: false
+
+  };
+
   import ProductCard from '../components/ProductCard'
     export default {
-        components: {
-          "product-card": ProductCard
+      data() {
+        return {
+          products: [product1]
         }
+      },
+      components: {
+        "product-card": ProductCard
+      }
     }
 </script>
 

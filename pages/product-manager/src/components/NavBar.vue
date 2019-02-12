@@ -63,8 +63,8 @@
                             <hr class="w-100">
                             <div class="col">
                               <div class="row">
-                                <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit.shortName}}</div>
-                                <div class="col-6 text-center">{{item.priceForOneMeasurementUnit * item.quantity}} грн</div>
+                                <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit}}</div>
+                                <div class="col-6 text-center">{{item.priceForMeasurementUnit * item.quantity}} грн</div>
                               </div>
                             </div>
                           </div>
@@ -145,35 +145,36 @@
 <script>
   let carIte1 = {
     id: 0,
-    imageSrc: 'https://wp.miray.com.ua/site/miray/files/wallpapers/wallpaper-4187.jpg',
     name: 'Апельсин',
-    priceForOneMeasurementUnit: 15.60,
+    imageSrc: 'https://wp.miray.com.ua/site/miray/files/wallpapers/wallpaper-4187.jpg',
+    priceForMeasurementUnit: 15.60,
+    sellerName: 'marius961',
+    measurementUnit: 'кг.',
     quantity: 3,
-    measurementUnit: { id:0, shortName: 'кг', fullName: 'кілограм'},
   };
   let carIte2 = {
     id: 1,
     imageSrc: 'https://irecommend.ru/sites/default/files/product-images/42233/zwr0obbJCnszZYssy91zA.jpg',
     name: 'Мука',
-    priceForOneMeasurementUnit: 20,
+    priceForMeasurementUnit: 20,
     quantity: 2,
-    measurementUnit: { id:0, shortName: 'кг', fullName: 'кілограм'},
+    measurementUnit: 'кг.',
   };
   let carIte3 = {
     id: 2,
     imageSrc: 'https://i.biz-gid.com/img/products/800/216796.png',
     name: 'Хліб',
-    priceForOneMeasurementUnit: 8.50,
+    priceForMeasurementUnit: 8.50,
     quantity: 2,
-    measurementUnit: { id:0, shortName: 'шт', fullName: 'штук'},
+    measurementUnit: 'шт.',
   };
   let carIte4 = {
     id: 2,
     imageSrc: 'https://img2.zakaz.ua/src.1470729330.ad72436478c_2016-08-09_Aleksey/src.1470729330.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg',
     name: 'Моршинська (сильногазована)',
-    priceForOneMeasurementUnit: 12.50,
+    priceForMeasurementUnit: 12.50,
     quantity: 1,
-    measurementUnit: { id:0, shortName: 'л.', fullName: 'літрів'},
+    measurementUnit: 'л.',
   };
 
   let category = {
@@ -222,7 +223,7 @@
       calculateCartSum() {
         let sum = 0;
         this.cartItems.map(item => {
-          sum += item.priceForOneMeasurementUnit * item.quantity
+          sum += item.priceForMeasurementUnit * item.quantity
         });
         return sum;
       },
