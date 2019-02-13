@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-12 mt-sm-3">
         <div class="row cards-bar">
-          <a class="col-7 col-sm-5 col-md-3 col-lg-2 category-card p-3">
+          <a class="col-7 col-sm-5 col-md-3 col-lg-2 category-card p-3" v-for="category in categories">
             <div class="row align-items-start text-center">
               <div class="col">
                 <img src="../assets/img/test/category.png" alt="">
               </div>
-              <div class="col-12 mt-3">Пекарня</div>
+              <div class="col-12 mt-3">{{category.name}}</div>
             </div>
           </a>
         </div>
@@ -58,16 +58,22 @@
   };
 
   import ProductCard from '../components/ProductCard'
-    export default {
-      data() {
-        return {
-          products: [product1]
-        }
-      },
-      components: {
-        "product-card": ProductCard
+
+  export default {
+    computed: {
+      categories() {
+        return this.$store.getters.getCategoriesMap
       }
-    }
+    },
+    data() {
+      return {
+        products: [product1]
+      }
+    },
+    components: {
+      "product-card": ProductCard
+    },
+  }
 </script>
 
 <style scoped>
