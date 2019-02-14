@@ -58,12 +58,13 @@
   };
 
   import ProductCard from '../components/ProductCard'
+  import {mapGetters} from 'vuex'
 
   export default {
     computed: {
-      categories() {
-        return this.$store.getters.getCategoriesMap
-      }
+      ...mapGetters({
+        categories: 'getCategoriesMap'
+      })
     },
     data() {
       return {

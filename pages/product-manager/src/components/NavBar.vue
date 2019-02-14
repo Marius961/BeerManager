@@ -55,25 +55,38 @@
                     <div class="col-12">
                       <div class="row nav-cart-box p-1">
                         <div class="col">
-                          <div v-for="item in cart" class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
-                            <div class="col-4 col-sm-2 text-center">
-                              <img :src="item.imageSrc" alt="">
-                            </div>
-                            <div class="col-8 col-sm-10 align-self-center text-center nav-cart-item-text">{{item.name}}</div>
-                            <hr class="w-100">
-                            <div class="col">
-                              <div class="row">
-                                <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit}}</div>
-                                <div class="col-6 text-center">{{item.priceForMeasurementUnit * item.quantity}} грн</div>
+                          <transition-group name="list">
+                            <div v-for="item in cart" :key="'cartItem' + item.id" class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
+                              <div class="col-auto text-center">
+                                <img :src="item.imageSrc" alt="">
+                              </div>
+                              <div class="col align-self-center nav-cart-item-text">{{item.name}}</div>
+                              <div class="col-1 align-self-start remove-cart-item-btn" @click="deleteItemFromCartById(item.id)">
+                                <img src="../assets/img/delete.png" alt="">
+                              </div>
+                              <hr class="w-100">
+                              <div class="col">
+                                <div class="row">
+                                  <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit}}</div>
+                                  <div class="col-6 text-center">{{item.priceForMeasurementUnit * item.quantity}} грн</div>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          </transition-group>
+                          <transition name="list">
+                            <div v-if="isCartEmpty" class="row empty-cart-message">
+                              <div class="col-12 text-center">
+                                <img src="../assets/img/empty-box.png" alt="">
+                              </div>
+                              <h5 class="col-12 text-center">Схоже, кошик пустий</h5>
+                            </div>
+                          </transition>
                         </div>
                       </div>
                     </div>
                     <hr>
-                    <div class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: {{calculateCartSum()}}грн</div>
-                    <button class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</button>
+                    <div v-if="calculateCartSum() > 0" class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: {{calculateCartSum()}}грн</div>
+                    <button v-if="calculateCartSum() > 0" class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</button>
                   </div>
                 </div>
               </div>
@@ -108,14 +121,14 @@
                 <div class="col-12 item-dropdown" v-if="isShowCategories">
                   <div v-for="category in categories" class="row align-items-center">
                     <div class="col">
-                      <div class="row category" @click="setOpenedStatus(category.id, !category.isOpened)">
+                      <div class="row category" @click="category.isOpened = !category.isOpened">
                         <div class="col-2">
                           <img src="../assets/img/test/category.png" alt="">
                         </div>
                         <div class="col">{{category.name}}</div>
                       </div>
                       <div class="row">
-                        <div class="col-12 p-2" v-if="category.isOpened">
+                        <div class="col-12 p-2" v-show="category.isOpened">
                           <div class="row no-gutters">
                             <a v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</a>
                           </div>
@@ -144,17 +157,22 @@
 </template>
 
 <script>
+  import {mapGetters} from 'vuex'
+  import {mapActions} from 'vuex'
+
   export default {
     computed: {
-      categories() {
-        return this.$store.getters.getCategoriesMap
-      },
-      cart() {
-        return this.$store.getters.getCartItems
+      ...mapGetters({
+        getCategoriesMap: 'getCategoriesMap',
+        cart: 'getCartItems'
+      }),
+      isCartEmpty() {
+        return !this.cart.length > 0
       }
     },
     data() {
       return {
+        categories: [],
         cartSum: 0,
         isShowSideBar: false,
         isShowCategories: false,
@@ -186,11 +204,20 @@
       },
       setOpenedStatus(id, status) {
         this.$store.commit('setOpenedStatus', {id, status})
-      }
+      },
+      ...mapActions([
+        'fetchCart',
+        'deleteItemFromCartById',
+        'fetchCategories'
+      ])
     },
     created() {
-      this.$store.dispatch('fetchCart');
-      this.$store.dispatch('fetchCategories')
+      this.fetchCart();
+      this.fetchCategories().then(() => {
+        this.categories = this.getCategoriesMap.map((category) => {
+          return {...category, isOpened: false};
+        })
+      })
     }
   }
 </script>
@@ -199,5 +226,12 @@
   @import "../assets/css/nav-bar.css";
 
 
+  .list-enter-active, .list-leave-active {
+    transition: .3s;
+  }
+  .list-enter, .list-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
 
 </style>

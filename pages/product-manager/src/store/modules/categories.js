@@ -39,18 +39,8 @@ export default {
   },
   mutations: {
     setCategoriesMap(state, payload) {
-      state.categoriesMap = payload.map((category) => {
-        category.isOpened = false;
-        return category;
-      });
+      state.categoriesMap = payload;
     },
-    setOpenedStatus(state, payload) {
-      state.categoriesMap.map(category => {
-        if(category.id === payload.id) {
-          category.isOpened = payload.status
-        }
-      })
-    }
   },
   getters: {
     getCategoriesMap(state) {

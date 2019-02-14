@@ -83,6 +83,17 @@ nav {
   overflow-y: auto;
 }
 
+.empty-cart-message {
+  padding: 20px 10px 10px;
+  color: $accentColor;
+  background: $cartDropdownElemColor;
+
+  img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
 .nav-cart-item {
   color: $cartTextColor;
   border-bottom: 1px solid $borderColor;
@@ -118,7 +129,7 @@ nav {
   box-shadow: rgb(219, 223, 226) 0 1px 2px 0, rgb(219, 223, 226) 0 1px 3px 1px;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, max-height .5s;
 
   a {
     text-decoration: none;
@@ -262,6 +273,74 @@ nav {
   }
 }
 
+.sidebar-item-active {
+  background: $accentColor;
+  color: white;
+}
+
+.item-dropdown {
+  padding: 10px;
+}
+
+
+.subcategory {
+  background: #e3e3e3;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.category {
+  font-size: 1.1em;
+  padding: 10px;
+  border-bottom: 1px solid $borderColor;
+  img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.search-field {
+  input {
+    border-radius: 10px 0 0 10px;
+    padding: 16px;
+    height: 26px;
+    border: 1px solid $accentColor;
+    color: $accentColor;
+    &:focus {
+      outline: none;
+    }
+  }
+  span {
+    padding-top: 5px;
+    background: $accentColor;
+    color: white;
+    border-radius: 0 10px 10px 0;
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  label {
+    font-size: 1.3em;
+  }
+}
+
+
+.remove-cart-item-btn {
+  @include userSelectNone;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 @media all and (min-width: 300px) {
   .cart-dropdown-menu {
     padding: 0;
@@ -320,77 +399,5 @@ nav {
 
   .show-sidebar {
     margin-left: 0;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.sidebar-item-active {
-  background: $accentColor;
-  color: white;
-}
-
-.item-dropdown {
-  padding: 10px;
-}
-
-
-.subcategory {
-  background: #e3e3e3;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.category {
-  font-size: 1.1em;
-  padding: 10px;
-  border-bottom: 1px solid $borderColor;
-  img {
-    width: 32px;
-    height: 32px;
-  }
-}
-
-
-.search-field {
-  input {
-    border-radius: 10px 0 0 10px;
-    padding: 16px;
-    height: 26px;
-    border: 1px solid $accentColor;
-    color: $accentColor;
-    &:focus {
-      outline: none;
-    }
-  }
-  span {
-    padding-top: 5px;
-    background: $accentColor;
-    color: white;
-    border-radius: 0 10px 10px 0;
-
-    img {
-      width: 16px;
-      height: 16px;
-    }
-  }
-
-  label {
-    font-size: 1.3em;
   }
 }

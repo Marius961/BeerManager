@@ -60,6 +60,14 @@ nav {
   max-height: 350px;
   overflow-y: auto; }
 
+.empty-cart-message {
+  padding: 20px 10px 10px;
+  color: #2c526a;
+  background: white; }
+  .empty-cart-message img {
+    width: 64px;
+    height: 64px; }
+
 .nav-cart-item {
   color: black;
   border-bottom: 1px solid #58bae8;
@@ -89,7 +97,7 @@ nav {
   box-shadow: #dbdfe2 0 1px 2px 0, #dbdfe2 0 1px 3px 1px;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.15s ease; }
+  transition: transform 0.15s ease, max-height .5s; }
   .nav-dropdown-menu a {
     text-decoration: none;
     color: black;
@@ -194,6 +202,54 @@ nav {
 
   .show-sidebar {
     margin-left: 0; } }
+.sidebar-item-active {
+  background: #2c526a;
+  color: white; }
+
+.item-dropdown {
+  padding: 10px; }
+
+.subcategory {
+  background: #e3e3e3;
+  padding: 10px;
+  text-decoration: none; }
+
+.category {
+  font-size: 1.1em;
+  padding: 10px;
+  border-bottom: 1px solid #58bae8; }
+  .category img {
+    width: 32px;
+    height: 32px; }
+
+.search-field input {
+  border-radius: 10px 0 0 10px;
+  padding: 16px;
+  height: 26px;
+  border: 1px solid #2c526a;
+  color: #2c526a; }
+  .search-field input:focus {
+    outline: none; }
+.search-field span {
+  padding-top: 5px;
+  background: #2c526a;
+  color: white;
+  border-radius: 0 10px 10px 0; }
+  .search-field span img {
+    width: 16px;
+    height: 16px; }
+.search-field label {
+  font-size: 1.3em; }
+
+.remove-cart-item-btn {
+  -moz-user-select: none;
+  -webkit-user-select: none; }
+  .remove-cart-item-btn:hover {
+    cursor: pointer; }
+  .remove-cart-item-btn img {
+    width: 16px;
+    height: 16px; }
+
 @media all and (min-width: 300px) {
   .cart-dropdown-menu {
     padding: 0;
@@ -235,41 +291,3 @@ nav {
 
   .show-sidebar {
     margin-left: 0; } }
-.sidebar-item-active {
-  background: #2c526a;
-  color: white; }
-
-.item-dropdown {
-  padding: 10px; }
-
-.subcategory {
-  background: #e3e3e3;
-  padding: 10px;
-  text-decoration: none; }
-
-.category {
-  font-size: 1.1em;
-  padding: 10px;
-  border-bottom: 1px solid #58bae8; }
-  .category img {
-    width: 32px;
-    height: 32px; }
-
-.search-field input {
-  border-radius: 10px 0 0 10px;
-  padding: 16px;
-  height: 26px;
-  border: 1px solid #2c526a;
-  color: #2c526a; }
-  .search-field input:focus {
-    outline: none; }
-.search-field span {
-  padding-top: 5px;
-  background: #2c526a;
-  color: white;
-  border-radius: 0 10px 10px 0; }
-  .search-field span img {
-    width: 16px;
-    height: 16px; }
-.search-field label {
-  font-size: 1.3em; }
