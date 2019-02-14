@@ -57,11 +57,11 @@
                         <div class="col">
                           <transition-group name="list">
                             <div v-for="item in cart" :key="'cartItem' + item.id" class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
-                              <div class="col-auto text-center">
+                              <div class="col-3 col-sm-auto text-center">
                                 <img :src="item.imageSrc" alt="">
                               </div>
-                              <div class="col align-self-center nav-cart-item-text">{{item.name}}</div>
-                              <div class="col-1 align-self-start remove-cart-item-btn" @click="deleteItemFromCartById(item.id)">
+                              <div class="col-7 col-sm align-self-center nav-cart-item-text">{{item.name}}</div>
+                              <div class="col-2 col-sm-auto align-self-center align-self-sm-start remove-cart-item-btn" @click="deleteItemFromCartById(item.id)">
                                 <img src="../assets/img/delete.png" alt="">
                               </div>
                               <hr class="w-100">
