@@ -1,0 +1,34 @@
+@import "vars";
+
+.seller-products {
+  padding: 5px;
+}
+
+.seller-name {
+  font-weight: bold;
+}
+
+
+.product {
+
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $accentColor;
+
+  img {
+    max-width: 92px;
+    max-height: 92px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  label {
+    width: 100%;
+
+    input {
+      width: 100%;
+    }
+  }
+}

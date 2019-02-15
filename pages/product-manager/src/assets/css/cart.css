@@ -1,0 +1,19 @@
+.seller-products {
+  padding: 5px; }
+
+.seller-name {
+  font-weight: bold; }
+
+.product {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2c526a; }
+  .product img {
+    max-width: 92px;
+    max-height: 92px; }
+    .product img:hover {
+      cursor: pointer; }
+  .product label {
+    width: 100%; }
+    .product label input {
+      width: 100%; }

@@ -86,7 +86,7 @@
                     </div>
                     <hr>
                     <div v-if="calculateCartSum() > 0" class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: {{calculateCartSum()}}грн</div>
-                    <button v-if="calculateCartSum() > 0" class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</button>
+                    <router-link tag="button" to="/cart" v-if="calculateCartSum() > 0" class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</router-link>
                   </div>
                 </div>
               </div>
@@ -103,9 +103,9 @@
           <div class="row no-gutters">
             <div class="col-12">
               <div class="row menu-title-bar align-items-center">
-                <a href="#" class="col-2 pb-2">
+                <router-link to="/" class="col-2 pb-2">
                   <img src="../assets/img/nav-bar/home.png" alt="">
-                </a>
+                </router-link>
                 <div class="col">
                   <h4>Меню</h4>
                 </div>
@@ -164,7 +164,7 @@
     computed: {
       ...mapGetters({
         getCategoriesMap: 'getCategoriesMap',
-        cart: 'getCartItems'
+        cart: 'getAllCartItems'
       }),
       isCartEmpty() {
         return !this.cart.length > 0
