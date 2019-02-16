@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 
 .seller-products {
   padding: 5px;
@@ -28,7 +29,31 @@
     width: 100%;
 
     input {
+      border-radius: 6px;
+      border: 1px solid $accentColor;
+      padding-left: 5px;
+      padding-right: 5px;
       width: 100%;
+
+      &:focus {
+        outline: none;
+      }
     }
+  }
+}
+
+.create-order-btn {
+  @include userSelectNone;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 8px;
+  color: $accentColor;
+  background: white;
+  border: 1px solid $accentColor;
+
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background: $accentColor;
   }
 }

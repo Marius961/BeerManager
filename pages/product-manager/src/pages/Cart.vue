@@ -8,7 +8,7 @@
           <div class="col-3 col-md-2 text-center">
             <img :src="cartItem.image" alt="">
           </div>
-          <div class="col-5 col-md order-2">{{cartItem.name}}</div>
+          <div class="col-7 col-md order-2">{{cartItem.name}}</div>
           <hr class="w-100 d-md-none order-4">
           <div class="col-4 col-md-2 text-center order-4 order-md-3">
             <div class="row">
@@ -28,6 +28,11 @@
           <div class="col-2 col-md-1 text-center order-3 order-md-6">
             <img @click="deleteItemFromCart(cartItem.id)" src="../assets/img/delete.png" alt="">
           </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row justify-content-end">
+          <div class="col-auto  create-order-btn">Створити замовлення</div>
         </div>
       </div>
     </div>
@@ -51,7 +56,13 @@
         fetchCartSellersList: 'fetchCartSellersList'
       }),
       updateItemQuantity(event, itemId) {
-        this.setQuantity({itemId: itemId, itemQuantity: event.target.value})
+        if (typeof +event.target.value === 'number') {
+          let quantity = event.target.value;
+          if (quantity === '') {
+            quantity = 1;
+          }
+          this.setQuantity({itemId: itemId, itemQuantity: quantity});
+        }
       }
     },
     created() {

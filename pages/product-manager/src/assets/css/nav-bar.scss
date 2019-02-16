@@ -1,9 +1,6 @@
 @import "vars";
+@import "mixins";
 
-@mixin userSelectNone {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
 
 /* the nav bar background and text color */
 .nav-bar-container {
@@ -393,7 +390,7 @@ nav {
     margin-left: 0;
     width: 350px;
     height: auto;
-    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.47);
+    box-shadow: 0 2px 14px 0 rgba(0,0,0,0.47);
   }
 
   .show-sidebar {

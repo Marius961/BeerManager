@@ -16,4 +16,24 @@
   .product label {
     width: 100%; }
     .product label input {
+      border-radius: 6px;
+      border: 1px solid #2c526a;
+      padding-left: 5px;
+      padding-right: 5px;
       width: 100%; }
+      .product label input:focus {
+        outline: none; }
+
+.create-order-btn {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 8px;
+  color: #2c526a;
+  background: white;
+  border: 1px solid #2c526a; }
+  .create-order-btn:hover {
+    cursor: pointer;
+    color: white;
+    background: #2c526a; }
