@@ -56,19 +56,19 @@
                       <div class="row nav-cart-box p-1">
                         <div class="col">
                           <transition-group name="list">
-                            <div v-for="item in cart" :key="'cartItem' + item.id" class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
+                            <div v-for="cartItem in cart" :key="'cartItem' + cartItem.id" class="row nav-cart-item align-items-center p-3 mt-1 mb-1">
                               <div class="col-3 col-sm-auto text-center">
-                                <img :src="item.imageSrc" alt="">
+                                <img :src="cartItem.image" alt="">
                               </div>
-                              <div class="col-7 col-sm align-self-center nav-cart-item-text">{{item.name}}</div>
-                              <div class="col-2 col-sm-auto align-self-center align-self-sm-start remove-cart-item-btn" @click="deleteItemFromCartById(item.id)">
+                              <div class="col-7 col-sm align-self-center nav-cart-item-text">{{cartItem.name}}</div>
+                              <div class="col-2 col-sm-auto align-self-center align-self-sm-start remove-cart-item-btn" @click="deleteItemFromCartById(cartItem.id)">
                                 <img src="../assets/img/delete.png" alt="">
                               </div>
                               <hr class="w-100">
                               <div class="col">
                                 <div class="row">
-                                  <div class="col-6 text-center">{{item.quantity}}{{item.measurementUnit}}</div>
-                                  <div class="col-6 text-center">{{item.priceForMeasurementUnit * item.quantity}} грн</div>
+                                  <div class="col-6 text-center">{{cartItem.quantity}}{{cartItem.measurementUnit.name}}</div>
+                                  <div class="col-6 text-center">{{cartItem.priceForMeasurementUnit * cartItem.quantity}} грн</div>
                                 </div>
                               </div>
                             </div>
@@ -201,9 +201,6 @@
         } else {
           this.isShowSideBar = true;
         }
-      },
-      setOpenedStatus(id, status) {
-        this.$store.commit('setOpenedStatus', {id, status})
       },
       ...mapActions([
         'fetchCart',

@@ -1,69 +1,85 @@
 // test data
 
+const testCartItemsSellers = [
+  {
+    id: 0,
+    name: 'seller1',
+    fullName: "Василь Степанович"
+  },
+  {
+    id: 1,
+    name: 'seller2',
+    fullName: "Іван Васильович"
+  }
+];
 
-
-
-
-const seller1 = {
-  id: 0,
-  name: 'seller1',
-  productsList: [
-    {
-      id: 2,
-      imageSrc: 'https://i.biz-gid.com/img/products/800/216796.png',
-      name: 'Хліб',
-      priceForMeasurementUnit: 8.50,
-      quantity: 2,
-      measurementUnit: 'шт.',
+const testCartItems = [
+  {
+    id: 1,
+    name: 'Мука',
+    sellerId: 1,
+    image: 'https://irecommend.ru/sites/default/files/product-images/42233/zwr0obbJCnszZYssy91zA.jpg',
+    priceForMeasurementUnit: 20,
+    measurementUnit: {
+      id: 13,
+      name: 'кг'
     },
-    {
+    quantity: 2
+  },
+  {
+    id: 0,
+    name: 'Апельсин',
+    sellerId: 0,
+    image: 'https://wp.miray.com.ua/site/miray/files/wallpapers/wallpaper-4187.jpg',
+    priceForMeasurementUnit: 15.60,
+    measurementUnit: {
+      id: 13,
+      name: 'кг'
+    },
+    quantity: 3
+  },
+  {
+    id: 3,
+    name: 'Моршинська (сильногазована)',
+    sellerId: 0,
+    image: 'https://img2.zakaz.ua/src.1470729330.ad72436478c_2016-08-09_Aleksey/src.1470729330.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg',
+    priceForMeasurementUnit: 9999.50,
+    measurementUnit: {
       id: 3,
-      imageSrc: 'https://img2.zakaz.ua/src.1470729330.ad72436478c_2016-08-09_Aleksey/src.1470729330.SNCPSG10.obj.0.1.jpg.oe.jpg.pf.jpg.1350nowm.jpg.1350x.jpg',
-      name: 'Моршинська (сильногазована)',
-      priceForMeasurementUnit: 9999.50,
-      quantity: 1,
-      measurementUnit: 'л.',
-    }
-  ]
-};
-
-
-const seller2 = {
-  id: 1,
-  name: 'seller2',
-  productsList: [
-    {
-      id: 0,
-      sellerId: 0,
-      name: 'Апельсин',
-      imageSrc: 'https://wp.miray.com.ua/site/miray/files/wallpapers/wallpaper-4187.jpg',
-      priceForMeasurementUnit: 15.60,
-      sellerName: 'marius961',
-      measurementUnit: 'кг.',
-      quantity: 3,
+      name: 'л'
     },
-    {
-      id: 1,
-      sellerId: 1,
-      imageSrc: 'https://irecommend.ru/sites/default/files/product-images/42233/zwr0obbJCnszZYssy91zA.jpg',
-      name: 'Мука',
-      priceForMeasurementUnit: 20,
-      quantity: 2,
-      measurementUnit: 'кг.',
-    }
-  ]
-};
+    quantity: 1
+  },
+  {
+    id: 2,
+    name: 'Хліб',
+    sellerId: 1,
+    image: 'https://i.biz-gid.com/img/products/800/216796.png',
+    priceForMeasurementUnit: 8.50,
+    measurementUnit: {
+      id: 8,
+      name: 'шт'
+    },
+    quantity: 2
+  },
+
+
+];
 
 //
 
 export default  {
   state: {
-    cartAndSellers: []
+    cartItems: [],
+    cartSellersList: []
   },
   actions: {
+    fetchCartSellersList(context) {
+      context.commit('setCartSellers', testCartItemsSellers)
+    },
     fetchCart(context) {
       //request to server...
-      context.commit('setCartItems', [seller1, seller2])
+      context.commit('setCartItems', testCartItems)
     },
     deleteItemFromCartById(context, itemId) {
       //request to server...
@@ -72,41 +88,42 @@ export default  {
     updateItemQuantity(context, itemData) {
       //request to server...
       context.commit('setItemQuantity', itemData);
-      alert('changed')
     }
   },
   mutations: {
     setCartItems(state, cartItems) {
-      state.cartAndSellers = cartItems;
+      state.cartItems = cartItems;
+    },
+    setCartSellers(state, sellers) {
+      state.cartSellersList = sellers;
     },
     removeCartItem(state, id) {
-      state.cartAndSellers.map((seller, sellerIndex) => {
-        let index = seller.productsList.findIndex(obj => obj.id === id);
-        if (index > -1) {
-          seller.productsList.splice(index, 1);
-          if (seller.productsList <= 0) {
-            state.cartAndSellers.splice(sellerIndex, 1);
-          }
-          return false;
-        }
-      });
+      const index = state.cartItems.findIndex(obj => obj.id === id);
+      state.cartItems.splice(index, 1);
     },
+
     setItemQuantity(state, itemData) {
-      let sellerIndex = state.cartAndSellers.findIndex(obj => obj.id === itemData.sellerId);
-      let productIndex = state.cartAndSellers[sellerIndex].productsList.findIndex(obj => obj.id === itemData.itemId);
-      state.cartAndSellers[sellerIndex].productsList[productIndex].quantity = itemData.quantity
+      const itemIndex = state.cartItems.findIndex(obj => obj.id === itemData.itemId);
+      state.cartItems[itemIndex].quantity = itemData.itemQuantity;
     }
   },
   getters: {
     getAllCartItems(state) {
-      const allProducts = [];
-      state.cartAndSellers.forEach((seller) => {
-        allProducts.push(...seller.productsList);
-      });
-      return allProducts;
+      return state.cartItems;
     },
     getSellersWithProducts(state) {
-      return state.cartAndSellers;
+      return state.cartSellersList.reduce((sellersAcc, seller, index) => {
+        const sellerItems =  state.cartItems.reduce(function(result, cartItem) {
+          if (cartItem.sellerId === seller.id) {
+            result.push(cartItem)
+          }
+          return result;
+        }, []);
+        if (sellerItems.length > 0) {
+          sellersAcc.push({...seller, 'cartItems': sellerItems});
+        }
+        return sellersAcc;
+      }, []);
     }
   }
 }
