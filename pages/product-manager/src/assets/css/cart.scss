@@ -53,17 +53,21 @@
 
 .create-order-btn {
   @include userSelectNone;
-  padding: 4px;
   border-radius: 4px;
   margin: 8px;
-  color: $accentColor;
-  background: white;
-  border: 1px solid $accentColor;
+  color: white;
+  padding: 12px;
+  font-size: 1.1em;
+  background: $accentColor;
+  border: 0;
 
   &:hover {
     cursor: pointer;
-    color: white;
-    background: $accentColor;
+  }
+
+  &:disabled {
+    background: #cacbcc;
+    cursor: not-allowed;
   }
 }
 

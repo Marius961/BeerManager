@@ -146,6 +146,21 @@ export default  {
         }
         return sellersAcc;
       }, []);
+    },
+    isItemsReadyToOrder(state) {
+      const readyItems = state.cartItems.reduce(function(result, cartItem) {
+        if (cartItem.isReadyToOrder) {
+          result.push(cartItem);
+        }
+        return result;
+      }, []);
+      let isItemsInvalid = false;
+      readyItems.map(item => {
+        if (item.sellerId !== readyItems[0].sellerId) {
+          isItemsInvalid = true;
+        }
+      });
+      return isItemsInvalid;
     }
   }
 }

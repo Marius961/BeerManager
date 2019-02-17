@@ -43,11 +43,9 @@
           </div>
         </div>
       </div>
-      <div class="col-12">
-        <div class="row justify-content-end">
-          <div class="col-auto  create-order-btn">Створити замовлення</div>
-        </div>
-      </div>
+    </div>
+    <div class="row justify-content-end" v-if="sellersWithProducts.length > 0">
+      <button class="col-12 col-sm-auto  create-order-btn" :disabled="isReadyToOrder">Створити замовлення</button>
     </div>
   </main>
 </template>
@@ -59,8 +57,9 @@
   export default {
     computed: {
       ...mapGetters({
-        sellersWithProducts: 'getSellersWithProducts'
-      })
+        sellersWithProducts: 'getSellersWithProducts',
+        isReadyToOrder: 'isItemsReadyToOrder'
+      }),
     },
     methods: {
       ...mapActions({
