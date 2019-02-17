@@ -22,9 +22,10 @@ const testCartItems = [
     priceForMeasurementUnit: 20,
     measurementUnit: {
       id: 13,
-      name: 'кг'
+      name: 'кг.'
     },
-    quantity: 2
+    quantity: 2,
+    isReadyToOrder: true
   },
   {
     id: 0,
@@ -34,9 +35,10 @@ const testCartItems = [
     priceForMeasurementUnit: 15.60,
     measurementUnit: {
       id: 13,
-      name: 'кг'
+      name: 'кг.'
     },
-    quantity: 3
+    quantity: 3,
+    isReadyToOrder: true
   },
   {
     id: 3,
@@ -46,9 +48,10 @@ const testCartItems = [
     priceForMeasurementUnit: 9999.50,
     measurementUnit: {
       id: 3,
-      name: 'л'
+      name: 'л.'
     },
-    quantity: 1
+    quantity: 1,
+    isReadyToOrder: true
   },
   {
     id: 2,
@@ -58,9 +61,10 @@ const testCartItems = [
     priceForMeasurementUnit: 8.50,
     measurementUnit: {
       id: 8,
-      name: 'шт'
+      name: 'шт.'
     },
-    quantity: 2
+    quantity: 2,
+    isReadyToOrder: false
   },
 
 
@@ -75,20 +79,34 @@ export default  {
   },
   actions: {
     fetchCartSellersList(context) {
-      context.commit('setCartSellers', testCartItemsSellers)
+      setTimeout(() => {
+        context.commit('setCartSellers', testCartItemsSellers)
+      }, 500);
     },
     fetchCart(context) {
       //request to server...
-      context.commit('setCartItems', testCartItems)
+      setTimeout(() => {
+        context.commit('setCartItems', testCartItems)
+      }, 300);
     },
     deleteItemFromCartById(context, itemId) {
       //request to server...
-      context.commit('removeCartItem', itemId)
+      setTimeout(() => {
+        context.commit('removeCartItem', itemId)
+      }, 300);
     },
     updateItemQuantity(context, itemData) {
       //request to server...
+      setTimeout(() => {
+
+      }, 300);
       context.commit('setItemQuantity', itemData);
-    }
+    },
+    updateIsReadyToOrder(context, itemData) {
+      setTimeout(() => {
+        context.commit('setIsReadyToOrder', itemData);
+      }, 300)
+    },
   },
   mutations: {
     setCartItems(state, cartItems) {
@@ -105,6 +123,10 @@ export default  {
     setItemQuantity(state, itemData) {
       const itemIndex = state.cartItems.findIndex(obj => obj.id === itemData.itemId);
       state.cartItems[itemIndex].quantity = itemData.itemQuantity;
+    },
+    setIsReadyToOrder(state, itemData) {
+      const itemIndex = state.cartItems.findIndex(obj => obj.id === itemData.itemId);
+      state.cartItems[itemIndex].isReadyToOrder = itemData.isReadyToOrder;
     }
   },
   getters: {

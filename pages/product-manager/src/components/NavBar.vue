@@ -45,7 +45,7 @@
               </div>
               <div class="col-auto">
                 <div class="row align-items-center nav-dropdown">
-                  <div class="cart-items-count">933</div>
+                  <div class="cart-items-count" v-if="cart.length > 0">{{cart.length}}</div>
                   <div class="col-2">
                     <img src="../assets/img/nav-bar/cart-icon.png" alt="">
                   </div>
