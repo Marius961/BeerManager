@@ -1,0 +1,67 @@
+@import "vars";
+@import "mixins";
+
+.address-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  font-size: 0.8em;
+}
+
+
+.selected-address {
+  border: 0 transparent;
+  background: rgba(112, 255, 137, 0.34);
+}
+
+.address-card {
+  border-radius: 15px;
+  padding: 18px;
+
+
+  .card-body {
+    border-radius: 15px;
+    border: 1px solid $accentColor;
+    padding: 10px 15px;
+  }
+
+  &.selected {
+    .card-body {
+      background: $accentColor;
+      color: white;
+    }
+  }
+}
+
+.select-address-btn {
+
+
+
+  .wrapper {
+    transition: all 0.2s;
+    color: black;
+  }
+
+  label {
+    padding: 5px;
+    border: 1px solid $accentColor;
+    border-radius: 6px;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+
+  input {
+    opacity: 0;
+    position: absolute;
+    &:checked ~ .wrapper {
+      background: $accentColor;
+      color: white;
+    }
+  }
+}
+
+.add-address-btn:hover {
+  background: #eeeeee;
+}
+

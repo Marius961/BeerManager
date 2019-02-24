@@ -351,26 +351,8 @@ html > body {
 
 /*address cards, containers and buttons*/
 
-/* container which contains address cards */
-.address-container {
-  overflow-x: auto;
-  overflow-y: hidden;
-  flex-wrap: nowrap;
-  font-size: 0.8em;
-}
 
-.selected-address {
-  border: 0 transparent;
-  background: rgba(112, 255, 137, 0.34);
-}
 
-.address-card {
-  border: 1px solid grey;
-}
-
-.add-address-btn:hover {
-  background: #eeeeee;
-}
 
 
 /*-- scroll bar styles --*/
