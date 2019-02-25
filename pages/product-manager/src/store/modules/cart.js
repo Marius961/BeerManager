@@ -161,6 +161,14 @@ export default  {
         }
       });
       return isItemsInvalid;
+    },
+    getItemsForOrder(state) {
+      return state.cartItems.reduce(function(result, cartItem) {
+        if (cartItem.isReadyToOrder) {
+          result.push(cartItem);
+        }
+        return result;
+      }, []);
     }
   }
 }

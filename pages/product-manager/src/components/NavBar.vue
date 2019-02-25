@@ -85,8 +85,8 @@
                       </div>
                     </div>
                     <hr>
-                    <div v-if="calculateCartSum() > 0" class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: {{calculateCartSum()}}грн</div>
-                    <router-link tag="button" to="/cart" v-if="calculateCartSum() > 0" class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</router-link>
+                    <div v-if="calculateCartSum > 0" class="col-12 nav-cart-total-price p-2 mt-2 text-center">Сума: {{calculateCartSum}}грн</div>
+                    <router-link tag="button" to="/cart" v-if="calculateCartSum > 0" class="col-12 nav-go-to-cart-btn p-2 mt-2 text-center">Перейти у кошик</router-link>
                   </div>
                 </div>
               </div>
@@ -168,6 +168,13 @@
       }),
       isCartEmpty() {
         return !this.cart.length > 0
+      },
+      calculateCartSum() {
+        let sum = 0;
+        this.cart.map(item => {
+          sum += item.priceForMeasurementUnit * item.quantity
+        });
+        return sum;
       }
     },
     data() {
@@ -179,13 +186,6 @@
       }
     },
     methods: {
-      calculateCartSum() {
-        let sum = 0;
-        this.cart.map(item => {
-          sum += item.priceForMeasurementUnit * item.quantity
-        });
-        return sum;
-      },
       closeSideBar() {
         this.isShowSideBar = false;
         setTimeout(() => {

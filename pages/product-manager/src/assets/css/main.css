@@ -201,12 +201,14 @@ html > body {
 .input-2 {
   width: 100%;
   outline: none;
-  border-radius: 1em;
-  border: 1px solid #d9d9d9;
-  transition: 150ms; }
+  color: #2c526a;
+  background: #f7f7f7;
+  border-radius: 10px;
+  border: 1px solid #2c526a;
+  transition: all 150ms; }
   .input-2:focus {
-    transition: 150ms;
-    box-shadow: 0 0 5px 1px #2c526a; }
+    border: 2px solid #2c526a;
+    background: white; }
 
 /*-- background and border wor table headers cells --*/
 .border-box-1 {

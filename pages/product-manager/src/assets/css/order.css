@@ -38,3 +38,22 @@
 
 .add-address-btn:hover {
   background: #eeeeee; }
+
+.product-row {
+  padding: 10px 5px;
+  border-bottom: 1px solid lightgray; }
+  .product-row img {
+    max-width: 64px;
+    height: auto; }
+
+.order-submit-btn {
+  font-weight: bolder;
+  padding: 10px;
+  color: white;
+  background: #2c526a;
+  border: 0; }
+  .order-submit-btn:hover {
+    cursor: pointer; }
+  .order-submit-btn:disabled {
+    background: #cacbcc;
+    cursor: not-allowed; }
