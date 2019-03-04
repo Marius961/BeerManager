@@ -130,7 +130,7 @@
                       <div class="row">
                         <div class="col-12 p-2" v-show="category.isOpened">
                           <div class="row no-gutters">
-                            <a v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</a>
+                            <router-link :to="'/products/' + subcategory.id" v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</router-link>
                           </div>
                         </div>
                       </div>

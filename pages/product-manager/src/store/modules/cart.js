@@ -22,7 +22,8 @@ const testCartItems = [
     priceForMeasurementUnit: 20,
     measurementUnit: {
       id: 13,
-      name: 'кг.'
+      name: 'кг.',
+      fullName: ''
     },
     quantity: 2,
     isReadyToOrder: true
@@ -35,7 +36,8 @@ const testCartItems = [
     priceForMeasurementUnit: 15.60,
     measurementUnit: {
       id: 13,
-      name: 'кг.'
+      name: 'кг.',
+      fullName: ''
     },
     quantity: 3,
     isReadyToOrder: true
@@ -48,7 +50,8 @@ const testCartItems = [
     priceForMeasurementUnit: 9999.50,
     measurementUnit: {
       id: 3,
-      name: 'л.'
+      name: 'л.',
+      fullName: ''
     },
     quantity: 1,
     isReadyToOrder: true
@@ -61,7 +64,8 @@ const testCartItems = [
     priceForMeasurementUnit: 8.50,
     measurementUnit: {
       id: 8,
-      name: 'шт.'
+      name: 'шт.',
+      fullName: ''
     },
     quantity: 2,
     isReadyToOrder: false

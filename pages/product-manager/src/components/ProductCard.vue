@@ -11,12 +11,12 @@
       </div>
       <div class="col-12 card-body align-self-start">
         <div class="row">
-          <div class="col-12 product-name">{{productName}}</div>
+          <div class="col-12 product-name">{{name}}</div>
           <div class="col-12 seller-nick">Продавець: {{sellerName}}</div>
           <div class="col-12 pt-3">
             <div class="row align-items-end justify-content-between">
               <div class="col-auto">Ціна:</div>
-              <div class="col-auto text-right product-price">{{priceForMeasurementUnit}} грн/{{measurementUnit}}</div>
+              <div class="col-auto text-right product-price">{{priceForMeasurementUnit}} грн/{{measurementUnit.name}}</div>
             </div>
           </div>
         </div>
@@ -24,7 +24,7 @@
       <div class="col-12 align-self-end">
         <div class="row align-items-center justify-content-between pt-1 pb-2">
           <hr class="w-100 m-0 mt-1 mb-1">
-          <a href="#" class="col-auto details-btm">Деталі</a>
+          <router-link :to="'/product/' + id" class="col-auto details-btm">Деталі</router-link>
           <div class="col-auto text-center" @click="inFavorites = !inFavorites">
             <i class="fa-star in-favorites-icon" :class="{'far': !inFavorites, 'fas': inFavorites}"></i>
           </div>
@@ -38,10 +38,10 @@
     export default {
       props: {
         id: Number,
-        productName: String,
+        name: String,
         imgSrc: String,
         priceForMeasurementUnit: Number,
-        measurementUnit: String,
+        measurementUnit: Object,
         sellerName: String,
         isInStock: Boolean,
         isInFavorites: Boolean

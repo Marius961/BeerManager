@@ -24,7 +24,7 @@
                 v-for="product in products" :key="product.id"
                 class="col-12 col-sm-6 col-md-4 col-xl-3"
                 :id="product.id"
-                :productName="product.name"
+                :name="product.name"
                 :imgSrc="product.imgSrc"
                 :priceForMeasurementUnit="product.priceForMeasurementUnit"
                 :measurementUnit="product.measurementUnit"
@@ -50,7 +50,11 @@
     name: 'Молоко',
     imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKtngGfEjZwPMFDFGOmxTeyrrObo-GE0Y44GSxKtdtINAZaL_P',
     priceForMeasurementUnit: 22.90,
-    measurementUnit: 'л,',
+    measurementUnit: {
+      id: 13,
+      name: 'кг.',
+      fullName: ''
+    },
     sellerName: 'marius961',
     isInStock: true,
     isInFavorites: false

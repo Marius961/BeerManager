@@ -4,7 +4,23 @@
     <bookmark url="file://$PROJECT_DIR$/pages/products.html" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d730e06-6d4c-4336-b15b-8230c8bb5b1f" name="Default Changelist" comment="" />
+    <list default="true" id="5d730e06-6d4c-4336-b15b-8230c8bb5b1f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/inputs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/productByCategory.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/productPage.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/pages/product/productPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../pages/product-manager/src/pages/productByCategory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/cart.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/cart.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/cart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/order.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/assets/css/order.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/components/ProductCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/components/ProductCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Cart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Cart.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/pages/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pages/product-manager/src/store/modules/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../pages/product-manager/src/store/modules/cart.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,19 +36,16 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/order.html">
+        <entry file="file://$PROJECT_DIR$/pages/products.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
+            <state relative-caret-position="273">
+              <caret line="279" column="28" selection-start-line="279" selection-start-column="28" selection-end-line="279" selection-end-column="28" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#main#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,10 +130,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-14" />
-    <option name="y" value="-14" />
-    <option name="width" value="1942" />
-    <option name="height" value="1055" />
+    <option name="x" value="-16" />
+    <option name="y" value="-16" />
+    <option name="width" value="1945" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -141,12 +154,6 @@
               <item name="Product manager pages" type="b2602c69:ProjectViewProjectNode" />
               <item name="Product manager pages" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Product manager pages" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Product manager pages" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -355,11 +362,13 @@
       <workItem from="1550246487894" duration="17000" />
       <workItem from="1550401814457" duration="22000" />
       <workItem from="1550425646974" duration="25000" />
+      <workItem from="1551185468113" duration="10000" />
+      <workItem from="1551689101767" duration="1427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="533995000" />
+    <option name="totallyTimeSpent" value="535432000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -449,20 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/new_product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="264" column="9" selection-start-line="264" selection-start-column="9" selection-end-line="264" selection-end-column="9" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/product_page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -546,10 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/products.html">
+    <entry file="file://$PROJECT_DIR$/pages/new_product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="278" column="37" selection-start-line="278" selection-start-column="37" selection-end-line="278" selection-end-column="37" />
+        <state relative-caret-position="126">
+          <caret line="6" column="90" lean-forward="true" selection-start-line="6" selection-start-column="90" selection-end-line="6" selection-end-column="90" />
           <folding>
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -562,8 +557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/order.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="451" lean-forward="true" selection-start-line="451" selection-end-line="451" />
+        <state relative-caret-position="301">
+          <caret line="451" selection-start-line="451" selection-end-line="451" />
           <folding>
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
@@ -573,6 +568,20 @@
             <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#main#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/products.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="279" column="28" selection-start-line="279" selection-start-column="28" selection-end-line="279" selection-end-column="28" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#nav#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#header#0;n#body#0;n#html#0;n#!!top" />
           </folding>
         </state>
       </provider>

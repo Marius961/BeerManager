@@ -2,7 +2,7 @@
   <main class="container">
     <div class="row seller-products" v-for="seller in sellersWithProducts" :key="seller.id">
       <span class="col-auto">Товари продавця</span>
-      <div class="col-auto seller-name">{{seller.name}}</div>
+      <div class="col-auto sku-number">{{seller.name}}</div>
       <div class="col-12">
         <div class="row no-gutters product align-items-center" v-for="cartItem in seller.cartItems" :key="cartItem.id">
           <div class="col-auto text-center">
