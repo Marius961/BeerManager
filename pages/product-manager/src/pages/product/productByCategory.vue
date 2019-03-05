@@ -63,7 +63,7 @@
 
 <script>
 
-    import ProductCard from "../components/ProductCard";
+    import ProductCard from "../../components/ProductCard";
 
     let product1 = {
         id: 0,
@@ -95,5 +95,5 @@
 </script>
 
 <style scoped>
-    @import "../assets/css/productByCategory.css";
+    @import "../../assets/css/productByCategory.css";
 </style>

@@ -39,6 +39,7 @@
                     <a class="col-12" href="#">Отримані замовлення</a>
                     <a class="col-12" href="#">Мої товари</a>
                     <router-link to="/add-product" class="col-12" href="#">Додати товар</router-link>
+                    <router-link to="/add-category" class="col-12" href="#">Додати категорію/підкатегорію</router-link>
                     <hr class="w-100 m-1">
                     <a class="col-12" href="#">Вийти</a>
                   </div>
@@ -131,7 +132,7 @@
                       <div class="row">
                         <div class="col-12 p-2" v-show="category.isOpened">
                           <div class="row no-gutters">
-                            <router-link :to="'/products/' + subcategory.id" v-for="subcategory in category.subcategories" href="#" class="col-12 subcategory">{{subcategory.name}} 1</router-link>
+                            <router-link :to="'/products/' + subcategory.id" v-for="subcategory in category.subcategories" :key="subcategory.id" href="#" class="col-12 subcategory">{{subcategory.name}} 1</router-link>
                           </div>
                         </div>
                       </div>
