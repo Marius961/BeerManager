@@ -6,6 +6,7 @@ import Order from "../pages/Order"
 import Error_404 from "../pages/404Error"
 import ProductPage from '../pages/product/productPage'
 import ProductsByCategory from '../pages/productByCategory'
+import AddProduct from '../pages/addProduct'
 
 Vue.use(Router);
 
@@ -34,6 +35,10 @@ export default new Router({
     {
       path: '/products/:categoryId',
       component: ProductsByCategory
+    },
+    {
+      path: '/add-product',
+      component: AddProduct
     }
   ]
 })

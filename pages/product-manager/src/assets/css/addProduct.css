@@ -1,0 +1,23 @@
+.photo-input {
+  text-align: center;
+  font-size: 10em;
+  color: #2c526a;
+  border: 1px solid #2c526a;
+  transition: background-color .3s, color .3s;
+  border-radius: 6px; }
+  .photo-input img {
+    max-width: 100%; }
+  .photo-input:hover {
+    color: white;
+    background: #2c526a; }
+  .photo-input span {
+    padding: 0;
+    margin: 0;
+    font-size: 0.2em;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15px; }
+  .photo-input input {
+    display: none; }

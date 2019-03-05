@@ -1,0 +1,40 @@
+@import "vars";
+
+.f-form-group {
+  margin: 15px 0;
+
+  input {
+    width: 100%;
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 6px 15px;
+
+    &:focus {
+      border-color: $accentColor;
+    }
+  }
+  label {
+    width: 100%;
+    font-size: 1.2em;
+    padding-left: 15px;
+  }
+
+  select {
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 6px 15px;
+  }
+
+
+  textarea {
+    width: 100%;
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 6px 15px;
+
+    &:focus {
+      border-color: $accentColor;
+    }
+  }
+
+}

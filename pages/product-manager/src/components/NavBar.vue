@@ -38,6 +38,7 @@
                     <a class="col-12" href="#">Мої замовлення</a>
                     <a class="col-12" href="#">Отримані замовлення</a>
                     <a class="col-12" href="#">Мої товари</a>
+                    <router-link to="/add-product" class="col-12" href="#">Додати товар</router-link>
                     <hr class="w-100 m-1">
                     <a class="col-12" href="#">Вийти</a>
                   </div>
