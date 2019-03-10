@@ -328,3 +328,113 @@ html > body {
 .order-box {
   border: 1px solid #d9d9d9;
   border-radius: 6px; }
+
+.p-btn {
+  margin: 5px;
+  background: #d1d1d1;
+  padding: 5px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  transition: background-color .15s; }
+  .p-btn:hover {
+    cursor: pointer;
+    background: #a4a4a4; }
+  .p-btn i {
+    font-size: 1.2em; }
+  .p-btn:disabled {
+    background: #d4d4d4;
+    color: #848484;
+    border: 0; }
+    .p-btn:disabled:hover {
+      cursor: not-allowed;
+      background: #d4d4d4;
+      color: #848484;
+      border: 0; }
+
+.p-btn-primary {
+  margin: 5px;
+  background: #d1d1d1;
+  padding: 5px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  transition: background-color .15s;
+  background: #2c526a;
+  color: white; }
+  .p-btn-primary:hover {
+    cursor: pointer;
+    background: #a4a4a4; }
+  .p-btn-primary i {
+    font-size: 1.2em; }
+  .p-btn-primary:disabled {
+    background: #d4d4d4;
+    color: #848484;
+    border: 0; }
+    .p-btn-primary:disabled:hover {
+      cursor: not-allowed;
+      background: #d4d4d4;
+      color: #848484;
+      border: 0; }
+  .p-btn-primary:hover {
+    background: #1d3747; }
+
+.p-btn-secondary {
+  margin: 5px;
+  background: #d1d1d1;
+  padding: 5px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  transition: background-color .15s;
+  border: 1px solid #2c526a;
+  background: white;
+  transition: color .15s; }
+  .p-btn-secondary:hover {
+    cursor: pointer;
+    background: #a4a4a4; }
+  .p-btn-secondary i {
+    font-size: 1.2em; }
+  .p-btn-secondary:disabled {
+    background: #d4d4d4;
+    color: #848484;
+    border: 0; }
+    .p-btn-secondary:disabled:hover {
+      cursor: not-allowed;
+      background: #d4d4d4;
+      color: #848484;
+      border: 0; }
+  .p-btn-secondary:hover {
+    background: #2c526a;
+    color: white; }
+
+.p-btn-danger {
+  margin: 5px;
+  background: #d1d1d1;
+  padding: 5px 10px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  border: 0;
+  transition: background-color .15s;
+  background: #ff2823;
+  color: white; }
+  .p-btn-danger:hover {
+    cursor: pointer;
+    background: #a4a4a4; }
+  .p-btn-danger i {
+    font-size: 1.2em; }
+  .p-btn-danger:disabled {
+    background: #d4d4d4;
+    color: #848484;
+    border: 0; }
+    .p-btn-danger:disabled:hover {
+      cursor: not-allowed;
+      background: #d4d4d4;
+      color: #848484;
+      border: 0; }
+  .p-btn-danger:hover {
+    background: #ff2823; }

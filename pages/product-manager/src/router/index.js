@@ -8,6 +8,8 @@ import ProductPage from '../pages/product/productPage'
 import ProductsByCategory from '../pages/product/productByCategory'
 import AddProduct from '../pages/product/addProduct'
 import AddCategory from '../pages/addCategory'
+import MyOrders from '../pages/MyOrders'
+import ReceivedOrders from '../pages/ReceivedOrders'
 
 Vue.use(Router);
 
@@ -45,6 +47,13 @@ export default new Router({
       path: '/add-category',
       component: AddCategory
     },
-
+    {
+      path: '/my-orders',
+      component: MyOrders
+    },
+    {
+      path: '/received-orders',
+      component: ReceivedOrders
+    },
   ]
 })

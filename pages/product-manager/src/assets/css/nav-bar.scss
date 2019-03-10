@@ -125,7 +125,9 @@ nav {
   box-shadow: rgb(219, 223, 226) 0 1px 2px 0, rgb(219, 223, 226) 0 1px 3px 1px;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.15s ease, max-height .5s;
+  transition: transform 0.2s ease-in, opacity .17s;
+  opacity: 0;
+  pointer-events: none;
 
   a {
     text-decoration: none;
@@ -141,7 +143,9 @@ nav {
 }
 
 .nav-dropdown:hover + .nav-dropdown-menu, .nav-dropdown-menu:hover {
+  opacity: 1;
   transform: scaleY(1);
+  pointer-events: auto;
 }
 
 

@@ -1,0 +1,29 @@
+@import "vars";
+
+.order-row {
+  padding: 10px 15px;
+  border: 1px solid $accentColor;
+  border-radius: 6px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    font-size: 1.2em;
+    color: $accentColor;
+  }
+}
+
+.order-info {
+  font-size: 1.2em;
+}
+
+.order-products-count {
+  font-size: 1.6em;
+}
+
+.status-header {
+  font-weight: bold;
+  font-size: 1.2em;
+}

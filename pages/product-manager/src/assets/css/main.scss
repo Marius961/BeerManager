@@ -1,4 +1,6 @@
 @import "vars";
+@import "mixins";
+
 
 html > body {
   padding: 0;
@@ -499,6 +501,47 @@ html > body {
 .order-box {
   border: 1px solid #d9d9d9;
   border-radius: 6px;
+}
+
+
+
+
+
+
+//Buttons
+
+.p-btn {
+  @include baseBtn;
+}
+
+.p-btn-primary {
+  @include baseBtn;
+  background: $accentColor;
+  color: white;
+
+  &:hover {
+    background: $accentColor/1.5;
+  }
+}
+
+.p-btn-secondary {
+  @include baseBtn;
+  border: 1px solid $accentColor;
+  background: white;
+  transition: color .15s;
+  &:hover {
+    background: $accentColor;
+    color: white;
+  }
+}
+
+.p-btn-danger {
+  @include baseBtn;
+  background: #ff2823;
+  color: white;
+  &:hover {
+    background: #ff2823;
+  }
 }
 
 

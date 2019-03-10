@@ -51,9 +51,9 @@
                     name: ''
                 },
                 subcategory: {
-                    name: '',
-                    selectedCategoryId: ''
-                }
+                    name: ''
+                },
+                selectedCategoryId: ''
             }
         },
         methods: {

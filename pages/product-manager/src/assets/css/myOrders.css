@@ -1,0 +1,10 @@
+.order-sort {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .order-sort a {
+    text-decoration: none;
+    color: #2c526a;
+    font-size: 1.2em; }
+    .order-sort a i {
+      padding-right: 5px;
+      font-size: 1.5em; }

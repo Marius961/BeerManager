@@ -1,0 +1,15 @@
+@import "vars";
+
+.order-sort {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  a {
+    text-decoration: none;
+    color: $accentColor;
+    font-size: 1.2em;
+    i {
+      padding-right: 5px;
+      font-size: 1.5em;
+    }
+  }
+}

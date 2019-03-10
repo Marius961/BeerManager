@@ -9,6 +9,7 @@ nav {
 .menu-btn-container {
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   height: 60px; }
   .menu-btn-container:hover {
     cursor: pointer; }
@@ -79,6 +80,7 @@ nav {
 .nav-dropdown {
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   height: 60px; }
   .nav-dropdown:hover {
     background-color: #1c2939;
@@ -97,7 +99,9 @@ nav {
   box-shadow: #dbdfe2 0 1px 2px 0, #dbdfe2 0 1px 3px 1px;
   transform: scaleY(0);
   transform-origin: top;
-  transition: transform 0.15s ease, max-height .5s; }
+  transition: transform 0.2s ease-in, opacity .17s;
+  opacity: 0;
+  pointer-events: none; }
   .nav-dropdown-menu a {
     text-decoration: none;
     color: black;
@@ -108,7 +112,9 @@ nav {
       background: #2c526a; }
 
 .nav-dropdown:hover + .nav-dropdown-menu, .nav-dropdown-menu:hover {
-  transform: scaleY(1); }
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: auto; }
 
 .cart-items-count {
   position: absolute;
@@ -150,6 +156,7 @@ nav {
 .sidebar {
   -moz-user-select: none;
   -webkit-user-select: none;
+  user-select: none;
   overflow-y: auto;
   overflow-x: hidden;
   background: white; }
@@ -243,7 +250,8 @@ nav {
 
 .remove-cart-item-btn {
   -moz-user-select: none;
-  -webkit-user-select: none; }
+  -webkit-user-select: none;
+  user-select: none; }
   .remove-cart-item-btn:hover {
     cursor: pointer; }
   .remove-cart-item-btn img {

@@ -1,0 +1,20 @@
+.order-row {
+  padding: 10px 15px;
+  border: 1px solid #2c526a;
+  border-radius: 6px; }
+  .order-row img {
+    max-width: 100%;
+    height: auto; }
+  .order-row a {
+    font-size: 1.2em;
+    color: #2c526a; }
+
+.order-info {
+  font-size: 1.2em; }
+
+.order-products-count {
+  font-size: 1.6em; }
+
+.status-header {
+  font-weight: bold;
+  font-size: 1.2em; }
