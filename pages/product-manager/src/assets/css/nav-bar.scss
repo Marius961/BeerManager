@@ -401,3 +401,18 @@ nav {
     margin-left: 0;
   }
 }
+
+.home-btn {
+  text-decoration: none;
+  text-align: end;
+  font-size: 32px;
+  color: $accentColor;
+  margin-right: 3px;
+  padding: 10px;
+  border-radius: 0 6px 6px 0;
+  transition: all .3s;
+  &:hover {
+    color: white;
+    background: $accentColor;
+  }
+}

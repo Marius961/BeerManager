@@ -37,7 +37,7 @@
                                     <div class="row no-gutters">
                                         <router-link to="/my-orders" class="col-12">Мої замовлення</router-link>
                                         <router-link to="/received-orders" class="col-12">Отримані замовлення</router-link>
-                                        <a class="col-12" href="#">Мої товари</a>
+                                        <router-link to="/my-products" class="col-12">Мої товари</router-link>
                                         <router-link to="/add-product" class="col-12" href="#">Додати товар</router-link>
                                         <router-link to="/add-category" class="col-12" href="#">Додати категорію/підкатегорію</router-link>
                                         <hr class="w-100 m-1">
@@ -105,10 +105,8 @@
                     <div class="row no-gutters">
                         <div class="col-12">
                             <div class="row menu-title-bar align-items-center">
-                                <router-link to="/" class="col-2 pb-2">
-                                    <img src="../assets/img/nav-bar/home.png" alt="">
-                                </router-link>
-                                <div class="col">
+                                <router-link to="/" class="col-2 fas fa-home home-btn"></router-link>
+                                <div class="col p-0 pt-2">
                                     <h4>Меню</h4>
                                 </div>
                                 <div class="col-2 pb-2 d-md-none" @click="closeSideBar">

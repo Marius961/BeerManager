@@ -21,8 +21,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
         <hr class="w-100 m-1 mt-0">
         <div class="row align-items-start justify-content-between pl-3 pr-3">
@@ -160,28 +158,5 @@
 
 <style scoped>
     @import "../assets/css/orderRow.css";
-
-    .scale-enter-active {
-        transition: opacity .7s, border .25s, margin 25s, padding .25s, font-size .25s, height .25s;
-    }
-
-    .scale-leave-active {
-        transition: opacity .25s, border .7s, margin .7s, padding .7s, font-size .7s, height .25s;
-    }
-
-    .scale-enter, .scale-leave-to {
-        padding: 0;
-        border: 0;
-        font-size: 0;
-        opacity: 0;
-    }
-
-    .scale-enter {
-        height: 0;
-        margin: 0;
-    }
-
-    .scale-leave-to {
-        margin: -30px;
-    }
+    @import "../assets/css/transitions.css";
 </style>

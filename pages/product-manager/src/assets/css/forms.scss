@@ -1,0 +1,24 @@
+@import "vars";
+
+.form-group {
+  position: relative;
+  i {
+    position: absolute;
+    color: #bfbfbf;
+    height: 40px;
+    line-height: 40px;
+    border-right: 1px solid lightgrey;
+  }
+  input {
+    outline: none;
+    height: 40px;
+    padding: 10px 10px 10px 58px;
+    background: #ebebeb;
+    border: 0;
+  }
+
+  label {
+    font-size: 1.2em;
+    font-weight: lighter;
+  }
+}

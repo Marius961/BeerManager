@@ -10,6 +10,10 @@ import AddProduct from '../pages/product/addProduct'
 import AddCategory from '../pages/addCategory'
 import MyOrders from '../pages/MyOrders'
 import ReceivedOrders from '../pages/ReceivedOrders'
+import MyProducts from '../pages/MyProducts'
+import Auth from '../pages/Auth'
+import Registration from '../components/Registration'
+import Login from '../components/Login'
 
 Vue.use(Router);
 
@@ -55,5 +59,25 @@ export default new Router({
       path: '/received-orders',
       component: ReceivedOrders
     },
+    {
+      path: '/my-products',
+      component: MyProducts
+    },
+    {
+      path: '/auth',
+      component: Auth,
+      redirect: '/auth/login',
+      children: [
+        {
+          path: 'registration',
+          component: Registration
+        },
+        {
+          path: 'login',
+          component: Login
+        },
+      ]
+    },
+
   ]
 })

@@ -299,3 +299,15 @@ nav {
 
   .show-sidebar {
     margin-left: 0; } }
+.home-btn {
+  text-decoration: none;
+  text-align: end;
+  font-size: 32px;
+  color: #2c526a;
+  margin-right: 3px;
+  padding: 10px;
+  border-radius: 0 6px 6px 0;
+  transition: all .3s; }
+  .home-btn:hover {
+    color: white;
+    background: #2c526a; }

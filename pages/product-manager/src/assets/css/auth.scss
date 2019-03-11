@@ -1,0 +1,31 @@
+@import "vars";
+
+.form-box {
+  overflow: hidden;
+
+  border: 1px solid lightgrey;
+}
+
+.form-tab {
+  text-decoration: none;
+  padding: 15px 10px;
+  font-size: 1.4em;
+  background: #dfdfdf;
+  transition: all .3s;
+  color: black;
+
+  &:hover {
+    background: #b9b9b9;
+  }
+}
+
+.tab-active {
+  background: white;
+}
+
+@media all and(min-width: 576px) {
+  .form-box {
+    border-radius: 8px;
+    margin-top: 100px;
+  }
+}

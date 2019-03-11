@@ -1,6 +1,7 @@
 html > body {
   padding: 0;
   margin: 0;
+  height: 100%;
   font-family: "Roboto", serif; }
 
 .cards-bar {
@@ -434,3 +435,9 @@ html > body {
       border: 0; }
   .p-btn-danger:hover {
     background: #ff2823; }
+
+.show-link {
+  color: #2c526a;
+  font-size: 1.1em;
+  padding: 15px;
+  text-decoration: none; }
