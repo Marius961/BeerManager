@@ -147,8 +147,8 @@
                                 <label for="search" class="col-12 d-md-none">Пошук по сайту</label>
                                 <input id="search" class="col-10" type="search">
                                 <span class="col-2 text-center">
-                <img src="../assets/img/nav-bar/search.png" alt="">
-              </span>
+                                     <img src="../assets/img/nav-bar/search.png" alt="">
+                                </span>
                             </div>
                         </div>
                     </div>

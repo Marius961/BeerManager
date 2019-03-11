@@ -1,13 +1,10 @@
 @import "vars";
 
 .order-row {
-  padding: 10px 15px;
   border: 1px solid $accentColor;
   border-radius: 6px;
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+
+
 
   a {
     font-size: 1.2em;
@@ -23,7 +20,59 @@
   font-size: 1.6em;
 }
 
-.status-header {
+.products-count {
   font-weight: bold;
   font-size: 1.2em;
+
+  i {
+    font-size: 2.5em;
+    padding-right: 15px;
+  }
+}
+
+.order-products-btn {
+  color: grey;
+  &:hover, &:hover .b-overlay {
+    display: flex;
+  }
+}
+
+
+.b-overlay {
+  border-radius: 6px;
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.47);
+}
+
+.show-link {
+  font-size: 1.1em;
+  padding: 15px;
+  text-decoration: none;
+}
+
+.comment-segment {
+  padding: 15px;
+  background: #d3d3d3;
+}
+
+.order-items-list {
+  background: #F2F2F2;
+  font-size: 1.2em;
+}
+
+.list-header {
+  padding: 10px;
+}
+
+.order-list-item {
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
 }

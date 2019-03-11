@@ -330,7 +330,6 @@ html > body {
   border-radius: 6px; }
 
 .p-btn {
-  margin: 5px;
   background: #d1d1d1;
   padding: 5px 10px;
   -webkit-border-radius: 6px;
@@ -354,7 +353,6 @@ html > body {
       border: 0; }
 
 .p-btn-primary {
-  margin: 5px;
   background: #d1d1d1;
   padding: 5px 10px;
   -webkit-border-radius: 6px;
@@ -382,7 +380,6 @@ html > body {
     background: #1d3747; }
 
 .p-btn-secondary {
-  margin: 5px;
   background: #d1d1d1;
   padding: 5px 10px;
   -webkit-border-radius: 6px;
@@ -412,7 +409,6 @@ html > body {
     color: white; }
 
 .p-btn-danger {
-  margin: 5px;
   background: #d1d1d1;
   padding: 5px 10px;
   -webkit-border-radius: 6px;
