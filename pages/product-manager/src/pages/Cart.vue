@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-end" v-if="sellersWithProducts.length > 0">
+    <div class="row justify-content-sm-end" v-if="sellersWithProducts.length > 0">
       <router-link tag="button" to="/create-order" class="col-12 col-sm-auto  create-order-btn" :disabled="isReadyToOrder">Створити замовлення</router-link>
     </div>
   </main>

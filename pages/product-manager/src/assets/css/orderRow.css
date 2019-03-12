@@ -48,5 +48,6 @@
   padding: 10px; }
 
 .order-list-item {
+  background: #dedede;
   padding: 10px;
   border-bottom: 1px solid lightgrey; }

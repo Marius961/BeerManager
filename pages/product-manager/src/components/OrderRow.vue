@@ -27,14 +27,14 @@
             <transition name="scale">
                 <div class="col-12 order-items-list" v-if="isShowOrderItems">
                     <div class="row list-header">
-                        <div class="col-6 font-weight-bold text-center">Назва</div>
-                        <div class="col-4 font-weight-bold text-center">Кількість</div>
-                        <div class="col-2 font-weight-bold text-center">Ціна</div>
+                        <div class="col-12 col-md-6 font-weight-bold text-center">Назва</div>
+                        <div class="col-md-4 d-none d-md-block font-weight-bold text-center">Кількість</div>
+                        <div class="col-md-2 d-none d-md-block font-weight-bold text-center">Ціна</div>
                     </div>
                     <div class="row order-list-item">
-                        <div class="col-6 text-center">Молоко домашнє</div>
-                        <div class="col-4 text-center">32літри</div>
-                        <div class="col-2 text-center">500грн</div>
+                        <div class="col-12 col-md-6 text-center">Молоко домашнє</div>
+                        <div class="col-6 col-md-4 text-center">32літри</div>
+                        <div class="col-6 col-md-2 text-center">99999999</div>
                     </div>
                 </div>
             </transition>

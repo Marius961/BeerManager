@@ -27,17 +27,4 @@
 <style scoped>
     @import "../assets/css/auth.css";
     @import "../assets/css/transitions.css";
-
-    .fadeHeight-enter-active,
-    .fadeHeight-leave-active {
-        transition: all .5s;
-        max-height: 600px;
-    }
-    .fadeHeight-enter,
-    .fadeHeight-leave-to
-    {
-        margin: -20px;
-        opacity: 0;
-        max-height: 0;
-    }
 </style>

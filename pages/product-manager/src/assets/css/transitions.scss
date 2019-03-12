@@ -21,3 +21,17 @@
 .scale-leave-to {
   margin: -30px;
 }
+
+
+.fadeHeight-enter-active,
+.fadeHeight-leave-active {
+  transition: all .5s;
+  max-height: 600px;
+}
+.fadeHeight-enter,
+.fadeHeight-leave-to
+{
+  margin: -20px;
+  opacity: 0;
+  max-height: 0;
+}

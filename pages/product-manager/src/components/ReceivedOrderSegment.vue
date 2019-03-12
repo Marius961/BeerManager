@@ -3,7 +3,7 @@
         <div class="col-12 col-md-auto p-0 m-0">
             <div class="row no-gutters">
                 <div class="col-12 col-sm-6 col-md-auto">
-                    <div class="row p-1 pl-3 pr-3">
+                    <div class="row p-1 pr-sm-3">
                         <button class="col-12 p-btn p-btn-primary">
                             <i class="fas fa-check"></i>
                             Прийняти
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 col-md-auto">
-                    <div class="row p-1 pl-3 pr-3">
+                    <div class="row p-1 pl-sm-3">
                         <button class="col-12 p-btn p-btn-danger">
                             <i class="fas fa-times"></i>
                             Відхилити
