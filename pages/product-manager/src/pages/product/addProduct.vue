@@ -13,11 +13,11 @@
             </label>
             <div class="col-12 col-md-6 col-lg-8">
                 <div class="row">
-                    <div class="col-12 f-form-group">
+                    <div class="col-12 f-form-group-2">
                         <label for="nameInput">Назва товару</label>
                         <input type="text" v-model="name" id="nameInput">
                     </div>
-                    <div class="col-12 col-sm-6 f-form-group">
+                    <div class="col-12 col-sm-6 f-form-group-2">
                         <div class="row no-gutters">
                             <label class="col-12" for="price">Ціна за одиницю</label>
                             <div class="col-12">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-6 f-form-group">
+                    <div class="col-12 col-sm-6 f-form-group-2">
                         <div class="row no-gutters">
                             <label class="col-12 pl-4" for="measurementUnit">Одиниці</label>
                             <div class="col-12">
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-sm-6 f-form-group p-4">
+            <div class="col-12 col-sm-6 f-form-group-2 p-4">
                 <div class="row">
                     <label class="col-12" for="categories">Виберіть категорю</label>
                     <select v-model="selectedCategory" class="col-12" id="categories">
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="w-100"></div>
-            <div class="col-12 col-sm-6 f-form-group p-4" v-if="isCategorySelected">
+            <div class="col-12 col-sm-6 f-form-group-2 p-4" v-if="isCategorySelected">
                 <div class="row">
                     <label class="col-12" for="subcategories">Виберіть категорю</label>
                     <select v-model="selectedSubcategory" class="col-12" id="subcategories">
@@ -73,13 +73,13 @@
                     </select>
                 </div>
             </div>
-            <div class="col-12 f-form-group">
+            <div class="col-12 f-form-group-2">
                 <label for="description">Опис</label>
                 <textarea rows="5" v-model="description" id="description"></textarea>
             </div>
             <div class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-sm-auto text-center f-submit">Додати товар</div>
+                <div class="row mt-2 justify-content-center-end">
+                    <button type="submit" class="col-12 col-sm-auto text-center p-btn p-btn-primary p-2">Додати товар</button>
                 </div>
             </div>
         </div>
@@ -114,15 +114,6 @@
                 if (e.target.files && e.target.files[0]) {
 
                     this.imageSrc = URL.createObjectURL(e.target.files[0]);
-
-                    // let reader = new FileReader();
-                    //
-                    // reader.onload = function(e2) {
-                    //     this.imageSrc = e2.target.result;
-                    //
-                    //     alert(this.imageSrc)
-                    // };
-                    // reader.readAsDataURL(e.target.files[0]);
                 }
             }
         }
@@ -131,5 +122,5 @@
 
 <style scoped>
     @import "../../assets/css/addProduct.css";
-    @import "../../assets/css/inputs.css";
+    @import "../../assets/css/forms.css";
 </style>

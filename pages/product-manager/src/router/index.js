@@ -14,6 +14,8 @@ import MyProducts from '../pages/MyProducts'
 import Auth from '../pages/Auth'
 import Registration from '../components/Registration'
 import Login from '../components/Login'
+import EditProduct from '../pages/EditProduct'
+
 
 Vue.use(Router);
 
@@ -62,6 +64,10 @@ export default new Router({
     {
       path: '/my-products',
       component: MyProducts
+    },
+    {
+      path: '/edit-product/:id',
+      component: EditProduct
     },
     {
       path: '/auth',

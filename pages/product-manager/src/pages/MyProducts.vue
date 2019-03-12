@@ -11,9 +11,9 @@
                     <div class="col-auto action-btn">
                         <i class="fas fa-trash-alt"></i>
                     </div>
-                    <div class="col-auto action-btn">
+                    <router-link tag="div" to="/edit-product/1" class="col-auto action-btn">
                         <i class="fas fa-edit"></i>
-                    </div>
+                    </router-link>
                 </div>
                 <hr class="w-100 m-2 ml-3 mr-3">
             </div>

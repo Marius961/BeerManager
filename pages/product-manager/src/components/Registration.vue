@@ -1,6 +1,6 @@
 <template>
     <form class="col-12 pl-5 pr-5 pt-3">
-        <div class="row form-group">
+        <div class="row f-form-group">
             <label class="col-12" for="username">Ім‘я користувача</label>
             <div class="col-12">
                 <div class="row align-items-center">
@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group">
+        <div class="row f-form-group">
             <label class="col-12" for="email">Емейл</label>
             <div class="col-12">
                 <div class="row align-items-center">
@@ -18,7 +18,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group">
+        <div class="row f-form-group">
             <label class="col-12" for="fullName">П. І. Б.</label>
             <div class="col-12">
                 <div class="row align-items-center">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group">
+        <div class="row f-form-group">
             <label class="col-12" for="password">Пароль</label>
             <div class="col-12">
                 <div class="row align-items-center">
@@ -36,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="row form-group">
+        <div class="row f-form-group">
             <label class="col-12" for="confirmPassword">Підтвердіть пароль</label>
             <div class="col-12">
                 <div class="row align-items-center">
