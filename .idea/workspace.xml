@@ -1,58 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="ProductManager:war exploded" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bf79b8b-cf51-4810-a6d3-50db104505fc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_2_6_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_4_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_3_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_javax_servlet_jsp_api_2_3_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_12.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_8_17.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_8_17.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_6_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_6_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_3_6_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_3_6_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_3_6_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_7_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_7_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_7_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_3_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_3_1_1.xml" afterDir="false" />
+    <list default="true" id="c9cc2040-6ea0-40c0-8221-6aa9285e557d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/DeletionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/UserRegistrationFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/security/SecurityConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProductManager_war.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ProductManager_war_exploded.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/11a69a8d-acd7-4605-ac4d-3ffffa181472/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3cc846ab-3e7d-4216-97ba-fc3fff8f8205.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3cc846ab-3e7d-4216-97ba-fc3fff8f8205/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5abb7bf9-9af6-45cb-913d-b17dc5fad7f4/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_pool_commons_pool_1_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_13.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_11_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_3_11_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_7_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_0_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_3_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_2_1_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_xerial_sqlite_jdbc_3_21_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/resourceBundles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductManager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductManager.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/product-manager/src/assets/css/loading.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/ProductManager.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/untitled.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/css/orders.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/css/users.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/images/s1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/images/s2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/images/s3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/createOrder.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/myOrders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/register.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/ProductManagerPages/views/users.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductManager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ProductManager_war_exploded/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/containers/SimpleStringContainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/OrderDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/UserDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/OrderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/models/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/models/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/models/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/security-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/accessDenied.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/order.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/orders.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userData.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/animations.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/orders.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/products.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/users.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/images/plus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/userOrders.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/locale/messages.properties" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -62,119 +156,28 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="productmanager@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="productmanager@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="productmanager@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="productmanager: schema" type="c314c289:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="productmanager@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="productmanager: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="users: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-    </expand>
-    <select />
-  </component>
-  <component name="ErrorTreeViewConfiguration">
-    <option name="autoscrollToSource" value="true" />
-    <option name="hideWarnings" value="true" />
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="true" />
-    <option name="HIDE_WARNINGS" value="true" />
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/MainController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="14" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="1323">
+              <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/security-config.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AuthController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3108">
-              <caret line="148" selection-start-line="148" selection-end-line="165" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/containers/SimpleStringContainer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+            <state relative-caret-position="378">
+              <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,125 +187,33 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="spring-beans.schema" />
-        <option value="Interface" />
-        <option value="jsf" />
-        <option value="Jsp File" />
-        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>showCurrentDateOrders</find>
-      <find>selectTab</find>
-      <find>cssload-container</find>
-      <find>hasErrors</find>
-      <find>/user</find>
-      <find>getAllProducts</find>
-      <find>currentUser</find>
-      <find>p-3</find>
-      <find>container-div&quot;</find>
-      <find>container-div</find>
-      <find>tab</find>
-      <find>item</find>
-      <find>eq</find>
-      <find>System</find>
-      <find>btn</find>
-      <find>btn-label</find>
-      <find>main.css</find>
-      <find>swai</find>
-      <find>alert</find>
-      <find>remove</find>
-      <find>removePro</find>
-      <find>sendForm</find>
-      <find>sendRequest</find>
-      <find>sqlite</find>
-      <find>jdbc</find>
-      <find>DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY</find>
-      <find>configureGlobal</find>
-      <find>error</find>
-      <find>main-div</find>
-      <find>dataSource</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Users\mapiy\IdeaProjects\WebAppProject\src\main\java</dir>
-      <dir>C:\Users\mapiy\IdeaProjects\WebAppProject</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/registration.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/userData.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/products.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-orders.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/userData.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/accessDenied.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrderController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/validators/OrderValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/loginForm.js" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/validators/ProductValidator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/CustomJdbcDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginRestController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/products.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/all-orders.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/products.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/my-profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/my-orders.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/order.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/registration.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/orders.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/user-profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/users.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/security-config.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/locale/messages.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/main.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/errors/404-error.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/registration.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/models/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/models/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/models/OrderItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/models/Order.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/OrderDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/OrderDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/Application.java" />
+        <option value="$PROJECT_DIR$/src/main/java/AuthController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Role.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/UserRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/config/CorsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/NotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/security/SecurityConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AuthController.java" />
       </list>
     </option>
-  </component>
-  <component name="LogFilters">
-    <option name="FILTER_ERRORS" value="false" />
-    <option name="FILTER_WARNINGS" value="true" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
-    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
@@ -311,57 +222,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="MavenProjectNavigator">
-    <treeState>
-      <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="WebAppProject Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="WebAppProject Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="WebAppProject Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Plugins" type="7aea1407:MavenProjectsStructure$PluginsNode" />
-          <item name="clean" type="36feed69:MavenProjectsStructure$PluginNode" />
-        </path>
-      </expand>
-      <select />
-    </treeState>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="y" value="-11" />
-    <option name="width" value="1940" />
-    <option name="height" value="1052" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>Android</id>
-          </State>
-          <State>
-            <id>CorrectnessLintAndroid</id>
-          </State>
-          <State>
-            <id>LintAndroid</id>
-          </State>
-          <State>
-            <id>PerformanceLintAndroid</id>
-          </State>
-          <State>
-            <id>Plugin DevKit</id>
-          </State>
-        </expanded-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1051" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -371,112 +236,110 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ProductManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProductManager" type="462c0819:PsiDirectoryNode" />
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="security" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql&#10;mysql" />
-    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="productmanager" />
-    <property name="SearchEverywhereHistoryKey" value="DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY&#9;PSI&#9;JAVA://org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl#DEF_GROUP_AUTHORITIES_BY_USERNAME_QUERY&#10;slf4j&#9;FILE&#9;file://C:/Users/mapiy/IdeaProjects/ProductManager/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_12.xml&#10;WEB_002dINF&#9;null&#9;null&#10;project&#9;ACTION&#9;NewProject&#10;libraries&#9;FILE&#9;file://C:/Users/mapiy/IdeaProjects/WebAppProject/.idea/libraries&#10;downloads&#9;ACTION&#9;Maven.DownloadAllSources&#10;librar&#9;ACTION&#9;Editor.JSLibrariesMenu.LibraryList" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536587043071" />
-    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)&#10;SQL Server (Microsoft)" />
-    <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552489083425" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.42528737" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\ProductManager\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views\admin-views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views\user-views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views\all-views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views\errors" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\images" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\WEB-INF\views" />
-      <recent name="C:\Users\mapiy\IdeaProjects\ProductManager\src\main\webapp\resources\css" />
-      <recent name="C:\Users\mapiy\IdeaProjects\WebAppProject\src\main\webapp\WEB-INF\lib" />
-      <recent name="C:\Users\mapiy\IdeaProjects\WebAppProject\src\main\webapp\resources\css" />
+      <recent name="C:\Users\mariu\Projects\product-manager-api\src\main\java\ua\product\manager\exceptions" />
+      <recent name="C:\Users\mariu\Projects\product-manager-api\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -491,945 +354,239 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.PM Server">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="product-manager-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ua.product.manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ua.product.manager.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PM Server" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.0.0" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="ProductManager:war exploded">
-          <settings />
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="DOMAIN" value="productManager" />
-        <option name="PRESERVE" value="false" />
-        <option name="COMPATIBILITY" value="false" />
-        <option name="VIRTUAL_SERVER" />
-        <option name="USERNAME" value="Marius" />
-        <option name="PASSWORD" value="m32s26" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="GlassFish" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="9009" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProductManager:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="WebAppProject" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.11" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
-      <option name="UPDATING_POLICY" value="restart-server" />
-      <deployment>
-        <artifact name="ProductManager:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_(1)_ProductManager" />
-        <option name="HTTP_PORT" value="8081" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="58631" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProductManager:war exploded" />
-        </option>
-      </method>
-    </configuration>
-    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.24" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="9.0">
-      <option name="OPEN_IN_BROWSER_URL" value="https://localhost:8443/" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
-      <deployment>
-        <artifact name="ProductManager:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ProductManager_4" />
-        <option name="HTTP_PORT" value="8081" />
-        <option name="HTTPS_PORT" value="8443" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64286" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="ProductManager:war exploded" />
-        </option>
-      </method>
-    </configuration>
-  </component>
-  <component name="SpringGeneralSettings">
-    <option name="allowAutoConfigurationMode" value="true" />
-  </component>
-  <component name="SshConsoleOptionsProvider">
-    <option name="myEncoding" value="UTF-8" />
-    <option name="myConnectionType" value="NONE" />
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2bf79b8b-cf51-4810-a6d3-50db104505fc" name="Default" comment="" />
-      <created>1518103450968</created>
+      <changelist id="c9cc2040-6ea0-40c0-8221-6aa9285e557d" name="Default Changelist" comment="" />
+      <created>1552486869328</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1518103450968</updated>
-      <workItem from="1518103452445" duration="1131000" />
-      <workItem from="1518104586495" duration="34000" />
-      <workItem from="1518104651339" duration="3817000" />
-      <workItem from="1518108594920" duration="1587000" />
-      <workItem from="1518159424595" duration="56000" />
-      <workItem from="1518182293040" duration="320000" />
-      <workItem from="1518182794215" duration="570000" />
-      <workItem from="1518203976538" duration="6159000" />
-      <workItem from="1518210168630" duration="37000" />
-      <workItem from="1518210233661" duration="32000" />
-      <workItem from="1518253409090" duration="14065000" />
-      <workItem from="1518271543430" duration="12000" />
-      <workItem from="1518288376708" duration="2008000" />
-      <workItem from="1518347945779" duration="1976000" />
-      <workItem from="1518350334852" duration="291000" />
-      <workItem from="1518418578220" duration="843000" />
-      <workItem from="1518431511770" duration="10871000" />
-      <workItem from="1518442523048" duration="211000" />
-      <workItem from="1518442760086" duration="5000" />
-      <workItem from="1518445553577" duration="6956000" />
-      <workItem from="1518701740448" duration="3000" />
-      <workItem from="1518701880228" duration="36000" />
-      <workItem from="1518706159411" duration="971000" />
-      <workItem from="1518717889675" duration="506000" />
-      <workItem from="1518718423802" duration="90000" />
-      <workItem from="1518762320472" duration="2591000" />
-      <workItem from="1518783733029" duration="98000" />
-      <workItem from="1518786444811" duration="5477000" />
-      <workItem from="1518792302474" duration="238000" />
-      <workItem from="1519034852776" duration="98000" />
-      <workItem from="1519216572123" duration="187000" />
-      <workItem from="1519479417503" duration="72000" />
-      <workItem from="1519479517660" duration="95000" />
-      <workItem from="1519650645340" duration="2062000" />
-      <workItem from="1519815716325" duration="98000" />
-      <workItem from="1520585735190" duration="452000" />
-      <workItem from="1520586191538" duration="77000" />
-      <workItem from="1520586407759" duration="902000" />
-      <workItem from="1520791257607" duration="1060000" />
-      <workItem from="1520856186941" duration="1165000" />
-      <workItem from="1520857950604" duration="1325000" />
-      <workItem from="1520859355058" duration="20400000" />
-      <workItem from="1520918109223" duration="3288000" />
-      <workItem from="1520933282915" duration="24807000" />
-      <workItem from="1520958971797" duration="4089000" />
-      <workItem from="1520965822442" duration="496000" />
-      <workItem from="1520966529891" duration="396000" />
-      <workItem from="1520968755354" duration="1738000" />
-      <workItem from="1521024925459" duration="5378000" />
-      <workItem from="1521209290750" duration="223000" />
-      <workItem from="1521209611002" duration="26000" />
-      <workItem from="1521462882557" duration="11000" />
-      <workItem from="1521462913047" duration="17000" />
-      <workItem from="1521463072223" duration="2000" />
-      <workItem from="1521463411375" duration="127000" />
-      <workItem from="1521463571294" duration="81000" />
-      <workItem from="1521469424518" duration="620000" />
-      <workItem from="1521561933635" duration="415000" />
-      <workItem from="1521565297472" duration="1384000" />
-      <workItem from="1521571338802" duration="76000" />
-      <workItem from="1521630117285" duration="2498000" />
-      <workItem from="1521641138668" duration="1073000" />
-      <workItem from="1521642758831" duration="581000" />
-      <workItem from="1521645261074" duration="1307000" />
-      <workItem from="1521646687010" duration="1169000" />
-      <workItem from="1521711672475" duration="18000" />
-      <workItem from="1521712196734" duration="10150000" />
-      <workItem from="1521722639094" duration="3499000" />
-      <workItem from="1521726895589" duration="1059000" />
-      <workItem from="1521728228784" duration="4184000" />
-      <workItem from="1521732504283" duration="98000" />
-      <workItem from="1521735949595" duration="1153000" />
-      <workItem from="1521737237301" duration="799000" />
-      <workItem from="1521807871603" duration="12635000" />
-      <workItem from="1521884295268" duration="3699000" />
-      <workItem from="1521897539180" duration="599000" />
-      <workItem from="1521908370517" duration="7453000" />
-      <workItem from="1521978230657" duration="2053000" />
-      <workItem from="1522059062277" duration="14480000" />
-      <workItem from="1522172425484" duration="156000" />
-      <workItem from="1522233059018" duration="26000" />
-      <workItem from="1522236472557" duration="1270000" />
-      <workItem from="1522328573615" duration="69000" />
-      <workItem from="1522328681575" duration="12000" />
-      <workItem from="1522331021266" duration="2208000" />
-      <workItem from="1522334789372" duration="69000" />
-      <workItem from="1522334882686" duration="773000" />
-      <workItem from="1522337338153" duration="1614000" />
-      <workItem from="1522343249489" duration="3000" />
-      <workItem from="1522397529446" duration="222000" />
-      <workItem from="1522398074523" duration="160000" />
-      <workItem from="1522401081229" duration="1050000" />
-      <workItem from="1522666782609" duration="2085000" />
-      <workItem from="1522855153671" duration="249000" />
-      <workItem from="1522857642289" duration="154000" />
-      <workItem from="1522859182707" duration="4000" />
-      <workItem from="1523272600914" duration="94000" />
-      <workItem from="1523274605030" duration="2158000" />
-      <workItem from="1523277549217" duration="913000" />
-      <workItem from="1523352659847" duration="2680000" />
-      <workItem from="1523357349273" duration="1304000" />
-      <workItem from="1523359804511" duration="131000" />
-      <workItem from="1523360285966" duration="523000" />
-      <workItem from="1523361197970" duration="1317000" />
-      <workItem from="1523374424457" duration="723000" />
-      <workItem from="1523530537186" duration="3000" />
-      <workItem from="1523530563174" duration="12000" />
-      <workItem from="1523548551282" duration="31000" />
-      <workItem from="1523709455280" duration="24000" />
-      <workItem from="1524155731513" duration="1696000" />
-      <workItem from="1524215443373" duration="4622000" />
-      <workItem from="1524224369426" duration="1066000" />
-      <workItem from="1524233438348" duration="7658000" />
-      <workItem from="1524241130767" duration="402000" />
-      <workItem from="1524394533824" duration="14000" />
-      <workItem from="1524485687511" duration="3004000" />
-      <workItem from="1524498286836" duration="2013000" />
-      <workItem from="1524565556913" duration="8965000" />
-      <workItem from="1524582192178" duration="3905000" />
-      <workItem from="1524594981417" duration="41000" />
-      <workItem from="1524650352442" duration="11172000" />
-      <workItem from="1524662025069" duration="5225000" />
-      <workItem from="1524741079728" duration="7074000" />
-      <workItem from="1524748428674" duration="6210000" />
-      <workItem from="1524839993552" duration="588000" />
-      <workItem from="1524908234487" duration="6672000" />
-      <workItem from="1525172953403" duration="687000" />
-      <workItem from="1525268260675" duration="599000" />
-      <workItem from="1525279209799" duration="56000" />
-      <workItem from="1525281278441" duration="277000" />
-      <workItem from="1525282139364" duration="317000" />
-      <workItem from="1525282990794" duration="44000" />
-      <workItem from="1525325415825" duration="11000" />
-      <workItem from="1525325892287" duration="4000" />
-      <workItem from="1525354108102" duration="11000" />
-      <workItem from="1529309573480" duration="1095000" />
-      <workItem from="1529406507993" duration="4562000" />
-      <workItem from="1529417560679" duration="1312000" />
-      <workItem from="1529482160867" duration="4171000" />
-      <workItem from="1529486474462" duration="6000" />
-      <workItem from="1529573627535" duration="10393000" />
-      <workItem from="1529586108467" duration="813000" />
-      <workItem from="1529586942881" duration="17305000" />
-      <workItem from="1529604512459" duration="3201000" />
-      <workItem from="1529665740253" duration="6895000" />
-      <workItem from="1529744977076" duration="9691000" />
-      <workItem from="1529755241912" duration="707000" />
-      <workItem from="1529768483703" duration="2641000" />
-      <workItem from="1529917071707" duration="4500000" />
-      <workItem from="1529922736308" duration="4345000" />
-      <workItem from="1529927466802" duration="2000" />
-      <workItem from="1529927496906" duration="1000" />
-      <workItem from="1529931405219" duration="105000" />
-      <workItem from="1529945731196" duration="1725000" />
-      <workItem from="1530016769556" duration="9748000" />
-      <workItem from="1530030186868" duration="239000" />
-      <workItem from="1530085583041" duration="11433000" />
-      <workItem from="1530103388495" duration="14498000" />
-      <workItem from="1530175396070" duration="2616000" />
-      <workItem from="1530188686903" duration="104000" />
-      <workItem from="1530188873345" duration="1115000" />
-      <workItem from="1530191289499" duration="534000" />
-      <workItem from="1530191934165" duration="194000" />
-      <workItem from="1530193806967" duration="4856000" />
-      <workItem from="1530198719307" duration="5283000" />
-      <workItem from="1530262399582" duration="96000" />
-      <workItem from="1530446078535" duration="592000" />
-      <workItem from="1530458753076" duration="136000" />
-      <workItem from="1530458983456" duration="484000" />
-      <workItem from="1530554148626" duration="11000" />
-      <workItem from="1530604162878" duration="994000" />
-      <workItem from="1530696688122" duration="4379000" />
-      <workItem from="1530709665544" duration="273000" />
-      <workItem from="1530773830984" duration="289000" />
-      <workItem from="1530774987133" duration="5366000" />
-      <workItem from="1530803981596" duration="882000" />
-      <workItem from="1530897169621" duration="5465000" />
-      <workItem from="1530902752813" duration="15000" />
-      <workItem from="1532520907884" duration="57000" />
-      <workItem from="1532943682456" duration="118000" />
-      <workItem from="1532943987007" duration="93000" />
-      <workItem from="1532944103903" duration="84000" />
-      <workItem from="1532944215691" duration="323000" />
-      <workItem from="1532944561620" duration="70000" />
-      <workItem from="1532944649148" duration="19000" />
-      <workItem from="1532944686797" duration="23000" />
-      <workItem from="1532945039404" duration="64000" />
-      <workItem from="1532945373635" duration="269000" />
-      <workItem from="1532945666287" duration="89000" />
-      <workItem from="1532945890892" duration="13000" />
-      <workItem from="1532946102036" duration="19000" />
-      <workItem from="1532946476610" duration="1069000" />
-      <workItem from="1532947713982" duration="72000" />
-      <workItem from="1532948806535" duration="936000" />
-      <workItem from="1532950046383" duration="983000" />
-      <workItem from="1532951054918" duration="32000" />
-      <workItem from="1532951369588" duration="486000" />
-      <workItem from="1532960787364" duration="895000" />
-      <workItem from="1532961935385" duration="237000" />
-      <workItem from="1532963146751" duration="1105000" />
-      <workItem from="1532964370857" duration="1059000" />
-      <workItem from="1532965579212" duration="943000" />
-      <workItem from="1533027058113" duration="1004000" />
-      <workItem from="1533028388865" duration="1117000" />
-      <workItem from="1533029606487" duration="884000" />
-      <workItem from="1533030870614" duration="1004000" />
-      <workItem from="1533032080485" duration="989000" />
-      <workItem from="1533033313593" duration="665000" />
-      <workItem from="1533034524193" duration="1178000" />
-      <workItem from="1533035737411" duration="1113000" />
-      <workItem from="1533039055998" duration="948000" />
-      <workItem from="1533040338337" duration="1031000" />
-      <workItem from="1533041607629" duration="160000" />
-      <workItem from="1533106023138" duration="1083000" />
-      <workItem from="1533107267329" duration="714000" />
-      <workItem from="1533112392616" duration="727000" />
-      <workItem from="1533115304186" duration="1007000" />
-      <workItem from="1533123982414" duration="983000" />
-      <workItem from="1533125189451" duration="1159000" />
-      <workItem from="1533126407878" duration="1121000" />
-      <workItem from="1533127719781" duration="637000" />
-      <workItem from="1533140804424" duration="896000" />
-      <workItem from="1533201595597" duration="1031000" />
-      <workItem from="1533202753092" duration="1025000" />
-      <workItem from="1533203961622" duration="1089000" />
-      <workItem from="1533205169345" duration="1152000" />
-      <workItem from="1533207186723" duration="997000" />
-      <workItem from="1533208541450" duration="1164000" />
-      <workItem from="1533209751435" duration="1105000" />
-      <workItem from="1533210963281" duration="421000" />
-      <workItem from="1533211523787" duration="255000" />
-      <workItem from="1533226766077" duration="1077000" />
-      <workItem from="1533228449949" duration="1124000" />
-      <workItem from="1533229670928" duration="476000" />
-      <workItem from="1533293556025" duration="1002000" />
-      <workItem from="1533294724704" duration="1165000" />
-      <workItem from="1533295929098" duration="729000" />
-      <workItem from="1533297322377" duration="1135000" />
-      <workItem from="1533298573694" duration="1175000" />
-      <workItem from="1533299787221" duration="1046000" />
-      <workItem from="1533301077989" duration="1180000" />
-      <workItem from="1533302301185" duration="1132000" />
-      <workItem from="1533303561733" duration="1159000" />
-      <workItem from="1533304763783" duration="863000" />
-      <workItem from="1533375987830" duration="1048000" />
-      <workItem from="1533377154833" duration="1116000" />
-      <workItem from="1533378363366" duration="1178000" />
-      <workItem from="1533379582708" duration="1132000" />
-      <workItem from="1533380796792" duration="1179000" />
-      <workItem from="1533382013620" duration="903000" />
-      <workItem from="1533383292653" duration="1126000" />
-      <workItem from="1533384505516" duration="977000" />
-      <workItem from="1533385768833" duration="1173000" />
-      <workItem from="1533387054709" duration="1156000" />
-      <workItem from="1533388261248" duration="1174000" />
-      <workItem from="1533389477583" duration="200000" />
-      <workItem from="1533389782862" duration="998000" />
-      <workItem from="1533392731654" duration="1089000" />
-      <workItem from="1533393938862" duration="1110000" />
-      <workItem from="1533395680367" duration="392000" />
-      <workItem from="1533473886734" duration="275000" />
-      <workItem from="1533547685973" duration="1046000" />
-      <workItem from="1533548842023" duration="1114000" />
-      <workItem from="1533550105792" duration="1146000" />
-      <workItem from="1533551323436" duration="1128000" />
-      <workItem from="1533552560841" duration="904000" />
-      <workItem from="1533564133397" duration="1118000" />
-      <workItem from="1533565301109" duration="1040000" />
-      <workItem from="1533566551145" duration="1133000" />
-      <workItem from="1533567783323" duration="1152000" />
-      <workItem from="1533568995109" duration="1178000" />
-      <workItem from="1533570204707" duration="666000" />
-      <workItem from="1533628185160" duration="1116000" />
-      <workItem from="1533629340155" duration="1138000" />
-      <workItem from="1533630559521" duration="998000" />
-      <workItem from="1533631964679" duration="848000" />
-      <workItem from="1533633663141" duration="1126000" />
-      <workItem from="1533634885516" duration="928000" />
-      <workItem from="1533636111179" duration="477000" />
-      <workItem from="1533638246261" duration="1031000" />
-      <workItem from="1533639454717" duration="1135000" />
-      <workItem from="1533640661283" duration="1187000" />
-      <workItem from="1533641877362" duration="820000" />
-      <workItem from="1533709869458" duration="1090000" />
-      <workItem from="1533711019413" duration="919000" />
-      <workItem from="1533712391390" duration="687000" />
-      <workItem from="1533713705019" duration="721000" />
-      <workItem from="1533728844162" duration="70000" />
-      <workItem from="1533729056386" duration="115000" />
-      <workItem from="1533729195794" duration="1151000" />
-      <workItem from="1533730535914" duration="38000" />
-      <workItem from="1533730604575" duration="39000" />
-      <workItem from="1533730669879" duration="53000" />
-      <workItem from="1533730752685" duration="543000" />
-      <workItem from="1533731621780" duration="796000" />
-      <workItem from="1533732475292" duration="46000" />
-      <workItem from="1533732549321" duration="209000" />
-      <workItem from="1533732784297" duration="24000" />
-      <workItem from="1533733324600" duration="25000" />
-      <workItem from="1533733421049" duration="6797000" />
-      <workItem from="1533747581157" duration="433000" />
-      <workItem from="1533748044724" duration="5452000" />
-      <workItem from="1533808450787" duration="1378000" />
-      <workItem from="1533810139372" duration="3000" />
-      <workItem from="1533810645094" duration="204000" />
-      <workItem from="1533811901387" duration="14000" />
-      <workItem from="1533840634822" duration="154000" />
-      <workItem from="1533884321691" duration="5766000" />
-      <workItem from="1533891945641" duration="3583000" />
-      <workItem from="1534150034119" duration="8617000" />
-      <workItem from="1534162078965" duration="3787000" />
-      <workItem from="1534238025743" duration="4780000" />
-      <workItem from="1534247524731" duration="9752000" />
-      <workItem from="1534323159068" duration="13217000" />
-      <workItem from="1534349578059" duration="1456000" />
-      <workItem from="1534353346842" duration="586000" />
-      <workItem from="1534353967053" duration="3145000" />
-      <workItem from="1534358115577" duration="2061000" />
-      <workItem from="1534360207768" duration="1893000" />
-      <workItem from="1534404276941" duration="15065000" />
-      <workItem from="1534423653671" duration="4172000" />
-      <workItem from="1534497882914" duration="5299000" />
-      <workItem from="1534599928447" duration="13738000" />
-      <workItem from="1534840312748" duration="11412000" />
-      <workItem from="1534853226567" duration="547000" />
-      <workItem from="1534943181714" duration="347000" />
-      <workItem from="1534943630460" duration="728000" />
-      <workItem from="1535958064324" duration="6029000" />
-      <workItem from="1536054776329" duration="2392000" />
-      <workItem from="1536059209031" duration="6120000" />
-      <workItem from="1536075298363" duration="11690000" />
-      <workItem from="1536121568116" duration="1313000" />
-      <workItem from="1536140539548" duration="683000" />
-      <workItem from="1536141505145" duration="1061000" />
-      <workItem from="1536142618759" duration="2979000" />
-      <workItem from="1536147312188" duration="5610000" />
-      <workItem from="1536415427185" duration="3778000" />
-      <workItem from="1536422603309" duration="3724000" />
-      <workItem from="1536428016297" duration="351000" />
-      <workItem from="1536499182201" duration="308000" />
-      <workItem from="1536577937675" duration="9097000" />
-      <workItem from="1538824952763" duration="1327000" />
-      <workItem from="1548068720290" duration="45000" />
-      <workItem from="1548069080944" duration="2724000" />
-      <workItem from="1550150652239" duration="70000" />
-      <workItem from="1550642551303" duration="45000" />
-      <workItem from="1550735239076" duration="48000" />
+      <updated>1552486869328</updated>
+      <workItem from="1552486870539" duration="2237000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="725559000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="2237000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2182285" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.2496382" />
-      <window_info id="Designer" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Image Layers" order="6" />
-      <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32392472" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4961489" weight="0.4784946" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5833333" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3266129" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32795697" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3252688" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5038511" side_tool="true" weight="0.47844228" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32258064" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32795697" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.32795697" />
-      <window_info anchor="bottom" id="Spring" order="13" weight="0.32795697" />
-      <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3293011" />
-      <window_info anchor="bottom" id="Database Console" order="15" weight="0.3266129" />
-      <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24903722" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3292683" />
-      <window_info anchor="right" id="Database" order="6" weight="0.27792042" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="CDI" order="9" />
-      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32991013" />
-      <window_info anchor="right" id="Bean Validation" order="11" weight="0.3292683" />
-      <window_info anchor="right" id="Maven" order="12" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23516643" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Image Layers" order="5" />
-      <window_info id="Web" order="6" side_tool="true" />
-      <window_info id="Favorites" order="7" side_tool="true" />
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Web" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24967907" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Spring" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32885906" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Java Enterprise" weight="0.32885906" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" weight="0.32885906" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49710566" weight="0.32859176" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997155" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32859176" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50289434" side_tool="true" weight="0.32859176" />
-      <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32859176" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.32859176" />
-      <window_info anchor="bottom" id="Java Enterprise" order="10" weight="0.32859176" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32859176" />
-      <window_info anchor="bottom" id="Spring" order="13" weight="0.32859176" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Bean Validation" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven Projects" order="4" weight="0.3299566" />
-      <window_info anchor="right" id="Database" order="5" weight="0.3299566" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="das://3f443328-0ee5-4648-8a39-4355783f5840/schema/productmanager/table/group_authorities" />
-    <entry file="das://3f443328-0ee5-4648-8a39-4355783f5840/schema/productmanager/table/groups" />
-    <entry file="das://3f443328-0ee5-4648-8a39-4355783f5840/schema/productmanager/table/products" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrderController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginController.java" />
-    <entry file="das://3f443328-0ee5-4648-8a39-4355783f5840/schema/productmanager/table/users" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/LoginRestController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/my-orders.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/order.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/products.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/loginForm.js">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/all-orders.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/products.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/animations.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/orders.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/products.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/orders.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-views/my-profile.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/user-profile.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/admin-views/users.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/locale/messages.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/users.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/registration.js" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/errors/404-error.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Role.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/all-views/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/images/404-page.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/dispatcher-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/main.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/OrderServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="41" column="47" lean-forward="true" selection-start-line="41" selection-start-column="47" selection-end-line="41" selection-end-column="47" />
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
           <folding>
-            <element signature="e#1323#1324#0" expanded="true" />
-            <element signature="e#1349#1350#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/repo/UserRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="67" selection-start-line="11" selection-start-column="67" selection-end-line="11" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="57" column="15" lean-forward="true" selection-start-line="57" selection-start-column="15" selection-end-line="57" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#649#650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/DeletionException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/NotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/exceptions/UserRegistrationFailedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/security/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="48" column="66" lean-forward="true" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/security/SecurityConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
-          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#244#245#0" expanded="true" />
+            <element signature="e#306#307#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/models/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/config/CorsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="34" selection-start-column="34" selection-end-column="34" />
+        <state relative-caret-position="630">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/models/Product.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="72">
+          <caret line="29" column="14" lean-forward="true" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/models/OrderItem.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        <state relative-caret-position="1323">
+          <caret line="130" column="5" selection-start-line="130" selection-start-column="5" selection-end-line="130" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/models/Order.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/AuthController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/ProductDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/interfaces/OrderDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="31" column="7" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/ProductDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/OrdersRestController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/dao/impls/OrderDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/impls/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3108">
-          <caret line="148" selection-start-line="148" selection-end-line="165" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/containers/SimpleStringContainer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/interfaces/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/config/security-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="378">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1439,12 +596,10 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>ProductManager:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1452,11 +607,11 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring (ProductManager)|Spring</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.42528737" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1464,11 +619,10 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
-          <last-edited>bootstrap</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.42528737" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1488,22 +642,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Web|ProductManager</last-edited>
+          <last-edited>product-manager-api</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1511,11 +655,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.fasterxml:classmate:1.3.1</last-edited>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.42528737" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
