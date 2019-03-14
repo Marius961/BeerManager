@@ -9,6 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import ua.product.manager.entities.User;
+import ua.product.manager.utils.JWTUtil;
 
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
@@ -51,15 +52,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             FilterChain chain,
                                             Authentication auth) {
 
-        final String authorities = auth.getAuthorities().stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.joining(","));
-        String token = JWT.create()
-                .withSubject(((User) auth.getPrincipal()).getUsername())
-                .withClaim("roles", authorities)
-                .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
-                .withIssuedAt(new Date(System.currentTimeMillis()))
-                .sign(HMAC512(SECRET.getBytes()));
+        JWTUtil jwtUtil = new JWTUtil();
+        String token = jwtUtil.generateToken(auth);
         res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
     }
 }

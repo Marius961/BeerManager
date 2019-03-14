@@ -3,6 +3,7 @@ package ua.product.manager.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import ua.product.manager.entities.Role;
 import ua.product.manager.security.JWTAuthenticationFilter;
 import ua.product.manager.security.JWTAuthorizationFilter;
 import ua.product.manager.services.UserService;
@@ -51,6 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/api/auth/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/categories", "/api/subcategories", "/api/subcategories/{id}").permitAll()
+                .antMatchers("/api/categories", "/api/subcategories**").hasAuthority(Role.ADMIN.getAuthority())
+                .antMatchers(HttpMethod.GET, "/img**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))
