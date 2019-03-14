@@ -14,12 +14,12 @@ public class Product {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     @JsonIgnore
     private User user;
 
-    @Column(name = "user_id", insertable = false, updatable = false)
-    private Long user_id;
+    @Column(name = "userId", insertable = false, updatable = false)
+    private Long userId;
 
     @NotBlank
     @Size(min = 4, max = 64, message = "Product name must be longer than 3 characters and shorter than 65 characters")
@@ -115,7 +115,7 @@ public class Product {
         this.subcategory = subcategory;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getUserId() {
+        return userId;
     }
 }

@@ -8,6 +8,7 @@ import ua.product.manager.entities.Subcategory;
 import ua.product.manager.entities.User;
 import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.exceptions.ObjectExistException;
+import ua.product.manager.repo.MeasurementUnitRepo;
 import ua.product.manager.repo.ProductRepo;
 import ua.product.manager.repo.SubcategoryRepo;
 
@@ -22,17 +23,21 @@ public class ProductService {
     private ProductImageService productImageService;
     private UserService userService;
     private SubcategoryRepo subcategoryRepo;
+    private MeasurementUnitRepo measurementUnitRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo, ProductImageService productImageService, UserService userService, SubcategoryRepo subcategoryRepo) {
+    public ProductService(ProductRepo productRepo, ProductImageService productImageService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo) {
         this.productRepo = productRepo;
         this.productImageService = productImageService;
         this.userService = userService;
         this.subcategoryRepo = subcategoryRepo;
+        this.measurementUnitRepo = measurementUnitRepo;
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
-        if (!productRepo.existsByName(product.getName())) {
+        boolean isProductNameExist = productRepo.existsByName(product.getName());
+        boolean isMeasurementUnitExist = measurementUnitRepo.existsById(product.getMeasurementUnit().getId());
+        if (!isProductNameExist && isMeasurementUnitExist) {
             product.setImageName(productImageService.saveImage(file));
             User user = (User) userService.loadUserByUsername(principal.getName());
             product.setUser(user);
