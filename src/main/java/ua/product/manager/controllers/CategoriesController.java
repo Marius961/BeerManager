@@ -9,6 +9,8 @@ import ua.product.manager.services.CategoriesService;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/categories")
@@ -29,5 +31,10 @@ public class CategoriesController {
     @GetMapping
     public Iterable<Category> getCategories() {
         return categoriesService.getAllCategories();
+    }
+
+    @PostMapping("/check")
+    public Map<String, Boolean> checkUnitFullName(@RequestBody Map<String, String> payload) {
+        return Collections.singletonMap("isExist", categoriesService.isCategoryExist(payload.get("categoryName")));
     }
 }

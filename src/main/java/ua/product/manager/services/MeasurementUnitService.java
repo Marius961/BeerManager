@@ -15,13 +15,21 @@ public class MeasurementUnitService {
         this.measurementUnitRepo = measurementUnitRepo;
     }
 
-    public void saveMeasurementUnit(MeasurementUnit measurementUnit) {
-        if (!measurementUnitRepo.existsByShortName(measurementUnit.getShortName())) {
-            measurementUnitRepo.save(measurementUnit);
+    public void saveMeasurementUnit(MeasurementUnit unit) {
+        if (!measurementUnitRepo.existsByFullNameOrShortName(unit.getFullName(), unit.getShortName())) {
+            measurementUnitRepo.save(unit);
         }
     }
 
     public Iterable<MeasurementUnit> getAllMeasurementUnits() {
         return measurementUnitRepo.findAll();
+    }
+
+    public boolean isFullNameExist(String fullName) {
+        return measurementUnitRepo.existsByFullName(fullName);
+    }
+
+    public boolean isShortNameExist(String shortName) {
+        return measurementUnitRepo.existsByShortName(shortName);
     }
 }

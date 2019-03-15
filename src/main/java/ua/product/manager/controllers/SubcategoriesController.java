@@ -7,6 +7,8 @@ import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.services.SubcategoryService;
 
 import javax.validation.Valid;
+import java.util.Collections;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/subcategories")
@@ -27,5 +29,10 @@ public class SubcategoriesController {
     @GetMapping("/{id}")
     public Iterable<Subcategory> getSubcategoriesByCategoryId(@PathVariable Long id) throws NotFoundException {
         return subcategoryService.getSubcategoriesByCategoryId(id);
+    }
+
+    @PostMapping("/check")
+    public Map<String, Boolean> checkUnitFullName(@RequestBody Map<String, String> payload) {
+        return Collections.singletonMap("isExist", subcategoryService.isSubcategoryExist(payload.get("subcategoryName")));
     }
 }

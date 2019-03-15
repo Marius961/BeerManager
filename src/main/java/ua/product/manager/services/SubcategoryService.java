@@ -24,8 +24,9 @@ public class SubcategoryService {
     }
 
     public void saveSubcategory(Subcategory subcategory) throws NotFoundException {
-
-        if (categoryRepo.existsById(subcategory.getCategory().getId())) {
+        boolean isCategoryExist = categoryRepo.existsById(subcategory.getCategory().getId());
+        boolean isNameUnique = !categoryRepo.existsByName(subcategory.getName());
+        if (isCategoryExist && isNameUnique) {
             subcategoryRepo.save(subcategory);
         } else throw new NotFoundException("Cannot found category with id " + subcategory.getCategory().getId());
     }
@@ -35,5 +36,9 @@ public class SubcategoryService {
         if (category.isPresent()) {
             return subcategoryRepo.findAllByCategory(category.get());
         } else throw new NotFoundException("Cannot find subcategories, because category with id " + categoryId + " not exist");
+    }
+
+    public boolean isSubcategoryExist(String name) {
+        return subcategoryRepo.existsByName(name);
     }
 }

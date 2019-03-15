@@ -5,6 +5,9 @@ import ua.product.manager.entities.MeasurementUnit;
 
 public interface MeasurementUnitRepo extends CrudRepository<MeasurementUnit, Long> {
 
-    boolean existsByShortName(String name);
+    boolean existsByShortName(String shortName);
 
+    boolean existsByFullName(String fullName);
+
+    boolean existsByFullNameOrShortName(String fullName, String shortName);
 }

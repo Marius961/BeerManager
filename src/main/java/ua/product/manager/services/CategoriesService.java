@@ -33,4 +33,8 @@ public class CategoriesService {
     public Iterable<Category> getAllCategories() {
         return categoryRepo.findAll();
     }
+
+    public boolean isCategoryExist(String categoryName) {
+        return categoryRepo.existsByName(categoryName);
+    }
 }

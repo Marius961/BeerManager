@@ -71,7 +71,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/api/categories**",
                         "/api/subcategories**",
-                        "/api/product/measurement-unit**"
+                        "/api/product/measurement-unit**",
+                        "/api/product/unit-short-name-check",
+                        "/api/product/unit-full-name-check",
+                        "/api/categories/check",
+                        "/api/subcategories/check"
                 ).hasAuthority(Role.ADMIN.getAuthority())
 
                 .antMatchers(
