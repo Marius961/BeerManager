@@ -55,7 +55,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/api/auth/**"
                 ).permitAll()
-
                 .antMatchers(HttpMethod.GET,
                         "/api/categories",
                         "/api/subcategories",
@@ -65,7 +64,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 ).permitAll()
 
                 .antMatchers(HttpMethod.POST,
-                        "/api/product"
+                        "/api/product",
+                        "/api/product/check"
                 ).hasAnyAuthority(Role.USER.getAuthority(), Role.ADMIN.getAuthority())
 
                 .antMatchers(

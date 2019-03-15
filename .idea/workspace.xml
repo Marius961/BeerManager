@@ -4,16 +4,11 @@
     <list default="true" id="c9cc2040-6ea0-40c0-8221-6aa9285e557d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/CategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/CategoriesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Subcategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Subcategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/MeasurementUnitRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/MeasurementUnitRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/CategoriesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/CategoriesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/MeasurementUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/MeasurementUnitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/SubcategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/SubcategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ua/product/manager/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/product/manager/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ua/product/manager/repo/MeasurementUnitRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/product/manager/repo/MeasurementUnitRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ua/product/manager/entities/Subcategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ua/product/manager/entities/Subcategory.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,48 +33,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/CategoriesController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Product.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/SubcategoryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+            <state relative-caret-position="756">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Subcategory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+              <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -139,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductImageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebMvcConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/ProductRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/UserRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/UserService.java" />
@@ -148,12 +106,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/repo/MeasurementUnitRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/MeasurementUnitService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/CategoriesService.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/CategoriesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/SubcategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Subcategory.java" />
       </list>
     </option>
@@ -177,10 +136,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-21" />
-    <option name="y" value="-21" />
-    <option name="width" value="1950" />
-    <option name="height" value="1062" />
+    <option name="x" value="-22" />
+    <option name="y" value="-22" />
+    <option name="width" value="1951" />
+    <option name="height" value="1063" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -190,6 +149,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -230,34 +191,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="manager" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
               <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="product-manager-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-              <item name="repo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="product_manager" type="b2602c69:ProjectViewProjectNode" />
@@ -279,8 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -290,7 +222,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552667424747" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552672492320" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -360,16 +292,18 @@
       <workItem from="1552627851409" duration="12430000" />
       <workItem from="1552653935294" duration="309000" />
       <workItem from="1552662068174" duration="4799000" />
+      <workItem from="1552669793165" duration="3286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36517000" />
+    <option name="totallyTimeSpent" value="39803000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1618" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20795892" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21052632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -539,40 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/repo/ProductRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/ImgService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="40" selection-start-line="40" selection-end-line="43" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/repo/SubcategoryRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -725,28 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/CategoriesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
+        <state relative-caret-position="441">
           <caret line="35" selection-start-line="35" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="80" column="28" lean-forward="true" selection-start-line="80" selection-start-column="28" selection-end-line="80" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -755,8 +629,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/SubcategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/repo/ProductRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="68" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/SubcategoriesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="33" selection-start-line="33" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="80" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/services/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
-          <caret line="29" column="44" lean-forward="true" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+          <caret line="34" column="5" lean-forward="true" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2517#2518#0" expanded="true" />
+            <element signature="e#2550#2551#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/controllers/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -766,7 +702,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ua/product/manager/entities/Subcategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="21" column="51" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

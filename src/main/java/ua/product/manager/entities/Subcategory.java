@@ -19,7 +19,7 @@ public class Subcategory {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id", unique = true)
+    @JoinColumn(name = "category_id")
     @JsonBackReference
     private Category category;
 

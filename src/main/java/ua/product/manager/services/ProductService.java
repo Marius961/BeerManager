@@ -35,7 +35,7 @@ public class ProductService {
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
-        boolean isProductNameExist = productRepo.existsByName(product.getName());
+        boolean isProductNameExist = isProductExist(product.getName());
         boolean isMeasurementUnitExist = measurementUnitRepo.existsById(product.getMeasurementUnit().getId());
         if (!isProductNameExist && isMeasurementUnitExist) {
             product.setImageName(imgService.saveImage(file));
@@ -50,5 +50,9 @@ public class ProductService {
         if (opSubcategory.isPresent()) {
             return productRepo.findAllBySubcategory(opSubcategory.get());
         } else throw new NotFoundException("Cannot find subcategory with id " + subcategoryId);
+    }
+
+    public boolean isProductExist(String name) {
+        return productRepo.existsByName(name);
     }
 }

@@ -2,11 +2,16 @@ package ua.product.manager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.MeasurementUnit;
+import ua.product.manager.entities.Product;
+import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.services.MeasurementUnitService;
 import ua.product.manager.services.ProductService;
 
 import javax.validation.Valid;
+import java.io.IOException;
+import java.security.Principal;
 import java.util.Collections;
 import java.util.Map;
 
@@ -21,6 +26,16 @@ public class ProductController {
     public ProductController(ProductService productService, MeasurementUnitService measurementUnitService) {
         this.productService = productService;
         this.measurementUnitService = measurementUnitService;
+    }
+
+
+    @PostMapping
+    public void addProduct(
+            @RequestPart(name = "image")MultipartFile file,
+            @Valid @RequestPart(name = "product")Product product,
+            Principal principal) throws IOException, ObjectExistException {
+
+        productService.addProduct(file, product, principal);
     }
 
     @PostMapping("/measurement-unit")
@@ -41,5 +56,10 @@ public class ProductController {
     @PostMapping("/unit-full-name-check")
     public Map<String, Boolean> checkUnitFullName(@RequestBody Map<String, String> payload) {
         return Collections.singletonMap("isExist", measurementUnitService.isFullNameExist(payload.get("fullName")));
+    }
+
+    @PostMapping("/check")
+    public Map<String, Boolean> checkProductName(@RequestBody Map<String, String> payload) {
+        return Collections.singletonMap("isExist", productService.isProductExist(payload.get("productName")));
     }
 }
