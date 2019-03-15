@@ -22,6 +22,7 @@ public class Category {
     @Size(min = 3)
     private String name;
 
+    private String imageName;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
     @JsonManagedReference
@@ -51,5 +52,13 @@ public class Category {
 
     public void setSubcategories(Set<Subcategory> subcategories) {
         this.subcategories = subcategories;
+    }
+
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 }

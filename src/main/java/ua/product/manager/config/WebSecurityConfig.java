@@ -52,10 +52,32 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/auth/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/categories", "/api/subcategories", "/api/subcategories/{id}").permitAll()
-                .antMatchers("/api/categories", "/api/subcategories**").hasAuthority(Role.ADMIN.getAuthority())
-                .antMatchers(HttpMethod.GET, "/img**").permitAll()
+                .antMatchers(
+                        "/api/auth/**"
+                ).permitAll()
+
+                .antMatchers(HttpMethod.GET,
+                        "/api/categories",
+                        "/api/subcategories",
+                        "/api/subcategories/{id}",
+                        "/api/product",
+                        "/api/product/measurement-unit"
+                ).permitAll()
+
+                .antMatchers(HttpMethod.POST,
+                        "/api/product"
+                ).hasAnyAuthority(Role.USER.getAuthority(), Role.ADMIN.getAuthority())
+
+                .antMatchers(
+                        "/api/categories**",
+                        "/api/subcategories**",
+                        "/api/product/measurement-unit**"
+                ).hasAuthority(Role.ADMIN.getAuthority())
+
+                .antMatchers(
+                        "/img/**"
+                ).permitAll()
+
                 .anyRequest().authenticated()
                 .and()
                 .addFilter(new JWTAuthorizationFilter(authenticationManager()))

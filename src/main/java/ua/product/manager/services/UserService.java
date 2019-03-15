@@ -27,15 +27,15 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        User applicationUser = userRepository.findByUsername(s);
-        if (applicationUser == null) {
+        Optional<User> opUser = userRepository.findByUsername(s);
+        if (!opUser.isPresent()) {
             throw new UsernameNotFoundException(s);
         }
-        return applicationUser;
+        return opUser.get();
     }
 
     public void createUser(User user) throws UserRegistrationFailedException {
-        if (userRepository.findFirstByUsernameOrEmail(user.getUsername(), user.getEmail()) == null) {
+        if (!userRepository.existsByUsernameOrEmail(user.getUsername(), user.getEmail())) {
             user.setActive(true);
             user.setRoles(Collections.singleton(Role.USER));
             try {
@@ -62,10 +62,10 @@ public class UserService implements UserDetailsService {
     }
 
     public boolean isRegistered(String username) throws HibernateException {
-        return userRepository.findByUsername(username) != null;
+        return userRepository.existsByUsername(username);
     }
 
     public boolean isEmailExist(String email) {
-        return userRepository.findByEmail(email) != null;
+        return userRepository.existsByEmail(email);
     }
 }

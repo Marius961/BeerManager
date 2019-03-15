@@ -2,11 +2,13 @@ package ua.product.manager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.Category;
 import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.services.CategoriesService;
 
 import javax.validation.Valid;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/api/categories")
@@ -20,8 +22,8 @@ public class CategoriesController {
     }
 
     @PostMapping
-    public void addCategory(@Valid @RequestBody Category category) throws ObjectExistException {
-        categoriesService.saveCategory(category);
+    public void addCategory(@Valid @RequestPart(name = "category") Category category, @RequestPart(name = "image") MultipartFile file) throws ObjectExistException, IOException {
+        categoriesService.saveCategory(category, file);
     }
 
     @GetMapping

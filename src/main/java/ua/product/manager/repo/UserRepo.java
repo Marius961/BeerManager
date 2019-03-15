@@ -3,11 +3,15 @@ package ua.product.manager.repo;
 import org.springframework.data.repository.CrudRepository;
 import ua.product.manager.entities.User;
 
+import java.util.Optional;
+
 public interface UserRepo extends CrudRepository<User, Long> {
 
-    User findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
-    User findByEmail(String email);
+    boolean existsByUsername(String username);
 
-    User findFirstByUsernameOrEmail(String username, String email);
+    boolean existsByEmail(String email);
+
+    boolean existsByUsernameOrEmail(String username, String email);
 }

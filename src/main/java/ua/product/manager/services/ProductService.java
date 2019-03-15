@@ -20,15 +20,15 @@ import java.util.Optional;
 public class ProductService {
 
     private ProductRepo productRepo;
-    private ProductImageService productImageService;
+    private ImgService imgService;
     private UserService userService;
     private SubcategoryRepo subcategoryRepo;
     private MeasurementUnitRepo measurementUnitRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo, ProductImageService productImageService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo) {
+    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo) {
         this.productRepo = productRepo;
-        this.productImageService = productImageService;
+        this.imgService = imgService;
         this.userService = userService;
         this.subcategoryRepo = subcategoryRepo;
         this.measurementUnitRepo = measurementUnitRepo;
@@ -38,7 +38,7 @@ public class ProductService {
         boolean isProductNameExist = productRepo.existsByName(product.getName());
         boolean isMeasurementUnitExist = measurementUnitRepo.existsById(product.getMeasurementUnit().getId());
         if (!isProductNameExist && isMeasurementUnitExist) {
-            product.setImageName(productImageService.saveImage(file));
+            product.setImageName(imgService.saveImage(file));
             User user = (User) userService.loadUserByUsername(principal.getName());
             product.setUser(user);
             productRepo.save(product);

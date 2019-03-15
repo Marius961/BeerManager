@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class MeasurementUnit {
@@ -12,8 +14,11 @@ public class MeasurementUnit {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank
     private String shortName;
 
+    @NotBlank
+    @Size(min = 3, max = 16, message = "Measurement unit name must be minimum 3 characters and maximum 16")
     private String fullName;
 
     public Long getId() {
