@@ -1,6 +1,9 @@
 package ua.product.manager.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.Product;
@@ -15,6 +18,8 @@ import ua.product.manager.repo.SubcategoryRepo;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.Optional;
+
+import static ua.product.manager.Specifications.ProductSpecification.*;
 
 @Service
 public class ProductService {
@@ -45,11 +50,27 @@ public class ProductService {
         } else throw new ObjectExistException("Product with name " + product.getName() + " already exist");
     }
 
-    public Iterable<Product> getAllBySubcategory(Long subcategoryId) throws NotFoundException {
-        Optional<Subcategory> opSubcategory = subcategoryRepo.findById(subcategoryId);
-        if (opSubcategory.isPresent()) {
-            return productRepo.findAllBySubcategory(opSubcategory.get());
-        } else throw new NotFoundException("Cannot find subcategory with id " + subcategoryId);
+    public Page<Product> getProducts(int page, int size, Long subcategoryId, Double minPrice, Double maxPrice) throws NotFoundException {
+        if (page > -1 && size > -1) {
+            if (subcategoryRepo.existsById(subcategoryId)) {
+                Specification<Product> endSpecification = productsByCategoryId(subcategoryId);
+
+                if (minPrice != null) {
+                    endSpecification = endSpecification.and(productsByMinPrice(minPrice));
+                }
+                if (maxPrice != null) {
+                    endSpecification = endSpecification.and(productsByMaxPrice(maxPrice));
+                }
+                return productRepo.findAll(endSpecification, PageRequest.of(page, size));
+            } else throw new NotFoundException("Unable to find subcategory with id " + subcategoryId);
+        } else throw new IllegalArgumentException("Page number and size must be greater than 0");
+    }
+
+    public Product getProductById(Long id) throws NotFoundException {
+        Optional<Product> opProduct = productRepo.findById(id);
+        if (opProduct.isPresent()) {
+            return opProduct.get();
+        } else throw new NotFoundException("Cannot find product with id " + id);
     }
 
     public boolean isProductExist(String name) {

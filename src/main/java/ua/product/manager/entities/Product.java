@@ -38,7 +38,7 @@ public class Product {
 
     private double priceForMeasurementUnit;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
 

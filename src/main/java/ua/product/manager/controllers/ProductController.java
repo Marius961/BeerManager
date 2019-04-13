@@ -1,10 +1,12 @@
 package ua.product.manager.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.MeasurementUnit;
 import ua.product.manager.entities.Product;
+import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.services.MeasurementUnitService;
 import ua.product.manager.services.ProductService;
@@ -28,6 +30,22 @@ public class ProductController {
         this.measurementUnitService = measurementUnitService;
     }
 
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable Long id) throws NotFoundException {
+        return productService.getProductById(id);
+    }
+
+    @GetMapping
+    public Page<Product> getProducts(
+            @RequestParam(name = "p") int page,
+            @RequestParam(name = "s") int size,
+            @RequestParam(name = "sc") Long subcategoryId,
+            @RequestParam(name = "minPrice", required = false) Double minPrice,
+            @RequestParam(name = "maxPrice", required =  false) Double maxPrice
+    ) throws NotFoundException {
+        return productService.getProducts(page, size,subcategoryId, minPrice, maxPrice);
+    }
 
     @PostMapping
     public void addProduct(

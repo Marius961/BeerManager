@@ -1,8 +1,8 @@
 package ua.product.manager.security;
 
 public class SecurityConstants {
-    public static final String SECRET = "qwdqwfqwddSDWdqdw123d1231dqwe1231";
-    public static final long EXPIRATION_TIME = 32_536_000;
+    public static final String SECRET = "йцвйца213124цйвйцайцв";
+    public static final long EXPIRATION_TIME = 1_284_012_568;
     static final String TOKEN_PREFIX = "Bearer ";
     static final String HEADER_STRING = "Authorization";
 

@@ -52,35 +52,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers(
-                        "/api/auth/**"
-                ).permitAll()
+                .antMatchers("/api/auth/**").permitAll()
                 .antMatchers(HttpMethod.GET,
                         "/api/categories",
-                        "/api/subcategories",
                         "/api/subcategories/{id}",
                         "/api/product",
-                        "/api/product/measurement-unit"
+                        "/api/product/{id}",
+                        "/api/product/measurement-unit",
+                        "/img/**"
                 ).permitAll()
 
                 .antMatchers(HttpMethod.POST,
                         "/api/product",
                         "/api/product/check"
-                ).hasAnyAuthority(Role.USER.getAuthority(), Role.ADMIN.getAuthority())
+                ).hasAnyAuthority(Role.USER.getAuthority())
 
                 .antMatchers(
                         "/api/categories**",
+                        "/api/categories/**",
                         "/api/subcategories**",
-                        "/api/product/measurement-unit**",
-                        "/api/product/unit-short-name-check",
-                        "/api/product/unit-full-name-check",
-                        "/api/categories/check",
-                        "/api/subcategories/check"
+                        "/api/subcategories/**",
+                        "/api/product**",
+                        "/api/product/**"
                 ).hasAuthority(Role.ADMIN.getAuthority())
-
-                .antMatchers(
-                        "/img/**"
-                ).permitAll()
 
                 .anyRequest().authenticated()
                 .and()
