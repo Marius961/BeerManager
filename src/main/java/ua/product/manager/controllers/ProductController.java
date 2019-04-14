@@ -42,9 +42,10 @@ public class ProductController {
             @RequestParam(name = "s") int size,
             @RequestParam(name = "sc") Long subcategoryId,
             @RequestParam(name = "minPrice", required = false) Double minPrice,
-            @RequestParam(name = "maxPrice", required =  false) Double maxPrice
+            @RequestParam(name = "maxPrice", required =  false) Double maxPrice,
+            @RequestParam(name = "sortType", required = false) String sortType
     ) throws NotFoundException {
-        return productService.getProducts(page, size,subcategoryId, minPrice, maxPrice);
+        return productService.getProducts(page, size,subcategoryId, minPrice, maxPrice, sortType);
     }
 
     @PostMapping

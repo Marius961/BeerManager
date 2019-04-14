@@ -42,6 +42,7 @@ public class Product {
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
 
+    private Long viewsCount;
 
     public Long getId() {
         return id;
@@ -117,5 +118,13 @@ public class Product {
 
     public Long getUserId() {
         return userId;
+    }
+
+    public Long getViewsCount() {
+        return viewsCount;
+    }
+
+    public void setViewsCount(Long viewsCount) {
+        this.viewsCount = viewsCount;
     }
 }

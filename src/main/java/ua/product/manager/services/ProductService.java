@@ -3,6 +3,7 @@ package ua.product.manager.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -50,7 +51,7 @@ public class ProductService {
         } else throw new ObjectExistException("Product with name " + product.getName() + " already exist");
     }
 
-    public Page<Product> getProducts(int page, int size, Long subcategoryId, Double minPrice, Double maxPrice) throws NotFoundException {
+    public Page<Product> getProducts(int page, int size, Long subcategoryId, Double minPrice, Double maxPrice, String sortType) throws NotFoundException {
         if (page > -1 && size > -1) {
             if (subcategoryRepo.existsById(subcategoryId)) {
                 Specification<Product> endSpecification = productsByCategoryId(subcategoryId);
@@ -61,7 +62,28 @@ public class ProductService {
                 if (maxPrice != null) {
                     endSpecification = endSpecification.and(productsByMaxPrice(maxPrice));
                 }
-                return productRepo.findAll(endSpecification, PageRequest.of(page, size));
+
+                Sort sort;
+                if (sortType != null) {
+                    switch (sortType.toUpperCase()) {
+                        case "PRICE_ASC":
+                            sort = Sort.by("priceForMeasurementUnit").ascending();
+                            break;
+                        case "PRICE_DESC":
+                            sort = Sort.by("priceForMeasurementUnit").descending();
+                            break;
+                        case "POPULAR":
+                            sort = Sort.by("viewsCount").descending();
+                            break;
+                        default:
+                            sort = Sort.by("viewsCount").descending();
+                            break;
+                    }
+                } else {
+                    sort = Sort.by("viewsCount").descending();
+                }
+
+                return productRepo.findAll(endSpecification, PageRequest.of(page, size, sort));
             } else throw new NotFoundException("Unable to find subcategory with id " + subcategoryId);
         } else throw new IllegalArgumentException("Page number and size must be greater than 0");
     }
