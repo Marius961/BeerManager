@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.Category;
+import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.repo.CategoryRepo;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @Service
 public class CategoriesService {
@@ -30,8 +32,37 @@ public class CategoriesService {
         } else throw new ObjectExistException("Category with name " + category.getName() + " already exist");
     }
 
+    public void updateCategory(Category category, MultipartFile file) throws IOException, NotFoundException {
+        Optional<Category> opCategory = categoryRepo.findById(category.getId());
+        if (opCategory.isPresent()) {
+            if (file != null) {
+                imgService.deleteImage(opCategory.get().getImageName());
+                category.setImageName(imgService.saveImage(file));
+            } else if (category.getImageName().equals("") || category.getImageName() == null) {
+                category.setImageName(opCategory.get().getImageName());
+            }
+            categoryRepo.save(category);
+        } else throw new NotFoundException("Cannot find category with id " + category.getId());
+    }
+
+    public void deleteCategory(Long id) throws NotFoundException {
+        Optional<Category> opCategory = categoryRepo.findById(id);
+        if (opCategory.isPresent()) {
+            if (opCategory.get().getSubcategories().isEmpty()) {
+                categoryRepo.deleteById(id);
+            } else throw new IllegalArgumentException("Cannot delete category, first delete all subcategories");
+        } else throw new NotFoundException("Cannot find category with id " + id);
+    }
+
     public Iterable<Category> getAllCategories() {
         return categoryRepo.findAll();
+    }
+
+    public Category getCategory(Long id) throws NotFoundException {
+        Optional<Category> opCategory = categoryRepo.findById(id);
+        if (opCategory.isPresent()) {
+            return opCategory.get();
+        } else throw new NotFoundException("Cannot find category with id " + id);
     }
 
     public boolean isCategoryExist(String categoryName) {

@@ -17,9 +17,9 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(unique = true)
     @NotBlank
-    @Size(min = 3)
+    @Column(unique = true)
+    @Size(min = 3, max = 20)
     private String name;
 
     private String imageName;

@@ -69,6 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(
                         "/api/categories**",
+                        "/api/categories/{id}",
                         "/api/categories/**",
                         "/api/subcategories**",
                         "/api/subcategories/**",
