@@ -73,6 +73,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/categories/**",
                         "/api/subcategories**",
                         "/api/subcategories/**",
+                        "/api/subcategories/{id}",
                         "/api/product**",
                         "/api/product/**"
                 ).hasAuthority(Role.ADMIN.getAuthority())

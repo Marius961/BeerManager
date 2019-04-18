@@ -2,6 +2,7 @@ package ua.product.manager.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -15,7 +16,7 @@ public class Subcategory {
     private Long id;
 
     @NotBlank
-    @Size(min = 3)
+    @Size(min = 3, max = 32)
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)

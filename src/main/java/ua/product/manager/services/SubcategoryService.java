@@ -6,6 +6,7 @@ import ua.product.manager.entities.Category;
 import ua.product.manager.entities.Subcategory;
 import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.repo.CategoryRepo;
+import ua.product.manager.repo.ProductRepo;
 import ua.product.manager.repo.SubcategoryRepo;
 
 import java.util.Optional;
@@ -15,12 +16,13 @@ public class SubcategoryService {
 
     private SubcategoryRepo subcategoryRepo;
     private CategoryRepo categoryRepo;
-
+    private ProductRepo productRepo;
 
     @Autowired
-    public SubcategoryService(SubcategoryRepo subcategoryRepo, CategoryRepo categoryRepo) {
+    public SubcategoryService(SubcategoryRepo subcategoryRepo, CategoryRepo categoryRepo, ProductRepo productRepo) {
         this.subcategoryRepo = subcategoryRepo;
         this.categoryRepo = categoryRepo;
+        this.productRepo = productRepo;
     }
 
     public void saveSubcategory(Subcategory subcategory) throws NotFoundException {
@@ -31,11 +33,28 @@ public class SubcategoryService {
         } else throw new NotFoundException("Cannot found category with id " + subcategory.getCategory().getId());
     }
 
-    public Iterable<Subcategory> getSubcategoriesByCategoryId(Long categoryId) throws NotFoundException {
-        Optional<Category> category = categoryRepo.findById(categoryId);
-        if (category.isPresent()) {
-            return subcategoryRepo.findAllByCategory(category.get());
-        } else throw new NotFoundException("Cannot find subcategories, because category with id " + categoryId + " not exist");
+    public Subcategory getSubcategoryById(Long id) throws NotFoundException {
+        Optional<Subcategory> opSubcategory = subcategoryRepo.findById(id);
+        if (opSubcategory.isPresent()) {
+            return opSubcategory.get();
+        } else throw new NotFoundException("Cannot find subcategory with id " + id);
+    }
+
+    public void deleteSubcategory(Long id) {
+        if (!productRepo.existsBySubcategoryId(id)) {
+            subcategoryRepo.deleteById(id);
+        } else throw new IllegalArgumentException("Cannot delete not empty subcategory");
+    }
+
+    public void updateSubcategory(Subcategory subcategory) throws NotFoundException {
+        if (subcategoryRepo.existsById(subcategory.getId())) {
+            boolean isCategoryExist = categoryRepo.existsById(subcategory.getCategory().getId());
+            boolean isNameUnique = !categoryRepo.existsByName(subcategory.getName());
+            if (isCategoryExist && isNameUnique) {
+                subcategoryRepo.save(subcategory);
+            } else throw new NotFoundException("Invalid category id, or category with name " + subcategory.getName() + " already exist");
+        } else throw new NotFoundException("Cannot find subcategory with id " + subcategory.getId());
+
     }
 
     public boolean isSubcategoryExist(String name) {

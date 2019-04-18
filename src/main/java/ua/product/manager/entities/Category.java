@@ -1,5 +1,6 @@
 package ua.product.manager.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -26,6 +27,7 @@ public class Category {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
     @JsonManagedReference
+    @JsonBackReference
     private Set<Subcategory> subcategories = new HashSet<>();
 
 

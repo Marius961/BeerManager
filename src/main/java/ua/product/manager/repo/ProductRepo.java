@@ -9,4 +9,6 @@ import ua.product.manager.entities.Subcategory;
 public interface ProductRepo extends PagingAndSortingRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
     boolean existsByName(String name);
+
+    boolean existsBySubcategoryId(Long subcategoryId);
 }

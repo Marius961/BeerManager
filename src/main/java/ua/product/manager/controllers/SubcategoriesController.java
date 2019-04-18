@@ -26,9 +26,19 @@ public class SubcategoriesController {
         subcategoryService.saveSubcategory(subcategory);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteSubcategory(@PathVariable Long id) {
+        subcategoryService.deleteSubcategory(id);
+    }
+
+    @PutMapping
+    public void updateSubcategory(@Valid @RequestBody Subcategory subcategory) throws NotFoundException {
+        subcategoryService.updateSubcategory(subcategory);
+    }
+
     @GetMapping("/{id}")
-    public Iterable<Subcategory> getSubcategoriesByCategoryId(@PathVariable Long id) throws NotFoundException {
-        return subcategoryService.getSubcategoriesByCategoryId(id);
+    public Subcategory getSubcategoriesByCategoryId(@PathVariable Long id) throws NotFoundException {
+        return subcategoryService.getSubcategoryById(id);
     }
 
     @PostMapping("/check")
