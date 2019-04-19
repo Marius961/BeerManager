@@ -14,11 +14,10 @@ public class MeasurementUnit {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank
+    @Size(max = 16)
     private String shortName;
 
-    @NotBlank
-    @Size(min = 3, max = 16, message = "Measurement unit name must be minimum 3 characters and maximum 16")
+    @Size(min = 3, max = 20)
     private String fullName;
 
     public Long getId() {

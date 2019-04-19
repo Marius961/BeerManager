@@ -52,5 +52,5 @@ public class Subcategory {
     @JsonProperty("categoryId")
     public Long getCategoryId() {
         return category == null ? null : category.getId();
-    }   
+    }
 }

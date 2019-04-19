@@ -11,4 +11,6 @@ public interface ProductRepo extends PagingAndSortingRepository<Product, Long>, 
     boolean existsByName(String name);
 
     boolean existsBySubcategoryId(Long subcategoryId);
+
+    boolean existsByMeasurementUnitId(Long measurementUnitId);
 }

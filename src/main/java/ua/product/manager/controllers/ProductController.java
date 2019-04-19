@@ -58,13 +58,28 @@ public class ProductController {
     }
 
     @PostMapping("/measurement-unit")
-    public void addMeasurementUnit(@Valid @RequestBody MeasurementUnit unit) {
+    public void addMeasurementUnit(@Valid @RequestBody MeasurementUnit unit) throws NotFoundException {
         measurementUnitService.saveMeasurementUnit(unit);
+    }
+
+    @PutMapping("/measurement-unit")
+    public void updateMeasurementUnit(@Valid @RequestBody MeasurementUnit unit) throws NotFoundException {
+        measurementUnitService.updateMeasurementUnit(unit);
     }
 
     @GetMapping("/measurement-unit")
     public Iterable<MeasurementUnit> getAllMeasurementUnits() {
         return measurementUnitService.getAllMeasurementUnits();
+    }
+
+    @GetMapping("/measurement-unit/{id}")
+    public MeasurementUnit getMeasurementUnit(@PathVariable Long id) throws NotFoundException {
+        return measurementUnitService.getMeasurementUnit(id);
+    }
+
+    @DeleteMapping("/measurement-unit/{id}")
+    public void deleteMeasurementUnit(@PathVariable Long id) {
+        measurementUnitService.deleteMeasurementUnit(id);
     }
 
     @PostMapping("/unit-short-name-check")

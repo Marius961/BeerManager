@@ -59,6 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/product",
                         "/api/product/{id}",
                         "/api/product/measurement-unit",
+                        "/api/product/measurement-unit/**",
                         "/img/**"
                 ).permitAll()
 

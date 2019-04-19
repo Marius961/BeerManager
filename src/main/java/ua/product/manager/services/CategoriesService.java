@@ -41,6 +41,7 @@ public class CategoriesService {
             } else if (category.getImageName().equals("") || category.getImageName() == null) {
                 category.setImageName(opCategory.get().getImageName());
             }
+            // TODO: no check for unique value
             categoryRepo.save(category);
         } else throw new NotFoundException("Cannot find category with id " + category.getId());
     }
