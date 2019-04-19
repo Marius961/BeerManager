@@ -27,7 +27,6 @@ public class Category {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "category", cascade = CascadeType.ALL)
     @JsonManagedReference
-    @JsonBackReference
     private Set<Subcategory> subcategories = new HashSet<>();
 
 

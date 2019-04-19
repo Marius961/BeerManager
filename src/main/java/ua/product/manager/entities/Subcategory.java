@@ -48,4 +48,9 @@ public class Subcategory {
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    @JsonProperty("categoryId")
+    public Long getCategoryId() {
+        return category == null ? null : category.getId();
+    }   
 }
