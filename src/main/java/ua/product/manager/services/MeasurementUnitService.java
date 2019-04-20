@@ -29,8 +29,9 @@ public class MeasurementUnitService {
 
     public void updateMeasurementUnit(MeasurementUnit unit) throws NotFoundException {
         if (measurementUnitRepo.existsById(unit.getId())) {
-            // TODO: no check for unique value
-            measurementUnitRepo.save(unit);
+            if (measurementUnitRepo.countByShortNameAndFullNameAndNotId(unit.getShortName(), unit.getFullName(), unit.getId()) == 0) {
+                measurementUnitRepo.save(unit);
+            } else throw new IllegalArgumentException("Measurement unit with this full name or short name already exists");
         } else throw new NotFoundException("Cannot find measurement with id " + unit.getId());
     }
 

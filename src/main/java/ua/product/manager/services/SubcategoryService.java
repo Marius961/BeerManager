@@ -49,10 +49,12 @@ public class SubcategoryService {
     public void updateSubcategory(Subcategory subcategory) throws NotFoundException {
         if (subcategoryRepo.existsById(subcategory.getId())) {
             boolean isCategoryExist = categoryRepo.existsById(subcategory.getCategory().getId());
-            boolean isNameUnique = !categoryRepo.existsByName(subcategory.getName());
-            if (isCategoryExist && isNameUnique) {
-                subcategoryRepo.save(subcategory);
-            } else throw new NotFoundException("Invalid category id, or category with name " + subcategory.getName() + " already exist");
+            boolean isNameNotSameAsCategoryName = !categoryRepo.existsByName(subcategory.getName());
+            if (isCategoryExist && isNameNotSameAsCategoryName) {
+                if(subcategoryRepo.countByNameAndIdNot(subcategory.getName(), subcategory.getId()) == 0) {
+                    subcategoryRepo.save(subcategory);
+                } else throw new IllegalArgumentException("Subcategory with name \"" + subcategory.getName() + "\" already exist");
+            } else throw new NotFoundException("Invalid category id, or category with name " + subcategory.getName() + " exist");
         } else throw new NotFoundException("Cannot find subcategory with id " + subcategory.getId());
 
     }

@@ -41,8 +41,9 @@ public class CategoriesService {
             } else if (category.getImageName().equals("") || category.getImageName() == null) {
                 category.setImageName(opCategory.get().getImageName());
             }
-            // TODO: no check for unique value
-            categoryRepo.save(category);
+            if (categoryRepo.countByCategoryNameAndNotId(category.getName(), category.getId()) == 0) {
+                categoryRepo.save(category);
+            } else throw new IllegalArgumentException("Category with name \"" + category.getName() + "\" already exist");
         } else throw new NotFoundException("Cannot find category with id " + category.getId());
     }
 
