@@ -18,7 +18,7 @@ public class Product {
     @JsonIgnore
     private User user;
 
-    @Column(name = "userId", insertable = false, updatable = false)
+    @Column(name = "user_Id", insertable = false, updatable = false)
     private Long userId;
 
     @NotBlank
