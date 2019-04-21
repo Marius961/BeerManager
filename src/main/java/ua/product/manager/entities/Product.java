@@ -1,5 +1,6 @@
 package ua.product.manager.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -14,12 +15,8 @@ public class Product {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    @JsonIgnore
-    private User user;
-
-    @Column(name = "user_Id", insertable = false, updatable = false)
-    private Long userId;
+    @JsonBackReference
+    private Seller seller;
 
     @NotBlank
     @Size(min = 4, max = 64, message = "Product name must be longer than 3 characters and shorter than 65 characters")
@@ -50,14 +47,6 @@ public class Product {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getName() {
@@ -116,9 +105,6 @@ public class Product {
         this.subcategory = subcategory;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
 
     public Long getViewsCount() {
         return viewsCount;
@@ -126,5 +112,13 @@ public class Product {
 
     public void setViewsCount(Long viewsCount) {
         this.viewsCount = viewsCount;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 }

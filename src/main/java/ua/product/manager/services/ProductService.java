@@ -8,17 +8,21 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import ua.product.manager.entities.Product;
+import ua.product.manager.entities.Seller;
 import ua.product.manager.entities.Subcategory;
 import ua.product.manager.entities.User;
 import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.repo.MeasurementUnitRepo;
 import ua.product.manager.repo.ProductRepo;
+import ua.product.manager.repo.SellerRepo;
 import ua.product.manager.repo.SubcategoryRepo;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import static ua.product.manager.Specifications.ProductSpecification.*;
 
@@ -30,14 +34,15 @@ public class ProductService {
     private UserService userService;
     private SubcategoryRepo subcategoryRepo;
     private MeasurementUnitRepo measurementUnitRepo;
+    private SellerRepo sellerRepo;
 
-    @Autowired
-    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo) {
+    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo) {
         this.productRepo = productRepo;
         this.imgService = imgService;
         this.userService = userService;
         this.subcategoryRepo = subcategoryRepo;
         this.measurementUnitRepo = measurementUnitRepo;
+        this.sellerRepo = sellerRepo;
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
@@ -46,8 +51,23 @@ public class ProductService {
         if (!isProductNameExist && isMeasurementUnitExist) {
             product.setImageName(imgService.saveImage(file));
             User user = (User) userService.loadUserByUsername(principal.getName());
-            product.setUser(user);
-            productRepo.save(product);
+            Optional<Seller> opSeller = sellerRepo.findByUserId(user.getId());
+            if (opSeller.isPresent()) {
+                Seller seller = opSeller.get();
+                product.setSeller(seller);
+                seller.getProducts().add(product);
+                sellerRepo.save(seller);
+            } else {
+                Seller newSeller = new Seller();
+                newSeller.setUser(user);
+
+                Set<Product> products = new HashSet<>();
+                product.setSeller(newSeller);
+                products.add(product);
+
+                newSeller.setProducts(products);
+                sellerRepo.save(newSeller);
+            }
         } else throw new ObjectExistException("Product with name " + product.getName() + " already exist");
     }
 
