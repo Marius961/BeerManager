@@ -16,6 +16,16 @@ public class CartItem extends Item {
     @Column(name = "user_id", insertable = false, updatable = false)
     private Long userId;
 
+    private boolean isAddToOrder;
+
+    public boolean isAddToOrder() {
+        return isAddToOrder;
+    }
+
+    public void setAddToOrder(boolean addToOrder) {
+        isAddToOrder = addToOrder;
+    }
+
     public User getUser() {
         return user;
     }

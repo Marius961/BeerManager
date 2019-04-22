@@ -32,6 +32,16 @@ public class CartService {
         return cartItemRepo.findAllByUserId(user.getId());
     }
 
+    public void setAddToOrder(Long itemId, boolean isAddToOrder) throws NotFoundException {
+        User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+        Optional<CartItem> opCartItem = cartItemRepo.findByIdAndUserId(itemId, user.getId());
+        if (opCartItem.isPresent()) {
+            CartItem cartItem = opCartItem.get();
+            cartItem.setAddToOrder(isAddToOrder);
+            cartItemRepo.save(cartItem);
+        } else throw new NotFoundException("Cannot find cart item with id " + itemId);
+    }
+
     public void changeQuantity(Long itemId, int quantity) throws NotFoundException {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
         Optional<CartItem> opCartItem = cartItemRepo.findByIdAndUserId(itemId, user.getId());

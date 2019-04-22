@@ -34,6 +34,11 @@ public class CartController {
         cartService.changeQuantity(itemId, quantity);
     }
 
+    @PutMapping("/add-to-order/{itemId}/{isAddToOrder}")
+    public void setAddItemToOrder(@PathVariable Long itemId, @PathVariable boolean isAddToOrder) throws NotFoundException {
+        cartService.setAddToOrder(itemId, isAddToOrder);
+    }
+
     @DeleteMapping("/{id}")
     public void deleteCartItem(@PathVariable Long id) {
         cartService.deleteCartItem(id);
