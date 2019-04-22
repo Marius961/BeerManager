@@ -20,4 +20,6 @@ public interface CartItemRepo extends CrudRepository<CartItem, Long> {
     void deleteByIdAndUserId(Long cartItemId, Long userId);
 
     void deleteAllByProduct(Product product);
+
+    Optional<CartItem> findByProductIdAndUserId(Long productId, Long userId);
 }

@@ -60,7 +60,7 @@ public class ProductService {
             } else {
                 Seller newSeller = new Seller();
                 newSeller.setUser(user);
-
+                newSeller.setName(user.getUsername());
                 Set<Product> products = new HashSet<>();
                 product.setSeller(newSeller);
                 products.add(product);

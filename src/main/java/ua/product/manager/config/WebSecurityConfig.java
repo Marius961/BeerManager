@@ -63,6 +63,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/img/**"
                 ).permitAll()
 
+                .antMatchers("/api/cart",
+                        "/api/cart/**"
+                ).hasAuthority(Role.USER.getAuthority())
+
                 .antMatchers(HttpMethod.POST,
                         "/api/product",
                         "/api/product/check"

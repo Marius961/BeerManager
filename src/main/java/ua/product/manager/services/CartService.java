@@ -9,6 +9,7 @@ import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.repo.CartItemRepo;
 import ua.product.manager.repo.ProductRepo;
 
+import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.Optional;
 
@@ -43,16 +44,25 @@ public class CartService {
         } else throw new NotFoundException("Cannot find cart item with id " + itemId);
     }
 
+    @Transactional
     public void addCartItem(CartItem cartItem) throws NotFoundException {
-        if (productRepo.existsById(cartItem.getProduct().getId())) {
-            if (cartItem.getQuantity() >= 1) {
-                User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+        if (cartItem.getQuantity() >= 1) {
+            User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+            Optional<CartItem> opCartItem = cartItemRepo.findByProductIdAndUserId(cartItem.getProduct().getId(),user.getId());
+            if (opCartItem.isPresent()) {
+                CartItem updatedCartItem = opCartItem.get();
+                updatedCartItem.setQuantity(updatedCartItem.getQuantity() + cartItem.getQuantity());
+                cartItemRepo.save(updatedCartItem);
+            } else if (productRepo.existsById(cartItem.getProduct().getId())) {
                 cartItem.setUser(user);
                 cartItemRepo.save(cartItem);
-            } else throw new IllegalArgumentException("Cart item quantity must be 1 or more");
-        } else throw new NotFoundException("Cannot add product to cart. Product with id " + cartItem.getProduct().getId() + " not found");
+            } else throw new NotFoundException("Cannot add product to cart. Product with id " + cartItem.getProduct().getId() + " not found");
+        } else throw new IllegalArgumentException("Cart item quantity must be 1 or more");
+
     }
 
+
+    @Transactional
     public void deleteCartItem(Long cartItemId) {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
         cartItemRepo.deleteByIdAndUserId(cartItemId, user.getId());

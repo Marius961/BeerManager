@@ -1,7 +1,9 @@
 package ua.product.manager.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -14,16 +16,14 @@ public class Seller {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String  name;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnore
     private User user;
 
-    @Column(name = "user_Id", insertable = false, updatable = false)
-    private Long userId;
-
-
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "seller", cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "seller", cascade = CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Product> products = new HashSet<>();
 
     public Long getId() {
@@ -42,15 +42,19 @@ public class Seller {
         this.user = user;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
     public Set<Product> getProducts() {
         return products;
     }
 
     public void setProducts(Set<Product> products) {
         this.products = products;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
