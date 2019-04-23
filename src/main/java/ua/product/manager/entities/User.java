@@ -1,5 +1,6 @@
 package ua.product.manager.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -40,6 +41,10 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<ShippingAddress> shippingAddresses;
 
     @NotNull
     @Column(columnDefinition = "INTEGER")
@@ -128,5 +133,13 @@ public class User implements UserDetails {
 
     public void addRole(Role role) {
         this.roles.add(role);
+    }
+
+    public Set<ShippingAddress> getShippingAddresses() {
+        return shippingAddresses;
+    }
+
+    public void setShippingAddresses(Set<ShippingAddress> shippingAddresses) {
+        this.shippingAddresses = shippingAddresses;
     }
 }

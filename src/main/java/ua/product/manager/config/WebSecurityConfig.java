@@ -64,12 +64,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 ).permitAll()
 
                 .antMatchers("/api/cart",
-                        "/api/cart/**"
+                        "/api/cart/**",
+                        "/api/shipping-address**",
+                        "/api/shipping-address/**"
                 ).hasAuthority(Role.USER.getAuthority())
+                .antMatchers(HttpMethod.GET,
+                        "/api/orders"
 
+                ).hasAuthority(Role.USER.getAuthority())
                 .antMatchers(HttpMethod.POST,
                         "/api/product",
-                        "/api/product/check"
+                        "/api/product/check",
+                        "/api/orders"
                 ).hasAnyAuthority(Role.USER.getAuthority())
 
                 .antMatchers(
