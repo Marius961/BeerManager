@@ -25,6 +25,7 @@ public class Order {
     @Column(name = "user_id", insertable = false, updatable = false)
     private Long userId;
 
+    @NotNull
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<OrderedItem> orderedItems;
@@ -35,7 +36,6 @@ public class Order {
     @NotNull
     @OneToOne
     @JoinColumn(name = "address_id")
-    @JsonManagedReference
     private ShippingAddress address;
 
     @Size(max = 512)

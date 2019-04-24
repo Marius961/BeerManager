@@ -16,6 +16,7 @@ import javax.transaction.Transactional;
 import java.security.Principal;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -35,30 +36,36 @@ public class OrderService {
 
     @Transactional
     public void createOrder(Order order) throws NotFoundException {
-        if (order.getOrderedItems() != null && !order.getOrderedItems().isEmpty()) {
+        if (!order.getOrderedItems().isEmpty()) {
             double orderTotalPrice = 0;
+            Long firstSellerId = null;
+            int index = 0;
+            for (OrderedItem item : order.getOrderedItems()) {
+                Optional<Product> opCurrentProduct = productRepo.findById(item.getProduct().getId());
+                if (opCurrentProduct.isPresent()) {
+                    Product currentProduct = opCurrentProduct.get();
+                    if (index == 0) {
+                        firstSellerId = currentProduct.getSeller().getId();
+                    }
+                    if (Objects.equals(firstSellerId, currentProduct.getSeller().getId())) {
+                        if (item.getQuantity() > 0) {
+                            item.setId(null);
+                            double itemTotalPrice = currentProduct.getPriceForMeasurementUnit() * item.getQuantity();
+                            item.setTotalPrice(itemTotalPrice);
+                            orderTotalPrice += itemTotalPrice;
+                            index++;
+                        } else throw new IllegalArgumentException("Quantity of item with id " + item.getId() + " must be more than 0");
+                    } else throw new IllegalArgumentException("Products in order must be from the same seller");
+                } else throw new NotFoundException("You can not add not existed product to order");
+            }
             order.setId(null);
             order.setCanceled(false);
             order.setCreationDate(new Date());
-            Long firstSellerId = order.getOrderedItems().get(0).getProduct().getSeller().getId();
-            for (OrderedItem item : order.getOrderedItems()) {
-                if (firstSellerId == item.getProduct().getSeller().getId()) {
-                    if (item.getQuantity() > 0) {
-                        Optional<Product> opProduct = productRepo.findById(item.getProduct().getId());
-                        if (opProduct.isPresent()) {
-                            item.setId(null);
-                            double itemTotalPrice = item.getProduct().getPriceForMeasurementUnit() * item.getQuantity();
-                            item.setTotalPrice(itemTotalPrice);
-                            orderTotalPrice += itemTotalPrice;
-                        } else throw new NotFoundException("You can not add not existed product to order");
-                    } else throw new IllegalArgumentException("Quantity of item with id " + item.getId() + " must be more than 0");
-                } else throw new IllegalArgumentException("Products in order must be from the same seller");
-            }
             order.setTotalPrice(orderTotalPrice);
             order.setUser((User) userService.loadUserByUsername(getPrincipal().getName()));
             orderRepo.save(order);
             removeOrderedItemsFromCart(order.getOrderedItems());
-        }
+        } else throw new NotFoundException("You can not create empty order");
     }
 
     private void removeOrderedItemsFromCart(List<OrderedItem> orderedItems) {

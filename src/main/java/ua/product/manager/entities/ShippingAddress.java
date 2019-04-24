@@ -1,9 +1,9 @@
 package ua.product.manager.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class ShippingAddress {
@@ -12,9 +12,9 @@ public class ShippingAddress {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String fullName;
+    private String recipientFullName;
 
-    private String mobileNumber;
+    private String recipientMobileNumber;
 
     private String region;
 
@@ -33,20 +33,20 @@ public class ShippingAddress {
     @JsonBackReference
     private User user;
 
-    public String getFullName() {
-        return fullName;
+    public String getRecipientFullName() {
+        return recipientFullName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setRecipientFullName(String recipientFullName) {
+        this.recipientFullName = recipientFullName;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getRecipientMobileNumber() {
+        return recipientMobileNumber;
     }
 
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setRecipientMobileNumber(String recipientMobileNumber) {
+        this.recipientMobileNumber = recipientMobileNumber;
     }
 
     public String getRegion() {
