@@ -2,12 +2,14 @@ package ua.product.manager.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "orders")
@@ -22,6 +24,11 @@ public class Order {
     @JsonIgnore
     private User user;
 
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "seller_id")
+    @JsonIgnore
+    private Seller seller;
+
     @Column(name = "user_id", insertable = false, updatable = false)
     private Long userId;
 
@@ -29,6 +36,10 @@ public class Order {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<OrderedItem> orderedItems;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<OrderStatus> statuses;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
@@ -44,6 +55,11 @@ public class Order {
     private double totalPrice;
 
     private boolean isCanceled;
+
+    @JsonProperty("sellerName")
+    public String getSellerName() {
+        return seller.getName();
+    }
 
     public Long getId() {
         return id;
@@ -111,5 +127,21 @@ public class Order {
 
     public void setCanceled(boolean canceled) {
         isCanceled = canceled;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
+    }
+
+    public Set<OrderStatus> getStatuses() {
+        return statuses;
+    }
+
+    public void setStatuses(Set<OrderStatus> statuses) {
+        this.statuses = statuses;
     }
 }

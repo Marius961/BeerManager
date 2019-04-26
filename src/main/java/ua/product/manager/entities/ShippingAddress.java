@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class ShippingAddress {
@@ -12,20 +14,36 @@ public class ShippingAddress {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotBlank
+    @Size(min = 6, max = 36)
     private String recipientFullName;
 
+    @NotBlank
+    @Size(min = 10, max = 10)
     private String recipientMobileNumber;
 
+    @NotBlank
+    @Size(min = 3, max = 36)
     private String region;
 
+    @NotBlank
+    @Size(min = 2, max = 36)
     private String city;
 
+    @NotBlank
+    @Size(min = 3, max = 36)
     private String street;
 
+    @NotBlank
+    @Size(min = 1, max = 10)
     private String buildingNumber;
 
+    @NotBlank
+    @Size(min = 1, max = 10)
     private String officeNumber;
 
+    @NotBlank
+    @Size(min = 1, max = 6 )
     private String postCode;
 
     @ManyToOne(fetch = FetchType.LAZY)

@@ -1,5 +1,6 @@
 package ua.product.manager.controllers;
 
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import ua.product.manager.entities.Order;
 import ua.product.manager.exceptions.NotFoundException;
@@ -18,12 +19,21 @@ public class OrderController {
     }
 
     @GetMapping
-    public Iterable<Order> getUserOrders(
+    public Page<Order> getUserOrders(
             @RequestParam(name = "p") int page,
             @RequestParam(name = "s") int size
     ) {
         return orderService.getUserOrders(page, size);
     }
+
+    @GetMapping("/received")
+    public Page<Order> getReceivedOrders(
+            @RequestParam(name = "p") int page,
+            @RequestParam(name = "s") int size
+    ) {
+        return orderService.getReceivedOrders(page, size);
+    }
+
 
     @PostMapping
     public void createOrder(@Valid @RequestBody Order order) throws NotFoundException {

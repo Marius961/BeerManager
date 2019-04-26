@@ -1,23 +1,17 @@
 package ua.product.manager.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
-import ua.product.manager.entities.Order;
-import ua.product.manager.entities.OrderedItem;
-import ua.product.manager.entities.Product;
-import ua.product.manager.entities.User;
+import ua.product.manager.entities.*;
 import ua.product.manager.exceptions.NotFoundException;
-import ua.product.manager.repo.CartItemRepo;
-import ua.product.manager.repo.OrderRepo;
-import ua.product.manager.repo.ProductRepo;
+import ua.product.manager.repo.*;
 
 import javax.transaction.Transactional;
 import java.security.Principal;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class OrderService {
@@ -26,12 +20,17 @@ public class OrderService {
     private ProductRepo productRepo;
     private UserService userService;
     private CartItemRepo cartItemRepo;
+    private SellerRepo sellerRepo;
+    private StatusRepo statusRepo;
 
-    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo) {
+    @Autowired
+    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo, SellerRepo sellerRepo, StatusRepo statusRepo) {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
         this.userService = userService;
         this.cartItemRepo = cartItemRepo;
+        this.sellerRepo = sellerRepo;
+        this.statusRepo = statusRepo;
     }
 
     @Transactional
@@ -46,6 +45,7 @@ public class OrderService {
                     Product currentProduct = opCurrentProduct.get();
                     if (index == 0) {
                         firstSellerId = currentProduct.getSeller().getId();
+                        order.setSeller(currentProduct.getSeller());
                     }
                     if (Objects.equals(firstSellerId, currentProduct.getSeller().getId())) {
                         if (item.getQuantity() > 0) {
@@ -63,6 +63,16 @@ public class OrderService {
             order.setCreationDate(new Date());
             order.setTotalPrice(orderTotalPrice);
             order.setUser((User) userService.loadUserByUsername(getPrincipal().getName()));
+
+            Optional<Status> opStatus = statusRepo.findByCode("0");
+
+            OrderStatus orderStatus = new OrderStatus();
+            orderStatus.setOrder(order);
+            orderStatus.setStatusSetDate(new Date());
+            orderStatus.setStatus(opStatus.orElse(null));
+            Set<OrderStatus> statuses = new HashSet<>();
+            statuses.add(orderStatus);
+            order.setStatuses(statuses);
             orderRepo.save(order);
             removeOrderedItemsFromCart(order.getOrderedItems());
         } else throw new NotFoundException("You can not create empty order");
@@ -74,9 +84,14 @@ public class OrderService {
         }
     }
 
-    public Iterable<Order> getUserOrders(int page, int size) {
+    public Page<Order> getUserOrders(int page, int size) {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
         return orderRepo.findAllByUserId(user.getId(), PageRequest.of(page, size));
+    }
+
+    public Page<Order> getReceivedOrders(int page, int size) {
+        User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+        return orderRepo.findAllBySellerUserId(user.getId(), PageRequest.of(page, size));
     }
 
     public Iterable<Order> getAllOrders(int page, int size) {
