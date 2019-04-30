@@ -3,6 +3,7 @@ package ua.product.manager.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import ua.product.manager.entities.*;
@@ -64,7 +65,7 @@ public class OrderService {
             order.setTotalPrice(orderTotalPrice);
             order.setUser((User) userService.loadUserByUsername(getPrincipal().getName()));
 
-            Optional<Status> opStatus = statusRepo.findByCode("0");
+            Optional<Status> opStatus = statusRepo.findByCode("CREATED");
 
             OrderStatus orderStatus = new OrderStatus();
             orderStatus.setOrder(order);
@@ -78,7 +79,8 @@ public class OrderService {
         } else throw new NotFoundException("You can not create empty order");
     }
 
-    private void removeOrderedItemsFromCart(List<OrderedItem> orderedItems) {
+    @Transactional
+    public void removeOrderedItemsFromCart(List<OrderedItem> orderedItems) {
         for (OrderedItem orderedItem : orderedItems) {
             cartItemRepo.deleteByProductId(orderedItem.getProduct().getId());
         }
@@ -92,6 +94,72 @@ public class OrderService {
     public Page<Order> getReceivedOrders(int page, int size) {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
         return orderRepo.findAllBySellerUserId(user.getId(), PageRequest.of(page, size));
+    }
+
+    @Transactional
+    public void addOrderStatus(OrderStatus orderStatus) throws NotFoundException {
+        // check for status existing
+        Optional<Status> opStatus = statusRepo.findByCode(orderStatus.getStatus().getCode());
+        if (opStatus.isPresent()) {
+
+            // check for order existing
+            Optional<Order> opOrder = orderRepo.findById(orderStatus.getOrder().getId());
+            if (opOrder.isPresent()) {
+                Order currentOrder = opOrder.get();
+
+                User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+                // is current user can add new status to order
+                boolean isUserCanAddStatus = user.getId().equals(currentOrder.getUserId()) || user.getId().equals(currentOrder.getSeller().getUser().getId());
+
+                // getting current order status
+                OrderStatus currentStatus = currentOrder.getStatuses().stream().findFirst().orElseThrow(() -> new NotFoundException("Cannot find first status"));
+                // is current user seller or recipient
+                if (isUserCanAddStatus) {
+
+                    boolean isUserSeller = user.getId().equals(currentOrder.getSeller().getUser().getId());
+                    Status newStatus = opStatus.get();
+
+                    // created empty order status object
+                    OrderStatus newOrderStatus = new OrderStatus();
+
+                    if (isUserSeller) {
+                        switch (currentStatus.getStatus().getCode()) {
+                            case ("CREATED"):
+                                if (newStatus.getCode().equals("CONFIRMED") || newStatus.getCode().equals("REJECTED")) {
+                                    newOrderStatus.setStatus(newStatus);
+                                    break;
+                                }
+                            case ("CONFIRMED"):
+                                if (newStatus.getCode().equals("SHIPPED_OUT")) {
+                                    newOrderStatus.setStatus(newStatus);
+                                    break;
+                                }
+                        }
+                    } else {
+                        switch (currentStatus.getStatus().getCode()) {
+                            case ("SHIPPED_OUT"):
+                                if (newStatus.getCode().equals("COMPLETED")) {
+                                    newOrderStatus.setStatus(newStatus);
+                                    break;
+                                }
+                            case ("CREATED"):
+                                if (newStatus.getCode().equals("CANCELED")) {
+                                    newOrderStatus.setStatus(newStatus);
+                                    break;
+                                }
+                        }
+                    }
+
+                    if (newOrderStatus.getStatus() != null) {
+                        newOrderStatus.setOrder(currentOrder);
+                        newOrderStatus.setStatusSetDate(new Date());
+                        newOrderStatus.setStatusComment(orderStatus.getStatusComment());
+                        currentOrder.addOrderStatus(newOrderStatus);
+                        orderRepo.save(currentOrder);
+                    } else throw new NotFoundException("Cannot find status which can be added to this order");
+                } else throw new AccessDeniedException("You can nod add status to this order");
+            } else throw new NotFoundException("Cannot find order with id " + orderStatus.getOrder().getId());
+        } else throw new NotFoundException("Cannot add status which not exists");
     }
 
     public Iterable<Order> getAllOrders(int page, int size) {

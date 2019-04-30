@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -19,14 +21,16 @@ public class OrderStatus {
 
     private String statusComment;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
     @JsonBackReference
     private Order order;
 
+    @NotNull
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "status_id")
-    Status status;
+    private Status status;
 
     public Long getId() {
         return id;
@@ -67,4 +71,6 @@ public class OrderStatus {
     public void setStatus(Status status) {
         this.status = status;
     }
+
+
 }

@@ -5,9 +5,11 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -38,8 +40,9 @@ public class Order {
     private List<OrderedItem> orderedItems;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
+    @OrderBy("statusSetDate DESC")
     @JsonManagedReference
-    private Set<OrderStatus> statuses;
+    private Set<OrderStatus> statuses = new HashSet<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
@@ -48,6 +51,10 @@ public class Order {
     @OneToOne
     @JoinColumn(name = "address_id")
     private ShippingAddress address;
+
+    public void addOrderStatus(@Valid OrderStatus orderStatus) {
+        statuses.add(orderStatus);
+    }
 
     @Size(max = 512)
     private String comment;

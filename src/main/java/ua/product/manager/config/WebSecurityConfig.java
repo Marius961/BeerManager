@@ -75,7 +75,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST,
                         "/api/product",
                         "/api/product/check",
-                        "/api/orders"
+                        "/api/orders",
+                        "/api/orders/add-status"
                 ).hasAnyAuthority(Role.USER.getAuthority())
 
                 .antMatchers(
