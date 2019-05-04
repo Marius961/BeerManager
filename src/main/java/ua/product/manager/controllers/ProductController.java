@@ -57,6 +57,14 @@ public class ProductController {
         productService.addProduct(file, product, principal);
     }
 
+    @PutMapping
+    public void updateProduct(
+            @RequestPart(name = "image")MultipartFile file,
+            @Valid @RequestPart(name = "product")Product product
+    ) throws IOException, NotFoundException {
+        productService.updateProduct(file, product);
+    }
+
     @PostMapping("/measurement-unit")
     public void addMeasurementUnit(@Valid @RequestBody MeasurementUnit unit) throws NotFoundException {
         measurementUnitService.saveMeasurementUnit(unit);
@@ -91,6 +99,21 @@ public class ProductController {
     public Map<String, Boolean> checkUnitFullName(@RequestBody Map<String, String> payload) {
         return Collections.singletonMap("isExist", measurementUnitService.isFullNameExist(payload.get("fullName")));
     }
+
+    @GetMapping("/my-products")
+    public Page<Product> getSellerProducts(
+            @RequestParam(name = "p") int page,
+            @RequestParam(name = "s") int size
+    ) {
+        return productService.getSellerProducts(page, size);
+    }
+
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable Long id) throws NotFoundException {
+        productService.deleteProduct(id);
+    }
+
 
     @PostMapping("/check")
     public Map<String, Boolean> checkProductName(@RequestBody Map<String, String> payload) {

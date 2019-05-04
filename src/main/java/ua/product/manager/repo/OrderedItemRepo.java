@@ -6,4 +6,6 @@ import ua.product.manager.entities.ShippingAddress;
 
 public interface OrderedItemRepo extends CrudRepository<OrderedItem, Long> {
 
+
+    boolean existsByProductId(Long id);
 }

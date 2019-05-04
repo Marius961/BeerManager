@@ -34,6 +34,12 @@ public class ShippingAddressController {
         return shippingAddressService.getUserShippingAddresses();
     }
 
+    @GetMapping("/{id}")
+    public ShippingAddress getUserShippingAddress(@PathVariable Long id) throws NotFoundException {
+        return shippingAddressService.getUserShippingAddress(id);
+    }
+
+
     @DeleteMapping("/{id}")
     public void deleteAddress(@PathVariable Long id) {
         shippingAddressService.deleteAddress(id);

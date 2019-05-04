@@ -13,4 +13,6 @@ public interface OrderRepo extends PagingAndSortingRepository<Order, Long> {
     Page<Order> findAllByUserId(Long userId, Pageable pageable);
 
     Page<Order> findAllBySellerUserId(Long sellerId, Pageable pageable);
+
+    boolean existsByAddressId(Long addressId);
 }

@@ -69,8 +69,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/shipping-address/**"
                 ).hasAuthority(Role.USER.getAuthority())
                 .antMatchers(HttpMethod.GET,
-                        "/api/orders"
+                        "/api/orders",
+                        "/api/product/my-products"
 
+                ).hasAuthority(Role.USER.getAuthority())
+                .antMatchers(HttpMethod.DELETE,
+                        "/api/product/{id}"
                 ).hasAuthority(Role.USER.getAuthority())
                 .antMatchers(HttpMethod.POST,
                         "/api/product",

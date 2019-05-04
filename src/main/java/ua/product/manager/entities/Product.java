@@ -1,12 +1,8 @@
 package ua.product.manager.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -16,26 +12,30 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     @ManyToOne(fetch = FetchType.EAGER)
     private Seller seller;
 
     @NotBlank
-    @Size(min = 4, max = 64, message = "Product name must be longer than 3 characters and shorter than 65 characters")
+    @Size(min = 4, max = 64)
     private String name;
 
-    @Size(min = 15, max = 512, message = "Product name must be longer than 14 characters and shorter than 513 characters")
+    @Size(min = 15, max = 512)
     private String description;
 
     private String imageName;
 
     private boolean active;
 
+    @NotNull
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "MeasurementUnit_id")
     private MeasurementUnit measurementUnit;
 
+    @NotNull
     private double priceForMeasurementUnit;
 
+    @NotNull
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
