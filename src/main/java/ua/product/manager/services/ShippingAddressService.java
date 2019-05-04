@@ -36,6 +36,7 @@ public class ShippingAddressService {
     public void updateShippingAddress(ShippingAddress shippingAddress) throws NotFoundException {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
         if (shippingAddressRepo.existsByIdAndUserId(shippingAddress.getId(), user.getId())) {
+            shippingAddress.setUser(user);
             shippingAddressRepo.save(shippingAddress);
         } else throw new NotFoundException("Cannot find address with id " + shippingAddress.getId());
     }

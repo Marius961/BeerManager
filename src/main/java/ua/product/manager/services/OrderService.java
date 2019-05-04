@@ -23,20 +23,24 @@ public class OrderService {
     private CartItemRepo cartItemRepo;
     private SellerRepo sellerRepo;
     private StatusRepo statusRepo;
+    private ShippingAddressRepo shippingAddressRepo;
 
     @Autowired
-    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo, SellerRepo sellerRepo, StatusRepo statusRepo) {
+    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo, SellerRepo sellerRepo, StatusRepo statusRepo, ShippingAddressRepo shippingAddressRepo) {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
         this.userService = userService;
         this.cartItemRepo = cartItemRepo;
         this.sellerRepo = sellerRepo;
         this.statusRepo = statusRepo;
+        this.shippingAddressRepo = shippingAddressRepo;
     }
 
     @Transactional
     public void createOrder(Order order) throws NotFoundException {
-        if (!order.getOrderedItems().isEmpty()) {
+        User user = (User) userService.loadUserByUsername(getPrincipal().getName());
+        Optional<ShippingAddress> opAddress = shippingAddressRepo.findByUserIdAndId(user.getId(), order.getUserAddressId());
+        if (!order.getOrderedItems().isEmpty() && opAddress.isPresent()) {
             double orderTotalPrice = 0;
             Long firstSellerId = null;
             int index = 0;
@@ -63,7 +67,8 @@ public class OrderService {
             order.setCanceled(false);
             order.setCreationDate(new Date());
             order.setTotalPrice(orderTotalPrice);
-            order.setUser((User) userService.loadUserByUsername(getPrincipal().getName()));
+            order.setUser(user);
+            order.setAddress(new OrderAddress(opAddress.get(), order));
 
             Optional<Status> opStatus = statusRepo.findByCode("CREATED");
 
@@ -76,7 +81,7 @@ public class OrderService {
             order.setStatuses(statuses);
             orderRepo.save(order);
             removeOrderedItemsFromCart(order.getOrderedItems());
-        } else throw new NotFoundException("You can not create empty order");
+        } else throw new NotFoundException("You can not create empty order. Or address not specified.");
     }
 
     @Transactional

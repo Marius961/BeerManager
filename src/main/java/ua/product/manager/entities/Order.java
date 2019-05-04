@@ -47,10 +47,12 @@ public class Order {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
-    @NotNull
-    @OneToOne
-    @JoinColumn(name = "address_id")
-    private ShippingAddress address;
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER, optional = false)
+    private OrderAddress address;
+
+    @Transient
+    private Long userAddressId;
 
     public void addOrderStatus(@Valid OrderStatus orderStatus) {
         statuses.add(orderStatus);
@@ -104,11 +106,11 @@ public class Order {
         this.creationDate = creationDate;
     }
 
-    public ShippingAddress getAddress() {
+    public OrderAddress getAddress() {
         return address;
     }
 
-    public void setAddress(ShippingAddress address) {
+    public void setAddress(OrderAddress address) {
         this.address = address;
     }
 
@@ -150,5 +152,13 @@ public class Order {
 
     public void setStatuses(Set<OrderStatus> statuses) {
         this.statuses = statuses;
+    }
+
+    public Long getUserAddressId() {
+        return userAddressId;
+    }
+
+    public void setUserAddressId(Long userAddressId) {
+        this.userAddressId = userAddressId;
     }
 }
