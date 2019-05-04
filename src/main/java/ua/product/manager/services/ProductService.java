@@ -34,9 +34,10 @@ public class ProductService {
     private MeasurementUnitRepo measurementUnitRepo;
     private SellerRepo sellerRepo;
     private OrderedItemRepo orderedItemRepo;
+    private CartItemRepo cartItemRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo, OrderedItemRepo orderedItemRepo) {
+    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo, OrderedItemRepo orderedItemRepo, CartItemRepo cartItemRepo) {
         this.productRepo = productRepo;
         this.imgService = imgService;
         this.userService = userService;
@@ -44,6 +45,7 @@ public class ProductService {
         this.measurementUnitRepo = measurementUnitRepo;
         this.sellerRepo = sellerRepo;
         this.orderedItemRepo = orderedItemRepo;
+        this.cartItemRepo = cartItemRepo;
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
@@ -84,7 +86,7 @@ public class ProductService {
                 imgService.deleteImage(currentProduct.getImageName());
                 currentProduct.setImageName(imgService.saveImage(file));
             }
-            productRepo.save(product);
+            productRepo.save(currentProduct);
         } else throw new NotFoundException("Cannot update product with id " + product.getId() + ". Product not exist");
     }
 
@@ -142,6 +144,7 @@ public class ProductService {
         Optional<Product> opProduct = productRepo.findBySellerUserIdAndId(user.getId(), productId);
         if (opProduct.isPresent()) {
             if (!orderedItemRepo.existsByProductId(productId)) {
+                cartItemRepo.deleteByProductId(productId);
                 productRepo.deleteById(productId);
             } else throw new IllegalArgumentException("Cannot delete product, because it is already ordered");
         } else throw new NotFoundException("Product not found");

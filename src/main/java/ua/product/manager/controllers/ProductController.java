@@ -59,7 +59,7 @@ public class ProductController {
 
     @PutMapping
     public void updateProduct(
-            @RequestPart(name = "image")MultipartFile file,
+            @RequestPart(name = "image", required = false)MultipartFile file,
             @Valid @RequestPart(name = "product")Product product
     ) throws IOException, NotFoundException {
         productService.updateProduct(file, product);
