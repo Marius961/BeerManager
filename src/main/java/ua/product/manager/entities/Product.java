@@ -16,9 +16,11 @@ public class Product {
     private Seller seller;
 
     @NotBlank
+    @Column(unique = true)
     @Size(min = 4, max = 64)
     private String name;
 
+    @NotBlank
     @Size(min = 15, max = 512)
     private String description;
 

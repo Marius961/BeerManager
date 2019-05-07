@@ -30,8 +30,7 @@ public class AuthController {
 
     @PostMapping("/sign-up")
     public void signUp(@Valid @RequestBody User user) throws UserRegistrationFailedException {
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userService.createUser(user);
+        userService.createUser(user, passwordEncoder);
     }
 
     @PostMapping("/is-registered")

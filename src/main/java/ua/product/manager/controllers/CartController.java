@@ -25,7 +25,7 @@ public class CartController {
     }
 
     @PostMapping
-    public void addCartItem(@Valid @RequestBody CartItem cartItem) throws NotFoundException {
+    public void addCartItem(@Valid @RequestBody CartItem cartItem) throws NotFoundException, InterruptedException {
         cartService.addCartItem(cartItem);
     }
 

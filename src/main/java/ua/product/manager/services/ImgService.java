@@ -15,7 +15,7 @@ import java.util.UUID;
 public class ImgService {
 
 
-    private final String[] allowedExtensions = {".jpg",".png"};
+    private final String[] allowedExtensions = {".jpg", ".png", ".bmp"};
 
     @Value(("${images.upload.path}"))
     private String uploadPath;
@@ -52,7 +52,7 @@ public class ImgService {
 
     private boolean isImageExtensionValid(String extension) {
         for (String e : allowedExtensions) {
-            if (e.equals(extension)) return true;
+            if (e.equalsIgnoreCase(extension)) return true;
         }
         return false;
     }

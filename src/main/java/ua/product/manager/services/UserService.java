@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ua.product.manager.entities.Role;
 import ua.product.manager.entities.User;
@@ -34,15 +35,14 @@ public class UserService implements UserDetailsService {
         return opUser.get();
     }
 
-    public void createUser(User user) throws UserRegistrationFailedException {
+    public void createUser(User user, PasswordEncoder passwordEncoder) throws UserRegistrationFailedException {
         if (!userRepository.existsByUsernameOrEmail(user.getUsername(), user.getEmail())) {
-            user.setActive(true);
-            user.setRoles(Collections.singleton(Role.USER));
-            try {
+            if (user.getPassword().length() <= 20) {
+                user.setPassword(passwordEncoder.encode(user.getPassword()));
+                user.setActive(true);
+                user.setRoles(Collections.singleton(Role.USER));
                 userRepository.save(user);
-            } catch (HibernateException e) {
-                throw new UserRegistrationFailedException("Failed to register new user.");
-            }
+            } else throw new IllegalArgumentException("Maximum password length is 20  characters");
         } else throw new UserRegistrationFailedException("Failed to register new user, because username or email already exist.");
 
     }

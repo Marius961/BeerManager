@@ -22,20 +22,21 @@ public class User implements UserDetails {
 
     @NotBlank
     @Column(unique = true)
-    @Size(min=3, message="Name should have at least 2 characters")
+    @Size(min=3, max = 16)
     private String username;
 
     @NotBlank
+    @Email
     @Column(unique = true)
-    @Email(message ="Invalid email format")
+    @Size(max = 32)
     private String email;
 
     @NotBlank
-    @Size(min = 6, message = "Invalid password (minimum 6 and maximum 32 characters)")
+    @Size(min = 6, max = 512)
     private String password;
 
     @NotBlank
-    @Size(min = 2, message = "First name must be longer than 2 characters")
+    @Size(min = 4, max = 64 )
     private String firstName;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
@@ -47,7 +48,6 @@ public class User implements UserDetails {
     @JsonManagedReference
     private Set<ShippingAddress> shippingAddresses;
 
-    @NotNull
     @Column(columnDefinition = "INTEGER")
     private boolean active;
 
