@@ -51,6 +51,7 @@ public class OrderService {
                     if (index == 0) {
                         firstSellerId = currentProduct.getSeller().getId();
                         order.setSeller(currentProduct.getSeller());
+                        index++;
                     }
                     if (Objects.equals(firstSellerId, currentProduct.getSeller().getId())) {
                         if (item.getQuantity() > 0) {
@@ -58,7 +59,8 @@ public class OrderService {
                             double itemTotalPrice = currentProduct.getPriceForMeasurementUnit() * item.getQuantity();
                             item.setTotalPrice(itemTotalPrice);
                             orderTotalPrice += itemTotalPrice;
-                            index++;
+
+                            incrementProductOrderCount(currentProduct);
                         } else throw new IllegalArgumentException("Quantity of item with id " + item.getId() + " must be more than 0");
                     } else throw new IllegalArgumentException("Products in order must be from the same seller");
                 } else throw new NotFoundException("You can not add not existed product to order");
@@ -169,6 +171,12 @@ public class OrderService {
 
     public Iterable<Order> getAllOrders(int page, int size) {
         return orderRepo.findAll(PageRequest.of(page, size));
+    }
+
+    @Transactional
+    public void incrementProductOrderCount(Product product) {
+        product.setOrdersCount(product.getOrdersCount() + 1);
+        productRepo.save(product);
     }
 
     private Principal getPrincipal() {

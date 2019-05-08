@@ -41,7 +41,7 @@ public class Product {
     @JoinColumn(name = "subcategory_id")
     private Subcategory subcategory;
 
-    private Long viewsCount;
+    private long ordersCount = 0;
 
     public Long getId() {
         return id;
@@ -107,13 +107,12 @@ public class Product {
         this.subcategory = subcategory;
     }
 
-
-    public Long getViewsCount() {
-        return viewsCount;
+    public long getOrdersCount() {
+        return ordersCount;
     }
 
-    public void setViewsCount(Long viewsCount) {
-        this.viewsCount = viewsCount;
+    public void setOrdersCount(long ordersCount) {
+        this.ordersCount = ordersCount;
     }
 
     public Seller getSeller() {

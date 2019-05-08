@@ -112,14 +112,13 @@ public class ProductService {
                             sort = Sort.by("priceForMeasurementUnit").descending();
                             break;
                         case "POPULAR":
-                            sort = Sort.by("viewsCount").descending();
+                            sort = Sort.by("ordersCount").descending();
                             break;
                         default:
-                            sort = Sort.by("viewsCount").descending();
-                            break;
+                            sort = Sort.by("ordersCount").descending();
                     }
                 } else {
-                    sort = Sort.by("viewsCount").descending();
+                    sort = Sort.by("ordersCount").descending();
                 }
 
                 return productRepo.findAll(endSpecification, PageRequest.of(page, size, sort));
