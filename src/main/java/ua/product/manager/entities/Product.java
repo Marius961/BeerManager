@@ -20,8 +20,7 @@ public class Product {
     @Size(min = 4, max = 64)
     private String name;
 
-    @NotBlank
-    @Size(min = 15, max = 512)
+    @Size(max = 512)
     private String description;
 
     private String imageName;

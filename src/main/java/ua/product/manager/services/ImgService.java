@@ -15,7 +15,7 @@ import java.util.UUID;
 public class ImgService {
 
 
-    private final String[] allowedExtensions = {".jpg", ".png", ".bmp"};
+    private final String[] allowedExtensions = {".jpeg",".jpg", ".png", ".bmp"};
 
     @Value(("${images.upload.path}"))
     private String uploadPath;
