@@ -66,7 +66,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/cart",
                         "/api/cart/**",
                         "/api/shipping-address**",
-                        "/api/shipping-address/**"
+                        "/api/shipping-address/**",
+                        "/api/account**",
+                        "/api/account/**"
                 ).hasAuthority(Role.USER.getAuthority())
                 .antMatchers(HttpMethod.GET,
                         "/api/orders",

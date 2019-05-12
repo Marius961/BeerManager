@@ -43,7 +43,7 @@ public class UserCreator {
     private void addAdmin() {
         User admin = new User();
         admin.setUsername("admin");
-        admin.setPassword(passwordEncoder.encode("admin"));
+        admin.setPassword(passwordEncoder.encode("admin1"));
         admin.setEmail("admin@mail.com");
         admin.setFirstName("Admin");
         admin.setActive(true);
