@@ -8,19 +8,14 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import ua.product.manager.entities.Product;
-import ua.product.manager.entities.Seller;
-import ua.product.manager.entities.Subcategory;
-import ua.product.manager.entities.User;
+import ua.product.manager.entities.*;
 import ua.product.manager.exceptions.NotFoundException;
 import ua.product.manager.exceptions.ObjectExistException;
 import ua.product.manager.repo.*;
 
 import java.io.IOException;
 import java.security.Principal;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import static ua.product.manager.Specifications.ProductSpecification.*;
 
@@ -35,9 +30,10 @@ public class ProductService {
     private SellerRepo sellerRepo;
     private OrderedItemRepo orderedItemRepo;
     private CartItemRepo cartItemRepo;
+    private CategoryRepo categoryRepo;
 
     @Autowired
-    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo, OrderedItemRepo orderedItemRepo, CartItemRepo cartItemRepo) {
+    public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo, OrderedItemRepo orderedItemRepo, CartItemRepo cartItemRepo, CategoryRepo categoryRepo) {
         this.productRepo = productRepo;
         this.imgService = imgService;
         this.userService = userService;
@@ -46,6 +42,7 @@ public class ProductService {
         this.sellerRepo = sellerRepo;
         this.orderedItemRepo = orderedItemRepo;
         this.cartItemRepo = cartItemRepo;
+        this.categoryRepo = categoryRepo;
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
@@ -124,6 +121,10 @@ public class ProductService {
                 return productRepo.findAll(endSpecification, PageRequest.of(page, size, sort));
             } else throw new NotFoundException("Unable to find subcategory with id " + subcategoryId);
         } else throw new IllegalArgumentException("Page number and size must be greater than 0");
+    }
+
+    public Iterable getPopularProducts() {
+        return productRepo.findAll(PageRequest.of(0, 24, Sort.by("ordersCount").descending()));
     }
 
     public Product getProductById(Long id) throws NotFoundException {

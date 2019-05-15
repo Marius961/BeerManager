@@ -58,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/api/subcategories/{id}",
                         "/api/product",
                         "/api/product/{id}",
+                        "/api/product/popular",
                         "/api/product/measurement-unit",
                         "/api/product/measurement-unit/**",
                         "/img/**"

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import ua.product.manager.entities.Category;
 import ua.product.manager.entities.MeasurementUnit;
 import ua.product.manager.entities.Product;
 import ua.product.manager.exceptions.NotFoundException;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 import java.io.IOException;
 import java.security.Principal;
 import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -112,6 +114,11 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) throws NotFoundException {
         productService.deleteProduct(id);
+    }
+
+    @GetMapping("/popular")
+    public Iterable getPopularCategoriesWithProducts() {
+        return productService.getPopularProducts();
     }
 
 
