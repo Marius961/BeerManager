@@ -3,6 +3,7 @@ package ua.product.manager.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -95,7 +96,7 @@ public class OrderService {
 
     public Page<Order> getUserOrders(int page, int size) {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
-        return orderRepo.findAllByUserId(user.getId(), PageRequest.of(page, size));
+        return orderRepo.findAllByUserId(user.getId(), PageRequest.of(page, size, Sort.by("creationDate").descending()));
     }
 
     public Page<Order> getReceivedOrders(int page, int size) {

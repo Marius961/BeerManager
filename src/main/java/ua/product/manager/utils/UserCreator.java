@@ -41,43 +41,43 @@ public class UserCreator {
 
 
     private void addAdmin() {
-        User admin = new User();
-        admin.setUsername("admin");
-        admin.setPassword(passwordEncoder.encode("admin1"));
-        admin.setEmail("admin@mail.com");
-        admin.setFirstName("Admin");
-        admin.setActive(true);
-        admin.setRoles(new HashSet<>(Arrays.asList(Role.USER, Role.ADMIN)));
-        userRepo.save(admin);
-
-
-        List<Status> stats = new LinkedList<>();
-        stats.add(new Status(
-                "CREATED",
-                "Створено",
-                "Ваше замовлення створено, та чекає на підтвердження зі сторони продавця"));
-        stats.add(new Status(
-                "CONFIRMED",
-                "Підтверджено",
-                "Ваше замовлення підтверджено, продавець на даний момент обробляє замовлення, скоро воно буде відправлено"));
-        stats.add(new Status(
-                "SHIPPED_OUT",
-                "Відправлено",
-                "Продавець відправив замовлення, воно прямує по зазначеній у замовленні адресі"));
-        stats.add(new Status(
-                "COMPLETED",
-                "Виконано",
-                "Покупець отримав замовлення, та підтвердив факт отримання"));
-        stats.add(new Status(
-                "CANCELED",
-                "Скасовано",
-                "Замовлення скасовано"));
-        stats.add(new Status(
-                "REJECTED",
-                "Відхилено",
-                "Замовлення відхилено"));
-
-        statusRepo.saveAll(stats);
+//        User admin = new User();
+//        admin.setUsername("admin");
+//        admin.setPassword(passwordEncoder.encode("admin1"));
+//        admin.setEmail("admin@mail.com");
+//        admin.setFirstName("Admin");
+//        admin.setActive(true);
+//        admin.setRoles(new HashSet<>(Arrays.asList(Role.USER, Role.ADMIN)));
+//        userRepo.save(admin);
+//
+//
+//        List<Status> stats = new LinkedList<>();
+//        stats.add(new Status(
+//                "CREATED",
+//                "Створено",
+//                "Ваше замовлення створено, та чекає на підтвердження зі сторони продавця"));
+//        stats.add(new Status(
+//                "CONFIRMED",
+//                "Підтверджено",
+//                "Ваше замовлення підтверджено, продавець на даний момент обробляє замовлення, скоро воно буде відправлено"));
+//        stats.add(new Status(
+//                "SHIPPED_OUT",
+//                "Відправлено",
+//                "Продавець відправив замовлення, воно прямує по зазначеній у замовленні адресі"));
+//        stats.add(new Status(
+//                "COMPLETED",
+//                "Виконано",
+//                "Покупець отримав замовлення, та підтвердив факт отримання"));
+//        stats.add(new Status(
+//                "CANCELED",
+//                "Скасовано",
+//                "Замовлення скасовано"));
+//        stats.add(new Status(
+//                "REJECTED",
+//                "Відхилено",
+//                "Замовлення відхилено"));
+//
+//        statusRepo.saveAll(stats);
 
 
 //        ShippingAddress shippingAddress = new ShippingAddress();
