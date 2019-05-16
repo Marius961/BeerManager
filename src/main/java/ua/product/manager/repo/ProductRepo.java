@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
+import ua.product.manager.entities.Category;
 import ua.product.manager.entities.Product;
 import ua.product.manager.entities.Subcategory;
 
@@ -23,5 +24,7 @@ public interface ProductRepo extends PagingAndSortingRepository<Product, Long>, 
     Page<Product> findBySellerUserId(Long id, Pageable pageable);
 
     Optional<Product> findBySellerUserIdAndId(Long userId, Long productId);
+
+    List<Product> findAllBySubcategoryCategory(Category category, Pageable pageable);
 
 }

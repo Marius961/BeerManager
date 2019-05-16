@@ -123,8 +123,15 @@ public class ProductService {
         } else throw new IllegalArgumentException("Page number and size must be greater than 0");
     }
 
-    public Iterable getPopularProducts() {
+    public Iterable<Product> getPopularProducts() {
         return productRepo.findAll(PageRequest.of(0, 24, Sort.by("ordersCount").descending()));
+    }
+
+    public List<Product> getCategoryPopular(Long categoryId) throws NotFoundException {
+        Optional<Category> opCategory = categoryRepo.findById(categoryId);
+        if (opCategory.isPresent()) {
+            return productRepo.findAllBySubcategoryCategory(opCategory.get(), PageRequest.of(0, 16, Sort.by("ordersCount").descending()));
+        } else throw new NotFoundException("Category not found");
     }
 
     public Product getProductById(Long id) throws NotFoundException {

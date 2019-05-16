@@ -117,10 +117,14 @@ public class ProductController {
     }
 
     @GetMapping("/popular")
-    public Iterable getPopularCategoriesWithProducts() {
+    public Iterable<Product> getPopularCategoriesWithProducts() {
         return productService.getPopularProducts();
     }
 
+    @GetMapping("/category-popular")
+    public List<Product> getCategoryPopularProducts(@RequestParam(name = "sc") Long id) throws NotFoundException {
+        return productService.getCategoryPopular(id);
+    }
 
     @PostMapping("/check")
     public Map<String, Boolean> checkProductName(@RequestBody Map<String, String> payload) {
