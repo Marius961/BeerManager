@@ -12,8 +12,8 @@ import java.util.Optional;
 @Service
 public class MeasurementUnitService {
 
-    private MeasurementUnitRepo measurementUnitRepo;
-    private ProductRepo productRepo;
+    private final MeasurementUnitRepo measurementUnitRepo;
+    private final ProductRepo productRepo;
 
     @Autowired
     public MeasurementUnitService(MeasurementUnitRepo measurementUnitRepo, ProductRepo productRepo) {

@@ -16,9 +16,9 @@ import java.util.Optional;
 @Service
 public class ShippingAddressService {
 
-    private ShippingAddressRepo shippingAddressRepo;
-    private UserService userService;
-    private OrderRepo orderRepo;
+    private final ShippingAddressRepo shippingAddressRepo;
+    private final UserService userService;
+    private final OrderRepo orderRepo;
 
     @Autowired
     public ShippingAddressService(ShippingAddressRepo shippingAddressRepo, UserService userService, OrderRepo orderRepo) {

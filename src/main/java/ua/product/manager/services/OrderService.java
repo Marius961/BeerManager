@@ -18,21 +18,19 @@ import java.util.*;
 @Service
 public class OrderService {
 
-    private OrderRepo orderRepo;
-    private ProductRepo productRepo;
-    private UserService userService;
-    private CartItemRepo cartItemRepo;
-    private SellerRepo sellerRepo;
-    private StatusRepo statusRepo;
-    private ShippingAddressRepo shippingAddressRepo;
+    private final OrderRepo orderRepo;
+    private final ProductRepo productRepo;
+    private final UserService userService;
+    private final CartItemRepo cartItemRepo;
+    private final StatusRepo statusRepo;
+    private final ShippingAddressRepo shippingAddressRepo;
 
     @Autowired
-    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo, SellerRepo sellerRepo, StatusRepo statusRepo, ShippingAddressRepo shippingAddressRepo) {
+    public OrderService(OrderRepo orderRepo, ProductRepo productRepo, UserService userService, CartItemRepo cartItemRepo, StatusRepo statusRepo, ShippingAddressRepo shippingAddressRepo) {
         this.orderRepo = orderRepo;
         this.productRepo = productRepo;
         this.userService = userService;
         this.cartItemRepo = cartItemRepo;
-        this.sellerRepo = sellerRepo;
         this.statusRepo = statusRepo;
         this.shippingAddressRepo = shippingAddressRepo;
     }
@@ -168,10 +166,6 @@ public class OrderService {
                 } else throw new AccessDeniedException("You can nod add status to this order");
             } else throw new NotFoundException("Cannot find order with id " + orderStatus.getOrder().getId());
         } else throw new NotFoundException("Cannot add status which not exists");
-    }
-
-    public Iterable<Order> getAllOrders(int page, int size) {
-        return orderRepo.findAll(PageRequest.of(page, size));
     }
 
     @Transactional

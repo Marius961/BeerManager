@@ -14,8 +14,7 @@ import java.util.UUID;
 @Service
 public class ImgService {
 
-
-    private final String[] allowedExtensions = {".jpeg",".jpg", ".png", ".bmp"};
+    private static final String[] ALLOWED_EXTENSIONS = {".jpeg",".jpg", ".png", ".bmp"};
 
     @Value(("${images.upload.path}"))
     private String uploadPath;
@@ -31,7 +30,7 @@ public class ImgService {
                     isUploadFolderExists = uploadFolder.mkdir();
                 }
 
-                boolean isExstensionValid = false;
+                boolean isExstensionValid;
                 String extension = name.substring(name.lastIndexOf("."));
                 isExstensionValid = isImageExtensionValid(extension);
 
@@ -40,7 +39,7 @@ public class ImgService {
                     String resultFileName = uuidFile + "." + file.getOriginalFilename();
                     file.transferTo(new File(uploadPath + '/' + resultFileName));
                     return resultFileName;
-                } else throw new IOException("File extension is not valid. Valid file extensions: " + Arrays.toString(allowedExtensions));
+                } else throw new IOException("File extension is not valid. Valid file extensions: " + Arrays.toString(ALLOWED_EXTENSIONS));
             } else throw new InvalidFileNameException(null, "Invalid file name");
         } else throw new FileNotFoundException("Uploaded file not found");
     }
@@ -51,7 +50,7 @@ public class ImgService {
     }
 
     private boolean isImageExtensionValid(String extension) {
-        for (String e : allowedExtensions) {
+        for (String e : ALLOWED_EXTENSIONS) {
             if (e.equalsIgnoreCase(extension)) return true;
         }
         return false;

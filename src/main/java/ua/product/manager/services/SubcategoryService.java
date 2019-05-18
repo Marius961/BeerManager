@@ -14,9 +14,9 @@ import java.util.Optional;
 @Service
 public class SubcategoryService {
 
-    private SubcategoryRepo subcategoryRepo;
-    private CategoryRepo categoryRepo;
-    private ProductRepo productRepo;
+    private final SubcategoryRepo subcategoryRepo;
+    private final CategoryRepo categoryRepo;
+    private final ProductRepo productRepo;
 
     @Autowired
     public SubcategoryService(SubcategoryRepo subcategoryRepo, CategoryRepo categoryRepo, ProductRepo productRepo) {

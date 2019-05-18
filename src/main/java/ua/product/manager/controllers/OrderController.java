@@ -1,5 +1,6 @@
 package ua.product.manager.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import ua.product.manager.entities.Order;
@@ -13,8 +14,9 @@ import javax.validation.Valid;
 @RequestMapping("/api/orders")
 public class OrderController {
 
-    private OrderService orderService;
+    private final OrderService orderService;
 
+    @Autowired
     public OrderController(OrderService orderService) {
         this.orderService = orderService;
     }

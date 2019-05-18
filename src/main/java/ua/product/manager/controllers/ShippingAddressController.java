@@ -12,7 +12,7 @@ import javax.validation.Valid;
 @RequestMapping("/api/shipping-address")
 public class ShippingAddressController {
 
-    private ShippingAddressService shippingAddressService;
+    private final ShippingAddressService shippingAddressService;
 
     @Autowired
     public ShippingAddressController(ShippingAddressService shippingAddressService) {

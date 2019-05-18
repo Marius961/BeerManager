@@ -14,15 +14,14 @@ import java.util.Optional;
 @Service
 public class CategoriesService {
 
-    private CategoryRepo categoryRepo;
-    private ImgService imgService;
+    private final CategoryRepo categoryRepo;
+    private final ImgService imgService;
 
     @Autowired
     public CategoriesService(CategoryRepo categoryRepo, ImgService imgService) {
         this.categoryRepo = categoryRepo;
         this.imgService = imgService;
     }
-
 
 
     public void saveCategory(Category category, MultipartFile file) throws ObjectExistException, IOException {

@@ -17,7 +17,7 @@ import java.util.Map;
 @RequestMapping("/api/categories")
 public class CategoriesController {
 
-    private CategoriesService categoriesService;
+    private final CategoriesService categoriesService;
 
     @Autowired
     public CategoriesController(CategoriesService categoriesService) {

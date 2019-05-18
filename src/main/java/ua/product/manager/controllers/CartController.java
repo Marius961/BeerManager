@@ -12,7 +12,7 @@ import javax.validation.Valid;
 @RequestMapping("/api/cart")
 public class CartController {
 
-    private CartService cartService;
+    private final CartService cartService;
 
     @Autowired
     public CartController(CartService cartService) {
@@ -25,7 +25,7 @@ public class CartController {
     }
 
     @PostMapping
-    public void addCartItem(@Valid @RequestBody CartItem cartItem) throws NotFoundException, InterruptedException {
+    public void addCartItem(@Valid @RequestBody CartItem cartItem) throws NotFoundException {
         cartService.addCartItem(cartItem);
     }
 

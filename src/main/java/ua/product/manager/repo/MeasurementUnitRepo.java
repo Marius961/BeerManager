@@ -2,10 +2,7 @@ package ua.product.manager.repo;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import ua.product.manager.entities.MeasurementUnit;
-
-import java.util.Optional;
 
 public interface MeasurementUnitRepo extends CrudRepository<MeasurementUnit, Long> {
 

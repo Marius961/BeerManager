@@ -14,7 +14,7 @@ import java.util.Map;
 @RequestMapping("/api/subcategories")
 public class SubcategoriesController {
 
-    private SubcategoryService subcategoryService;
+    private final SubcategoryService subcategoryService;
 
     @Autowired
     public SubcategoriesController(SubcategoryService subcategoryService) {

@@ -22,15 +22,15 @@ import static ua.product.manager.Specifications.ProductSpecification.*;
 @Service
 public class ProductService {
 
-    private ProductRepo productRepo;
-    private ImgService imgService;
-    private UserService userService;
-    private SubcategoryRepo subcategoryRepo;
-    private MeasurementUnitRepo measurementUnitRepo;
-    private SellerRepo sellerRepo;
-    private OrderedItemRepo orderedItemRepo;
-    private CartItemRepo cartItemRepo;
-    private CategoryRepo categoryRepo;
+    private final ProductRepo productRepo;
+    private final ImgService imgService;
+    private final UserService userService;
+    private final SubcategoryRepo subcategoryRepo;
+    private final MeasurementUnitRepo measurementUnitRepo;
+    private final SellerRepo sellerRepo;
+    private final OrderedItemRepo orderedItemRepo;
+    private final CartItemRepo cartItemRepo;
+    private final CategoryRepo categoryRepo;
 
     @Autowired
     public ProductService(ProductRepo productRepo, ImgService imgService, UserService userService, SubcategoryRepo subcategoryRepo, MeasurementUnitRepo measurementUnitRepo, SellerRepo sellerRepo, OrderedItemRepo orderedItemRepo, CartItemRepo cartItemRepo, CategoryRepo categoryRepo) {
@@ -46,9 +46,8 @@ public class ProductService {
     }
 
     public void addProduct(MultipartFile file, Product product, Principal principal) throws IOException, ObjectExistException {
-        boolean isProductNameExist = isProductExist(product.getName());
         boolean isMeasurementUnitExist = measurementUnitRepo.existsById(product.getMeasurementUnit().getId());
-        if (!isProductNameExist && isMeasurementUnitExist) {
+        if (isMeasurementUnitExist) {
             product.setImageName(imgService.saveImage(file));
             User user = (User) userService.loadUserByUsername(principal.getName());
             Optional<Seller> opSeller = sellerRepo.findByUserId(user.getId());

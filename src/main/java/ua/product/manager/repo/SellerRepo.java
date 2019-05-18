@@ -9,5 +9,4 @@ public interface SellerRepo extends CrudRepository<Seller, Long> {
 
     Optional<Seller> findByUserId(Long userId);
 
-    boolean existsByUserId(Long userId);
 }

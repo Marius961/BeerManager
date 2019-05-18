@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import ua.product.manager.entities.Category;
 import ua.product.manager.entities.MeasurementUnit;
 import ua.product.manager.entities.Product;
 import ua.product.manager.exceptions.NotFoundException;
@@ -23,8 +22,8 @@ import java.util.Map;
 @RequestMapping("/api/product")
 public class ProductController {
 
-    private ProductService productService;
-    private MeasurementUnitService measurementUnitService;
+    private final ProductService productService;
+    private final MeasurementUnitService measurementUnitService;
 
     @Autowired
     public ProductController(ProductService productService, MeasurementUnitService measurementUnitService) {
