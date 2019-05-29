@@ -44,7 +44,6 @@ public class UserService implements UserDetailsService {
         if (!userRepository.existsByUsernameOrEmail(user.getUsername(), user.getEmail())) {
             if (user.getPassword().length() <= 20) {
                 user.setPassword(passwordEncoder.encode(user.getPassword()));
-                user.setActive(true);
                 user.setRoles(Collections.singleton(Role.USER));
                 userRepository.save(user);
             } else throw new IllegalArgumentException("Maximum password length is 20  characters");

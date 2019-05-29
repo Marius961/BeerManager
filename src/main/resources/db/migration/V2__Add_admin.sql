@@ -1,6 +1,6 @@
 INSERT INTO user
-    (id, active, email, password, username, first_name)
-values (1, '1', 'admin@gmail.com', '$2a$11$SxLjGe1kDnjRapbFYuJzhu9uR89vU4CR4Tdk9VekH2J8EQSM7bDJm', 'admin', 'Admin');
+    (id, email, password, username, first_name)
+values (1, 'admin@gmail.com', '$2a$11$SxLjGe1kDnjRapbFYuJzhu9uR89vU4CR4Tdk9VekH2J8EQSM7bDJm', 'admin', 'Admin');
 
 INSERT INTO user_role
     (user_id, roles)

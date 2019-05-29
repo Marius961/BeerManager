@@ -7,7 +7,6 @@ create table cart_items
     product_id      bigint  not null,
     primary key (id)
 ) engine = InnoDB;
-
 create table category
 (
     id         bigint not null,
@@ -15,41 +14,36 @@ create table category
     name       varchar(20),
     primary key (id)
 ) engine = InnoDB;
-
 create table hibernate_sequence
 (
     next_val bigint
 ) engine = InnoDB;
-
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
+values (1);
 insert into hibernate_sequence
-values (14);
-
-
-
+values (1);
 create table measurement_unit
 (
     id         bigint not null,
@@ -153,7 +147,6 @@ create table subcategory
 create table user
 (
     id         bigint not null,
-    active     INTEGER,
     email      varchar(32),
     first_name varchar(64),
     password   varchar(512),

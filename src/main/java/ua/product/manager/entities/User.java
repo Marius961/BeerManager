@@ -49,10 +49,6 @@ public class User implements UserDetails {
     @JsonManagedReference
     private Set<ShippingAddress> shippingAddresses;
 
-    @JsonIgnore
-    @Column(columnDefinition = "INTEGER")
-    private boolean active;
-
     public Long getId() {
         return id;
     }
@@ -86,7 +82,13 @@ public class User implements UserDetails {
     @Override
     @JsonIgnore
     public boolean isEnabled() {
-        return isActive();
+        return true;
+    }
+
+    @Override
+    @JsonIgnore
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
     }
 
     public void setUsername(String username) {
@@ -99,12 +101,6 @@ public class User implements UserDetails {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    @Override
-    @JsonIgnore
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getRoles();
     }
 
     public String getPassword() {
@@ -129,14 +125,6 @@ public class User implements UserDetails {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
     }
 
     public void addRole(Role role) {
