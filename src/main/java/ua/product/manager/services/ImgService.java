@@ -21,7 +21,7 @@ import java.util.UUID;
 @Service
 public class ImgService {
 
-    private static final String[] ALLOWED_EXTENSIONS = {".jpeg",".jpg", ".png", ".bmp"};
+    private static final String[] ALLOWED_EXTENSIONS = {"jpeg","jpg", "png", "bmp"};
 
     @Value(("${images.upload.path}"))
     private String uploadPath;
@@ -38,7 +38,7 @@ public class ImgService {
                 }
 
                 boolean isExstensionValid;
-                String extension = name.substring(name.lastIndexOf("."));
+                String extension = name.substring(name.lastIndexOf(".")+1);
                 isExstensionValid = isImageExtensionValid(extension);
 
                 if (isExstensionValid && isUploadFolderExists) {
@@ -54,7 +54,7 @@ public class ImgService {
                     File compressedImageFile = new File(uploadFolder.getPath().concat('/' + resultFileName));
                     OutputStream os = new FileOutputStream(compressedImageFile);
 
-                    Iterator<ImageWriter> writers = ImageIO.getImageWritersByFormatName("jpg");
+                    Iterator<ImageWriter> writers = ImageIO.getImageWritersByFormatName(extension);
                     ImageWriter writer = writers.next();
 
                     ImageOutputStream ios = ImageIO.createImageOutputStream(os);
