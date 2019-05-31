@@ -142,7 +142,7 @@ public class ProductService {
 
     public Page<Product> getSellerProducts(int page, int size) {
         User user = (User) userService.loadUserByUsername(getPrincipal().getName());
-        return productRepo.findBySellerUserId(user.getId(), PageRequest.of(page, size));
+        return productRepo.findBySellerUserId(user.getId(), PageRequest.of(page, size, Sort.by("id").descending()));
     }
 
     public void deleteProduct(Long productId) throws NotFoundException {
